@@ -2,8 +2,11 @@
   import atag from './data/atag.js';
   import Guideline from './components/Guideline.svelte';
   import ProgressBar from './components/ProgressBar.svelte';
+  import SideNav from './components/SideNav.svelte';
 
   $: evaluation = {};
+  $: jsonDownload = `data:text/json;charset=utf-8,${encodeURIComponent(JSON.stringify(evaluation))}`;
+
   let current = 0;
   let nextSection = function() {
     if (current + 1 < atag.length) {
@@ -23,14 +26,13 @@
     evaluation = JSON.stringify(Object.fromEntries(data));
     evaluation = JSON.parse(evaluation); 
 
-    console.log(evaluation);
-
     nextSection();
   }
 
   $: progression = ((current + 1) / atag.length * 100);
 </script>
 
+<SideNav {jsonDownload}></SideNav>
 <main>
   <h1>How accessible is your authoring tool?</h1>
   <p style="font-size: 1.2em">With this tool, you can find out how accessible your authoring tool (CMS, LMS, wiki, form generator) is, by checking it against the <a href="https://www.w3.org/TR/ATAG20/">Authoring Tool Accessibility Guidelines</a> (ATAG).</p>

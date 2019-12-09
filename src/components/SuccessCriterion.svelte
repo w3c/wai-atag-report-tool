@@ -13,26 +13,22 @@
     { id: 'not-present', text: 'Not present' },
     { id: 'cannot-tell', text: 'Cannot tell' }
   ];
-
-  function logResult() {
-    console.log(selectedResult);
-  }
 </script>
 
 <div {id} class={`criterion criterion--${selectedResult ? selectedResult.toLowerCase() : ''}`}>
   <h3>{related_atag}: {name}</h3>
   <p>{description}</p>
   <div class="criterion__answers">
-    <label for={`result-$(id)`} class="visuallyhidden">Result for {related_atag}</label>
-    <select id={`result-$(id)`} name={id} bind:value={selectedResult}>
+    <label for={`result-${id}`} class="visuallyhidden">Result for {related_atag}</label>
+    <select id={`result-${id}`} name={id} bind:value={selectedResult}>
       {#each results as result}
         <option name=({id}-{result.id}) value={result.text}>
           {result.text}
         </option>
       {/each}
     </select>
-    <label for={`comment-$(id)`} class="visuallyhidden">Result for {related_atag}</label>
-    <textarea name={`comment-$(id)`} id={`comment-$(id)`} cols="20"></textarea>
+    <label for={`comment-${id}`} class="visuallyhidden">Observations for {related_atag}</label>
+    <textarea name={`comment-${id}`} id={`comment-${id}`} cols="20"></textarea>
   </div>
 </div>
 
