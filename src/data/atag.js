@@ -1,4 +1,5 @@
-const atag_a = [{
+const atag = [
+{
   "guideline": "The authoring tool user interface follows applicable accessibility guidelines",
   "scs": [
     {
@@ -95,6 +96,93 @@ const atag_a = [{
       "related_atag": ["A.4.2"]
     }
   ]
-}];
+},
+{
+  "guideline": "Fully automatic processes produce accessible content ",
+  "scs": [
+    {
+      "id": "auto-content-accessible",
+      "name": "Generates accessible markup",
+      "description": " When the tool generates markup, that markup is accessible. If accesssibility information is required, like alternative texts, the content editor is prompted to provide that information.",
+      "related_atag": ["B.1.1"]
+    },
+    {
+      "id": "accessibility-information-preserved",
+      "name": "Preserves accessibility information",
+      "description": " If content is pasted from a word processor or converted from one format into another, any accessibility information is preserved.",
+      "related_atag": ["B.1.2"]
+    }
+  ]
+},
+{
+  "guideline": "Supports producing accessible contentt",
+  "scs": [
+    {
+      "id": "accessible-content-production-possible",
+      "name": "Accessible content production is possible",
+      "description": "If some options produce more accessible content than others, they are displayed more prominently. If properties and attributes can be set, those relevant for accessibility can also be set.",
+      "related_atag": ["B.2.1"]
+    },
+    {
+      "id": "editors-guided",
+      "name": "Editors guided",
+      "description": "Editors are guided to produce accessible content.",
+      "related_atag": ["B.2.2"]
+    },
+    {
+      "id": "alternatives-manageable",
+      "name": "Text alternatives can be managed",
+      "description": "There is a tool for providing text alternatives to “non-text content”, like images, videos and data visualisation.",
+      "related_atag": ["B.2.3"]
+    },
+    {
+      "id": "accessible-templates-available",
+      "name": "Accessible templates available",
+      "description": " There are accessible templates available. If there is a repository of templates, it is easy to find the ones that prioritise accessibility.",
+      "related_atag": ["B.2.4"]
+    },
+    {
+      "id": "accessible-components-available",
+      "name": "Accessible components/plug-ins available",
+      "description": " If any components or plugins are built-in to the tool, they are accessible. If there is a gallery of components or plug-ins, it indicates accessible options.",
+      "related_atag": ["B.2.5"]
+    }
+  ]
+},
+{
+  "guideline": "Helps with improving the accessibility of existing content",
+  "scs": [
+    {
+      "id": "automatically-checks",
+      "name": "Checks accessibility automatically",
+      "description": " Has built-in checks for common accessibility problems, for example a check to identify missing alternative text.",
+      "related_atag": ["B.3.1"]
+    },
+    {
+      "id": "helps-fix-problems",
+      "name": "Helps content editors fix problems",
+      "description": " Provides suggestions to content editor about accessibility problems.",
+      "related_atag": ["B.3.2"]
+    }
+  ]
+ },
+ {
+  "guideline": "Promotes and integrates accessibility features",
+  "scs": [
+    {
+      "id": "features-promote-accessibility",
+      "name": "Accessibility features prominent",
+      "description": "Accessibility features are on by default and a prominent part of the editing workflow. Documentation shows examples of how to create accessible content, for instance with example markup or screenshots.",
+      "related_atag": ["B.4.1"]
+    },
+    {
+      "id": "documentation-promotes-accessibility",
+      "name": "Documentation promotes accessibility",
+      "description": " Provides suggestions to content editor about accessibility problems.",
+      "related_atag": ["B.4.2"]
+    }
+  ] 
+}
+];
 
-export default atag_a;
+export default atag;
