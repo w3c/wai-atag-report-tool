@@ -34,8 +34,8 @@
 
 <SideNav {jsonDownload}></SideNav>
 <main>
-  <h1>How accessible is your authoring tool?</h1>
-  <p style="font-size: 1.2em">With this tool, you can find out how accessible your authoring tool (CMS, LMS, wiki, form generator) is, by checking it against the <a href="https://www.w3.org/TR/ATAG20/">Authoring Tool Accessibility Guidelines</a> (ATAG).</p>
+  <h1>Check your authoring tool's accessibility</h1>
+  <p style="font-size: 1.2em">With this tool, you can find out how accessible your authoring tool (CMS, LMS, wiki, form generator etc) is, by checking it against the <a href="https://www.w3.org/TR/ATAG20/">Authoring Tool Accessibility Guidelines</a> (ATAG).</p>
   <ProgressBar percentage={progression}></ProgressBar>
   <form method="POST" action="" on:submit={handleSubmit}>
   {#each atag as { guideline, scs }, i }

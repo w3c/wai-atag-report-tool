@@ -1,6 +1,6 @@
 const atag = [
 {
-  "guideline": "The authoring tool user interface follows applicable accessibility guidelines",
+  "guideline": "UI follows accessibility guidelines",
   "scs": [
     {
       "id": "web-based-accessible",
@@ -17,7 +17,7 @@ const atag = [
   ]
   },
   {
-  "guideline": "Editing-views are perceivable ",
+  "guideline": "Editing experience is perceivable ",
   "scs": [
     {
       "id": "alt-available",
@@ -34,7 +34,7 @@ const atag = [
   ]
   },
   {  
-  "guideline": "Editing-views are operable",
+  "guideline": "Editing experience is operable",
   "scs": [
     {
       "id": "works-with-keyboard",
@@ -81,7 +81,7 @@ const atag = [
   ]
   },
   {
-  "guideline": "Editing-views are understandable",
+  "guideline": "Editing experience is understandable",
   "scs": [
     {
       "id": "prevent-mistakes",
@@ -115,7 +115,7 @@ const atag = [
   ]
 },
 {
-  "guideline": "Supports producing accessible contentt",
+  "guideline": "Supports producing accessible content",
   "scs": [
     {
       "id": "accessible-content-production-possible",
