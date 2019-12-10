@@ -1,6 +1,6 @@
-# ATAG Conformance Evaluation Report Tool
+# ATAG Conformance Evaluation Report Tool (ACERT)
 
-With this tool, you can find out how accessible your [authoring tool](https://www.w3.org/TR/ATAG20/#def-Authoring-Tool) is. It will guide you through the success criteria of the Authoring Tool Accessibility Guidelines 2.0 (ATAG 2.0).
+With this tool, people can find out how accessible their [authoring tool](https://www.w3.org/TR/ATAG20/#def-Authoring-Tool) is. It will guide them through the Success Criteria of the [Authoring Tool Accessibility Guidelines 2.0](https://www.w3.org/TR/ATAG20/) (ATAG 2.0).
 
 
 ## Development
