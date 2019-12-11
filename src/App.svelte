@@ -57,6 +57,6 @@
 
 <style>
   main {
-    grid-column-end: 8;
+    grid-column-end: 9;
   }
 </style>
