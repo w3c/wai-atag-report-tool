@@ -1,3 +1,4 @@
 module.exports = {
-  auto_format_on_save: true,
+  trailingComma: "es5",
+  auto_format_on_save: true
 };
