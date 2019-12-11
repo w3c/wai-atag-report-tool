@@ -13,10 +13,13 @@
     { id: 'not-present', text: 'Not present' },
     { id: 'cannot-tell', text: 'Cannot tell' }
   ];
+
+  const normalisedCriterionId = atag_id.replace(/\./g, '').toLowerCase();
+  const linkToCriterion = `https://www.w3.org/TR/ATAG20/#sc_${normalisedCriterionId}`;
 </script>
 
 <div {id} class={`criterion criterion--${selectedResult ? selectedResult.toLowerCase() : ''}`}>
-  <h4>{name} <span class="criterion__ref"><abbr title="Success Criterion">SC</abbr> {atag_id}</span></h4>
+  <h4>{name} <a href={linkToCriterion} class="criterion__ref" target="_blank"><abbr title="Success Criterion">SC</abbr> {atag_id}</a></h4>
   <p>{description}</p>
   <div class="criterion__answers">
     <label for={`result-${id}`} class="visuallyhidden">Result for {atag_id}</label>
@@ -67,5 +70,7 @@
   margin-left: .5em;
   background-color: var(--cloudy-subtle);
   font-size: 70%;
+  color: inherit;
+  text-decoration: none;
 }
 </style>
