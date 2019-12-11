@@ -1,6 +1,6 @@
 <script>
   export let id;
-  export let related_atag;
+  export let atag_id;
   export let name;
   export let description;
 
@@ -16,10 +16,10 @@
 </script>
 
 <div {id} class={`criterion criterion--${selectedResult ? selectedResult.toLowerCase() : ''}`}>
-  <h3>{related_atag}: {name}</h3>
+  <h4>{name} <span class="criterion__ref"><abbr title="Success Criterion">SC</abbr> {atag_id}</span></h4>
   <p>{description}</p>
   <div class="criterion__answers">
-    <label for={`result-${id}`} class="visuallyhidden">Result for {related_atag}</label>
+    <label for={`result-${id}`} class="visuallyhidden">Result for {atag_id}</label>
     <select id={`result-${id}`} name={id} bind:value={selectedResult}>
       {#each results as result}
         <option name=({id}-{result.id}) value={result.text}>
@@ -27,7 +27,7 @@
         </option>
       {/each}
     </select>
-    <label for={`comment-${id}`} class="visuallyhidden">Observations for {related_atag}</label>
+    <label for={`comment-${id}`} class="visuallyhidden">Observations for {atag_id}</label>
     <textarea name={`comment-${id}`} id={`comment-${id}`} cols="20"></textarea>
   </div>
 </div>
@@ -35,11 +35,19 @@
 <style>
 .criterion {
   margin-bottom: 2em;
+  background-color: var(--pure-white);
+  border: 1px solid var(--line-grey);
+  box-shadow: 1px 1px 4px -4px
+    #000;
+  padding: 1em;
 }
-.criterion--passed h3::before {
+.criterion h4 {
+  margin-top: 0;
+}
+.criterion--passed h4::before {
   content: '👍 ';
 }
-.criterion--failed h3::before {
+.criterion--failed h4::before {
   content: '❌ ';
 }
   .criterion__answers {
@@ -53,4 +61,11 @@
     .criterion__answers textarea {
       flex: 1;
     }
+.criterion__ref {
+  padding: .25em 1em;
+  border-radius: 1em;
+  margin-left: .5em;
+  background-color: var(--cloudy-subtle);
+  font-size: 70%;
+}
 </style>

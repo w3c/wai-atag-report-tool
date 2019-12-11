@@ -1,17 +1,22 @@
 <script>
   import SuccessCriterion from './SuccessCriterion.svelte';
-  export let title;
-  export let subtitle = '';
-  export let scs;
-  export let className = undefined;
+  export let id;
+  export let atag_id;
+  export let name;
+  export let description;
+  export let scs = [];
 </script>
 
-<div class={className}>
-  <h2>{subtitle}: {title}</h2>
-  {#each scs as sc }
-  <SuccessCriterion {...sc} />
+<div {id} class="guideline">
+  <h3>{atag_id}: {name}</h3>
+  <p>{description}</p>
+  {#each scs as sc}
+    <SuccessCriterion {...sc} />
   {/each}
 </div>
 
 <style>
+.guideline {
+  margin-bottom: 2em;
+}
 </style>

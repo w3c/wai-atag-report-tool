@@ -1,6 +1,6 @@
 <script>
   import atag from './data/atag.js';
-  import Guideline from './components/Guideline.svelte';
+  import Principle from './components/Principle.svelte';
   import ProgressBar from './components/ProgressBar.svelte';
   import SideNav from './components/SideNav.svelte';
 
@@ -38,11 +38,11 @@
   <p style="font-size: 1.2em">With this tool, you can find out how accessible your authoring tool (CMS, LMS, wiki, form generator etc) is, by checking it against the <a href="https://www.w3.org/TR/ATAG20/">Authoring Tool Accessibility Guidelines</a> (ATAG).</p>
   <ProgressBar percentage={progression}></ProgressBar>
   <form method="POST" action="" on:submit={handleSubmit}>
-  {#each atag as { guideline, scs }, i }
+  {#each atag as { principle, guidelines }, i }
     {#if current === i}
-      <Guideline title="{guideline}" subtitle={`Step ${current+1} of ${atag.length}`} {scs} />
+      <Principle title="{principle}" subtitle={`Step ${current+1} of ${atag.length}`} {guidelines} />
     {:else}
-      <Guideline title="{guideline}" {scs} className="visuallyhidden" />    
+      <Principle title="{principle}" {guidelines} className="visuallyhidden" />    
     {/if}
   {/each}
   <button on:click={prevSection}>Previous</button>
