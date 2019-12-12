@@ -336,35 +336,115 @@ const atag = [
     guidelines: [
       {
         id: "auto-content-accessible",
-        name: "Generates accessible markup",
-        description:
-          " When the tool generates markup, that markup is accessible. If accesssibility information is required, like alternative texts, the content editor is prompted to provide that information.",
         atag_id: "B.1.1",
+        name: "Ensure that automatically-specified content is accessible.",
+        description:
+          "If authoring tools automatically produce web content that includes accessibility problems (WCAG), then this will impose additional repair tasks on authors.",
+        scs: [
+          {
+            id: "content-after-authoring-session",
+            atag_id: "B.1.1.1",
+            name: "Content Auto-Generation After Authoring Sessions (WCAG)",
+            description:
+              "The authoring tool does not automatically generate web content after the end of an authoring session, or, authors can specify that the content be accessible web content (WCAG). (Level A to meet WCAG 2.0 Level A success criteria; Level AA to meet WCAG 2.0 Level A and AA success criteria; Level AAA to meet all WCAG 2.0 success criteria)",
+            level: "A-AAA",
+          },
+          {
+            id: "content-during-authoring-session",
+            atag_id: "B.1.1.2",
+            name: "Content Auto-Generation During Authoring Sessions (WCAG",
+            description:
+              " If the authoring tool provides the functionality for automatically generating web content during an authoring session, then at least one of the following is true: (Level A to meet WCAG 2.0 Level A success criteria; Level AA to meet WCAG 2.0 Level A and AA success criteria; Level AAA to meet all WCAG 2.0 success criteria)",
+            level: "A-AAA",
+          },
+        ],
       },
       {
         id: "accessibility-information-preserved",
-        name: "Preserves accessibility information",
+        name: "Ensure that accessibility information is preserved.",
         description:
-          " If content is pasted from a word processor or converted from one format into another, any accessibility information is preserved.",
+          "Accessibility information (WCAG) is critical to maintaining comparable levels of web content accessibility (WCAG) between the input and output of web content transformations.",
         atag_id: "B.1.2",
+        scs: [
+          {
+            id: "restructuring-recording-transformations",
+            atag_id: "B.1.2.1",
+            name: "Restructuring and Recoding Transformations",
+            description:
+              "If the authoring tool provides restructuring transformations or re-coding transformations, and if equivalent mechanisms exist in the web content technology of the output, then at least one of the following is true: (Level A to meet WCAG 2.0 Level A success criteria; Level AA to meet WCAG 2.0 Level A and AA success criteria; Level AAA to meet all WCAG 2.0 success criteria)",
+            level: "A-AAA",
+          },
+          {
+            id: "copy-paste-in-authoring-tool",
+            atag_id: "B.1.2.2",
+            name: "Copy-Paste Inside Authoring Tool (WCAG)",
+            description:
+              "If the authoring tool supports copy and paste of structured content, then any accessibility information (WCAG) in the copied content is preserved when the authoring tool is both the source and destination of the copy-paste and the source and destination use the same web content technology. (Level A to meet WCAG 2.0 Level A success criteria; Level AA to meet WCAG 2.0 Level A and AA success criteria; Level AAA to meet all WCAG 2.0 success criteria)",
+            level: "A-AAA",
+          },
+          {
+            id: "optimizations-preserve-accessibility",
+            atag_id: "B.1.2.3",
+            name: "Optimizations Preserve Accessibility",
+            description:
+              "If the authoring tool provides optimizing web content transformations, then any accessibility information (WCAG) in the input is preserved in the output.",
+            level: "A",
+          },
+          {
+            id: "text-alts-for-non-text-preserved",
+            atag_id: "B.1.2.4",
+            name: "Text Alternatives for Non-Text Content are Preserved",
+            description:
+              " If the authoring tool provides web content transformations that preserve non-text content in the output, then any text alternatives for that non-text content are also preserved, if equivalent mechanisms exist in the web content technology of the output. ",
+            level: "A",
+          },
+        ],
       },
     ],
   },
   {
-    principle: "Supports producing accessible content",
+    principle: "Authors are supported in producing accessible content",
     guidelines: [
       {
-        id: "accessible-content-production-possible",
-        name: "Accessible content production is possible",
+        id: "authors-supported-in-producing-content",
+        name: "Ensure that accessible content production is possible. ",
         description:
-          "If some options produce more accessible content than others, they are displayed more prominently. If properties and attributes can be set, those relevant for accessibility can also be set.",
+          "To support accessible web content (WCAG) production, at minimum, it is possible to produce web content that conforms with WCAG 2.0 using the authoring tool.",
         atag_id: "B.2.1",
+        scs: [
+          {
+            id: "accessible-content-possible",
+            atag_id: "B.2.1.1",
+            name: "Ensure that accessible content production is possible. ",
+            description:
+              "The authoring tool does not place restrictions on the web content that authors can specify or those restrictions do not prevent WCAG 2.0 success criteria from being met. (Level A to meet WCAG 2.0 Level A success criteria; Level AA to meet WCAG 2.0 Level A and AA success criteria; Level AAA to meet all WCAG 2.0 success criteria)",
+            level: "A-AAA",
+          },
+        ],
       },
       {
         id: "editors-guided",
         name: "Editors guided",
         description: "Editors are guided to produce accessible content.",
         atag_id: "B.2.2",
+        scs: [
+          {
+            id: "accessible-option-prominence",
+            atag_id: "B.2.2.1",
+            name: "Accessible Option Prominence (WCAG)",
+            description:
+              "If authors are provided with a choice of authoring actions for achieving the same authoring outcome (e.g. styling text), then options that will result in accessible web content (WCAG) are at least as prominent as options that will not. (Level A to meet WCAG 2.0 Level A success criteria; Level AA to meet WCAG 2.0 Level A and AA success criteria; Level AAA to meet all WCAG 2.0 success criteria)",
+            level: "A-AAA",
+          },
+          {
+            id: "setting-accessibility-props",
+            atag_id: "B.2.2.2",
+            name: "Setting Accessibility Properties (WCAG)",
+            description:
+              "If the authoring tool provides mechanisms to set web content properties (e.g. attribute values), then mechanisms are also provided to set web content properties related to accessibility information (WCAG). (Level A to meet WCAG 2.0 Level A success criteria; Level AA to meet WCAG 2.0 Level A and AA success criteria; Level AAA to meet all WCAG 2.0 success criteria)",
+            level: "A-AAA",
+          },
+        ],
       },
       {
         id: "alternatives-manageable",
@@ -372,20 +452,82 @@ const atag = [
         description:
           "There is a tool for providing text alternatives to “non-text content”, like images, videos and data visualisation.",
         atag_id: "B.2.3",
+        scs: [
+          {
+            id: "alternative-content-editable",
+            atag_id: "B.2.3.1",
+            name: "Alternative Content is Editable (WCAG)",
+            description:
+              "If the authoring tool provides functionality for adding non-text content, then authors are able to modify programmatically associated text alternatives for non-text content. (Level A to meet WCAG 2.0 Level A success criteria; Level AA to meet WCAG 2.0 Level A and AA success criteria; Level AAA to meet all WCAG 2.0 success criteria)",
+            level: "A-AAA",
+          },
+          {
+            id: "automatic-repair-of-text-alts",
+            atag_id: "B.2.3.2",
+            name: "Automating Repair of Text Alternatives",
+            description:
+              'The authoring tool does not attempt to repair text alternatives for non-text content or the following are all true: (a) No Generic or Irrelevant Strings: Generic strings (e.g. "image") and irrelevant strings (e.g. the file name, file format) are not used as text alternatives; and (b) In-Session Repairs: If the repair attempt occurs during an authoring session, authors have the opportunity to accept, modify, or reject the repair attempt prior to insertion of the text alternative into the content; and (c) Out-of-Session Repairs: If the repair attempt occurs after an authoring session has ended, the repaired text alternatives are indicated during subsequent authoring sessions (if any) and authors have the opportunity to accept, modify, or reject the repair strings prior to insertion in the content.',
+            level: "A",
+          },
+        ],
       },
       {
         id: "accessible-templates-available",
-        name: "Accessible templates available",
+        name: "Assist authors with accessible templates.",
         description:
           " There are accessible templates available. If there is a repository of templates, it is easy to find the ones that prioritise accessibility.",
         atag_id: "B.2.4",
+        scs: [
+          {
+            id: "accessible-template-options",
+            atag_id: "B.2.4.1",
+            name: "Accessible Template Options (WCAG)",
+            description:
+              "If the authoring tool provides templates, then there are accessible template (WCAG) options for a range of template uses. (Level A to meet WCAG 2.0 Level A success criteria; Level AA to meet WCAG 2.0 Level A and AA success criteria; Level AAA to meet all WCAG 2.0 success criteria)",
+            level: "A-AAA",
+          },
+          {
+            id: "identify-template-accessibility",
+            atag_id: "B.2.4.2",
+            name: "Identify Template Accessibility",
+            description:
+              "If the authoring tool includes a template selection mechanism and provides any non-accessible template (WCAG) options, then the template selection mechanism can display distinctions between the accessible and non-accessible options.",
+            level: "AA",
+          },
+          {
+            id: "author-created-templates",
+            atag_id: "B.2.4.3",
+            description:
+              "If the authoring tool includes a template selection mechanism and allows authors to create new non-accessible templates (WCAG), then authors can enable the template selection mechanism to display distinctions between accessible and non-accessible templates that they create.",
+            name: "Author-Created Templates",
+            level: "AA",
+          },
+        ],
       },
       {
         id: "accessible-components-available",
-        name: "Accessible components/plug-ins available",
+        name: "Assist authors with accessible pre-authored content.",
         description:
           " If any components or plugins are built-in to the tool, they are accessible. If there is a gallery of components or plug-ins, it indicates accessible options.",
         atag_id: "B.2.5",
+        scs: [
+          {
+            id: "accessible-pre-authored-content-options",
+            atag_id: "B.2.5.1",
+            name: "Accessible Pre-Authored Content Options",
+            description:
+              "If the authoring tool provides pre-authored content, then a range of accessible pre-authored content (to WCAG Level AA) options are provided.",
+            level: "AA",
+          },
+          {
+            id: "identify-pre-authored-content-accessibility",
+            atag_id: "B.2.5.2",
+            name: "Identify Pre-Authored Content Accessibility",
+            description:
+              "If the authoring tool includes a pre-authored content selection mechanism and provides any non-accessible pre-authored content (WCAG Level AA) options, then the selection mechanism can display distinctions between the accessible and non-accessible options.",
+            level: "AA",
+          },
+        ],
       },
     ],
   },
@@ -398,6 +540,48 @@ const atag = [
         description:
           " Has built-in checks for common accessibility problems, for example a check to identify missing alternative text.",
         atag_id: "B.3.1",
+        scs: [
+          {
+            id: "checking-assistance",
+            atag_id: "B.3.1.1",
+            name: "Checking Assistance (WCAG)",
+            description:
+              "If the authoring tool provides authors with the ability to add or modify web content in such a way that a WCAG 2.0 success criterion can be violated, then accessibility checking for that success criterion is provided (e.g. an HTML authoring tool that inserts images should check for alternative text; a video authoring tool with the ability to edit text tracks should check for captions). (Level A to meet WCAG 2.0 Level A success criteria; Level AA to meet WCAG 2.0 Level A and AA success criteria; Level AAA to meet all WCAG 2.0 success criteria)",
+            level: "A-AAA",
+          },
+          {
+            id: "help-authors-decide",
+            atag_id: "B.3.1.2",
+            name: "Help Authors Decide",
+            description:
+              "If the authoring tool provides accessibility checking that relies on authors to decide whether potential web content accessibility problems (WCAG) are correctly identified (i.e. manual checking and semi-automated checking), then the accessibility checking process provides instructions that describe how to decide.",
+            level: "A",
+          },
+          {
+            id: "help-authors-locate",
+            atag_id: "B.3.1.3",
+            name: "Help Authors Locate",
+            description:
+              "If the authoring tool provides checks that require authors to decide whether a potential web content accessibility problem (WCAG) is correctly identified (i.e. manual checking and semi-automated checking), then the relevant content is identified to the authors.",
+            level: "A",
+          },
+          {
+            id: "status-report",
+            atag_id: "B.3.1.4",
+            name: "Status Report",
+            description:
+              "If the authoring tool provides checks, then authors can receive an accessibility status report based on the results of the accessibility checks.",
+            level: "AA",
+          },
+          {
+            id: "programmatic-association-of-rules",
+            atag_id: "B.3.1.5",
+            name: "Programmatic Association of Results",
+            description:
+              "If the authoring tool provides checks, then the authoring tool can programmatically associate accessibility checking results with the web content that was checked.",
+            level: "AA",
+          },
+        ],
       },
       {
         id: "helps-fix-problems",
@@ -405,6 +589,16 @@ const atag = [
         description:
           " Provides suggestions to content editor about accessibility problems.",
         atag_id: "B.3.2",
+        scs: [
+          {
+            id: "repair-assistance",
+            atag_id: "B.3.2.1",
+            name: "Repair Assistance (WCAG",
+            description:
+              "If checking (see Success Criterion B.3.1.1) can detect that a WCAG 2.0 success criterion is not met, then repair suggestion(s) are provided: (Level A to meet WCAG 2.0 Level A success criteria; Level AA to meet WCAG 2.0 Level A and AA success criteria; Level AAA to meet all WCAG 2.0 success criteria)",
+            level: "A-AAA",
+          },
+        ],
       },
     ],
   },
@@ -417,6 +611,40 @@ const atag = [
         description:
           "Accessibility features are on by default and a prominent part of the editing workflow. Documentation shows examples of how to create accessible content, for instance with example markup or screenshots.",
         atag_id: "B.4.1",
+        scs: [
+          {
+            id: "features-active-by-default",
+            atag_id: "B.4.1.1",
+            name: "Features Active by Default",
+            description:
+              "All accessible content support features are turned on by default. ",
+            level: "A",
+          },
+          {
+            id: "option-to-reactivate-features",
+            atag_id: "B.4.1.2",
+            name: "Option to Reactivate Features",
+            description:
+              "The authoring tool does not include the option to turn off its accessible content support features or features which have been turned off can be turned back on.",
+            level: "A",
+          },
+          {
+            id: "feature-deactivation-warning",
+            atag_id: "B.4.1.3",
+            name: "Feature Deactivation Warning",
+            description:
+              "The authoring tool does not include the option to turn off its accessible content support features or, if these features can be turned off, authors are informed that this may increase the risk of content accessibility problems (WCAG).",
+            level: "AA",
+          },
+          {
+            id: "feature-prominence",
+            atag_id: "B.4.1.4",
+            name: "Feature Prominence",
+            description:
+              "All accessible content support features are at least as prominent as features related to either invalid markup, syntax errors, spelling errors or grammar errors.",
+            level: "AA",
+          },
+        ],
       },
       {
         id: "documentation-promotes-accessibility",
@@ -424,6 +652,24 @@ const atag = [
         description:
           " Provides suggestions to content editor about accessibility problems.",
         atag_id: "B.4.2",
+        scs: [
+          {
+            id: "model-practice",
+            atag_id: "B.4.2.1",
+            name: "Model Practice (WCAG)",
+            description:
+              "A range of examples in the documentation (e.g. markup, screen shots of WYSIWYG editing-views) demonstrate accessible authoring practices (WCAG). (Level A to meet WCAG 2.0 Level A success criteria; Level AA to meet WCAG 2.0 Level A and AA success criteria; Level AAA to meet all WCAG 2.0 success criteria)",
+            level: "A-AAA",
+          },
+          {
+            id: "feature-instructions",
+            atag_id: "B.4.2.2",
+            name: "Feature Instructions",
+            description:
+              "Instructions for using any accessible content support features appear in the documentation.",
+            level: "A",
+          },
+        ],
       },
     ],
   },
