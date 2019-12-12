@@ -3,6 +3,7 @@
   export let atag_id;
   export let name;
   export let description;
+  export let level;
 
   let selectedResult, observations;
 
