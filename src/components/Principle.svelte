@@ -10,7 +10,7 @@
 </script>
 
 <div class={className}>
-  <h2>{principle}</h2>
+  <h2>{principle.description}</h2>
   {#each guidelines as guideline }
   <Guideline {...guideline} />
   {/each}
