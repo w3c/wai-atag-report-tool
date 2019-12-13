@@ -1,7 +1,11 @@
 const atag = [
   {
-    principle:
-      "Authoring tool user interfaces follow applicable accessibility guidelines",
+    principle: {
+      name: "Accessibility Gudelines",
+      description:
+        "Authoring tool user interfaces follow applicable accessibility guidelines",
+      atag_id: "A.1",
+    },
     guidelines: [
       {
         id: "web-based-accessible",
@@ -47,7 +51,11 @@ const atag = [
     ],
   },
   {
-    principle: "Editing-views are perceivable ",
+    principle: {
+      name: "UI perceivable",
+      description: "Editing-views are perceivable",
+      atag_id: "A.2",
+    },
     guidelines: [
       {
         id: "alt-available",
@@ -103,7 +111,11 @@ const atag = [
     ],
   },
   {
-    principle: "Editing-views are operable",
+    principle: {
+      name: "UI operable",
+      description: "Editing-views are operable",
+      atag_id: "A.3",
+    },
     guidelines: [
       {
         id: "works-with-keyboard",
@@ -276,7 +288,11 @@ const atag = [
     ],
   },
   {
-    principle: "Editing-views are understandable",
+    principle: {
+      name: "UI understandable",
+      description: "Editing-views are understandable",
+      atag_id: "A.4",
+    },
     guidelines: [
       {
         id: "prevent-mistakes",
@@ -332,7 +348,11 @@ const atag = [
     ],
   },
   {
-    principle: "Fully automatic processes produce accessible content ",
+    principle: {
+      name: "Generated Content Accessible",
+      description: "Fully automatic processes produce accessible content ",
+      atag_id: "B.1",
+    },
     guidelines: [
       {
         id: "auto-content-accessible",
@@ -403,7 +423,11 @@ const atag = [
     ],
   },
   {
-    principle: "Authors are supported in producing accessible content",
+    principle: {
+      name: "Authors Supported",
+      description: "Authors are supported in producing accessible content",
+      atag_id: "B.2",
+    },
     guidelines: [
       {
         id: "authors-supported-in-producing-content",
@@ -532,7 +556,11 @@ const atag = [
     ],
   },
   {
-    principle: "Helps with improving the accessibility of existing content",
+    principle: {
+      name: "Helps Improve Accessibility",
+      description: "Helps with improving the accessibility of existing content",
+      atag_id: "B.3",
+    },
     guidelines: [
       {
         id: "automatically-checks",
@@ -603,7 +631,11 @@ const atag = [
     ],
   },
   {
-    principle: "Promotes and integrates accessibility features",
+    principle: {
+      name: "Promotes Accessibility Features",
+      description: "Promotes and integrates accessibility features",
+      atag_id: "B.4",
+    },
     guidelines: [
       {
         id: "features-promote-accessibility",
