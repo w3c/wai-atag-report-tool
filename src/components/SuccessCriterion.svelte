@@ -3,7 +3,7 @@
   export let atag_id;
   export let name;
   export let description;
-  export let level;
+  export let level = 'A';
 
   let selectedResult, observations;
 
@@ -21,7 +21,7 @@
 
 <div {id} class={`criterion criterion--${selectedResult ? selectedResult.toLowerCase() : ''}`}>
   <h4>{name} <a href={linkToCriterion} class="criterion__ref" target="_blank"><abbr title="Success Criterion">SC</abbr> {atag_id}</a></h4>
-  <p>{description}</p>
+  <p>{description}<br><em>Level {level}</em></p>
   <div class="criterion__answers">
     <label for={`result-${id}`} class="visuallyhidden">Result for {atag_id}</label>
     <select id={`result-${id}`} name={id} bind:value={selectedResult}>
@@ -68,10 +68,15 @@
 .criterion__ref {
   padding: .25em 1em;
   border-radius: 1em;
-  margin-left: .5em;
+  margin-left: .75em;
   background-color: var(--cloudy-subtle);
+  border: 1px solid var(--cloudy-subtle);
   font-size: 70%;
   color: inherit;
   text-decoration: none;
+}
+.criterion__ref:hover {
+  background-color: transparent;
+  border-color: var(--ocean);
 }
 </style>
