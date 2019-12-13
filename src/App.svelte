@@ -30,30 +30,18 @@
       </div>
     </div>
     <ul class="sidenav--list">
-      <li>
-        <a href="/" aria-current="page" class="page-link" lang="en">
-          <span>Evaluate</span>
-        </a>
-        <Router>
-        <ul>
-          <li>
-            <NavLink to="/">Start</NavLink>
-          </li>
-          {#each atag as { principle, guidelines }, i }
-          <li>
-            <NavLink to="step/{i+1}">Step {i+1}</NavLink>
-          </li>
-          {/each}
-          <li>
-            <NavLink to="/results">Results</NavLink>
-          </li>
-        </ul>
-        </Router>
-      </li>
-<!--       <li>
-        <a href={jsonDownload} class="page-link"><span>Download JSON</span></a>
-      </li>
- -->    </ul>
+      <Router>
+        <li><NavLink to="/">Start</NavLink></li>
+        {#each atag as { principle, guidelines }, i }
+        <li>
+          <NavLink to="step/{i+1}">{principle.atag_id}: {principle.name}</NavLink>
+        </li>
+        {/each}
+        <li>
+          <NavLink to="/results">Results</NavLink>
+        </li>
+      </Router>
+    </ul>
   </nav>
 </div>
 <main>
@@ -72,6 +60,6 @@
 
 <style>
   main {
-    grid-column-end: 9;
+    grid-column-end: 10;
   }
 </style>
