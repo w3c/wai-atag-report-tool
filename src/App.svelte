@@ -6,20 +6,8 @@
   import SideNav from './components/SideNav.svelte';
   import NavLink from './components/NavLink.svelte';
   import atag from './data/atag.js';
-
+  import { evaluation } from './stores/evaluation.js';
   export let url = "";
-
-  let handleSubmit = function(e) {
-    e.preventDefault();
-    const form = e.target;
-    const data = new FormData(form);
-
-    evaluation = JSON.stringify(Object.fromEntries(data));
-    evaluation = JSON.parse(evaluation); 
-  }
-
-  $: evaluation = {};
-  $: jsonDownload = `data:text/json;charset=utf-8,${encodeURIComponent(JSON.stringify(evaluation))}`;
 </script>
 
 <div class="sidenav">
@@ -54,8 +42,6 @@
     </Route>
     <Route path="/results"><Results /></Route>
   </Router>
-  <form method="POST" action="" on:submit={handleSubmit}>
-  </form>
 </main>
 
 <style>

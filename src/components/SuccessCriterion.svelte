@@ -1,4 +1,5 @@
 <script>
+  import { evaluation } from '../stores/evaluation.js';
   export let id;
   export let atag_id;
   export let name;
@@ -24,7 +25,7 @@
   <p>{description}<br><em>Level {level}</em></p>
   <div class="criterion__answers">
     <label for={`result-${id}`} class="visuallyhidden">Result for {atag_id}</label>
-    <select id={`result-${id}`} name={id} bind:value={selectedResult}>
+    <select id={`result-${id}`} name={id} bind:value={$evaluation[id]} on:change={() => console.log(`result-${id} is now set to ${selectedResult}`)}>
       {#each results as result}
         <option name=({id}-{result.id}) value={result.text}>
           {result.text}
