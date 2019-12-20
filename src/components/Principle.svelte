@@ -20,12 +20,12 @@
   <Pager label="Previous/Next Step">
     {#if id > 0 && id < atag.length }
     <PagerLink to={`/step/${id}`} direction="previous">
-      {`${atag[id-1].principle.description}`}
+      {`${atag[id-1].principle.name}`}
     </PagerLink>
     {/if}
     {#if (id + 1) < atag.length }
     <PagerLink to={`/step/${id+2}`} direction="next">
-      {`${atag[id+1].principle.description}`}
+      {`${atag[id+1].principle.name}`}
     </PagerLink>
     {/if}
     {#if (id + 1) === atag.length }
