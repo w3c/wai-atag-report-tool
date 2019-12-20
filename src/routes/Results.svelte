@@ -11,5 +11,5 @@
   <li><a href={jsonDownload} download="data.json">Download JSON</a></li>
 </ul>
 
-{JSON.stringify($evaluation)}
+{console.log(JSON.stringify($evaluation))}
 <NavLink to="/step/1">Start over</NavLink>
