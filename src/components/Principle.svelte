@@ -1,6 +1,8 @@
 <script>
   import NavLink from "./NavLink.svelte";
   import Guideline from './Guideline.svelte';
+  import Pager from './Pager.svelte';
+  import PagerLink from './PagerLink.svelte';
   import atag from '../data/atag.js';
   export let id = null;
   export let className = undefined;
@@ -14,13 +16,20 @@
   {#each guidelines as guideline }
   <Guideline {...guideline} />
   {/each}
-  {#if id > 0 && id < atag.length }
-  <button type="button" on:click={()=>id--}>Previous step</button>
-  {/if}
-  {#if (id + 1) < atag.length }
-  <button type="button" on:click={()=>id++}>Next step</button>
-  {/if}
-</div>
 
-<style>
-</style>
+  <Pager label="Previous/Next Step">
+    {#if id > 0 && id < atag.length }
+    <PagerLink to={`/step/${id}`} direction="previous">
+      {`${atag[id-1].principle.description}`}
+    </PagerLink>
+    {/if}
+    {#if (id + 1) < atag.length }
+    <PagerLink to={`/step/${id+2}`} direction="next">
+      {`${atag[id+1].principle.description}`}
+    </PagerLink>
+    {/if}
+    {#if (id + 1) === atag.length }
+    <PagerLink to={"/results"} direction="next">View results</PagerLink>
+    {/if}
+  </Pager>
+</div>
