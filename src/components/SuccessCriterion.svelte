@@ -1,5 +1,6 @@
 <script>
   import { evaluation } from '../stores/evaluation.js';
+  import MoreInfo from './MoreInfo.svelte';
   export let id;
   export let atag_id;
   export let name;
@@ -21,7 +22,13 @@
 </script>
 
 <div {id} class={`criterion criterion--${selectedResult ? selectedResult.toLowerCase() : ''}`}>
-  <h4>{name} <a href={linkToCriterion} class="criterion__ref" target="_blank"><abbr title="Success Criterion">SC</abbr> {atag_id}</a></h4>
+  <h4>
+    {name} 
+    <a href={linkToCriterion} class="criterion__ref" target="_blank"><abbr title="Success Criterion">SC</abbr> {atag_id}</a>
+    <MoreInfo label="Info about {atag_id}">
+      <p>Provide plain text alternatives when using icons, images and other non-text content. For instance, if you have a button that is just an icon, make sure there is a label associated.</p>
+    </MoreInfo> 
+  </h4>
   <p>{description}<br><em>Level {level}</em></p>
   <div class="criterion__answers">
     <label for={`result-${id}`} class="visuallyhidden">Result for {atag_id}</label>
