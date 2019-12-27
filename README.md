@@ -4,7 +4,7 @@ With this tool, people can find out how accessible their [authoring tool](https:
 
 ## Status
 
-This is currently in an early prototype phase.
+This project is an early prototype.
 
 ## Development
 
