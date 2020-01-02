@@ -2,13 +2,13 @@
   import SuccessCriterion from './SuccessCriterion.svelte';
   export let id;
   export let num;
-  export let name;
+  export let handle;
   export let description;
   export let scs = [];
 </script>
 
 <div {id} class="guideline">
-  <h3>{num}: {name}</h3>
+  <h3>{num}: {handle}</h3>
   <p>{description}</p>
   {#each scs as sc}
     <SuccessCriterion {...sc} />

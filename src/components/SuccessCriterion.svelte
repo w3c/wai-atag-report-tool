@@ -3,7 +3,7 @@
   import MoreInfo from './MoreInfo.svelte';
   export let id;
   export let num;
-  export let name;
+  export let handle;
   export let description;
   export let level = 'A';
 
@@ -23,7 +23,7 @@
 
 <div {id} class={`criterion criterion--${selectedResult ? selectedResult.toLowerCase() : ''}`}>
   <h4>
-    {name} 
+    {handle} 
     <a href={linkToCriterion} class="criterion__ref" target="_blank"><abbr title="Success Criterion">SC</abbr> {num}</a>
     <MoreInfo label="Info about {num}">
       <p>Provide plain text alternatives when using icons, images and other non-text content. For instance, if you have a button that is just an icon, make sure there is a label associated.</p>

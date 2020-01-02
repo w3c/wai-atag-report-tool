@@ -14,7 +14,7 @@
   <Router>
     <NavLink to="/">Start</NavLink>
     {#each atag as { principle, guidelines }, i }
-    <NavLink to="step/{i+1}">{principle.num}: {principle.name}</NavLink>
+    <NavLink to="step/{i+1}">{principle.num}: {principle.handle}</NavLink>
     {/each}
     <NavLink to="/results">Results</NavLink>
   </Router>
