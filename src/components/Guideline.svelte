@@ -1,14 +1,14 @@
 <script>
   import SuccessCriterion from './SuccessCriterion.svelte';
   export let id;
-  export let atag_id;
+  export let num;
   export let name;
   export let description;
   export let scs = [];
 </script>
 
 <div {id} class="guideline">
-  <h3>{atag_id}: {name}</h3>
+  <h3>{num}: {name}</h3>
   <p>{description}</p>
   {#each scs as sc}
     <SuccessCriterion {...sc} />
