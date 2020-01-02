@@ -3,14 +3,14 @@
   export let id;
   export let num;
   export let handle;
-  export let description;
-  export let scs = [];
+  export let text;
+  export let successcriteria = [];
 </script>
 
 <div {id} class="guideline">
   <h3>{num}: {handle}</h3>
-  <p>{description}</p>
-  {#each scs as sc}
+  <p>{text}</p>
+  {#each successcriteria as sc}
     <SuccessCriterion {...sc} />
   {/each}
 </div>
