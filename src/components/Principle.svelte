@@ -12,7 +12,7 @@
 </script>
 
 <div class={className}>
-  <h2>{principle.description}</h2>
+  <h2>{principle.text}</h2>
   {#each guidelines as guideline }
   <Guideline {...guideline} />
   {/each}
@@ -23,12 +23,12 @@
     {/if}
     {#if id > 0 && id < atag.length }
     <PagerLink to={`/step/${id}`} direction="previous">
-      {`${atag[id-1].principle.name}`}
+      {`${atag[id-1].principle.handle}`}
     </PagerLink>
     {/if}
     {#if (id + 1) < atag.length }
     <PagerLink to={`/step/${id+2}`} direction="next">
-      {`${atag[id+1].principle.name}`}
+      {`${atag[id+1].principle.handle}`}
     </PagerLink>
     {/if}
     {#if (id + 1) === atag.length }
