@@ -1,7 +1,7 @@
 <script>
   import { Router, Route } from "svelte-routing";
-  import Start from "./routes/Start.svelte";  
-  import Results from "./routes/Results.svelte";  
+  import Start from "./routes/Start.svelte";
+  import Results from "./routes/Results.svelte";
   import Principle from './components/Principle.svelte';
   import SideNav from './components/SideNav.svelte';
   import NavLink from './components/NavLink.svelte';
@@ -20,7 +20,7 @@
   </Router>
 </SideNav>
 <main>
-  <h1>Check your authoring tool's accessibility</h1>
+  <h1>Check your authoring tool’s accessibility</h1>
   <p style="font-size: 1.2em">With this tool, you can find out how accessible your authoring tool (CMS, LMS, wiki, form generator etc) is, by checking it against the <a href="https://www.w3.org/TR/ATAG20/">Authoring Tool Accessibility Guidelines</a> (ATAG).</p>
   <Router url={url}>
     <Route path="/">
