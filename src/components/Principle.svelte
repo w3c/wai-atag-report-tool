@@ -9,6 +9,9 @@
 
   $: principle = atag[id].principle || null;
   $: guidelines = atag[id].guidelines || null;
+
+  const normalisedPrincipleId = atag[id].principle.num.replace(/\./g, '').toLowerCase();
+  const linkToPrinciple = `https://www.w3.org/TR/ATAG20/#principle_${normalisedPrincipleId}`;
 </script>
 
 <style>
@@ -23,7 +26,7 @@
 
 <div class={className}>
   <h1><span>Your evaluation ({id+1}/8)</span> {principle.handle}</h1>
-  <p>Evaluation for {principle.num}, “{principle.text}”</p>
+  <p>See: <a href={linkToPrinciple} target="_blank" rel="noopener roreferrer">{principle.num} {principle.text}</a></p>
   {#each guidelines as guideline }
   <Guideline {...guideline} />
   {/each}
