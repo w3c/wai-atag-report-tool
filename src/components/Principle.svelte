@@ -11,8 +11,19 @@
   $: guidelines = atag[id].guidelines || null;
 </script>
 
+<style>
+  h1 span {
+    font-size: .4em;
+    margin-bottom: .5em;
+    color: var(--ocean);
+    text-transform: uppercase;
+    display: block;
+  }
+</style>
+
 <div class={className}>
-  <h2>{principle.text}</h2>
+  <h1><span>Your evaluation ({id+1}/8)</span> {principle.handle}</h1>
+  <p>Evaluation for {principle.num}, “{principle.text}”</p>
   {#each guidelines as guideline }
   <Guideline {...guideline} />
   {/each}
