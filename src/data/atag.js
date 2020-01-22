@@ -1,7 +1,7 @@
 const atag = [
   {
     principle: {
-      handle: "Accessibility Gudelines",
+      handle: "Accessibility Guidelines",
       text:
         "Authoring tool user interfaces follow applicable accessibility guidelines",
       num: "A.1",
