@@ -31,16 +31,20 @@
   </h4>
   <p>{text}<br><em>Level {level}</em></p>
   <div class="criterion__answers">
-    <label for={`result-${id}`} class="visuallyhidden">Result for {num}</label>
-    <select id={`result-${id}`} name={id} bind:value={$evaluation[id]} on:change={() => console.log(`result-${id} is now set to ${selectedResult}`)}>
-      {#each results as result}
-        <option name=({id}-{result.id}) value={result.text}>
-          {result.text}
-        </option>
-      {/each}
-    </select>
-    <label for={`comment-${id}`} class="visuallyhidden">Observations for {num}</label>
-    <textarea name={`comment-${id}`} id={`comment-${id}`} cols="20"></textarea>
+    <div>
+      <label for={`result-${id}`}>Result for {num}</label>
+      <select id={`result-${id}`} name={id} bind:value={$evaluation[id]} on:change={() => console.log(`result-${id} is now set to ${selectedResult}`)}>
+        {#each results as result}
+          <option name=({id}-{result.id}) value={result.text}>
+            {result.text}
+          </option>
+        {/each}
+      </select>
+    </div>
+    <div>
+      <label for={`comment-${id}`}>Observations for {num}</label>
+      <textarea name={`comment-${id}`} id={`comment-${id}`} cols="20"></textarea>
+    </div>
   </div>
 </div>
 
@@ -56,22 +60,29 @@
 .criterion h4 {
   margin-top: 0;
 }
-.criterion--passed h4::before {
-  content: '👍 ';
-}
-.criterion--failed h4::before {
-  content: '❌ ';
-}
   .criterion__answers {
     display: flex;
     align-items: start;
     justify-content: stretch;
   }
+    .criterion__answers label {
+      font-size: 90%;
+      display: block;
+      color: var(--wai-green);
+      font-weight: bold;
+      margin-bottom: .5em; 
+    }
     .criterion__answers select {
       margin-right: 1em;
     }
-    .criterion__answers textarea {
+    .criterion__answers div:first-child {
       flex: 1;
+    }
+    .criterion__answers div:last-child {
+      flex: 2;
+    }
+    .criterion__answers textarea {
+      width: 100%;
     }
 .criterion__ref {
   padding: .25em 1em;
