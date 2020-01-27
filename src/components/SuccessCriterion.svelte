@@ -1,11 +1,13 @@
 <script>
   import { evaluation } from '../stores/evaluation.js';
   import MoreInfo from './MoreInfo.svelte';
+  import SuccessCriterionDetails from './SuccessCriterionDetails.svelte';
   export let id;
   export let num;
   export let handle;
   export let text;
   export let level = 'A';
+  export let details = null;
 
   let selectedResult, observations;
 
@@ -17,8 +19,15 @@
     { id: 'cannot-tell', text: 'Cannot tell' }
   ];
 
+  let notes = null;
+  let list = null;
   const normalisedCriterionId = num.replace(/\./g, '').toLowerCase();
   const linkToCriterion = `https://www.w3.org/TR/ATAG20/#sc_${normalisedCriterionId}`;
+
+  if (details) {
+    $: notes =  details.filter(detail => detail.type === 'note');
+    $: list = details.filter(detail => detail.type === 'olist' || detail.type === 'ulist');
+  }
 </script>
 
 <div {id} class={`criterion criterion--${selectedResult ? selectedResult.toLowerCase() : ''}`}>
@@ -29,7 +38,10 @@
       <p>Provide plain text alternatives when using icons, images and other non-text content. For instance, if you have a button that is just an icon, make sure there is a label associated.</p>
     </MoreInfo> 
   </h4>
-  <p>{text}<br><em>{level}</em></p>
+  <p>{text}</p>
+  {#if list}<SuccessCriterionDetails type="list" details={list} />{/if}
+  <p><em>{level}</em></p>
+  {#if notes}<SuccessCriterionDetails type="notes" details={notes} />{/if}
   <div class="criterion__answers">
     <div>
       <label for={`result-${id}`}>Result for {num}</label>
@@ -59,6 +71,9 @@
 }
 .criterion h4 {
   margin-top: 0;
+}
+.criterion ol li {
+  list-style: lower-alpha;
 }
   .criterion__answers {
     display: flex;

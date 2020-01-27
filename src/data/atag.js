@@ -39,6 +39,14 @@ const atag = [
             text:
               "If the authoring tool contains non-web-based user interfaces, then those non-web-based user interfaces follow user interface accessibility guidelines for the platform.",
             level: "Level A",
+            details: [
+              {
+                type: "note",
+                handle: "Note 1",
+                text:
+                  "The (optional) explanation of conformance claim results should record the user interface accessibility guidelines that were followed.",
+              },
+            ],
           },
           {
             id: "non-web-platform-a11y-services",
@@ -47,6 +55,14 @@ const atag = [
             text:
               "If the authoring tool contains non-web-based user interfaces, then those non-web-based user interfaces expose accessibility information through platform accessibility services.",
             level: "Level A",
+            details: [
+              {
+                type: "note",
+                handle: "Note 1",
+                text:
+                  "The (optional) explanation of conformance claim results should record the platform accessibility service(s) that were implemented.",
+              },
+            ],
           },
         ],
       },
@@ -71,7 +87,7 @@ const atag = [
             num: "A.2.1.1",
             handle: "Text Alternatives for Rendered Non-Text Content",
             text:
-              "If an editing-view renders non-text content, then any programmatically associated text alternatives for the non-text content can be programmatically determined. (Level A)",
+              "If an editing-view renders non-text content, then any programmatically associated text alternatives for the non-text content can be programmatically determined.",
             level: "Level A",
           },
           {
@@ -79,8 +95,25 @@ const atag = [
             num: "A.2.1.2",
             handle: "Alternatives for Rendered Time-Based Media",
             text:
-              "If an editing-view renders time-based media, then at least one of the following is true: (Level A) (a) Option to Render: The authoring tool provides the option to render alternatives for the time-based media; or (b) User Agent Option: Authors have the option to preview the time-based media in a user agent that is able to render the alternatives.",
+              "If an editing-view renders time-based media, then at least one of the following is true:",
             level: "Level A",
+            details: [
+              {
+                type: "olist",
+                items: [
+                  {
+                    handle: "Option to Render",
+                    text:
+                      "The authoring tool provides the option to render alternatives for the time-based media; or",
+                  },
+                  {
+                    handle: "User Agent Option",
+                    text:
+                      "Authors have the option to preview the time-based media in a user agent that is able to render the alternatives.",
+                  },
+                ],
+              },
+            ],
           },
         ],
       },
@@ -99,6 +132,14 @@ const atag = [
             text:
               "If an editing-view adds status indicators to the content being edited, then the information being conveyed by the status indicators can be programmatically determined.",
             level: "Level A",
+            details: [
+              {
+                type: "note",
+                handle: "Note 1",
+                text:
+                  "Status indicators may indicate errors (e.g. spelling errors), tracked changes, hidden elements, or other information.",
+              },
+            ],
           },
           {
             id: "access-rendered-text-props",
@@ -133,6 +174,26 @@ const atag = [
             text:
               "All functionality of the authoring tool is operable through a keyboard interface without requiring specific timings for individual keystrokes, except where the underlying function requires input that depends on the path of the user's movement and not just the endpoints.",
             level: "Level A",
+            details: [
+              {
+                type: "note",
+                handle: "Note 1",
+                text:
+                  "Keyboard interfaces are programmatic services provided by many platforms that allow operation in a device independent manner. This success criterion does not imply the presence of a hardware keyboard.",
+              },
+              {
+                type: "note",
+                handle: "Note 2",
+                text:
+                  "The path exception relates to the underlying function, not the input technique. For example, if using handwriting to enter text, the input technique (handwriting) requires path-dependent input, but the underlying function (text input) does not. The path exception encompasses other input variables that are continuously sampled from pointing devices, including pressure, speed, and angle.",
+              },
+              {
+                type: "note",
+                handle: "Note 3",
+                text:
+                  "This success criterion does not forbid and should not discourage other input methods (e.g. mouse, touch) in addition to keyboard operation.",
+              },
+            ],
           },
           {
             id: "no-keyboard-traps",
@@ -172,8 +233,44 @@ const atag = [
             num: "A.3.2.2",
             handle: "Timing Adjustable",
             text:
-              'The authoring tool does not include time limits or at least one of the following is true: (a) Turn Off: Authors are allowed to turn off the time limit before encountering it; or (b) Adjust: Authors are allowed to adjust the time limit before encountering it over a wide range that is at least ten times the length of the default setting; or (c) Extend: Authors are warned before time expires and given at least 20 seconds to extend the time limit with a simple action (e.g. "press the space bar"), and authors are allowed to extend the time limit at least ten times; or (d) Real-time Exception: The time limit is a required part of a real-time event (e.g. a collaborative authoring system), and no alternative to the time limit is possible; or (e) Essential Exception: The time limit is essential and extending it would invalidate the activity; or (f) 20 Hour Exception: The time limit is longer than 20 hours.',
+              "The authoring tool does not include time limits or at least one of the following is true:",
             level: "Level A",
+            details: [
+              {
+                type: "olist",
+                items: [
+                  {
+                    handle: "Turn Off",
+                    text:
+                      "Authors are allowed to turn off the time limit before encountering it; or",
+                  },
+                  {
+                    handle: "Adjust",
+                    text:
+                      "Authors are allowed to adjust the time limit before encountering it over a wide range that is at least ten times the length of the default setting; or",
+                  },
+                  {
+                    handle: "Extend",
+                    text:
+                      'Authors are warned before time expires and given at least 20 seconds to extend the time limit with a simple action (e.g. "press the space bar"), and authors are allowed to extend the time limit at least ten times; or',
+                  },
+                  {
+                    handle: "Real-time Exception",
+                    text:
+                      "The time limit is a required part of a real-time event (e.g. a collaborative authoring system), and no alternative to the time limit is possible; or",
+                  },
+                  {
+                    handle: "Essential Exception",
+                    text:
+                      "The time limit is essential and extending it would invalidate the activity; or",
+                  },
+                  {
+                    handle: "20 Hour Exception",
+                    text: "The time limit is longer than 20 hours.",
+                  },
+                ],
+              },
+            ],
           },
           {
             id: "static-input-components",
@@ -231,8 +328,33 @@ const atag = [
             num: "A.3.5.1",
             handle: "Text Search",
             text:
-              "If the authoring tool provides an editing-view of text-based content, then the editing-view enables text search, such that all of the following are true: (a) All Editable Text: Any text content that is editable by the editing-view is searchable (including alternative content); and (b) Match: Matching results can be presented to authors and given focus; and (c) No Match: Authors are informed when no results are found; and (d) Two-way: The search can be made forwards or backwards.",
+              "If the authoring tool provides an editing-view of text-based content, then the editing-view enables text search, such that all of the following are true:",
             level: "Level AA",
+            details: [
+              {
+                type: "olist",
+                items: [
+                  {
+                    handle: "All Editable Text",
+                    text:
+                      "Any text content that is editable by the editing-view is searchable (including alternative content); and",
+                  },
+                  {
+                    handle: "Match",
+                    text:
+                      "Matching results can be presented to authors and given focus; and",
+                  },
+                  {
+                    handle: "No Match",
+                    text: "Authors are informed when no results are found; and",
+                  },
+                  {
+                    handle: "Two-way",
+                    text: "The search can be made forwards or backwards.",
+                  },
+                ],
+              },
+            ],
           },
         ],
       },
@@ -336,6 +458,39 @@ const atag = [
             text:
               "For each authoring tool feature that is used to meet Part A of ATAG 2.0, at least one of the following is true: (a) Described in the Documentation: Use of the feature is explained in the authoring tool's documentation; or (b) Described in the Interface: Use of the feature is explained in the authoring tool user interface; or (c) Platform Service: The feature is a service provided by an underlying platform; or (d) Not Used by Authors: The feature is not used directly by authors (e.g. passing information to a platform accessibility service).",
             level: "Level A",
+            details: [
+              {
+                type: "ulist",
+                items: [
+                  {
+                    handle: "Described in the Documentation",
+                    text:
+                      "Use of the feature is explained in the authoring tool's documentation; or ",
+                  },
+                  {
+                    handle: "Described in the Interface",
+                    text:
+                      "Use of the feature is explained in the authoring tool user interface; or ",
+                  },
+                  {
+                    handle: "Platform Service",
+                    text:
+                      "The feature is a service provided by an underlying platform; or ",
+                  },
+                  {
+                    handle: "Not Used by Authors",
+                    text:
+                      "The feature is not used directly by authors (e.g. passing information to a platform accessibility service).",
+                  },
+                ],
+              },
+              {
+                type: "note",
+                handle: "Note 1",
+                text:
+                  "The accessibility of the documentation is covered by Guideline A.1.1 and Guideline A.1.2.",
+              },
+            ],
           },
           {
             id: "document-all-features",
@@ -344,6 +499,39 @@ const atag = [
             text:
               "For each authoring tool feature, at least one of the following is true:  (a) Described in the Documentation: Use of the feature is explained in the authoring tool's documentation; or (b) Described in the Interface: Use of the feature is explained in the authoring tool user interface; or (c) Platform Service: The feature is a service provided by an underlying platform; or (d) Not Used by Authors: The feature is not used directly by authors (e.g. passing information to a platform accessibility service).",
             level: "Level AA",
+            details: [
+              {
+                type: "olist",
+                items: [
+                  {
+                    handle: "Described in the Documentation",
+                    text:
+                      "Use of the feature is explained in the authoring tool's documentation; or ",
+                  },
+                  {
+                    handle: "Described in the Interface",
+                    text:
+                      "Use of the feature is explained in the authoring tool user interface; or ",
+                  },
+                  {
+                    handle: "Platform Service",
+                    text:
+                      "The feature is a service provided by an underlying platform; or ",
+                  },
+                  {
+                    handle: "Not Used by Authors",
+                    text:
+                      "The feature is not used directly by authors (e.g. passing information to a platform accessibility service).",
+                  },
+                ],
+              },
+              {
+                type: "note",
+                handle: "Note 1",
+                text:
+                  "The accessibility of the documentation is covered by Guideline A.1.1 and Guideline A.1.2.",
+              },
+            ],
           },
         ],
       },
@@ -371,6 +559,14 @@ const atag = [
               "The authoring tool does not automatically generate web content after the end of an authoring session, or, authors can specify that the content be accessible web content (WCAG).",
             level:
               "Level A to meet WCAG 2.0 Level A success criteria; Level AA to meet WCAG 2.0 Level A and AA success criteria; Level AAA to meet all WCAG 2.0 success criteria",
+            details: [
+              {
+                type: "note",
+                handle: "Note",
+                text:
+                  "This success criterion applies only to automatic processes specified by the authoring tool developer. It does not apply when author actions prevent generation of accessible web content (WCAG).",
+              },
+            ],
           },
           {
             id: "content-during-authoring-session",
@@ -380,6 +576,45 @@ const atag = [
               " If the authoring tool provides the functionality for automatically generating web content during an authoring session, then at least one of the following is true:",
             level:
               "Level A to meet WCAG 2.0 Level A success criteria; Level AA to meet WCAG 2.0 Level A and AA success criteria; Level AAA to meet all WCAG 2.0 success criteria",
+            details: [
+              {
+                type: "ulist",
+                items: [
+                  {
+                    handle: "Accessible",
+                    text:
+                      " The content is accessible web content (WCAG) without author input; or",
+                  },
+                  {
+                    handle: "Prompting",
+                    text:
+                      "During the automatic generation process, authors are prompted for any required accessibility information (WCAG); or ",
+                  },
+                  {
+                    handle: "Automatic Checking",
+                    text:
+                      "After the automatic generation process, accessibility checking is automatically performed; or ",
+                  },
+                  {
+                    handle: "Checking Suggested",
+                    text:
+                      " After the automatic generation process, the authoring tool prompts authors to perform accessibility checking. ",
+                  },
+                ],
+              },
+              {
+                type: "note",
+                handle: "Note 1",
+                text:
+                  "Automatic generation includes automatically selecting templates for authors.",
+              },
+              {
+                type: "note",
+                handle: "Note 2",
+                text:
+                  "This success criterion applies only to automatic processes specified by the authoring tool developer. It does not apply when author actions prevent generation of accessible web content (WCAG).",
+              },
+            ],
           },
         ],
       },
@@ -398,6 +633,45 @@ const atag = [
               "If the authoring tool provides restructuring transformations or re-coding transformations, and if equivalent mechanisms exist in the web content technology of the output, then at least one of the following is true: ",
             level:
               "Level A to meet WCAG 2.0 Level A success criteria; Level AA to meet WCAG 2.0 Level A and AA success criteria; Level AAA to meet all WCAG 2.0 success criteria",
+            details: [
+              {
+                type: "olist",
+                items: [
+                  {
+                    handle: "Preserve",
+                    text:
+                      "Accessibility information (WCAG) is preserved in the output; or",
+                  },
+                  {
+                    handle: "Warning",
+                    text:
+                      "Authors have the default option to be warned that accessibility information (WCAG) may be lost (e.g. when saving a vector graphic into a raster image format); or ",
+                  },
+                  {
+                    handle: "Automatic Checking",
+                    text:
+                      "After the transformation, accessibility checking is automatically performed; or ",
+                  },
+                  {
+                    handle: "Checking Suggested",
+                    text:
+                      "After the transformation, the authoring tool prompts authors to perform accessibility checking. ",
+                  },
+                ],
+              },
+              {
+                type: "note",
+                handle: "Note 1",
+                text:
+                  "For text alternatives for non-text content, see Success Criterion B.1.2.4.",
+              },
+              {
+                type: "note",
+                handle: "Note 2",
+                text:
+                  "This success criteria only applies when the output technology is “included” for conformance.",
+              },
+            ],
           },
           {
             id: "copy-paste-in-authoring-tool",
@@ -423,6 +697,14 @@ const atag = [
             text:
               " If the authoring tool provides web content transformations that preserve non-text content in the output, then any text alternatives for that non-text content are also preserved, if equivalent mechanisms exist in the web content technology of the output. ",
             level: "Level A",
+            details: [
+              {
+                type: "note",
+                handle: "Note",
+                text:
+                  "This success criterion only applies when the output technology is “included” for conformance.",
+              },
+            ],
           },
         ],
       },
@@ -502,6 +784,28 @@ const atag = [
             text:
               'The authoring tool does not attempt to repair text alternatives for non-text content or the following are all true: (a) No Generic or Irrelevant Strings: Generic strings (e.g. "image") and irrelevant strings (e.g. the file handle, file format) are not used as text alternatives; and (b) In-Session Repairs: If the repair attempt occurs during an authoring session, authors have the opportunity to accept, modify, or reject the repair attempt prior to insertion of the text alternative into the content; and (c) Out-of-Session Repairs: If the repair attempt occurs after an authoring session has ended, the repaired text alternatives are indicated during subsequent authoring sessions (if any) and authors have the opportunity to accept, modify, or reject the repair strings prior to insertion in the content.',
             level: "Level A",
+            details: [
+              {
+                type: "olist",
+                items: [
+                  {
+                    handle: "No Generic or Irrelevant Strings",
+                    text:
+                      "Generic strings (e.g. “image”) and irrelevant strings (e.g. the file name, file format) are not used as text alternatives; and",
+                  },
+                  {
+                    handle: "In-Session Repairs",
+                    text:
+                      "If the repair attempt occurs during an authoring session, authors have the opportunity to accept, modify, or reject the repair attempt prior to insertion of the text alternative into the content; and",
+                  },
+                  {
+                    handle: "Out-of-Session Repairs",
+                    text:
+                      "If the repair attempt occurs after an authoring session has ended, the repaired text alternatives are indicated during subsequent authoring sessions (if any) and authors have the opportunity to accept, modify, or reject the repair strings prior to insertion in the content. ",
+                  },
+                ],
+              },
+            ],
           },
         ],
       },
@@ -528,6 +832,14 @@ const atag = [
             text:
               "If the authoring tool includes a template selection mechanism and provides any non-accessible template (WCAG) options, then the template selection mechanism can display distinctions between the accessible and non-accessible options.",
             level: "Level AA",
+            details: [
+              {
+                type: "note",
+                handle: "Note",
+                text:
+                  "The distinction can involve providing information for the accessible templates, the non-accessible templates or both.",
+              },
+            ],
           },
           {
             id: "author-created-templates",
@@ -536,6 +848,14 @@ const atag = [
               "If the authoring tool includes a template selection mechanism and allows authors to create new non-accessible templates (WCAG), then authors can enable the template selection mechanism to display distinctions between accessible and non-accessible templates that they create.",
             handle: "Author-Created Templates",
             level: "Level AA",
+            details: [
+              {
+                type: "note",
+                handle: "Note",
+                text:
+                  "The distinction can involve providing information for the accessible templates (WCAG), the non-accessible templates or both.",
+              },
+            ],
           },
         ],
       },
@@ -561,6 +881,14 @@ const atag = [
             text:
               "If the authoring tool includes a pre-authored content selection mechanism and provides any non-accessible pre-authored content (WCAG Level AA) options, then the selection mechanism can display distinctions between the accessible and non-accessible options.",
             level: "Level AA",
+            details: [
+              {
+                type: "note",
+                handle: "Note",
+                text:
+                  "The distinction can involve providing information for the accessible pre-authored content, the non-accessible pre-authored content or both.",
+              },
+            ],
           },
         ],
       },
@@ -588,6 +916,14 @@ const atag = [
               "If the authoring tool provides authors with the ability to add or modify web content in such a way that a WCAG 2.0 success criterion can be violated, then accessibility checking for that success criterion is provided (e.g. an HTML authoring tool that inserts images should check for alternative text; a video authoring tool with the ability to edit text tracks should check for captions).",
             level:
               "Level A to meet WCAG 2.0 Level A success criteria; Level AA to meet WCAG 2.0 Level A and AA success criteria; Level AAA to meet all WCAG 2.0 success criteria",
+            details: [
+              {
+                type: "note",
+                handle: "Note",
+                text:
+                  "Automated and semi-automated checking is possible (and encouraged) for many types of web content accessibility problems (WCAG). However, manual checking is the minimum requirement to meet this success criterion. In manual checking, the authoring tool provides authors with instructions for detecting problems, which authors carry out by themselves. For more information on checking, see Implementing ATAG 2.0 - Appendix B: Levels of Checking Automation.",
+              },
+            ],
           },
           {
             id: "help-authors-decide",
@@ -604,6 +940,14 @@ const atag = [
             text:
               "If the authoring tool provides checks that require authors to decide whether a potential web content accessibility problem (WCAG) is correctly identified (i.e. manual checking and semi-automated checking), then the relevant content is identified to the authors.",
             level: "Level A",
+            details: [
+              {
+                type: "note",
+                handle: "Note",
+                text:
+                  "Depending on the nature of the editing-view and the scope of the potential web content accessibility problem (WCAG), identification might involve highlighting elements or renderings of elements, displaying line numbers, or providing instructions.",
+              },
+            ],
           },
           {
             id: "status-report",
@@ -612,6 +956,14 @@ const atag = [
             text:
               "If the authoring tool provides checks, then authors can receive an accessibility status report based on the results of the accessibility checks.",
             level: "Level AA",
+            details: [
+              {
+                type: "note",
+                handle: "Note",
+                text:
+                  "The format of the accessibility status report is not specified and they might include a listing of problems detected or a WCAG 2.0 conformance level, etc.",
+              },
+            ],
           },
           {
             id: "programmatic-association-of-rules",
@@ -638,6 +990,14 @@ const atag = [
               "If checking (see Success Criterion B.3.1.1) can detect that a WCAG 2.0 success criterion is not met, then repair suggestion(s) are provided:",
             level:
               "Level A to meet WCAG 2.0 Level A success criteria; Level AA to meet WCAG 2.0 Level A and AA success criteria; Level AAA to meet all WCAG 2.0 success criteria",
+            details: [
+              {
+                type: "note",
+                handle: "Note",
+                text:
+                  "Automated and semi-automated repair is possible (and encouraged) for many types of web content accessibility problems (WCAG). However, manual repair is the minimum requirement to meet this success criterion. In manual repair, the authoring tool provides authors with instructions for repairing problems, which authors carry out by themselves. For more information on repair, see Implementing ATAG 2.0 - Appendix C: Levels of Repair Automation.",
+              },
+            ],
           },
         ],
       },
