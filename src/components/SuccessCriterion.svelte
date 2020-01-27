@@ -29,7 +29,7 @@
       <p>Provide plain text alternatives when using icons, images and other non-text content. For instance, if you have a button that is just an icon, make sure there is a label associated.</p>
     </MoreInfo> 
   </h4>
-  <p>{text}<br><em>Level {level}</em></p>
+  <p>{text}<br><em>{level}</em></p>
   <div class="criterion__answers">
     <div>
       <label for={`result-${id}`}>Result for {num}</label>
