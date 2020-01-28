@@ -404,8 +404,25 @@ const atag = [
             num: "A.3.7.1",
             handle: "Preview (Minimum)",
             text:
-              "If a preview is provided, then at least one of the following is true: (a) In-Market User Agent: The preview renders content using a user agent that is in-market; or (b) UAAG (Level A): The preview conforms to the User Agent Accessibility Guidelines 1.0 Level A",
+              "If a preview is provided, then at least one of the following is true:",
             level: "Level A",
+            details: [
+              {
+                type: "olist",
+                items: [
+                  {
+                    handle: "In-Market User Agent",
+                    text:
+                      "The preview renders content using a user agent that is in-market; or",
+                  },
+                  {
+                    handle: " UAAG (Level A)",
+                    text:
+                      "The preview conforms to the User Agent Accessibility Guidelines 1.0 Level A",
+                  },
+                ],
+              },
+            ],
           },
         ],
       },

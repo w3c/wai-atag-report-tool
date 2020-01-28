@@ -4,7 +4,7 @@
   export let label = '';
 
   let info;
-  $: labelPrefix = open ? 'Close' : 'Button';
+  $: labelPrefix = open ? 'Close' : 'Open';
 
   async function toggle() {
     if (open) {
