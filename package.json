@@ -13,6 +13,7 @@
     "svelte": "^3.0.0"
   },
   "dependencies": {
+    "oaf-svelte-routing": "^2.0.0",
     "svelte-routing": "^1.4.0"
   },
   "scripts": {
