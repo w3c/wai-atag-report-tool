@@ -66,7 +66,7 @@ principle:
                  text: Full text for item
                - handle: Ordered Item 2
                  text: Full text for item 2
-            - type: ulist
+           - type: ulist
               items:
                 - handle: Unordered item
                   text: Full text for item
