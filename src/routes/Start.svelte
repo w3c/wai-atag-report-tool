@@ -4,7 +4,7 @@
   import PagerLink from '../components/PagerLink.svelte';
 </script>
 <h1>Check your authoring tool's accessibility</h1>
-<p style="font-size: 1.2em">With this tool, you can find out how accessible your authoring tool (CMS, LMS, wiki, form generator etc) is, by checking it against the <a href="https://www.w3.org/TR/ATAG20/">Authoring Tool Accessibility Guidelines</a> (ATAG).</p>
+<p style="font-size: 1.2em">With this tool, you can find out how accessible your authoring tool (CMS, LMS, wiki, form generator etc) is, by checking it manually against the <a href="https://www.w3.org/TR/ATAG20/">Authoring Tool Accessibility Guidelines</a> (ATAG).</p>
 <h2>Principles, guidelines and success criteria</h2>
 <p>This process will take you through 8 steps, the <strong>Principles</strong>. Within these, there are <strong>Guidelines</strong>, which break down into <strong>Success Criteria</strong>.</p>
 <p>For each Success Criterion, you can select whether the authoring tool you are evaluation meets it or not.</p>
