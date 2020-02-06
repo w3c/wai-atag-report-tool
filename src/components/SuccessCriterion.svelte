@@ -9,8 +9,6 @@
   export let level = 'A';
   export let details = null;
 
-  let selectedResult, observations;
-
   let results = [
     { id: 'not-checked', text: 'Not checked' },
     { id: 'passed', text: 'Passed' },
@@ -24,15 +22,13 @@
   const normalisedCriterionId = num.replace(/\./g, '').toLowerCase();
   const linkToCriterion = `https://www.w3.org/TR/ATAG20/#sc_${normalisedCriterionId}`;
 
-  if (details) {
-    $: notes =  details.filter(detail => detail.type === 'note');
-    $: list = details.filter(detail => detail.type === 'olist' || detail.type === 'ulist');
-  }
+  $: notes = details ? details.filter(detail => detail.type === 'note') : null;
+  $: list = details ? details.filter(detail => detail.type === 'olist' || detail.type === 'ulist') : null;
 </script>
 
-<div {id} class={`criterion criterion--${selectedResult ? selectedResult.toLowerCase() : ''}`}>
+<div {id}>
   <h4>
-    {handle} 
+    {handle}
     <a href={linkToCriterion} class="criterion__ref" target="_blank"><abbr title="Success Criterion">SC</abbr> {num}</a>
     <MoreInfo label="Info about {num}">
       <p>Provide plain text alternatives when using icons, images and other non-text content. For instance, if you have a button that is just an icon, make sure there is a label associated.</p>
@@ -45,7 +41,7 @@
   <div class="criterion__answers">
     <div>
       <label for={`result-${id}`}>Result for {num}</label>
-      <select id={`result-${id}`} name={id} bind:value={$evaluation[id]} on:change={() => console.log(`result-${id} is now set to ${selectedResult}`)}>
+      <select id={`result-${id}`} name={id} bind:value={$evaluation[id]['result']} on:change={() => console.log(`result-${id} is now set to ${$evaluation[id]['result']}`)}>
         {#each results as result}
           <option name=({id}-{result.id}) value={result.text}>
             {result.text}
@@ -55,7 +51,7 @@
     </div>
     <div>
       <label for={`comment-${id}`}>Observations for {num}</label>
-      <textarea name={`comment-${id}`} id={`comment-${id}`} cols="20"></textarea>
+      <textarea name={`comment-${id}`} bind:value={$evaluation[id]['observations']} id={`comment-${id}`} cols="20" on:change={() => console.log(`${id} comment is now set to ${$evaluation[id]['observations']}`)}></textarea>
     </div>
   </div>
 </div>
