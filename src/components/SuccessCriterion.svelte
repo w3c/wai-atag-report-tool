@@ -41,7 +41,7 @@
   <div class="criterion__answers">
     <div>
       <label for={`result-${id}`}>Result for {num}</label>
-      <select id={`result-${id}`} name={id} bind:value={$evaluation[id]['result']} on:change={() => console.log(`result-${id} is now set to ${$evaluation[id]['result']}`)}>
+      <select id={`result-${id}`} name={id} bind:value={$evaluation[id]['result']} on:change={() => evaluation.updateCache($evaluation)}>
         {#each results as result}
           <option name=({id}-{result.id}) value={result.text}>
             {result.text}
@@ -51,7 +51,7 @@
     </div>
     <div>
       <label for={`comment-${id}`}>Observations for {num}</label>
-      <textarea name={`comment-${id}`} bind:value={$evaluation[id]['observations']} id={`comment-${id}`} cols="20" on:change={() => console.log(`${id} comment is now set to ${$evaluation[id]['observations']}`)}></textarea>
+      <textarea name={`comment-${id}`} bind:value={$evaluation[id]['observations']} id={`comment-${id}`} cols="20" on:change={() => evaluation.updateCache($evaluation)}></textarea>
     </div>
   </div>
 </div>
