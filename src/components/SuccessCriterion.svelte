@@ -37,7 +37,7 @@
   <p>{text}</p>
   {#if list}<SuccessCriterionDetails type="list" details={list} />{/if}
   <p><em>{level}</em></p>
-  {#if notes}<SuccessCriterionDetails type="notes" details={notes} />{/if}
+  {#if notes && notes.length > 0}<SuccessCriterionDetails type="notes" details={notes} />{/if}
   <div class="criterion__answers">
     <div>
       <label for={`result-${id}`}>Result for {num}</label>
