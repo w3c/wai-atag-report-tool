@@ -13,8 +13,8 @@
     { id: 'not-checked', text: 'Not checked' },
     { id: 'passed', text: 'Passed' },
     { id: 'failed', text: 'Failed' },
-    { id: 'not-present', text: 'Not present' },
-    { id: 'cannot-tell', text: 'Cannot tell' }
+    { id: 'cannot-tell', text: 'Cannot tell' },
+    { id: 'not-applicable', text: 'Not applicable' } 
   ];
 
   let notes = null;
