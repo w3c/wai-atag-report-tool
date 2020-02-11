@@ -26,4 +26,3 @@
 	{/each}
 	</tbody>
 </table>
-<NavLink to="/step/1">Start over</NavLink>
