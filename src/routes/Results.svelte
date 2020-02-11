@@ -11,7 +11,7 @@
 <table>
 	<thead>
 		<tr>
-			<th>ID</th>
+			<th>Success Criterion</th>
 			<th>Result</th>
 			<th>Observations</th>
 		</tr>
@@ -19,7 +19,7 @@
 	<tbody>
 	{#each Object.values($evaluation) as result}
 	<tr>
-		<td>{result.handle}</td>
+		<td>{result.num}: {result.handle}</td>
 		<td>{result.result ? result.result : 'No result'}</td>
 		<td>{result.observations ? result.observations : 'No observations'}</td>
 	</tr>

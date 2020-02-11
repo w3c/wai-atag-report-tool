@@ -9,6 +9,7 @@ for (const principle of atag) {
 			scs[successcriterion.id] = {
 				id: successcriterion.id,
 				handle: successcriterion.handle,
+        num: successcriterion.num,
 				result: null,
 				observations: null,
 			};
