@@ -13,14 +13,14 @@
     { id: 'not-checked', text: 'Not checked' },
     { id: 'passed', text: 'Passed' },
     { id: 'failed', text: 'Failed' },
-    { id: 'not-present', text: 'Not present' },
-    { id: 'cannot-tell', text: 'Cannot tell' }
+    { id: 'cannot-tell', text: 'Cannot tell' },
+    { id: 'not-applicable', text: 'Not applicable' } 
   ];
 
   let notes = null;
   let list = null;
   const normalisedCriterionId = num.replace(/\./g, '').toLowerCase();
-  const linkToCriterion = `https://www.w3.org/TR/ATAG20/#sc_${normalisedCriterionId}`;
+  const linkToImplementing = `https://www.w3.org/WAI/AU/2012/WD-IMPLEMENTING-ATAG20-20121011/#sc_${normalisedCriterionId}`;
 
   $: notes = details ? details.filter(detail => detail.type === 'note') : null;
   $: list = details ? details.filter(detail => detail.type === 'olist' || detail.type === 'ulist') : null;
@@ -29,7 +29,7 @@
 <div {id}>
   <h4>
     {handle}
-    <a href={linkToCriterion} class="criterion__ref" target="_blank"><abbr title="Success Criterion">SC</abbr> {num}</a>
+    <a href={linkToImplementing} class="criterion__ref" target="_blank">Implementing {num}</a>
     <MoreInfo label="Info about {num}">
       <p>Provide plain text alternatives when using icons, images and other non-text content. For instance, if you have a button that is just an icon, make sure there is a label associated.</p>
     </MoreInfo> 
@@ -37,7 +37,7 @@
   <p>{text}</p>
   {#if list}<SuccessCriterionDetails type="list" details={list} />{/if}
   <p><em>{level}</em></p>
-  {#if notes}<SuccessCriterionDetails type="notes" details={notes} />{/if}
+  {#if notes && notes.length > 0}<SuccessCriterionDetails type="notes" details={notes} />{/if}
   <div class="criterion__answers">
     <div>
       <label for={`result-${id}`}>Result for {num}</label>

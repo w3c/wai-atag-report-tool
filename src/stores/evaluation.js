@@ -46,6 +46,7 @@ export function getEvaluation() {
               for (const successcriterion of guideline.successcriteria) {
                   cleanEvaluation[successcriterion.id] = {
                       id: successcriterion.id,
+                      num: successcriterion.num,
                       handle: successcriterion.handle,
                       result: null,
                       observations: null,
