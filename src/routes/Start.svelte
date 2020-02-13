@@ -5,7 +5,7 @@
   import PagerLink from '../components/PagerLink.svelte';
 </script>
 <Header>ATAG Report Tool</Header>
-<p style="font-size: 1.5em; margin-top: -.25em">Manually check authoring tools against the <a href="https://www.w3.org/TR/ATAG20/">Authoring Tool Accessibility Guidelines</a> (ATAG) standard and report on the results.</p>
+<p style="font-size: 1.5em; margin-top: -.25em">Manually check authoring tools against the <a href="https://www.w3.org/TR/ATAG20/">Authoring Tool Accessibility Guidelines</a> (ATAG) and report on the results.</p>
 
 <p>With this tool, you can produce a report of an authoring tool's conformance with the ATAG standard. The tool is designed for accessibility auditors and  requires a working knowledge of <a href="https://www.w3.org/TR/ATAG20/">ATAG 2.0</a>.</p>
 
