@@ -11,7 +11,13 @@
 
 <Header>ATAG Report Tool</Header>
 
-<p style="font-size: 1.5em; margin-top: -.25em">This tool guides you through the individual requirements of the <a href="https://www.w3.org/WAI/standards-guidelines/atag/">W3C Authoring Tool Accessibility Guidelines (ATAG)</a>, to help you record your evaluation of authoring tools in consistent reports.</p>
+<aside class="box">
+  <header class="box-h ">About</header>
+  <div class="box-i">
+This tool guides you through the individual requirements of the <a href="https://www.w3.org/WAI/standards-guidelines/atag/">W3C Authoring Tool Accessibility Guidelines (ATAG)</a>, to help you record your evaluation of authoring tools in consistent reports.
+  </div>
+</aside>
+
 {#if evaluation.reused && !acknowledged}
 <section class="doc-note-box" aria-label="Evaluation version info">
 	<p><strong>Note</strong>: we have restored your previous evaluation.</p>
