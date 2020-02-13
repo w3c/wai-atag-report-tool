@@ -3,21 +3,21 @@
   import Start from "./routes/Start.svelte";
   import Results from "./routes/Results.svelte";
   import Principle from './components/Principle.svelte';
-  import SideNav from './components/SideNav.svelte';
-  import NavLink from './components/NavLink.svelte';
+  import Progress from './components/Progress.svelte';
+  import ProgressItem from './components/ProgressItem.svelte';
   import atag from './data/atag.js';
   export let url = "";
 </script>
 
-<SideNav>
+<Progress>
   <Router>
-    <NavLink to="/">Start</NavLink>
+    <ProgressItem to="/">Start</ProgressItem>
     {#each atag as { principle, guidelines }, i }
-    <NavLink to="step/{i+1}">{principle.num}: {principle.handle}</NavLink>
+    <ProgressItem to="step/{i+1}"><small>{principle.num}:</small> {principle.handle}</ProgressItem>
     {/each}
-    <NavLink to="/results">Results</NavLink>
+    <ProgressItem to="/results">Results</ProgressItem>
   </Router>
-</SideNav>
+</Progress>
 <main>
   <Router url={url}>
     <Route path="/">

@@ -1,6 +1,5 @@
 <script>
   import Header from '../components/Header.svelte';
-  import NavLink from '../components/NavLink.svelte';
   import Pager from '../components/Pager.svelte';
   import PagerLink from '../components/PagerLink.svelte';
   import { evaluation } from '../stores/evaluation.js';
