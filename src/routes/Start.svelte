@@ -41,7 +41,7 @@ This tool guides you through the individual requirements of the <a href="https:/
 	<summary><h2>Tips for using this tool</h2></summary>
 	<ul>
 		<li>Remember to always save the information that you enter because it is not stored in the server.</li>
-		<li>More information on eacg ATAG Success Criterion is in <a href="https://www.w3.org/TR/IMPLEMENTING-ATAG20/" target="_blank">Implementing ATAG 2.0</a>. Link in this tool lead you to the relevant sections of the “Implementing” document.</li>
+		<li>More information on each ATAG Success Criterion is in <a href="https://www.w3.org/TR/IMPLEMENTING-ATAG20/" target="_blank">Implementing ATAG 2.0</a>. Links in this tool lead you to the relevant sections of the “Implementing” document.</li>
 		<li>You can go back and forth between the steps in any order. None of the fields are required.</li>
 		<li>The tool provides your report as HTML (web page) and as JSON (structured data).</li>
 	</ul>
