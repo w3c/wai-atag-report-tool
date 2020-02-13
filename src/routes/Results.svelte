@@ -1,11 +1,16 @@
 <script>
   import { evaluation } from '../stores/evaluation.js';
+  import Header from '../components/Header.svelte';
+  import HeaderSub from '../components/HeaderSub.svelte';
   import NavLink from '../components/NavLink.svelte';
 
   $: jsonDownload = `data:text/json;charset=utf-8,${encodeURIComponent(JSON.stringify(Object.values($evaluation)))}`;
 </script>
 
-<h2>Results</h2>
+<Header>
+  <HeaderSub>ATAG Report Tool</HeaderSub>
+  Results
+</Header>
 <p>Thanks for using this tool. Your evaluation is displayed in full below. You can also <a href={jsonDownload} download="data.json">Download JSON</a>.</p>
 
 <table>

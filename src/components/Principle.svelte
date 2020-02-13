@@ -1,5 +1,7 @@
 <script>
   import NavLink from "./NavLink.svelte";
+  import Header from './Header.svelte';
+  import HeaderSub from './HeaderSub.svelte';
   import Guideline from './Guideline.svelte';
   import Pager from './Pager.svelte';
   import PagerLink from './PagerLink.svelte';
@@ -15,18 +17,13 @@
   const linkToPrinciple = `https://www.w3.org/TR/ATAG20/#principle_${normalisedPrincipleId}`;
 </script>
 
-<style>
-  h1 span {
-    font-size: .4em;
-    margin-bottom: .5em;
-    color: var(--ocean);
-    text-transform: uppercase;
-    display: block;
-  }
-</style>
-
 <div class={className}>
-  <h1><span>Your evaluation ({id+1}/8)</span> {principle.handle}</h1>
+  <Header>
+    <HeaderSub>
+      ATAG Report Tool (<span class="visuallyhidden">Step </span>{id+1}<span aria-hidden="true">/</span><span class="visuallyhidden"> of </span>8)
+    </HeaderSub>
+    {principle.handle}
+  </Header>
   <p>See: <a href={linkToPrinciple} target="_blank" rel="noopener roreferrer">{principle.num} {principle.text}</a></p>
   {#each guidelines as guideline }
   <Guideline {...guideline} />
