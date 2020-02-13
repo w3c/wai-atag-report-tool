@@ -6,7 +6,6 @@
   import SideNav from './components/SideNav.svelte';
   import NavLink from './components/NavLink.svelte';
   import atag from './data/atag.js';
-  import { evaluation } from './stores/evaluation.js';
   export let url = "";
 </script>
 

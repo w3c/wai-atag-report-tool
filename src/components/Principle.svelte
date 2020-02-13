@@ -6,6 +6,7 @@
   import Pager from './Pager.svelte';
   import PagerLink from './PagerLink.svelte';
   import atag from '../data/atag.js';
+  import { evaluation } from '../stores/evaluation.js';
   export let id = null;
   export let className = undefined;
 
