@@ -13,11 +13,12 @@
   <Router>
     <ProgressItem to="/">Start</ProgressItem>
     {#each atag as { principle, guidelines }, i }
-    <ProgressItem to="step/{i+1}"><small>{principle.num}:</small> {principle.handle}</ProgressItem>
+    <ProgressItem to="step/{i+1}">{principle.num}<span class="visuallyhidden">: {principle.handle}</span></ProgressItem>
     {/each}
     <ProgressItem to="/results">Results</ProgressItem>
   </Router>
 </Progress>
+<div style="grid-column: 1 / 4">(visual indication of progress)</div>
 <main>
   <Router url={url}>
     <Route path="/">

@@ -2,11 +2,14 @@
   .progress {
     grid-column: 1 / -1;
     overflow: auto;
-    margin: -2em 0 2em;
+    margin: -32px -32px 32px;
+    background-color: var(--cloudy-subtle);
   } 
     .progress ul {
       display: flex;
       flex-direction: row;
+      margin: 0;
+      padding: 0;
     }
 </style>
 

@@ -13,25 +13,45 @@
     />
     <link rel="stylesheet" href="/build/bundle.css" />
     <script defer src="/build/bundle.js"></script>
+    <style>
+      .logo {
+        grid-column: 1 / -1;
+      }
+        .logo a {
+          text-decoration: none;
+        }
+      .progress__item {
+        list-style: none;
+        margin: 0;
+        text-decoration: none;
+      }
+      .progress__item a {
+        display: block;
+        font-size: 0.85em;
+        padding: 1em;
+        text-decoration: none;
+        background-color: var(--cloudy-subtle);
+        color: inherit;
+      }
+      .progress__item .active {
+        background-color: var(--body-bg);
+      }
+    </style>
   </head>
   <body>
     <header id="site-header" class="default-grid with-gap">
-      <span class="w3c" style="display: block;"
-        ><a href="http://w3.org/">
-          <img
-            alt="W3C"
-            src="/images/w3c.svg"
-            width="80"
-            height="50"
-          /> </a></span
-      ><span class="wai"
-        ><a href="http://w3.org/WAI/">
+      <div class="logo">
+        <a href="http://w3.org/">
+          <img alt="W3C" src="/images/w3c.svg" width="73" height="50" />
+        </a>
+        <a href="http://w3.org/WAI/">
           <img
             alt="Web Accessibility Initiative"
             src="/images/wai.svg"
             height="50"
-          /> </a
-      ></span>
+          />
+        </a>
+      </div>
     </header>
     <main style="padding: 2em 0">
       <div id="conformance-tool" class="default-grid leftcol">
