@@ -26,7 +26,7 @@ This tool guides you through the individual requirements of the <a href="https:/
 </section>
 {/if}
 
-<p>Authoring tools include content management systems (CMS), code editors, and other software used to create content. With this tool, you can produce a report of an authoring tool's conformance with the <a href="https://www.w3.org/TR/ATAG20/">ATAG 2.0</a> standard. The tool is designed for accessibility auditors.</p>
+<p>Authoring tools include content management systems (CMS), code editors, and other software used to create web content. With this tool, you can produce a report of an authoring tool's conformance with the <a href="https://www.w3.org/TR/ATAG20/">ATAG 2.0</a> standard. The tool is designed for accessibility auditors.</p>
 
 <p><small>Note: This tool does not automatically save the information that you enter. To save your data in a file locally on your computer, use Windows shortcut keys Ctrl+S or Mac shortcut keys ⌘S to open the Save dialog.</small></p>
 
