@@ -1,5 +1,5 @@
 <script>
-  import NavLink from "./NavLink.svelte";
+
   import Header from './Header.svelte';
   import HeaderSub from './HeaderSub.svelte';
   import Guideline from './Guideline.svelte';

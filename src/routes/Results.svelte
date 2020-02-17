@@ -2,7 +2,6 @@
   import { evaluation } from '../stores/evaluation.js';
   import Header from '../components/Header.svelte';
   import HeaderSub from '../components/HeaderSub.svelte';
-  import NavLink from '../components/NavLink.svelte';
 
   $: jsonDownload = `data:text/json;charset=utf-8,${encodeURIComponent(JSON.stringify(Object.values($evaluation)))}`;
 </script>
