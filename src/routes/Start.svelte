@@ -2,22 +2,11 @@
   import Header from '../components/Header.svelte';
   import Pager from '../components/Pager.svelte';
   import PagerLink from '../components/PagerLink.svelte';
-  import { evaluation } from '../stores/evaluation.js';
-
-  let acknowledged = false;
-  const acknowledge = function() { acknowledged = true; }
 </script>
 
 <Header>ATAG Report Tool</Header>
 
 <p style="font-size: 1.5em; margin-top: -.25em">Manually check authoring tools against the <a href="https://www.w3.org/TR/ATAG20/">Authoring Tool Accessibility Guidelines</a> (ATAG) and report on the results.</p>
-{#if evaluation.fresh && !acknowledged}
-<section class="doc-note-box" aria-label="Evaluation version info">
-	<p><strong>Note</strong>: we have restored your previous evaluation.</p>
-	<button type="button" on:click={acknowledge}>OK</button>
-	<button type="button" on:click={evaluation.clearCache}>Clear and start over</button>
-</section>
-{/if}
 
 <p>With this tool, you can produce a report of an authoring tool's conformance with the ATAG standard. The tool is designed for accessibility auditors and  requires a working knowledge of <a href="https://www.w3.org/TR/ATAG20/">ATAG 2.0</a>.</p>
 
