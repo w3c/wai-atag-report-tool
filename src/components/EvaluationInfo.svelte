@@ -35,7 +35,9 @@
    <button class="button button-secondary" disabled>Import</button>
   {:else}
     <h2>
-      <small>Evaluating </small>PowerCMS 2.5
+      <small>Evaluating </small>PowerCMS 2.5 <MoreInfo label="What is this title?">
+      <p><small>Editor's note: title is fixed at the moment. I think we could have a page before the first criteria that prompts for a name and some other meta data.</small></p>
+    </MoreInfo>
     </h2>
     <p>Evaluated <strong>{evaluatedItems.length}</strong> out of <strong>{Object.values($evaluation).length}</strong> success criteria. <MoreInfo label="More info">
       <p><small>Editor's note: we could also display a pie or bar chart visualisation of progress.</small></p>
