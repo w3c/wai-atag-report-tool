@@ -29,6 +29,13 @@
     background: var(--footer-grey);box-shadow: 0px 2px 8px -7px #000;padding: 1em;border: 1px solid var(--line-grey);
     grid-column: 2 / 4;
     align-self: start;
+    margin-bottom: 2em;
+  }
+  @media (min-width: 50em) {
+    aside {
+      position: sticky;
+      top: 1em;
+      }
   }
   h2 {
     font-weight: bold;font-size: 1em;margin: 0;
