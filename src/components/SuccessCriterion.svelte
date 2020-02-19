@@ -30,9 +30,9 @@
   <h4>
     {handle}
     <a href={linkToImplementing} class="criterion__ref" target="_blank">Implementing {num}</a>
-    <MoreInfo label="Info about {num}">
+    <!-- <MoreInfo label="Info about {num}">
       <p>Provide plain text alternatives when using icons, images and other non-text content. For instance, if you have a button that is just an icon, make sure there is a label associated.</p>
-    </MoreInfo> 
+    </MoreInfo>-->
   </h4>
   <p>{text}</p>
   {#if list}<SuccessCriterionDetails type="list" details={list} />{/if}
