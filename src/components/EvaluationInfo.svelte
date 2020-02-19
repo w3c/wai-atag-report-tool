@@ -1,6 +1,7 @@
 <script>
   import { navigate } from 'svelte-routing';
   import { evaluation } from '../stores/evaluation.js';
+  import MoreInfo from './MoreInfo.svelte';
 
   let fresh = evaluation.isFresh();
   let startedNew = false;
@@ -10,24 +11,37 @@
     startedNew = true;
   }
 
+  function toOverview() {
+    navigate('/results', { replace: false });
+  }
+
+  function clear() {
+    evaluation.clearCache();
+    navigate('/', { replace: true });    
+  }
+
   evaluation.subscribe(value => {
     fresh = evaluation.isFresh();
   });
+
+  $: evaluatedItems = Object.values($evaluation).filter(item => item.evaluated === true);
 </script>
 
 <aside>
   {#if fresh && !startedNew}
    <h2>Your evaluation</h2>
    <p>No existing evaluation found.</p>
-   <button class="button" on:click={startNew}>Start new evaluation</button> 
-   <button class="button button-secondary" disabled>Import from JSON</button>
+   <button class="button" on:click={startNew}>New evaluation</button> 
+   <button class="button button-secondary" disabled>Import</button>
   {:else}
     <h2>
       <small>Evaluating </small>PowerCMS 2.5
     </h2>
-    <p>Evaluated <strong>4</strong> out of <strong>{Object.values($evaluation).length}</strong> success criteria.</p>
-    <button class="button">Save / Overview</button>
-    <button class="button button-secondary" on:click={evaluation.clearCache}>Clear</button>
+    <p>Evaluated <strong>{evaluatedItems.length}</strong> out of <strong>{Object.values($evaluation).length}</strong> success criteria. <MoreInfo label="More info">
+      <p><small>Editor's note: we could also display a pie or bar chart visualisation of progress.</small></p>
+    </MoreInfo></p>
+    <button class="button" on:click={toOverview}>Save / Overview</button>
+    <button class="button button-secondary" on:click={clear}>Clear</button>
   {/if}
 </aside>
 

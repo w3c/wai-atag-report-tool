@@ -56,6 +56,7 @@ export function getEvaluation() {
             handle: successcriterion.handle,
             result: null,
             observations: null,
+            evaluated: false,
           };
         }
       }
