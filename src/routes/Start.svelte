@@ -11,7 +11,7 @@
 <Header>ATAG Report Tool</Header>
 
 <p style="font-size: 1.5em; margin-top: -.25em">Manually check authoring tools against the <a href="https://www.w3.org/TR/ATAG20/">Authoring Tool Accessibility Guidelines</a> (ATAG) and report on the results.</p>
-{#if evaluation.reused && !acknowledged}
+{#if evaluation.fresh && !acknowledged}
 <section class="doc-note-box" aria-label="Evaluation version info">
 	<p><strong>Note</strong>: we have restored your previous evaluation.</p>
 	<button type="button" on:click={acknowledge}>OK</button>
