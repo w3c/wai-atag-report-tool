@@ -28,13 +28,30 @@ This tool guides you through the individual requirements of the <a href="https:/
 
 <p>Authoring tools include content management systems (CMS), code editors, and other software used to create web content. With this tool, you can produce a report of an authoring tool's conformance with the <a href="https://www.w3.org/TR/ATAG20/">ATAG 2.0</a> standard. The tool is designed for accessibility auditors.</p>
 
-<p><small>Note: This tool does not automatically save the information that you enter. To save your data in a file locally on your computer, use Windows shortcut keys Ctrl+S or Mac shortcut keys ⌘S to open the Save dialog.</small></p>
+<p><small>Note: this evaluation happens on your computer, no data is sent to us. To save the results on your computer, use <kbd>Ctrl</kbd>/<kbd>⌘ (Command)</kbd> + <kdb>S</kdb>.</small></p>
 
 <details>
-	<summary><h2>About this tool</h2></summary>
+	<summary><h2>What to expect</h2></summary>
 	<p>Following the structure of ATAG, this tool takes you through eight <strong>Principles</strong>. Each principle has a number of <strong>Guidelines</strong>, which are further divided into <strong>Success Criteria</strong>. For each, you can select a result and note down any observations. Results include "Not checked", "Passed", "Failed", "Not applicable", and "Cannot tell".</p>
 	<p>Part A (Principles A.1 to A.4) is related to the <strong>editing experience</strong> with the authoring tool. It helps ensure that content can be created by people with disabilities.</p>
 	<p>Part B (Principles B.1 to B.4) is about the <strong>output</strong> of the authoring tool. It helps ensure that content editors can create accessible content, and are encouraged to do so.</p>
+</details>
+
+<details>
+	<summary><h2>Legend of results</h2></summary>
+	<p>This is what the possible results mean:</p>
+	<dl>
+		<dt>Not checked</dt>
+		<dd>You did not check this success criterion</dd>
+		<dt>Pass</dt>
+		<dd>This success criterion is met.</dd>
+		<dt>Failed</dt>
+		<dd>This success criterion is not met.</dd>
+		<dt>Not applicable</dt>
+		<dd>This success criterion relates to a feature the authoring tool does not have, it does not apply.</dd>
+		<dt>Cannot tell</dt>
+		<dd>It is unclear whether the success criterion is met.</dd>
+	</dl>
 </details>
 
 <details>
