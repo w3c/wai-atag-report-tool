@@ -10,7 +10,13 @@
 
 <Header>ATAG Report Tool</Header>
 
-<p style="font-size: 1.5em; margin-top: -.25em">Manually check authoring tools against the <a href="https://www.w3.org/TR/ATAG20/">Authoring Tool Accessibility Guidelines</a> (ATAG) and report on the results.</p>
+<aside class="box">
+  <header class="box-h ">About</header>
+  <div class="box-i">
+This tool guides you through the individual requirements of the <a href="https://www.w3.org/WAI/standards-guidelines/atag/">W3C Authoring Tool Accessibility Guidelines (ATAG)</a>, to help you record your evaluation of authoring tools in consistent reports.
+  </div>
+</aside>
+
 {#if evaluation.reused && !acknowledged}
 <section class="doc-note-box" aria-label="Evaluation version info">
 	<p><strong>Note</strong>: we have restored your previous evaluation.</p>
@@ -19,14 +25,15 @@
 </section>
 {/if}
 
-<p>With this tool, you can produce a report of an authoring tool's conformance with the ATAG standard. The tool is designed for accessibility auditors and  requires a working knowledge of <a href="https://www.w3.org/TR/ATAG20/">ATAG 2.0</a>.</p>
+<p>Authoring tools include content management systems (CMS), code editors, and other software used to create web content. With this tool, you can produce a report of an authoring tool's conformance with the <a href="https://www.w3.org/TR/ATAG20/">ATAG 2.0</a> standard. The tool is designed for accessibility auditors.</p>
+
+<p><small>Note: this evaluation happens on your computer, no data is sent to us. To save the results on your computer, use <kbd>Ctrl</kbd>/<kbd>⌘ (Command)</kbd> + <kdb>S</kdb>.</small></p>
 
 <details>
 	<summary><h2>What to expect</h2></summary>
-	<p>Following the structure of ATAG, this tool takes you through eight  <strong>Principles</strong>. Each principle has a number of <strong>Guidelines</strong>, which break down into <strong>Success Criteria</strong>. For each, you can select a result and note down any observations.</p>
-	<p>Part A (Principles A.1 to A.4) is related to the authoring tool's <strong>editing experience</strong>. It helps ensure that content can be created by people with disabilities.</p>
-	<p>Part B (Principles B.1 to B.4) is about the <strong>output</strong> of the tool. It helps ensure that content editors can create accessible content, and are  encouraged to do so.</p>
-	<p><small>Note: this evaluation happens on your computer, no data is sent to us. To save the results on your computer, use <kbd>Ctrl</kbd>/<kbd>⌘ (Command)</kbd> + <kdb>S</kdb>.</small></p>
+	<p>Following the structure of ATAG, this tool takes you through eight <strong>Principles</strong>. Each principle has a number of <strong>Guidelines</strong>, which are further divided into <strong>Success Criteria</strong>. For each, you can select a result and note down any observations. Results include "Not checked", "Passed", "Failed", "Not applicable", and "Cannot tell".</p>
+	<p>Part A (Principles A.1 to A.4) is related to the <strong>editing experience</strong> with the authoring tool. It helps ensure that content can be created by people with disabilities.</p>
+	<p>Part B (Principles B.1 to B.4) is about the <strong>output</strong> of the authoring tool. It helps ensure that content editors can create accessible content, and are encouraged to do so.</p>
 </details>
 
 <details>
@@ -47,11 +54,11 @@
 </details>
 
 <details>
-	<summary><h2>Tips for usage</h2></summary>
+	<summary><h2>Tips for using this tool</h2></summary>
 	<ul>
-		<li>Find more information on ATAG Success Criteria (SCs) in <a href="https://www.w3.org/TR/IMPLEMENTING-ATAG20/" target="_blank">Implementing ATAG 2.0</a>. You will find a link to the relevant “Implementing” section listed with each SC.</li>
-		<li>You can go back and forth between the steps in any order.</li>
-		<li>None of the fields are required.</li>
+		<li>Remember to always save the information that you enter because it is not stored in the server.</li>
+		<li>More information on each ATAG Success Criterion is in <a href="https://www.w3.org/TR/IMPLEMENTING-ATAG20/" target="_blank">Implementing ATAG 2.0</a>. Links in this tool lead you to the relevant sections of the “Implementing” document.</li>
+		<li>You can go back and forth between the steps in any order. None of the fields are required.</li>
 		<li>The tool provides your report as HTML (web page) and as JSON (structured data).</li>
 	</ul>
 </details>
