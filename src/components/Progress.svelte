@@ -1,8 +1,8 @@
 <style>
   .progress {
-    grid-column: 1 / -1;
+    grid-column: navigation-start / content-end;
     overflow: auto;
-    margin: -32px -32px 32px;
+    margin: -32px -32px 32px 0;
     background-color: var(--cloudy-subtle);
   } 
     .progress ul {

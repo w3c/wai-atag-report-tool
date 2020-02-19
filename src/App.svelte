@@ -18,8 +18,8 @@
     <ProgressItem to="/results">Results</ProgressItem>
   </Router>
 </Progress>
-<div style="grid-column: 1 / 4">(visual indication of progress)</div>
-<main>
+<div style="grid-column: 2 / 4">(visual indication of progress)</div>
+<section aria-label="Main content">
   <Router url={url}>
     <Route path="/">
       <Start />
@@ -31,10 +31,10 @@
       <Results />
     </Route>
   </Router>
-</main>
+</section>
 
 <style>
-  main {
-    grid-column-end: 10;
+  section {
+    grid-column: content-start / content-end;
   }
 </style>
