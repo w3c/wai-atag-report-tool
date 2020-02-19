@@ -11,7 +11,7 @@ const routerSettings = {
 
     if (location.pathname.startsWith("/step/")) {
       const id = location.pathname.substring(6, 7);
-      return (newTitle = `${atag[id].principle.handle} - ${defaultTitle}`);
+      return (newTitle = `${atag[id - 1].principle.handle} - ${defaultTitle}`);
     }
 
     switch (location.pathname) {
