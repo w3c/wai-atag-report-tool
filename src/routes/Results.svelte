@@ -10,7 +10,8 @@
   <HeaderSub>ATAG Report Tool</HeaderSub>
   Results
 </Header>
-<p>Thanks for using this tool. Your evaluation is displayed in full below. You can also <a href={jsonDownload} download="data.json">Download JSON</a>.</p>
+<p>Thanks for using this tool. Your evaluation is displayed in full below.</p>
+<p><a href={jsonDownload} class="button button-secondary" download="evaluation.json">Download evaluation (JSON)</a></p>
 
 <table>
 	<thead>

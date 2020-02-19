@@ -30,7 +30,9 @@
 <aside>
   {#if fresh && !startedNew}
    <h2>Your evaluation</h2>
-   <p>No existing evaluation found.</p>
+   <p>No existing evaluation found.  <MoreInfo label="On import functionality">
+      <p><small>Editor's note: import functionality is not yet built, it is planned for the next iteration. This is why the button below is disabled.</small></p>
+    </MoreInfo></p>
    <button class="button" on:click={startNew}>New evaluation</button> 
    <button class="button button-secondary" disabled>Import</button>
   {:else}
