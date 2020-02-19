@@ -2,10 +2,6 @@
   import Header from '../components/Header.svelte';
   import Pager from '../components/Pager.svelte';
   import PagerLink from '../components/PagerLink.svelte';
-  import { evaluation } from '../stores/evaluation.js';
-
-  let acknowledged = false;
-  const acknowledge = function() { acknowledged = true; }
 </script>
 
 <Header>ATAG Report Tool</Header>
@@ -16,14 +12,6 @@
 This tool guides you through the individual requirements of the <a href="https://www.w3.org/WAI/standards-guidelines/atag/">W3C Authoring Tool Accessibility Guidelines (ATAG)</a>, to help you record your evaluation of authoring tools in consistent reports.
   </div>
 </aside>
-
-{#if evaluation.reused && !acknowledged}
-<section class="doc-note-box" aria-label="Evaluation version info">
-	<p><strong>Note</strong>: we have restored your previous evaluation.</p>
-	<button type="button" on:click={acknowledge}>OK</button>
-	<button type="button" on:click={evaluation.clearCache}>Clear and start over</button>
-</section>
-{/if}
 
 <p>Authoring tools include content management systems (CMS), code editors, and other software used to create web content. With this tool, you can produce a report of an authoring tool's conformance with the <a href="https://www.w3.org/TR/ATAG20/">ATAG 2.0</a> standard. The tool is designed for accessibility auditors.</p>
 

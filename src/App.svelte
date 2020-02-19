@@ -1,6 +1,7 @@
 <script>
   import { Router, Route } from "svelte-routing";
   import Start from "./routes/Start.svelte";
+  import EvaluationInfo from './components/EvaluationInfo.svelte';
   import Results from "./routes/Results.svelte";
   import Principle from './components/Principle.svelte';
   import Progress from './components/Progress.svelte';
@@ -18,7 +19,7 @@
     <ProgressItem to="/results">Results</ProgressItem>
   </Router>
 </Progress>
-<div style="grid-column: 2 / 4">(visual indication of progress)</div>
+<EvaluationInfo></EvaluationInfo>
 <section aria-label="Main content">
   <Router url={url}>
     <Route path="/">
