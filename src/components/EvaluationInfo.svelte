@@ -2,14 +2,21 @@
   import { navigate } from 'svelte-routing';
   import { evaluation } from '../stores/evaluation.js';
 
+  let fresh = evaluation.isFresh();
+  let startedNew = false;
+
   function startNew() {
     navigate('/step/1', { replace: false });
+    startedNew = true;
   }
-  $: fresh = evaluation.fresh;
+
+  evaluation.subscribe(value => {
+    fresh = evaluation.isFresh();
+  });
 </script>
 
 <aside>
-  {#if fresh}
+  {#if fresh && !startedNew}
    <h2>Your evaluation</h2>
    <p>No existing evaluation found.</p>
    <button class="button" on:click={startNew}>Start new evaluation</button> 
@@ -18,7 +25,7 @@
     <h2>
       <small>Evaluating </small>PowerCMS 2.5
     </h2>
-    <p>Evaluated <strong>4</strong> out of <strong>42</strong> success criteria.</p>
+    <p>Evaluated <strong>4</strong> out of <strong>{Object.values($evaluation).length}</strong> success criteria.</p>
     <button class="button">Save / Overview</button>
     <button class="button button-secondary" on:click={evaluation.clearCache}>Clear</button>
   {/if}

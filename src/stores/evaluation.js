@@ -79,7 +79,7 @@ export function create_evaluation() {
     update,
     updateCache,
     clearCache,
-    fresh,
+    isFresh,
   };
 }
 
