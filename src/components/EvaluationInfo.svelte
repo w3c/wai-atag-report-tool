@@ -16,8 +16,10 @@
   }
 
   function clear() {
-    evaluation.clearCache();
-    navigate('/', { replace: true });    
+    if (window.confirm("This will clear the current evaluation and start a new one. Are you sure that's what you'd like to do?")) {
+      evaluation.clearCache();
+      navigate('/', { replace: true });    
+    }
   }
 
   evaluation.subscribe(value => {
