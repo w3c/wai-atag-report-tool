@@ -1,6 +1,7 @@
 <script>
   import { Router, Route } from "svelte-routing";
   import Start from "./routes/Start.svelte";
+  import YourEvaluation from './routes/YourEvaluation.svelte';
   import EvaluationInfo from './components/EvaluationInfo.svelte';
   import Results from "./routes/Results.svelte";
   import Principle from './components/Principle.svelte';
@@ -13,6 +14,7 @@
 <Progress>
   <Router>
     <ProgressItem to="/">Start</ProgressItem>
+    <ProgressItem to="/your-evaluation">Your Evaluation</ProgressItem>
     {#each atag as { principle, guidelines }, i }
     <ProgressItem to="step/{i+1}">{principle.num}<span class="visuallyhidden">: {principle.handle}</span></ProgressItem>
     {/each}
@@ -24,6 +26,9 @@
   <Router url={url}>
     <Route path="/">
       <Start />
+    </Route>
+    <Route path="/your-evaluation">
+      <YourEvaluation />
     </Route>
     <Route path="/step/:id" let:params>
       <Principle id="{params.id-1}" />

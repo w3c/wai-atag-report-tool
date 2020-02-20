@@ -52,5 +52,5 @@ This tool guides you through the individual requirements of the <a href="https:/
 </details>
 
 <Pager label="Previous/Next Step">
-  <PagerLink to="/step/1" direction="next">Get started</PagerLink>
+  <PagerLink to="/your-evaluation" direction="next">Your evaluation</PagerLink>
 </Pager>

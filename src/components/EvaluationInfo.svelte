@@ -7,7 +7,7 @@
   let startedNew = false;
 
   function startNew() {
-    navigate('/step/1', { replace: false });
+    navigate('/your-evaluation', { replace: false });
     startedNew = true;
   }
 
@@ -24,7 +24,7 @@
     fresh = evaluation.isFresh();
   });
 
-  $: evaluatedItems = Object.values($evaluation).filter(item => item.evaluated === true);
+  $: evaluatedItems = $evaluation ? Object.values($evaluation).filter(item => item.evaluated === true) : [];
 </script>
 
 <aside>
@@ -35,9 +35,12 @@
     </MoreInfo></p>
    <button class="button" on:click={startNew}>New evaluation</button> 
    <button class="button button-secondary" disabled>Import</button>
+  {:else if !$evaluation["evaluationMeta"]["name"]["value"]}
+  <h2>New evaluation</h2>
+  <p>Set up information about your evaluation.</p>
   {:else}
     <h2>
-      <small>Evaluating </small>PowerCMS 2.5 <MoreInfo label="What is this title?">
+      <small>Evaluating </small>{$evaluation["evaluationMeta"]["name"]["value"]} <MoreInfo label="What is this title?">
       <p><small>Editor's note: title is fixed at the moment. I think we could have a page before the first criteria that prompts for a name and some other meta data.</small></p>
     </MoreInfo>
     </h2>

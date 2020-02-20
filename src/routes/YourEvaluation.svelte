@@ -1,0 +1,37 @@
+<script>
+  import Header from '../components/Header.svelte';
+  import HeaderSub from '../components/HeaderSub.svelte';
+  import Pager from '../components/Pager.svelte';
+  import PagerLink from '../components/PagerLink.svelte';
+  import { evaluation } from '../stores/evaluation.js';
+</script>
+
+<Header>
+  <HeaderSub>
+    ATAG Report Tool
+  </HeaderSub>
+  Your evaluation
+</Header>
+
+<p>On this page, you can set up your evaluation.</p>
+
+<h2>About your evaluation</h2>
+
+<div class="field">
+  <label for="evaluation-meta-name">Name of authoring tool</label>
+  <input type="text" bind:value={$evaluation["evaluationMeta"]["name"]["value"]} id="evaluation-meta-name"on:change={() =>  evaluation.updateCache($evaluation)} />
+</div>
+
+<div class="field">
+  <label for="evaluation-meta-name">Your name</label>
+  <input type="text" bind:value={$evaluation["evaluationMeta"]["evaluatorName"]["value"]} id="evaluation-meta-name"on:change={() =>  evaluation.updateCache($evaluation)} />
+</div>
+
+<div class="field">
+  <label for="evaluation-meta-name">Your organisation</label>
+  <input type="text" bind:value={$evaluation["evaluationMeta"]["evaluatorOrg"]["value"]} id="evaluation-meta-name"on:change={() =>  evaluation.updateCache($evaluation)} />
+</div>
+
+<Pager label="Previous/Next Step">
+  <PagerLink to="/step/1" direction="next">Step 1</PagerLink>
+</Pager>

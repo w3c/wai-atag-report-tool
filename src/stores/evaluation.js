@@ -7,10 +7,13 @@ let fresh = true;
 export function updateCache(evaluation) {
   try {
     const serialisedEvaluation = JSON.stringify(Object.values(evaluation));
+    const serialisedMeta = JSON.stringify(
+      Object.values(evaluation.evaluationMeta)
+    );
     localStorage.setItem(storageName, serialisedEvaluation);
+    localStorage.setItem(`${storageName}-meta`, serialisedMeta);
 
     fresh = false;
-    console.log("updating…", fresh);
   } catch (error) {
     // something didn't work
   }
@@ -29,12 +32,23 @@ export function getEvaluation() {
   ) {
     try {
       const serialisedEvaluation = localStorage.getItem(storageName);
+      const serialisedEvaluationMeta = localStorage.getItem(
+        `${storageName}-meta`
+      );
       const evaluationValues = JSON.parse(serialisedEvaluation);
+      const evaluationMetaValues = JSON.parse(serialisedEvaluationMeta);
       let existingEvaluation = [];
 
       // We only saved the values; create  an object with keys
       for (const item in Object.values(evaluationValues)) {
         existingEvaluation[evaluationValues[item].id] = evaluationValues[item];
+      }
+
+      existingEvaluation.evaluationMeta = {};
+
+      for (const item in Object.values(evaluationMetaValues)) {
+        existingEvaluation["evaluationMeta"][evaluationMetaValues[item].id] =
+          evaluationMetaValues[item];
       }
 
       fresh = false;
@@ -45,7 +59,7 @@ export function getEvaluation() {
     }
   } else {
     // Use clean evaluation
-    const cleanEvaluation = [];
+    const cleanEvaluation = {};
 
     for (const principle of atag) {
       for (const guideline of principle.guidelines) {
@@ -61,6 +75,21 @@ export function getEvaluation() {
         }
       }
     }
+
+    cleanEvaluation.evaluationMeta = {
+      name: {
+        id: "name",
+        value: null,
+      },
+      evaluatorName: {
+        id: "evaluatorName",
+        value: null,
+      },
+      evaluatorOrg: {
+        id: "evaluatorOrg",
+        value: null,
+      },
+    };
 
     return cleanEvaluation;
   }

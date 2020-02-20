@@ -23,7 +23,9 @@
     </HeaderSub>
     {principle.handle}
   </Header>
+
   <p>See: <a href={linkToPrinciple} target="_blank" rel="noopener roreferrer">{principle.num} {principle.text}</a></p>
+  
   {#each guidelines as guideline }
   <Guideline {...guideline} />
   {/each}

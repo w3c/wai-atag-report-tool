@@ -12,7 +12,20 @@
 </Header>
 <p>Thanks for using this tool. Your evaluation is displayed in full below.</p>
 <p><a href={jsonDownload} class="button button-secondary" download="evaluation.json">Download evaluation (JSON)</a></p>
-
+<dl>
+  {#if $evaluation["evaluationMeta"]["name"]["value"]}
+  <dt>Name</dt>
+  <dd>{$evaluation["evaluationMeta"]["name"]["value"]}</dd>
+  {/if}
+  {#if $evaluation["evaluationMeta"]["evaluatorName"]["value"]}
+  <dt>Evaluator</dt>
+  <dd>{$evaluation["evaluationMeta"]["evaluatorName"]["value"]}</dd>
+  {/if}
+  {#if $evaluation["evaluationMeta"]["evaluatorOrg"]["value"]}
+  <dt>Organisation</dt>
+  <dd>{$evaluation["evaluationMeta"]["evaluatorOrg"]["value"]}</dd>
+  {/if}
+</dl>
 <table>
 	<thead>
 		<tr>
