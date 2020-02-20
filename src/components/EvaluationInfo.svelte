@@ -36,7 +36,7 @@
    <button class="button" on:click={startNew}>New evaluation</button> 
    <button class="button button-secondary" disabled>Import</button>
   {:else if !$evaluation["evaluationMeta"]["name"]["value"]}
-  <h2>New evaluation</h2>
+  <h2>Your evaluation</h2>
   <p>Set up information about your evaluation.</p>
   {:else}
     <h2>

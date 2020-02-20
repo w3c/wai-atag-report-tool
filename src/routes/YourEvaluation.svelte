@@ -10,7 +10,7 @@
   <HeaderSub>
     ATAG Report Tool
   </HeaderSub>
-  Your evaluation
+  Your Evaluation
 </Header>
 
 <p>On this page, you can set up your evaluation.</p>
