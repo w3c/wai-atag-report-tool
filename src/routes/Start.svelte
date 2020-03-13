@@ -18,7 +18,7 @@ This tool guides you through the individual requirements of the <a href="https:/
 <p><small>Note: this evaluation happens on your computer, no data is sent to us. To save the results on your computer, use <kbd>Ctrl</kbd>/<kbd>⌘ (Command)</kbd> + <kdb>S</kdb>.</small></p>
 
 <details>
-	<summary><h2>What to expect</h2></summary>
+	<summary><h2>Structure of this tool</h2></summary>
 	<p>Following the structure of ATAG, this tool takes you through eight <strong>Principles</strong>. Each principle has a number of <strong>Guidelines</strong>, which are further divided into <strong>Success Criteria</strong>. For each, you can select a result and note down any observations. Results include "Not checked", "Passed", "Failed", "Not applicable", and "Cannot tell".</p>
 	<p>Part A (Principles A.1 to A.4) is related to the <strong>editing experience</strong> with the authoring tool. It helps ensure that content can be created by people with disabilities.</p>
 	<p>Part B (Principles B.1 to B.4) is about the <strong>output</strong> of the authoring tool. It helps ensure that content editors can create accessible content, and are encouraged to do so.</p>
@@ -26,7 +26,7 @@ This tool guides you through the individual requirements of the <a href="https:/
 
 <details>
 	<summary><h2>Legend of results</h2></summary>
-	<p>This is what the possible results mean:</p>
+	<p>As you go through and evaluate your tool, you will select a "result" for each criterion. Here is the legend of what those selections mean:</p>
 	<dl>
 		<dt>Not checked</dt>
 		<dd>You did not check this success criterion</dd>
@@ -44,7 +44,7 @@ This tool guides you through the individual requirements of the <a href="https:/
 <details>
 	<summary><h2>Tips for using this tool</h2></summary>
 	<ul>
-		<li>Remember to always save the information that you enter because it is not stored in the server.</li>
+		<li>Remember to always save the information that you enter because it is not stored on a server.</li>
 		<li>More information on each ATAG Success Criterion is in <a href="https://www.w3.org/TR/IMPLEMENTING-ATAG20/" target="_blank">Implementing ATAG 2.0</a>. Links in this tool lead you to the relevant sections of the “Implementing” document.</li>
 		<li>You can go back and forth between the steps in any order. None of the fields are required.</li>
 		<li>The tool provides your report as HTML (web page) and as JSON (structured data).</li>
