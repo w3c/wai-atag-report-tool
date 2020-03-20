@@ -4,14 +4,14 @@
   let someCollapsed, someExpanded;
 
   let expandAll = function() {
-    document.querySelectorAll('details').forEach(excol => {
+    Array.from(document.querySelectorAll('details')).forEach(excol => {
       excol.setAttribute('open', '');
     });
     setButtonStatus();
   }
 
   let collapseAll = function() {
-    document.querySelectorAll('details').forEach(excol => {
+    Array.from(document.querySelectorAll('details')).forEach(excol => {
       excol.removeAttribute('open', '');
     });
     setButtonStatus();
