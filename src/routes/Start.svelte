@@ -18,7 +18,7 @@ This tool guides you through the individual requirements of the <a href="https:/
 
 <p><small>Note: this evaluation happens on your computer, no data is sent to us. To save the results on your computer, use <kbd>Ctrl</kbd>/<kbd>⌘ (Command)</kbd> + <kdb>S</kdb>.</small></p>
 
-<ExpandCollapseAll></ExpandCollapseAll>
+<ExpandCollapseAll />
 
 <details>
 	<summary><h2>Structure of this tool</h2></summary>
