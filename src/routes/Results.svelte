@@ -1,9 +1,15 @@
 <script>
+  import marked from 'marked';
   import { evaluation } from '../stores/evaluation.js';
   import Header from '../components/Header.svelte';
   import HeaderSub from '../components/HeaderSub.svelte';
 
-  $: jsonDownload = `data:text/json;charset=utf-8,${encodeURIComponent(JSON.stringify(Object.values($evaluation)))}`;
+  function createDownload(evaluation) {
+    let blob = new Blob([JSON.stringify(evaluation)]);
+    return url
+  }
+
+  $: jsonDownload = `data:application/json;charset=utf-8,${encodeURIComponent(JSON.stringify(Object.values($evaluation)))}`;
 </script>
 
 <Header>
@@ -11,7 +17,7 @@
   Results
 </Header>
 <p>Thanks for using this tool. Your evaluation is displayed in full below.</p>
-<p><a href={jsonDownload} class="button button-secondary" download="evaluation.json">Download evaluation (JSON)</a></p>
+<p><a href={jsonDownload} class="button button-secondary">Download evaluation (JSON)</a></p>
 <dl>
   {#if $evaluation["evaluationMeta"]["name"]["value"]}
   <dt>Name</dt>
@@ -37,9 +43,15 @@
 	<tbody>
 	{#each Object.values($evaluation) as result}
 	<tr>
-		<td>{result.num}: {result.handle}</td>
-		<td>{result.result ? result.result : 'No result'}</td>
-		<td>{result.observations ? result.observations : 'No observations'}</td>
+		<td id={`criterion-${result.num}`}>{result.num}: {result.handle}</td>
+		<td id={`result-${result.num}`}>{result.result ? result.result : 'No result'}</td>
+		<td id={`observation-${result.num}`}>
+      {#if result.observations}
+        {@html marked(result.observations)}
+      {:else}
+        No observations
+      {/if}
+    </td>
 	</tr>
 	{/each}
 	</tbody>

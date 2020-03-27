@@ -1,4 +1,5 @@
 <script>
+  import { Link } from "svelte-routing";
   import { evaluation } from '../stores/evaluation.js';
   import MoreInfo from './MoreInfo.svelte';
   import SuccessCriterionDetails from './SuccessCriterionDetails.svelte';
@@ -26,13 +27,10 @@
   $: list = details ? details.filter(detail => detail.type === 'olist' || detail.type === 'ulist') : null;
 </script>
 
-<div {id}>
+<div {id} class="criterion">
   <h4>
     {handle}
     <a href={linkToImplementing} class="criterion__ref" target="_blank">Implementing {num}</a>
-    <!-- <MoreInfo label="Info about {num}">
-      <p>Provide plain text alternatives when using icons, images and other non-text content. For instance, if you have a button that is just an icon, make sure there is a label associated.</p>
-    </MoreInfo>-->
   </h4>
   <p>{text}</p>
   {#if list}<SuccessCriterionDetails type="list" details={list} />{/if}
@@ -49,16 +47,41 @@
         {/each}
       </select>
     </div>
-    <div>
-      <label for={`comment-${id}`}>Observations for {num}</label>
-      <textarea name={`comment-${id}`} bind:value={$evaluation[id]['observations']} id={`comment-${id}`} cols="20" on:change={() => { evaluation.updateCache($evaluation); $evaluation[id]['evaluated'] = true; }}></textarea>
+    <div class="observation">
+      <div class="observation__header">
+        <label for={`comment-${id}`}>Observations for {num}</label>
+        <span class="observation__meta">Markdown supported (<a href="https://daringfireball.net/projects/markdown/basics" target="_blank" rel="noopener">syntax</a>, <Link to={`/results#observation-${num}`}>preview<span class="visuallyhidden"> for {num}</span></Link>) </span>
+       </div>
+      <textarea name={`comment-${id}`} bind:value={$evaluation[id]['observations']} id={`comment-${id}`} cols="20" rows="5" on:change={() => { evaluation.updateCache($evaluation); $evaluation[id]['evaluated'] = true; }}></textarea>
     </div>
   </div>
 </div>
 
 <style>
+.observation {
+  margin-top: 1em;
+}
+@media (min-width: 35em) {
+  .observation {
+    margin-top: 0;
+  }
+}
+.observation__header {
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 35em) {
+  .observation__header {
+    flex-direction: row;
+  }
+}
+  .observation__meta {
+    margin-left: auto;
+    font-size: smaller;
+    align-self: baseline;
+  }
 .criterion {
-  margin-bottom: 1em;
+  margin-bottom: 4em;
   background-color: var(--pure-white);
   border: 1px solid var(--line-grey);
   box-shadow: 1px 1px 4px -4px
@@ -75,6 +98,7 @@
     display: flex;
     align-items: start;
     justify-content: stretch;
+    flex-direction: column;
   }
     .criterion__answers label {
       font-size: 90%;
@@ -90,11 +114,17 @@
       flex: 1;
     }
     .criterion__answers div:last-child {
-      flex: 2;
+      flex: 3;
     }
     .criterion__answers textarea {
       width: 100%;
+      font-family: "Noto Sans Mono", monospace;
     }
+  @media (min-width: 35em) {
+    .criterion__answers {
+      flex-direction: row;
+    }
+  }
 .criterion__ref {
   padding: .25em 1em;
   border-radius: 1em;
