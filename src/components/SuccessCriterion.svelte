@@ -58,8 +58,22 @@
 </div>
 
 <style>
+.observation {
+  margin-top: 1em;
+}
+@media (min-width: 35em) {
+  .observation {
+    margin-top: 0;
+  }
+}
 .observation__header {
   display: flex;
+  flex-direction: column;
+}
+@media (min-width: 35em) {
+  .observation__header {
+    flex-direction: row;
+  }
 }
   .observation__meta {
     margin-left: auto;
@@ -84,6 +98,7 @@
     display: flex;
     align-items: start;
     justify-content: stretch;
+    flex-direction: column;
   }
     .criterion__answers label {
       font-size: 90%;
@@ -105,6 +120,11 @@
       width: 100%;
       font-family: "Noto Sans Mono", monospace;
     }
+  @media (min-width: 35em) {
+    .criterion__answers {
+      flex-direction: row;
+    }
+  }
 .criterion__ref {
   padding: .25em 1em;
   border-radius: 1em;
