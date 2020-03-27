@@ -45,11 +45,13 @@
 	<tr>
 		<td id={`result-${result.num}`}>{result.num}: {result.handle}</td>
 		<td>{result.result ? result.result : 'No result'}</td>
-		<td>{#if result.observations}
-    {@html marked(result.observations)}
-    {:else}
-    No observations
-  {/if}</td>
+		<td>
+      {#if result.observations}
+        {@html marked(result.observations)}
+      {:else}
+        No observations
+      {/if}
+    </td>
 	</tr>
 	{/each}
 	</tbody>
