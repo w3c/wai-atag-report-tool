@@ -1,4 +1,5 @@
 <script>
+  import marked from 'marked';
   import { evaluation } from '../stores/evaluation.js';
   import Header from '../components/Header.svelte';
   import HeaderSub from '../components/HeaderSub.svelte';
@@ -39,7 +40,11 @@
 	<tr>
 		<td>{result.num}: {result.handle}</td>
 		<td>{result.result ? result.result : 'No result'}</td>
-		<td>{result.observations ? result.observations : 'No observations'}</td>
+		<td>{#if result.observations}
+    {@html marked(result.observations)}
+    {:else}
+    No observations
+  {/if}</td>
 	</tr>
 	{/each}
 	</tbody>

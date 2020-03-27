@@ -1,4 +1,6 @@
 <script>
+  import marked from 'marked';
+  import { Tabs, Tab, TabList, TabPanel } from 'svelte-tabs';
   import { evaluation } from '../stores/evaluation.js';
   import MoreInfo from './MoreInfo.svelte';
   import SuccessCriterionDetails from './SuccessCriterionDetails.svelte';
@@ -50,8 +52,23 @@
       </select>
     </div>
     <div>
-      <label for={`comment-${id}`}>Observations for {num}</label>
-      <textarea name={`comment-${id}`} bind:value={$evaluation[id]['observations']} id={`comment-${id}`} cols="20" on:change={() => { evaluation.updateCache($evaluation); $evaluation[id]['evaluated'] = true; }}></textarea>
+      <label for={`comment-${id}`} style="display:flex;">Observations for {num} <small style="font-weight: normal; font-size: 0.8em; margin-left: auto;">Markdown supported</small></label>
+      <Tabs>
+        <TabList>
+          <Tab>Observation</Tab>
+          <Tab>Preview</Tab>
+        </TabList>
+        <TabPanel>
+          <textarea name={`comment-${id}`} bind:value={$evaluation[id]['observations']} id={`comment-${id}`} cols="20" on:change={() => { evaluation.updateCache($evaluation); $evaluation[id]['evaluated'] = true; }}></textarea>
+        </TabPanel>
+        <TabPanel>
+          {#if $evaluation[id]['observations'] }
+          <p>{@html marked($evaluation[id]['observations']) }</p>
+          {:else}
+          Nothing to preview
+          {/if}
+        </TabPanel>
+      </Tabs>
     </div>
   </div>
 </div>
@@ -90,7 +107,7 @@
       flex: 1;
     }
     .criterion__answers div:last-child {
-      flex: 2;
+      flex: 3;
     }
     .criterion__answers textarea {
       width: 100%;
@@ -108,5 +125,16 @@
 .criterion__ref:hover {
   background-color: transparent;
   border-color: var(--ocean);
+}
+
+:global(.svelte-tabs .svelte-tabs__tab) {
+  padding: 0;
+}
+:global(.svelte-tabs .svelte-tabs__selected) {
+  color: var(--ocean);
+  font-weight: bold;
+}
+:global(.svelte-tabs .svelte-tabs__tab-list) {
+  border-bottom: 0;
 }
 </style>
