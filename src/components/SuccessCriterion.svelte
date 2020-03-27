@@ -50,7 +50,7 @@
     <div class="observation">
       <div class="observation__header">
         <label for={`comment-${id}`}>Observations for {num}</label>
-        <span class="observation__meta">Markdown supported (<a href="https://daringfireball.net/projects/markdown/basics">syntax</a>, <Link to={`/results#result-${num}`}>preview<span class="visuallyhidden"> for {num}</span></Link>) </span>
+        <span class="observation__meta">Markdown supported (<a href="https://daringfireball.net/projects/markdown/basics" target="_blank" rel="noopener">syntax</a>, <Link to={`/results#result-${num}`}>preview<span class="visuallyhidden"> for {num}</span></Link>) </span>
        </div>
       <textarea name={`comment-${id}`} bind:value={$evaluation[id]['observations']} id={`comment-${id}`} cols="20" rows="5" on:change={() => { evaluation.updateCache($evaluation); $evaluation[id]['evaluated'] = true; }}></textarea>
     </div>
