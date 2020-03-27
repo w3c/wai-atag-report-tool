@@ -43,9 +43,9 @@
 	<tbody>
 	{#each Object.values($evaluation) as result}
 	<tr>
-		<td id={`result-${result.num}`}>{result.num}: {result.handle}</td>
-		<td>{result.result ? result.result : 'No result'}</td>
-		<td>
+		<td id={`criterion-${result.num}`}>{result.num}: {result.handle}</td>
+		<td id={`result-${result.num}`}>{result.result ? result.result : 'No result'}</td>
+		<td id={`observation-${result.num}`}>
       {#if result.observations}
         {@html marked(result.observations)}
       {:else}
