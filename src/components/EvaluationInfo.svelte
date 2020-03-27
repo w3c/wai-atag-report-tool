@@ -32,9 +32,7 @@
 <aside>
   {#if fresh && !startedNew}
    <h2>Your evaluation</h2>
-   <p>No existing evaluation found.  <MoreInfo label="On import functionality">
-      <p><small>Editor's note: import functionality is not yet built, it is planned for the next iteration. This is why the button below is disabled.</small></p>
-    </MoreInfo></p>
+   <p>No existing evaluation found.</p>
    <button class="button" on:click={startNew}>New evaluation</button> 
    <button class="button button-secondary" disabled>Import</button>
   {:else if !$evaluation["evaluationMeta"]["name"]["value"]}
@@ -44,9 +42,7 @@
     <h2>
       <small>Evaluating </small>{$evaluation["evaluationMeta"]["name"]["value"]}
     </h2>
-    <p>Evaluated <strong>{evaluatedItems.length}</strong> out of <strong>{Object.values($evaluation).length}</strong> success criteria. <MoreInfo label="More info">
-      <p><small>Editor's note: we could also display a pie or bar chart visualisation of progress.</small></p>
-    </MoreInfo></p>
+    <p>Evaluated <strong>{evaluatedItems.length}</strong> out of <strong>{Object.values($evaluation).length}</strong> success criteria.</p>
     <button class="button" on:click={toOverview}>Save / Overview</button>
     <button class="button button-secondary" on:click={clear}>Clear</button>
   {/if}
