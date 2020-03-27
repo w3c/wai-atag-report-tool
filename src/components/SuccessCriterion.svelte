@@ -1,6 +1,5 @@
 <script>
-  import marked from 'marked';
-  import { Tabs, Tab, TabList, TabPanel } from 'svelte-tabs';
+  import { Link } from "svelte-routing";
   import { evaluation } from '../stores/evaluation.js';
   import MoreInfo from './MoreInfo.svelte';
   import SuccessCriterionDetails from './SuccessCriterionDetails.svelte';
@@ -28,7 +27,7 @@
   $: list = details ? details.filter(detail => detail.type === 'olist' || detail.type === 'ulist') : null;
 </script>
 
-<div {id}>
+<div {id} class="criterion">
   <h4>
     {handle}
     <a href={linkToImplementing} class="criterion__ref" target="_blank">Implementing {num}</a>
@@ -51,31 +50,27 @@
         {/each}
       </select>
     </div>
-    <div>
-      <label for={`comment-${id}`} style="display:flex;">Observations for {num} <small style="font-weight: normal; font-size: 0.8em; margin-left: auto;">Markdown supported</small></label>
-      <Tabs>
-        <TabList>
-          <Tab>Observation</Tab>
-          <Tab>Preview</Tab>
-        </TabList>
-        <TabPanel>
-          <textarea name={`comment-${id}`} bind:value={$evaluation[id]['observations']} id={`comment-${id}`} cols="20" on:change={() => { evaluation.updateCache($evaluation); $evaluation[id]['evaluated'] = true; }}></textarea>
-        </TabPanel>
-        <TabPanel>
-          {#if $evaluation[id]['observations'] }
-          <p>{@html marked($evaluation[id]['observations']) }</p>
-          {:else}
-          Nothing to preview
-          {/if}
-        </TabPanel>
-      </Tabs>
+    <div class="observation">
+      <div class="observation__header">
+        <label for={`comment-${id}`}>Observations for {num}</label>
+        <span class="observation__meta">Markdown supported (<a href="https://daringfireball.net/projects/markdown/basics">syntax</a>, <Link to={`/results#result-${num}`}>preview<span class="visuallyhidden"> for {num}</span></Link>) </span>
+       </div>
+      <textarea name={`comment-${id}`} bind:value={$evaluation[id]['observations']} id={`comment-${id}`} cols="20" rows="5" on:change={() => { evaluation.updateCache($evaluation); $evaluation[id]['evaluated'] = true; }}></textarea>
     </div>
   </div>
 </div>
 
 <style>
+.observation__header {
+  display: flex;
+}
+  .observation__meta {
+    margin-left: auto;
+    font-size: smaller;
+    align-self: baseline;
+  }
 .criterion {
-  margin-bottom: 1em;
+  margin-bottom: 4em;
   background-color: var(--pure-white);
   border: 1px solid var(--line-grey);
   box-shadow: 1px 1px 4px -4px
@@ -111,6 +106,7 @@
     }
     .criterion__answers textarea {
       width: 100%;
+      font-family: "Noto Sans Mono", monospace;
     }
 .criterion__ref {
   padding: .25em 1em;
@@ -125,16 +121,5 @@
 .criterion__ref:hover {
   background-color: transparent;
   border-color: var(--ocean);
-}
-
-:global(.svelte-tabs .svelte-tabs__tab) {
-  padding: 0;
-}
-:global(.svelte-tabs .svelte-tabs__selected) {
-  color: var(--ocean);
-  font-weight: bold;
-}
-:global(.svelte-tabs .svelte-tabs__tab-list) {
-  border-bottom: 0;
 }
 </style>
