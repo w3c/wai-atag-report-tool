@@ -71,4 +71,7 @@
   h2 small {
     display: block;font-weight: normal;color: var(--dk-blue);
   }
+  .button + .button {
+    margin-top: .25em;
+  }
 </style>
