@@ -9,7 +9,7 @@
     return url
   }
 
-  $: jsonDownload = `data:application/json;charset=utf-8,${encodeURIComponent(JSON.stringify(Object.values($evaluation)))}`;
+  $: jsonDownload = `data:application/json;charset=utf-8,${encodeURIComponent(JSON.stringify($evaluation))}`;
 </script>
 
 <Header>
@@ -19,17 +19,17 @@
 <p>Thanks for using this tool. Your evaluation is displayed in full below.</p>
 <p><a href={jsonDownload} class="button button-secondary">Download evaluation (JSON)</a></p>
 <dl>
-  {#if $evaluation["evaluationMeta"]["name"]["value"]}
+  {#if $evaluation["meta"]["name"]["value"]}
   <dt>Name</dt>
-  <dd>{$evaluation["evaluationMeta"]["name"]["value"]}</dd>
+  <dd>{$evaluation["meta"]["name"]["value"]}</dd>
   {/if}
-  {#if $evaluation["evaluationMeta"]["evaluatorName"]["value"]}
+  {#if $evaluation["meta"]["evaluatorName"]["value"]}
   <dt>Evaluator</dt>
-  <dd>{$evaluation["evaluationMeta"]["evaluatorName"]["value"]}</dd>
+  <dd>{$evaluation["meta"]["evaluatorName"]["value"]}</dd>
   {/if}
-  {#if $evaluation["evaluationMeta"]["evaluatorOrg"]["value"]}
+  {#if $evaluation["meta"]["evaluatorOrg"]["value"]}
   <dt>Organisation</dt>
-  <dd>{$evaluation["evaluationMeta"]["evaluatorOrg"]["value"]}</dd>
+  <dd>{$evaluation["meta"]["evaluatorOrg"]["value"]}</dd>
   {/if}
 </dl>
 <table>
@@ -41,7 +41,7 @@
 		</tr>
 	</thead>
 	<tbody>
-	{#each Object.values($evaluation) as result}
+	{#each Object.values($evaluation.evaluationData) as result}
 	<tr>
 		<td id={`criterion-${result.num}`}>{result.num}: {result.handle}</td>
 		<td id={`result-${result.num}`}>{result.result ? result.result : 'No result'}</td>
