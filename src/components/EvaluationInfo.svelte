@@ -35,8 +35,6 @@
       reader.onload = function(event) {
         var converted = JSON.parse(event.target.result);
 
-        console.log(converted);
-
         // simplistic check
         if (converted.evaluationData) {
           evaluation.update(evaluation => converted);
@@ -53,8 +51,6 @@
 
       reader.readAsText(file);
     }
-
-    console.log(files);
   }
 
   evaluation.subscribe(value => {
