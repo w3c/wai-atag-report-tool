@@ -6,12 +6,8 @@ let fresh = true;
 
 export function updateCache(evaluation) {
   try {
-    const serialisedEvaluation = JSON.stringify(Object.values(evaluation));
-    const serialisedMeta = JSON.stringify(
-      Object.values(evaluation.evaluationMeta)
-    );
+    const serialisedEvaluation = JSON.stringify(evaluation);
     localStorage.setItem(storageName, serialisedEvaluation);
-    localStorage.setItem(`${storageName}-meta`, serialisedMeta);
 
     fresh = false;
   } catch (error) {
@@ -32,39 +28,25 @@ export function getEvaluation() {
   ) {
     try {
       const serialisedEvaluation = localStorage.getItem(storageName);
-      const serialisedEvaluationMeta = localStorage.getItem(
-        `${storageName}-meta`
-      );
-      const evaluationValues = JSON.parse(serialisedEvaluation);
-      const evaluationMetaValues = JSON.parse(serialisedEvaluationMeta);
-      let existingEvaluation = [];
-
-      // We only saved the values; create  an object with keys
-      for (const item in Object.values(evaluationValues)) {
-        existingEvaluation[evaluationValues[item].id] = evaluationValues[item];
-      }
-
-      existingEvaluation.evaluationMeta = {};
-
-      for (const item in Object.values(evaluationMetaValues)) {
-        existingEvaluation["evaluationMeta"][evaluationMetaValues[item].id] =
-          evaluationMetaValues[item];
-      }
+      const evaluationObject = JSON.parse(serialisedEvaluation);
 
       fresh = false;
 
-      return existingEvaluation;
+      return evaluationObject;
     } catch (error) {
       // something didn't work
     }
   } else {
     // Use clean evaluation
-    const cleanEvaluation = {};
+    const cleanEvaluation = {
+      evaluationData: {},
+      meta: {},
+    };
 
     for (const principle of atag) {
       for (const guideline of principle.guidelines) {
         for (const successcriterion of guideline.successcriteria) {
-          cleanEvaluation[successcriterion.id] = {
+          cleanEvaluation["evaluationData"][successcriterion.id] = {
             id: successcriterion.id,
             num: successcriterion.num,
             handle: successcriterion.handle,
@@ -76,7 +58,7 @@ export function getEvaluation() {
       }
     }
 
-    cleanEvaluation.evaluationMeta = {
+    cleanEvaluation.meta = {
       name: {
         id: "name",
         value: null,

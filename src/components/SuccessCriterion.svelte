@@ -39,7 +39,7 @@
   <div class="criterion__answers">
     <div>
       <label for={`result-${id}`}>Result for {num}</label>
-      <select id={`result-${id}`} name={id} bind:value={$evaluation[id]['result']} on:change={() => { evaluation.updateCache($evaluation); $evaluation[id]['evaluated'] = true}}>
+      <select id={`result-${id}`} name={id} bind:value={$evaluation['evaluationData'][id]['result']} on:change={() => { evaluation.updateCache($evaluation); $evaluation['evaluationData'][id]['evaluated'] = true}}>
         {#each results as result}
           <option name=({id}-{result.id}) value={result.text}>
             {result.text}
@@ -52,7 +52,7 @@
         <label for={`comment-${id}`}>Observations for {num}</label>
         <span class="observation__meta">Markdown supported (<a href="https://daringfireball.net/projects/markdown/basics" target="_blank" rel="noopener">syntax</a>, <Link to={`/results#observation-${num}`}>preview<span class="visuallyhidden"> for {num}</span></Link>) </span>
        </div>
-      <textarea name={`comment-${id}`} bind:value={$evaluation[id]['observations']} id={`comment-${id}`} cols="20" rows="5" on:change={() => { evaluation.updateCache($evaluation); $evaluation[id]['evaluated'] = true; }}></textarea>
+      <textarea name={`comment-${id}`} bind:value={$evaluation['evaluationData'][id]['observations']} id={`comment-${id}`} cols="20" rows="5" on:change={() => { evaluation.updateCache($evaluation); $evaluation['evaluationData'][id]['evaluated'] = true; }}></textarea>
     </div>
   </div>
 </div>

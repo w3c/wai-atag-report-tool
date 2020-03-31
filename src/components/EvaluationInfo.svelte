@@ -22,27 +22,62 @@
     }
   }
 
+  function importEvaluation(event) {
+    var files = event.target.files;
+
+    for (var i = 0, file; file = files[i]; i++) {
+      if (!file.type.match('application/json')) {
+        return
+      }
+
+      var reader = new FileReader();
+
+      reader.onload = function(event) {
+        try {
+          var converted = JSON.parse(event.target.result);
+
+          if (converted.evaluationData) {
+            evaluation.update(evaluation => converted);
+
+            if (converted.meta.name.value) {
+              alert(`Evaluation “${converted.meta.name.value}” loaded`);
+            } else {
+              alert('Evalution loaded');
+            }
+            startedNew = true;
+          }
+        }
+        catch {
+          alert('No data found or invalid import');
+        }
+      }
+
+      reader.readAsText(file);
+    }
+  }
+
   evaluation.subscribe(value => {
     fresh = evaluation.isFresh();
   });
 
-  $: evaluatedItems = $evaluation ? Object.values($evaluation).filter(item => item.evaluated === true) : [];
+  $: evaluatedItems = $evaluation ? Object.values($evaluation.evaluationData).filter(item => item.evaluated === true) : [];
 </script>
 
 <aside>
   {#if fresh && !startedNew}
    <h2>Your evaluation</h2>
    <p>No existing evaluation found.</p>
-   <button class="button" on:click={startNew}>New evaluation</button> 
-   <button class="button button-secondary" disabled>Import</button>
-  {:else if !$evaluation["evaluationMeta"]["name"]["value"]}
+   <button class="button" on:click={startNew}>New evaluation</button>
+   <input type="file" id="import-evaluation" on:change={importEvaluation} class="visuallyhidden" accept="application/json"/>
+   <label for="import-evaluation" class="button button-secondary">Import</label>
+  {:else if !$evaluation["meta"]["name"]["value"]}
   <h2>Your evaluation</h2>
   <p>Set up information about your evaluation.</p>
   {:else}
     <h2>
-      <small>Evaluating </small>{$evaluation["evaluationMeta"]["name"]["value"]}
+      <small>Evaluating </small>{$evaluation["meta"]["name"]["value"]}
     </h2>
-    <p>Evaluated <strong>{evaluatedItems.length}</strong> out of <strong>{Object.values($evaluation).length}</strong> success criteria.</p>
+    <p>Evaluated <strong>{evaluatedItems.length}</strong> out of <strong>{Object.values($evaluation.evaluationData).length}</strong> success criteria.</p>
     <button class="button" on:click={toOverview}>Save / Overview</button>
     <button class="button button-secondary" on:click={clear}>Clear</button>
   {/if}
@@ -70,4 +105,11 @@
   .button + .button {
     margin-top: .25em;
   }
-</style>
+  input[type="file"]:focus + label {
+    outline-offset: 2px;
+    outline: 2px solid transparent;
+    transition: outline-offset .2s linear;
+    border-color: var(--w3c-blue);
+    outline-color: var(--w3c-blue);
+  }
+ </style>

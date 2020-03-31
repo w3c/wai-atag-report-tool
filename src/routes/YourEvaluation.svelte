@@ -19,17 +19,17 @@
 
 <div class="field">
   <label for="evaluation-meta-name">Name of authoring tool</label>
-  <input type="text" bind:value={$evaluation["evaluationMeta"]["name"]["value"]} id="evaluation-meta-name"on:change={() =>  evaluation.updateCache($evaluation)} />
+  <input type="text" bind:value={$evaluation["meta"]["name"]["value"]} id="evaluation-meta-name"on:change={() =>  evaluation.updateCache($evaluation)} />
 </div>
 
 <div class="field">
   <label for="evaluation-meta-name">Your name</label>
-  <input type="text" bind:value={$evaluation["evaluationMeta"]["evaluatorName"]["value"]} id="evaluation-meta-name"on:change={() =>  evaluation.updateCache($evaluation)} />
+  <input type="text" bind:value={$evaluation["meta"]["evaluatorName"]["value"]} id="evaluation-meta-name"on:change={() =>  evaluation.updateCache($evaluation)} />
 </div>
 
 <div class="field">
   <label for="evaluation-meta-name">Your organisation</label>
-  <input type="text" bind:value={$evaluation["evaluationMeta"]["evaluatorOrg"]["value"]} id="evaluation-meta-name"on:change={() =>  evaluation.updateCache($evaluation)} />
+  <input type="text" bind:value={$evaluation["meta"]["evaluatorOrg"]["value"]} id="evaluation-meta-name"on:change={() =>  evaluation.updateCache($evaluation)} />
 </div>
 
 <Pager label="Previous/Next Step">
