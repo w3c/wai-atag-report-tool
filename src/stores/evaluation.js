@@ -63,6 +63,10 @@ export function getEvaluation() {
         id: "name",
         value: null,
       },
+      website: {
+        id: "website",
+        value: null,
+      },
       evaluatorName: {
         id: "evaluatorName",
         value: null,

@@ -23,6 +23,14 @@
 </div>
 
 <div class="field">
+  <label for="evaluation-meta-website">Website</label>
+  <input type="url" placeholder="https://" bind:value={$evaluation["meta"]["website"]["value"]} id="evaluation-meta-website" on:change={() =>  evaluation.updateCache($evaluation)} />
+</div>
+
+
+<h2>About you</h2>
+
+<div class="field">
   <label for="evaluation-meta-name">Your name</label>
   <input type="text" bind:value={$evaluation["meta"]["evaluatorName"]["value"]} id="evaluation-meta-name"on:change={() =>  evaluation.updateCache($evaluation)} />
 </div>
