@@ -23,6 +23,10 @@
   <dt>Name</dt>
   <dd>{$evaluation["meta"]["name"]["value"]}</dd>
   {/if}
+  {#if $evaluation["meta"]["website"]["value"]}
+  <dt>Website</dt>
+  <dd>{$evaluation["meta"]["website"]["value"]}</dd>
+  {/if}
   {#if $evaluation["meta"]["evaluatorName"]["value"]}
   <dt>Evaluator</dt>
   <dd>{$evaluation["meta"]["evaluatorName"]["value"]}</dd>
