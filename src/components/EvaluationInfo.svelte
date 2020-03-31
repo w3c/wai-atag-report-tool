@@ -23,7 +23,7 @@
   }
 
   function importEvaluation(event) {
-    let files = event.target.files;
+    var files = event.target.files;
 
     for (var i = 0, file; file = files[i]; i++) {
       if (!file.type.match('application/json')) {
@@ -33,19 +33,22 @@
       var reader = new FileReader();
 
       reader.onload = function(event) {
-        var converted = JSON.parse(event.target.result);
+        try {
+          var converted = JSON.parse(event.target.result);
 
-        // simplistic check
-        if (converted.evaluationData) {
-          evaluation.update(evaluation => converted);
-          if (converted.meta.name.value) {
-            alert(`Evaluation “${converted.meta.name.value}” loaded`);
-          } else {
-            alert('Evalution loaded');
+          if (converted.evaluationData) {
+            evaluation.update(evaluation => converted);
+
+            if (converted.meta.name.value) {
+              alert(`Evaluation “${converted.meta.name.value}” loaded`);
+            } else {
+              alert('Evalution loaded');
+            }
+            startedNew = true;
           }
-          startedNew = true;
-        } else {
-          alert('No data found / invalid import');
+        }
+        catch {
+          alert('No data found or invalid import');
         }
       }
 
