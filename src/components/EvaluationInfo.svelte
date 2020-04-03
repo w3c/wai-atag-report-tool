@@ -60,7 +60,7 @@
     fresh = evaluation.isFresh();
   });
 
-  $: evaluatedItems = $evaluation ? Object.values($evaluation.evaluationData).filter(item => item.evaluated === true) : [];
+  $: evaluatedItems = $evaluation && $evaluation.evaluationData && $evaluation.evaluationData.length > 0  ? Object.values($evaluation.evaluationData).filter(item => item.evaluated === true) : [];
 </script>
 
 <aside>
@@ -70,7 +70,7 @@
    <button class="button" on:click={startNew}>New evaluation</button>
    <input type="file" id="import-evaluation" on:change={importEvaluation} class="visuallyhidden" accept="application/json"/>
    <label for="import-evaluation" class="button button-secondary">Import</label>
-  {:else if !$evaluation["meta"]["name"]["value"]}
+  {:else if !($evaluation["meta"] && $evaluation["meta"]["name"] && $evaluation["meta"]["name"]["value"])}
   <h2>Your evaluation</h2>
   <p>Set up information about your evaluation.</p>
   {:else}
