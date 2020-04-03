@@ -102,7 +102,8 @@
   h2 small {
     display: block;font-weight: normal;color: var(--dk-blue);
   }
-  .button + .button {
+  .button + .button,
+  .button + input + .button /* the file upload button */ {
     margin-top: .25em;
   }
   input[type="file"]:focus + label {
