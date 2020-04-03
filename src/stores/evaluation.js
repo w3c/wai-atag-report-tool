@@ -1,5 +1,6 @@
 import atag from "../data/atag.js";
 import { writable } from "svelte/store";
+import packageJson from "../../package.json";
 
 const storageName = "atag_report_tool_evaluation";
 let fresh = true;
@@ -74,6 +75,10 @@ export function getEvaluation() {
       evaluatorOrg: {
         id: "evaluatorOrg",
         value: null,
+      },
+      createdWith: {
+        id: "createdWith",
+        value: packageJson.version,
       },
     };
 

@@ -35,6 +35,10 @@
   <dt>Organisation</dt>
   <dd>{$evaluation["meta"]["evaluatorOrg"]["value"]}</dd>
   {/if}
+  {#if $evaluation["meta"]["createdWith"]["value"]}
+  <dt>Created with ATAG Report Tool version</dt>
+  <dd>{$evaluation["meta"]["createdWith"]["value"]}</dd>
+  {/if}
 </dl>
 <table>
 	<thead>
