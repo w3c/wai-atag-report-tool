@@ -28,10 +28,10 @@
 </script>
 
 <div {id} class="criterion">
-  <h4>
+  <h3>
     {handle}
     <a href={linkToImplementing} class="criterion__ref" target="_blank">Implementing {num}</a>
-  </h4>
+  </h3>
   <p>{text}</p>
   {#if list}<SuccessCriterionDetails type="list" details={list} />{/if}
   <p><em>{level}</em></p>
@@ -88,8 +88,9 @@
     #000;
   padding: 1em;
 }
-.criterion h4 {
+.criterion h3 {
   margin-top: 0;
+  font-weight: normal;
 }
 .criterion ol li {
   list-style: lower-alpha;

@@ -8,7 +8,7 @@
 </script>
 
 <div {id} class="guideline">
-  <h3>{num}: {handle}</h3>
+  <h2>{num}: {handle}</h2>
   <p>{text}</p>
   {#each successcriteria as sc}
     <SuccessCriterion {...sc} />
@@ -18,5 +18,8 @@
 <style>
 .guideline {
   margin-bottom: 2em;
+}
+.guideline h2 {
+  font-size: 1.125em;
 }
 </style>
