@@ -1,6 +1,7 @@
 <script>
   import { navigate } from 'svelte-routing';
   import { evaluation } from '../stores/evaluation.js';
+  import { importEvaluation } from '../utils/importEvaluation.js';
   import MoreInfo from './MoreInfo.svelte';
 
   let fresh = evaluation.isFresh();
@@ -19,40 +20,6 @@
     if (window.confirm("This will clear the current evaluation and start a new one. Are you sure that's what you'd like to do?")) {
       evaluation.clearCache();
       navigate('/', { replace: true });    
-    }
-  }
-
-  function importEvaluation(event) {
-    var files = event.target.files;
-
-    for (var i = 0, file; file = files[i]; i++) {
-      if (!file.type.match('application/json')) {
-        return
-      }
-
-      var reader = new FileReader();
-
-      reader.onload = function(event) {
-        try {
-          var converted = JSON.parse(event.target.result);
-
-          if (converted.evaluationData) {
-            evaluation.update(evaluation => converted);
-
-            if (converted.meta.name.value) {
-              alert(`Evaluation “${converted.meta.name.value}” loaded`);
-            } else {
-              alert('Evalution loaded');
-            }
-            startedNew = true;
-          }
-        }
-        catch {
-          alert('No data found or invalid import');
-        }
-      }
-
-      reader.readAsText(file);
     }
   }
 
