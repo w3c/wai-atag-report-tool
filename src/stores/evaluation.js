@@ -21,6 +21,8 @@ export function clearCache() {
 }
 
 export function getEvaluation() {
+  const cleanEvaluation = createCleanEvaluation();
+
   if (
     localStorage.getItem(storageName) &&
     localStorage.getItem(storageName) !== null
@@ -31,13 +33,11 @@ export function getEvaluation() {
 
       fresh = false;
 
-      if (localEvaluationObject) return localEvaluationObject;
+      return localEvaluationObject;
     } catch (error) {
-      const cleanEvaluation = createCleanEvaluation();
       return cleanEvaluation;
     }
   } else {
-    const cleanEvaluation = createCleanEvaluation();
     return cleanEvaluation;
   }
 }
