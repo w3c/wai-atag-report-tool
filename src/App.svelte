@@ -3,7 +3,7 @@
   import Start from "./routes/Start.svelte";
   import YourEvaluation from './routes/YourEvaluation.svelte';
   import EvaluationInfo from './components/EvaluationInfo.svelte';
-  import Results from "./routes/Results.svelte";
+  import Report from "./routes/Report.svelte";
   import Principle from './components/Principle.svelte';
   import Progress from './components/Progress.svelte';
   import ProgressItem from './components/ProgressItem.svelte';
@@ -18,7 +18,7 @@
     {#each atag as { principle, guidelines }, i }
     <ProgressItem to="step/{i+1}">{principle.num}<span class="visuallyhidden">: {principle.handle}</span></ProgressItem>
     {/each}
-    <ProgressItem to="/results">Results</ProgressItem>
+    <ProgressItem to="/report">Report</ProgressItem>
   </Router>
 </Progress>
 <EvaluationInfo></EvaluationInfo>
@@ -33,8 +33,8 @@
     <Route path="/step/:id" let:params>
       <Principle id="{params.id-1}" />
     </Route>
-    <Route path="/results">
-      <Results />
+    <Route path="/report">
+      <Report />
     </Route>
   </Router>
 </section>

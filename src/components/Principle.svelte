@@ -45,7 +45,7 @@
     </PagerLink>
     {/if}
     {#if (id + 1) === atag.length }
-    <PagerLink to={"/results"} direction="next">View results</PagerLink>
+    <PagerLink to={"/report"} direction="next">View report</PagerLink>
     {/if}
   </Pager>
 </div>

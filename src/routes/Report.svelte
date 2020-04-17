@@ -14,7 +14,7 @@
 
 <Header>
   <HeaderSub>ATAG Report Tool</HeaderSub>
-  Results
+  Report
 </Header>
 <p>Thanks for using this tool. Your evaluation is displayed in full below.</p>
 <p><a href={jsonDownload} class="button button-secondary">Download evaluation (JSON)</a></p>

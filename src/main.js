@@ -19,8 +19,8 @@ const routerSettings = {
         return (newTitle = `Start - ${defaultTitle}`);
       case "/your-evaluation":
         return (newTitle = `Your Evaluation - ${defaultTitle}`);
-      case "/results":
-        return (newTitle = `Results - ${defaultTitle}`);
+      case "/report":
+        return (newTitle = `Report - ${defaultTitle}`);
     }
     return newTitle;
   },

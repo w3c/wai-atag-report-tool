@@ -13,7 +13,7 @@
   }
 
   function toOverview() {
-    navigate('/results', { replace: false });
+    navigate('/report', { replace: false });
   }
 
   function clear() {
