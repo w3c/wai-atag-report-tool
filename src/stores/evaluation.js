@@ -1,6 +1,5 @@
-import atag from "../data/atag.js";
 import { writable } from "svelte/store";
-import packageJson from "../../package.json";
+import { createCleanEvaluation } from "../utils/createCleanEvaluation.js";
 
 const storageName = "atag_report_tool_evaluation";
 let fresh = true;
@@ -22,66 +21,23 @@ export function clearCache() {
 }
 
 export function getEvaluation() {
-  // Check for existing evaluation
   if (
     localStorage.getItem(storageName) &&
     localStorage.getItem(storageName) !== null
   ) {
     try {
       const serialisedEvaluation = localStorage.getItem(storageName);
-      const evaluationObject = JSON.parse(serialisedEvaluation);
+      const localEvaluationObject = JSON.parse(serialisedEvaluation);
 
       fresh = false;
 
-      return evaluationObject;
+      if (localEvaluationObject) return localEvaluationObject;
     } catch (error) {
-      // something didn't work
+      const cleanEvaluation = createCleanEvaluation();
+      return cleanEvaluation;
     }
   } else {
-    // Use clean evaluation
-    const cleanEvaluation = {
-      evaluationData: {},
-      meta: {},
-    };
-
-    for (const principle of atag) {
-      for (const guideline of principle.guidelines) {
-        for (const successcriterion of guideline.successcriteria) {
-          cleanEvaluation["evaluationData"][successcriterion.id] = {
-            id: successcriterion.id,
-            num: successcriterion.num,
-            handle: successcriterion.handle,
-            result: null,
-            observations: null,
-            evaluated: false,
-          };
-        }
-      }
-    }
-
-    cleanEvaluation.meta = {
-      name: {
-        id: "name",
-        value: null,
-      },
-      website: {
-        id: "website",
-        value: null,
-      },
-      evaluatorName: {
-        id: "evaluatorName",
-        value: null,
-      },
-      evaluatorOrg: {
-        id: "evaluatorOrg",
-        value: null,
-      },
-      createdWith: {
-        id: "createdWith",
-        value: packageJson.version,
-      },
-    };
-
+    const cleanEvaluation = createCleanEvaluation();
     return cleanEvaluation;
   }
 }
