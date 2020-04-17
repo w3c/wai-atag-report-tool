@@ -10,9 +10,11 @@
 <div {id} class="guideline">
   <h2>{num}: {handle}</h2>
   <p>{text}</p>
+  {#if successcriteria}
   {#each successcriteria as sc}
     <SuccessCriterion {...sc} />
   {/each}
+  {/if}
 </div>
 
 <style>
