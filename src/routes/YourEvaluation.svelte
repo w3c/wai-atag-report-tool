@@ -25,6 +25,7 @@
 <div class="field">
   <label for="evaluation-meta-website">Website</label>
   <input type="url" placeholder="https://" bind:value={$evaluation["meta"]["website"]["value"]} id="evaluation-meta-website" on:change={() =>  evaluation.updateCache($evaluation)} />
+  <input type="url" bind:value={$evaluation["meta"]["website"]["value"]} id="evaluation-meta-website" on:change={() =>  evaluation.updateCache($evaluation)} />
 </div>
 
 
