@@ -17,29 +17,36 @@
 
 <h2>About your evaluation</h2>
 
+{#if $evaluation["meta"]["name"]}
 <div class="field">
   <label for="evaluation-meta-name">Name of authoring tool</label>
   <input type="text" bind:value={$evaluation["meta"]["name"]["value"]} id="evaluation-meta-name"on:change={() =>  evaluation.updateCache($evaluation)} />
 </div>
+{/if}
 
+{#if $evaluation["meta"]["website"]}
 <div class="field">
   <label for="evaluation-meta-website">Website</label>
-  <input type="url" placeholder="https://" bind:value={$evaluation["meta"]["website"]["value"]} id="evaluation-meta-website" on:change={() =>  evaluation.updateCache($evaluation)} />
   <input type="url" bind:value={$evaluation["meta"]["website"]["value"]} id="evaluation-meta-website" on:change={() =>  evaluation.updateCache($evaluation)} />
 </div>
+{/if}
 
 
 <h2>About you</h2>
 
+{#if $evaluation["meta"]["evaluatorName"]}
 <div class="field">
   <label for="evaluation-meta-your-name">Your name</label>
   <input type="text" bind:value={$evaluation["meta"]["evaluatorName"]["value"]} id="evaluation-meta-your-name"on:change={() =>  evaluation.updateCache($evaluation)} />
 </div>
+{/if}
 
+{#if $evaluation["meta"]["evaluatorOrg"]}
 <div class="field">
   <label for="evaluation-meta-org-name">Your organisation</label>
   <input type="text" bind:value={$evaluation["meta"]["evaluatorOrg"]["value"]} id="evaluation-meta-org-name"on:change={() =>  evaluation.updateCache($evaluation)} />
 </div>
+{/if}
 
 <Pager label="Previous/Next Step">
   <PagerLink to="/step/1" direction="next">Step 1</PagerLink>

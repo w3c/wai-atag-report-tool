@@ -1,5 +1,5 @@
 <script>
-  import { navigate } from 'svelte-routing';
+  import { navigate, Router, Link } from 'svelte-routing';
   import { evaluation } from '../stores/evaluation.js';
   import { importEvaluation } from '../utils/importEvaluation.js';
   import MoreInfo from './MoreInfo.svelte';
@@ -27,22 +27,29 @@
     fresh = evaluation.isFresh();
   });
 
-  $: evaluatedItems = $evaluation && $evaluation.evaluationData && $evaluation.evaluationData.length > 0  ? Object.values($evaluation.evaluationData).filter(item => item.evaluated === true) : [];
+  $: evaluatedItems = $evaluation && $evaluation.evaluationData && Object.keys($evaluation.evaluationData).length > 0 ? Object.values($evaluation.evaluationData).filter(item => item.evaluated === true) : [];
 </script>
 
 <aside>
   {#if fresh && !startedNew}
    <h2>Your evaluation</h2>
-   <p>No existing evaluation found.</p>
-   <button class="button" on:click={startNew}>New evaluation</button>
+   <p>Welcome to the ATAG Report Tool.</p>
+   <button class="button" on:click={startNew}>Start new evaluation</button>
    <input type="file" id="import-evaluation" on:change={importEvaluation} class="visuallyhidden" accept="application/json"/>
-   <label for="import-evaluation" class="button button-secondary">Import</label>
-  {:else if !($evaluation["meta"] && $evaluation["meta"]["name"] && $evaluation["meta"]["name"]["value"])}
+   <label for="import-evaluation" class="button button-secondary">Import evaluation</label>
+  {:else if !(evaluatedItems.length > 0) }
   <h2>Your evaluation</h2>
-  <p>Set up information about your evaluation.</p>
+  <Router>
+    <p>You can <Link to="your-evaluation">add information</Link> about your report, or start evaluating straight away in <Link to="step/1">Step 1</Link>.</p>
+  </Router>
   {:else}
     <h2>
+      {#if $evaluation["meta"]["name"]["value"]}
       <small>Evaluating </small>{$evaluation["meta"]["name"]["value"]}
+      }
+      {:else}
+      Your evaluation
+      {/if}
     </h2>
     <p>Evaluated <strong>{evaluatedItems.length}</strong> out of <strong>{Object.values($evaluation.evaluationData).length}</strong> success criteria.</p>
     <button class="button" on:click={toOverview}>Save / Overview</button>

@@ -19,23 +19,23 @@
 <p>Thanks for using this tool. Your evaluation is displayed in full below.</p>
 <p><a href={jsonDownload} class="button button-secondary">Download evaluation (JSON)</a></p>
 <dl>
-  {#if $evaluation["meta"]["name"]["value"]}
+  {#if $evaluation["meta"]["name"] && $evaluation["meta"]["name"]["value"]}
   <dt>Name</dt>
   <dd>{$evaluation["meta"]["name"]["value"]}</dd>
   {/if}
-  {#if $evaluation["meta"]["website"]["value"]}
+  {#if $evaluation["meta"]["website"] && $evaluation["meta"]["website"]["value"]}
   <dt>Website</dt>
   <dd>{$evaluation["meta"]["website"]["value"]}</dd>
   {/if}
-  {#if $evaluation["meta"]["evaluatorName"]["value"]}
+  {#if $evaluation["meta"]["evaluatorName"] && $evaluation["meta"]["evaluatorName"]["value"]}
   <dt>Evaluator</dt>
   <dd>{$evaluation["meta"]["evaluatorName"]["value"]}</dd>
   {/if}
-  {#if $evaluation["meta"]["evaluatorOrg"]["value"]}
+  {#if $evaluation["meta"]["evaluatorOrg"] && $evaluation["meta"]["evaluatorOrg"]["value"]}
   <dt>Organisation</dt>
   <dd>{$evaluation["meta"]["evaluatorOrg"]["value"]}</dd>
   {/if}
-  {#if $evaluation["meta"]["createdWith"]["value"]}
+  {#if $evaluation["meta"]["createdWith"] && $evaluation["meta"]["createdWith"]["value"]}
   <dt>Created with ATAG Report Tool version</dt>
   <dd>{$evaluation["meta"]["createdWith"]["value"]}</dd>
   {/if}
