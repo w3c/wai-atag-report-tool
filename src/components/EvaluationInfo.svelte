@@ -57,7 +57,7 @@
     align-self: start;
     margin-bottom: 2em;
   }
-  @media (min-width: 50em) {
+  @media (min-width: 60em) {
     aside {
       position: sticky;
       top: 1em;
