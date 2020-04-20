@@ -19,8 +19,6 @@
   Your Evaluation
 </Header>
 
-<p>On this page, you can set up your evaluation.</p>
-
 <h2>About the authoring tool</h2>
 
 {#if $evaluation["meta"]["name"]}
