@@ -39,7 +39,7 @@
   {:else if $currentPage === "Your Evaluation" }
   <Router>
     <h2>
-      {#if $evaluation["meta"]["name"]["value"]}
+      {#if $evaluation["meta"] && $evaluation["meta"]["name"] && $evaluation["meta"]["name"]["value"]}
       <small>Evaluating </small>{$evaluation["meta"]["name"]["value"]}
       {:else}
       Your evaluation
@@ -49,7 +49,7 @@
   </Router>
   {:else}
     <h2>
-      {#if $evaluation["meta"]["name"]["value"]}
+      {#if $evaluation["meta"] && $evaluation["meta"]["name"] && $evaluation["meta"]["name"]["value"]}
       <small>Evaluating </small>{$evaluation["meta"]["name"]["value"]}
       {:else}
       Your evaluation
