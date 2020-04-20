@@ -11,19 +11,17 @@
   export let url = "";
 </script>
 
-<Progress>
-  <Router>
+<Router {url}>
+  <Progress>
     <ProgressItem to="/">Start</ProgressItem>
     <ProgressItem to="/your-evaluation">Your Evaluation</ProgressItem>
     {#each atag as { principle, guidelines }, i }
     <ProgressItem to="principle/{i+1}">{principle.num}<span class="visuallyhidden">: {principle.handle}</span></ProgressItem>
     {/each}
     <ProgressItem to="/report">Report</ProgressItem>
-  </Router>
-</Progress>
-<EvaluationInfo></EvaluationInfo>
-<section aria-label="Main content">
-  <Router url={url}>
+  </Progress>
+  <EvaluationInfo />
+  <section aria-label="Main content">
     <Route path="/">
       <Start />
     </Route>
@@ -36,8 +34,8 @@
     <Route path="/report">
       <Report />
     </Route>
-  </Router>
-</section>
+  </section>
+</Router>
 
 <style>
   section {
