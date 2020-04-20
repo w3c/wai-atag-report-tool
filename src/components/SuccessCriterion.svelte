@@ -10,7 +10,7 @@
   export let level = 'A';
   export let details = null;
 
-  let results = [
+  $: results = [
     { id: 'not-checked', text: 'Not checked' },
     { id: 'passed', text: 'Passed' },
     { id: 'failed', text: 'Failed' },
@@ -20,9 +20,9 @@
 
   let notes = null;
   let list = null;
-  const normalisedCriterionId = num.replace(/\./g, '').toLowerCase();
-  const linkToImplementing = `https://www.w3.org/WAI/AU/2012/WD-IMPLEMENTING-ATAG20-20121011/#sc_${normalisedCriterionId}`;
 
+  $: normalisedCriterionId = num.replace(/\./g, '').toLowerCase();
+  $: linkToImplementing = `https://www.w3.org/WAI/AU/2012/WD-IMPLEMENTING-ATAG20-20121011/#sc_${normalisedCriterionId}`;
   $: notes = details ? details.filter(detail => detail.type === 'note') : null;
   $: list = details ? details.filter(detail => detail.type === 'olist' || detail.type === 'ulist') : null;
 </script>
@@ -39,9 +39,9 @@
   <div class="criterion__answers">
     <div>
       <label for={`result-${id}`}>Result for {num}</label>
-      <select id={`result-${id}`} name={id} bind:value={$evaluation['evaluationData'][id]['result']} on:change={() => { evaluation.updateCache($evaluation); $evaluation['evaluationData'][id]['evaluated'] = true}}>
+      <select id={`result-${id}`} name={`result-${id}`} bind:value={$evaluation['evaluationData'][id]['result']} on:change={() => { evaluation.updateCache($evaluation); $evaluation['evaluationData'][id]['evaluated'] = true}}>
         {#each results as result}
-          <option name=({id}-{result.id}) value={result.text}>
+          <option name={`option-${id}-${result.id}`}>
             {result.text}
           </option>
         {/each}
