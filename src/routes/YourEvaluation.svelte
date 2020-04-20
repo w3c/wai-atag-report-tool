@@ -48,6 +48,6 @@
 </div>
 {/if}
 
-<Pager label="Previous/Next Step">
-  <PagerLink to="/step/1" direction="next">Step 1</PagerLink>
+<Pager label="Previous/Next Principle">
+  <PagerLink to="/principle/1" direction="next">Principle 1: Accessibility Guidelines</PagerLink>
 </Pager>

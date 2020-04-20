@@ -16,7 +16,7 @@
     <ProgressItem to="/">Start</ProgressItem>
     <ProgressItem to="/your-evaluation">Your Evaluation</ProgressItem>
     {#each atag as { principle, guidelines }, i }
-    <ProgressItem to="step/{i+1}">{principle.num}<span class="visuallyhidden">: {principle.handle}</span></ProgressItem>
+    <ProgressItem to="principle/{i+1}">{principle.num}<span class="visuallyhidden">: {principle.handle}</span></ProgressItem>
     {/each}
     <ProgressItem to="/report">Report</ProgressItem>
   </Router>
@@ -30,7 +30,7 @@
     <Route path="/your-evaluation">
       <YourEvaluation />
     </Route>
-    <Route path="/step/:id" let:params>
+    <Route path="/principle/:id" let:params>
       <Principle id="{params.id-1}" />
     </Route>
     <Route path="/report">

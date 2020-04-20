@@ -40,7 +40,7 @@
   {:else if !(evaluatedItems.length > 0) }
   <h2>Your evaluation</h2>
   <Router>
-    <p>You can <Link to="your-evaluation">add information</Link> about your report, or start evaluating straight away in <Link to="step/1">Step 1</Link>.</p>
+    <p>You can <Link to="your-evaluation">add information</Link> about your report, or start evaluating straight away in <Link to="principle/1">Principle 1</Link>.</p>
   </Router>
   {:else}
     <h2>

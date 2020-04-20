@@ -9,8 +9,8 @@ const routerSettings = {
       "ATAG Conformance Evaluation Report Tool | Web Accessibility Initiative (WAI) | W3C";
     let newTitle;
 
-    if (location.pathname.startsWith("/step/")) {
-      const id = location.pathname.substring(6, 7);
+    if (location.pathname.startsWith("/principle/")) {
+      const id = location.pathname.substring(11, 12);
       return (newTitle = `${atag[id - 1].principle.handle} - ${defaultTitle}`);
     }
 

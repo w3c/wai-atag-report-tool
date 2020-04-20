@@ -19,7 +19,7 @@
 <div class={className}>
   <Header>
     <HeaderSub>
-      ATAG Report Tool (<span class="visuallyhidden">Step </span>{id+1}<span aria-hidden="true">/</span><span class="visuallyhidden"> of </span>8)
+      ATAG Report Tool (<span class="visuallyhidden">Principle </span>{id+1}<span aria-hidden="true">/</span><span class="visuallyhidden"> of </span>8)
     </HeaderSub>
     {principle.handle}
   </Header>
@@ -30,18 +30,18 @@
   <Guideline {...guideline} />
   {/each}
 
-  <Pager label="Previous/Next Step">
+  <Pager label="Previous/Next Principle">
     {#if id === 0}
     <PagerLink to={"/your-evaluation"} direction="previous">Your Evaluation</PagerLink>
     {/if}
     {#if id > 0 && id < atag.length }
-    <PagerLink to={`/step/${id}`} direction="previous">
-      {`${atag[id-1].principle.handle}`}
+    <PagerLink to={`/principle/${id}`} direction="previous">
+      {`Principle ${id}: ${atag[id-1].principle.handle}`}
     </PagerLink>
     {/if}
     {#if (id + 1) < atag.length }
-    <PagerLink to={`/step/${id+2}`} direction="next">
-      {`${atag[id+1].principle.handle}`}
+    <PagerLink to={`/principle/${id+2}`} direction="next">
+      {`Principle ${id+2}: ${atag[id+1].principle.handle}`}
     </PagerLink>
     {/if}
     {#if (id + 1) === atag.length }
