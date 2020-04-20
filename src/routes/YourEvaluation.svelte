@@ -15,11 +15,11 @@
 
 <p>On this page, you can set up your evaluation.</p>
 
-<h2>About your evaluation</h2>
+<h2>About the authoring tool</h2>
 
 {#if $evaluation["meta"]["name"]}
 <div class="field">
-  <label for="evaluation-meta-name">Name of authoring tool</label>
+  <label for="evaluation-meta-name">Name</label>
   <input type="text" bind:value={$evaluation["meta"]["name"]["value"]} id="evaluation-meta-name"on:change={() =>  evaluation.updateCache($evaluation)} />
 </div>
 {/if}
@@ -32,18 +32,18 @@
 {/if}
 
 
-<h2>About you</h2>
+<h2>About the evaluation</h2>
 
 {#if $evaluation["meta"]["evaluatorName"]}
 <div class="field">
-  <label for="evaluation-meta-your-name">Your name</label>
+  <label for="evaluation-meta-your-name">Name of evaluator</label>
   <input type="text" bind:value={$evaluation["meta"]["evaluatorName"]["value"]} id="evaluation-meta-your-name"on:change={() =>  evaluation.updateCache($evaluation)} />
 </div>
 {/if}
 
 {#if $evaluation["meta"]["evaluatorOrg"]}
 <div class="field">
-  <label for="evaluation-meta-org-name">Your organisation</label>
+  <label for="evaluation-meta-org-name">Organization of evaluator</label>
   <input type="text" bind:value={$evaluation["meta"]["evaluatorOrg"]["value"]} id="evaluation-meta-org-name"on:change={() =>  evaluation.updateCache($evaluation)} />
 </div>
 {/if}
