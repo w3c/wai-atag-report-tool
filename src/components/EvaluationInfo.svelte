@@ -55,7 +55,9 @@
       Your evaluation
       {/if}
     </h2>
+    {#if evaluatedItems}
     <p>Evaluated <strong>{evaluatedItems.length}</strong> out of <strong>{Object.values($evaluation.evaluationData).length}</strong> success criteria.</p>
+    {/if}
     <button class="button" on:click={toOverview}>View report</button>
     <button class="button button-secondary" on:click={clear}>Clear</button>
   {/if}
