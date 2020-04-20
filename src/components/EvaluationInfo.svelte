@@ -1,15 +1,14 @@
 <script>
   import { navigate, Router, Link } from 'svelte-routing';
   import { evaluation } from '../stores/evaluation.js';
+  import { currentPage } from '../stores/currentPage.js';
   import { importEvaluation } from '../utils/importEvaluation.js';
   import MoreInfo from './MoreInfo.svelte';
 
   let fresh = evaluation.isFresh();
-  let startedNew = false;
 
   function startNew() {
     navigate('/your-evaluation', { replace: false });
-    startedNew = true;
   }
 
   function toOverview() {
@@ -31,16 +30,22 @@
 </script>
 
 <aside>
-  {#if fresh && !startedNew}
+  {#if fresh && $currentPage === "Start"}
    <h2>Your evaluation</h2>
    <p>Welcome to the ATAG Report Tool.</p>
    <button class="button" on:click={startNew}>Start new evaluation</button>
    <input type="file" id="import-evaluation" on:change={importEvaluation} class="visuallyhidden" accept="application/json"/>
    <label for="import-evaluation" class="button button-secondary">Import evaluation</label>
-  {:else if !(evaluatedItems.length > 0) }
-  <h2>Your evaluation</h2>
+  {:else if $currentPage === "Your Evaluation" }
   <Router>
-    <p>You can <Link to="your-evaluation">add information</Link> about your report, or start evaluating straight away in <Link to="principle/1">Principle 1</Link>.</p>
+    <h2>
+      {#if $evaluation["meta"]["name"]["value"]}
+      <small>Evaluating </small>{$evaluation["meta"]["name"]["value"]}
+      {:else}
+      Your evaluation
+      {/if}
+    </h2>
+    <p>On this page, you can add information about your report, or start evaluating straight away in <Link to="/principle/1">Principle 1</Link>.</p>
   </Router>
   {:else}
     <h2>

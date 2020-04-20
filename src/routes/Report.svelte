@@ -1,8 +1,14 @@
 <script>
+  import { onMount } from 'svelte';
   import marked from 'marked';
   import { evaluation } from '../stores/evaluation.js';
   import Header from '../components/Header.svelte';
   import HeaderSub from '../components/HeaderSub.svelte';
+  import { currentPage } from '../stores/currentPage.js';
+
+  onMount(() => {
+    currentPage.update( currentPage => 'Report' );
+  });
 
   function createDownload(evaluation) {
     let blob = new Blob([JSON.stringify(evaluation)]);

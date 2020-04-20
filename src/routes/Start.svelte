@@ -1,8 +1,14 @@
 <script>
+  import { onMount } from 'svelte';
   import ExpandCollapseAll from '../components/ExpandCollapseAll.svelte';
   import Header from '../components/Header.svelte';
   import Pager from '../components/Pager.svelte';
   import PagerLink from '../components/PagerLink.svelte';
+  import { currentPage } from '../stores/currentPage.js';
+
+  onMount(() => {
+    currentPage.update( currentPage => 'Start' );
+  });
 </script>
 
 <Header>ATAG Report Tool</Header>

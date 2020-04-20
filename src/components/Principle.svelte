@@ -1,16 +1,22 @@
 <script>
-
+  import { onMount } from 'svelte';
   import Header from './Header.svelte';
   import HeaderSub from './HeaderSub.svelte';
   import Guideline from './Guideline.svelte';
   import Pager from './Pager.svelte';
   import PagerLink from './PagerLink.svelte';
   import atag from '../data/atag.js';
+  import { currentPage } from '../stores/currentPage.js';
+
   export let id = null;
   export let className = undefined;
 
   $: principle = atag[id].principle || null;
   $: guidelines = atag[id].guidelines || null;
+
+  onMount(() => {
+    currentPage.update( currentPage => 'Evaluation' );
+  });
 
   const normalisedPrincipleId = atag[id].principle.num.replace(/\./g, '').toLowerCase();
   const linkToPrinciple = `https://www.w3.org/TR/ATAG20/#principle_${normalisedPrincipleId}`;
