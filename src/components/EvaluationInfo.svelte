@@ -46,7 +46,6 @@
     <h2>
       {#if $evaluation["meta"]["name"]["value"]}
       <small>Evaluating </small>{$evaluation["meta"]["name"]["value"]}
-      }
       {:else}
       Your evaluation
       {/if}
