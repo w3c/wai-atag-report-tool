@@ -70,3 +70,10 @@
 	{/each}
 	</tbody>
 </table>
+
+<style>
+  thead {
+    position: sticky;
+    top: 0;
+  }
+</style>
