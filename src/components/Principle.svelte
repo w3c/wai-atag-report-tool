@@ -27,10 +27,10 @@
     <HeaderSub>
       ATAG Report Tool (<span class="visuallyhidden">Principle </span>{id+1}<span aria-hidden="true">/</span><span class="visuallyhidden"> of </span>8)
     </HeaderSub>
-    {principle.handle}
+    {principle.num}: {principle.handle}
   </Header>
 
-  <p>More details: <a href={linkToPrinciple} target="_blank" rel="noopener roreferrer">{principle.num} {principle.text}</a></p>
+  <p><a href={linkToPrinciple} target="_blank" rel="noopener roreferrer">View full Principle in ATAG 2.0 specification</a></p>
   
   {#each guidelines as guideline }
   <Guideline {...guideline} />

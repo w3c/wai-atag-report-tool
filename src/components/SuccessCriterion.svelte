@@ -29,7 +29,7 @@
 
 <div {id} class="criterion">
   <h3>
-    {handle}
+    {num}: {handle}
     <a href={linkToImplementing} class="criterion__ref" target="_blank">Implementing {num}</a>
   </h3>
   <p>{text}</p>
@@ -38,7 +38,7 @@
   {#if notes && notes.length > 0}<SuccessCriterionDetails type="notes" details={notes} />{/if}
   <div class="criterion__answers">
     <div>
-      <label for={`result-${id}`}>Result for {num}</label>
+      <label for={`result-${id}`}>Result<span class="visuallyhidden"> for {num}</span></label>
       <select id={`result-${id}`} name={`result-${id}`} bind:value={$evaluation['evaluationData'][id]['result']} on:change={() => { evaluation.updateCache($evaluation); $evaluation['evaluationData'][id]['evaluated'] = true}}>
         {#each results as result}
           <option name={`option-${id}-${result.id}`}>
@@ -49,7 +49,7 @@
     </div>
     <div class="observation">
       <div class="observation__header">
-        <label for={`comment-${id}`}>Observations for {num}</label>
+        <label for={`comment-${id}`}>Observations<span class="visuallyhidden">for {num}</span></label>
         <span class="observation__meta">Markdown supported (<a href="https://daringfireball.net/projects/markdown/basics" target="_blank" rel="noopener">syntax</a>, <Link to={`/report#observation-${num}`}>preview<span class="visuallyhidden"> for {num}</span></Link>) </span>
        </div>
       <textarea name={`comment-${id}`} bind:value={$evaluation['evaluationData'][id]['observations']} id={`comment-${id}`} cols="20" rows="5" on:change={() => { evaluation.updateCache($evaluation); $evaluation['evaluationData'][id]['evaluated'] = true; }}></textarea>

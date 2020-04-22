@@ -70,7 +70,7 @@ const atag = [
   },
   {
     principle: {
-      handle: "UI perceivable",
+      handle: "Perceivable",
       text: "Editing-views are perceivable",
       num: "A.2",
     },
@@ -155,7 +155,7 @@ const atag = [
   },
   {
     principle: {
-      handle: "UI operable",
+      handle: "Operable",
       text: "Editing-views are operable",
       num: "A.3",
     },
@@ -430,7 +430,7 @@ const atag = [
   },
   {
     principle: {
-      handle: "UI understandable",
+      handle: "Understandable",
       text: "Editing-views are understandable",
       num: "A.4",
     },
