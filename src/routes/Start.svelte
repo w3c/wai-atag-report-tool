@@ -34,7 +34,7 @@ This tool guides you through the individual requirements of the <a href="https:/
 </details>
 
 <details>
-	<summary><h2>Legend of results</h2></summary>
+	<summary><h2>Result choices</h2></summary>
 	<p>As you go through and evaluate your tool, you will select a "result" for each criterion. Here is the legend of what those selections mean:</p>
 	<dl>
 		<dt>Not checked</dt>
