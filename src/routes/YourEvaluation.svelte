@@ -16,7 +16,7 @@
   <HeaderSub>
     ATAG Report Tool
   </HeaderSub>
-  Your Evaluation
+  Basic Information
 </Header>
 
 <h2>About the authoring tool</h2>
