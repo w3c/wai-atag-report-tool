@@ -27,7 +27,7 @@
   $: list = details ? details.filter(detail => detail.type === 'olist' || detail.type === 'ulist') : null;
 </script>
 
-<div {id} class="criterion">
+<div id={normalisedCriterionId} class="criterion">
   <h3>
     {num}: {handle}
     <a href={linkToImplementing} class="criterion__ref" target="_blank">Implementing {num}</a>
@@ -49,10 +49,10 @@
     </div>
     <div class="observation">
       <div class="observation__header">
-        <label for={`comment-${id}`}>Observations<span class="visuallyhidden">for {num}</span></label>
-        <span class="observation__meta">Markdown supported (<a href="https://daringfireball.net/projects/markdown/basics" target="_blank" rel="noopener">syntax</a>, <Link to={`/report#observation-${num}`}>preview<span class="visuallyhidden"> for {num}</span></Link>) </span>
+        <label for={`comment-${normalisedCriterionId}`}>Observations<span class="visuallyhidden">for {num}</span></label>
+        <span class="observation__meta">Markdown supported ・ <Link to={`/report#criterion-${normalisedCriterionId}`}>Preview in report<span class="visuallyhidden"> for {normalisedCriterionId}</span></Link> </span>
        </div>
-      <textarea name={`comment-${id}`} bind:value={$evaluation['evaluationData'][id]['observations']} id={`comment-${id}`} cols="20" rows="5" on:change={() => { evaluation.updateCache($evaluation); $evaluation['evaluationData'][id]['evaluated'] = true; }}></textarea>
+      <textarea name={`comment-${normalisedCriterionId}`} bind:value={$evaluation['evaluationData'][id]['observations']} id={`comment-${normalisedCriterionId}`} cols="20" rows="5" on:change={() => { evaluation.updateCache($evaluation); $evaluation['evaluationData'][id]['evaluated'] = true; }}></textarea>
     </div>
   </div>
 </div>
