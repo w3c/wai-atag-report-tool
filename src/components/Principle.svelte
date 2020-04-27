@@ -30,7 +30,7 @@
     {principle.num}: {principle.handle}
   </Header>
 
-  <p><a href={linkToPrinciple} target="_blank" rel="noopener roreferrer">View full Principle in ATAG 2.0 specification</a></p>
+  <p>More details: <a href={linkToPrinciple} target="_blank" rel="noopener roreferrer">{principle.num} {principle.text}</a></p>
   
   {#each guidelines as guideline }
   <Guideline {...guideline} />
