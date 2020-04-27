@@ -72,7 +72,6 @@
       {#if result.observations}
         {@html marked(result.observations)}
       {:else}
-        No observations
       {/if}
     </td>
     <td>
