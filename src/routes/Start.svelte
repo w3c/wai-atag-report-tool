@@ -54,5 +54,5 @@
 
 <Pager label="Previous/Next Principle">
   <PagerLink to="/" direction="previous">Overview</PagerLink>
-  <PagerLink to="/principle/1" direction="next">Principle 1: Accessibility Guidelines</PagerLink>
+  <PagerLink to="/principle/1" direction="next">A.1</PagerLink>
 </Pager>

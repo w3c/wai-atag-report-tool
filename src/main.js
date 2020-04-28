@@ -11,7 +11,7 @@ const routerSettings = {
 
     if (location.pathname.startsWith("/principle/")) {
       const id = location.pathname.substring(11, 12);
-      return (newTitle = `${atag[id - 1].principle.handle} - ${defaultTitle}`);
+      return (newTitle = `${atag[id - 1].principle.num} - ${defaultTitle}`);
     }
 
     switch (location.pathname) {

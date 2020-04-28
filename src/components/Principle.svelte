@@ -42,12 +42,12 @@
     {/if}
     {#if id > 0 && id < atag.length }
     <PagerLink to={`/principle/${id}`} direction="previous">
-      {`Principle ${id}: ${atag[id-1].principle.handle}`}
+      {atag[id-1].principle.num}
     </PagerLink>
     {/if}
     {#if (id + 1) < atag.length }
     <PagerLink to={`/principle/${id+2}`} direction="next">
-      {`Principle ${id+2}: ${atag[id+1].principle.handle}`}
+      {atag[id+1].principle.num}
     </PagerLink>
     {/if}
     {#if (id + 1) === atag.length }
