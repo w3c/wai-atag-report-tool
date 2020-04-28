@@ -53,5 +53,6 @@
 {/if}
 
 <Pager label="Previous/Next Principle">
+  <PagerLink to="/" direction="previous">Start</PagerLink>
   <PagerLink to="/principle/1" direction="next">Principle 1: Accessibility Guidelines</PagerLink>
 </Pager>
