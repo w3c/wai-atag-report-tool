@@ -16,9 +16,9 @@ const routerSettings = {
 
     switch (location.pathname) {
       case "/":
-        return (newTitle = `Start - ${defaultTitle}`);
+        return (newTitle = `Overview - ${defaultTitle}`);
       case "/your-evaluation":
-        return (newTitle = `Your Evaluation - ${defaultTitle}`);
+        return (newTitle = `Start - ${defaultTitle}`);
       case "/report":
         return (newTitle = `Report - ${defaultTitle}`);
     }
