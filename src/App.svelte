@@ -1,7 +1,7 @@
 <script>
   import { Router, Route } from "svelte-routing";
-  import Start from "./routes/Start.svelte";
-  import YourEvaluation from './routes/YourEvaluation.svelte';
+  import Overview from "./routes/Overview.svelte";
+  import Start from './routes/Start.svelte';
   import EvaluationInfo from './components/EvaluationInfo.svelte';
   import Report from "./routes/Report.svelte";
   import Principle from './components/Principle.svelte';
@@ -13,8 +13,8 @@
 
 <Router {url}>
   <Progress>
-    <ProgressItem to="/">Start</ProgressItem>
-    <ProgressItem to="/your-evaluation">Your Evaluation</ProgressItem>
+    <ProgressItem to="/">Overview</ProgressItem>
+    <ProgressItem to="/start">Start</ProgressItem>
     {#each atag as { principle, guidelines }, i }
     <ProgressItem to="principle/{i+1}">{principle.num}<span class="visuallyhidden">: {principle.handle}</span></ProgressItem>
     {/each}
@@ -23,10 +23,10 @@
   <EvaluationInfo />
   <section aria-label="Main content">
     <Route path="/">
-      <Start />
+      <Overview />
     </Route>
-    <Route path="/your-evaluation">
-      <YourEvaluation />
+    <Route path="/start">
+      <Start />
     </Route>
     <Route path="/principle/:id" let:params>
       <Principle id="{params.id-1}" />
