@@ -5,8 +5,7 @@ import atag from "./data/atag.js";
 
 const routerSettings = {
   documentTitle: location => {
-    const defaultTitle =
-      "ATAG Conformance Evaluation Report Tool | Web Accessibility Initiative (WAI) | W3C";
+    const defaultTitle = "ATAG Report Tool | W3C WAI";
     let newTitle;
 
     if (location.pathname.startsWith("/principle/")) {
@@ -17,7 +16,7 @@ const routerSettings = {
     switch (location.pathname) {
       case "/":
         return (newTitle = `Overview - ${defaultTitle}`);
-      case "/your-evaluation":
+      case "/start":
         return (newTitle = `Start - ${defaultTitle}`);
       case "/report":
         return (newTitle = `Report - ${defaultTitle}`);
