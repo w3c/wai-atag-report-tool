@@ -1,8 +1,11 @@
 <script>
-  import { Link } from "svelte-routing";
   import { evaluation } from '../stores/evaluation.js';
   import MoreInfo from './MoreInfo.svelte';
+  import EvaluationResultSelector from './EvaluationResultSelector.svelte';
+  import EvaluationObservation from './EvaluationObservation.svelte';
   import SuccessCriterionDetails from './SuccessCriterionDetails.svelte';
+  import { normaliseCriterionId } from '../utils/normaliseCriterionId';
+
   export let id;
   export let num;
   export let handle;
@@ -10,19 +13,10 @@
   export let level = 'A';
   export let details = null;
 
-  $: results = [
-    { id: 'not-set', text: '--'},
-    { id: 'not-checked', text: 'Not checked' },
-    { id: 'passed', text: 'Passed' },
-    { id: 'failed', text: 'Failed' },
-    { id: 'cannot-tell', text: 'Cannot tell' },
-    { id: 'not-applicable', text: 'Not applicable' } 
-  ];
-
   let notes = null;
   let list = null;
 
-  $: normalisedCriterionId = num.replace(/\./g, '').toLowerCase();
+  $: normalisedCriterionId = normaliseCriterionId(num);
   $: linkToImplementing = `https://www.w3.org/WAI/AU/2012/WD-IMPLEMENTING-ATAG20-20121011/#sc_${normalisedCriterionId}`;
   $: notes = details ? details.filter(detail => detail.type === 'note') : null;
   $: list = details ? details.filter(detail => detail.type === 'olist' || detail.type === 'ulist') : null;
@@ -37,49 +31,12 @@
   {#if list}<SuccessCriterionDetails type="list" details={list} />{/if}
   {#if notes && notes.length > 0}<SuccessCriterionDetails type="notes" details={notes} />{/if}
   <div class="criterion__answers">
-    <div>
-      <label for={`result-${id}`}>Result<span class="visuallyhidden"> for {num}</span></label>
-      <select id={`result-${id}`} name={`result-${id}`} bind:value={$evaluation['evaluationData'][id]['result']} on:change={() => { evaluation.updateCache($evaluation); $evaluation['evaluationData'][id]['evaluated'] = true}}>
-        {#each results as result}
-          <option name={`option-${id}-${result.id}`}>
-            {result.text}
-          </option>
-        {/each}
-      </select>
-    </div>
-    <div class="observation">
-      <div class="observation__header">
-        <label for={`comment-${normalisedCriterionId}`}>Observations<span class="visuallyhidden">for {num}</span></label>
-        <span class="observation__meta">Markdown supported ・ <Link to={`/report#criterion-${normalisedCriterionId}`}>Preview in report<span class="visuallyhidden"> for {normalisedCriterionId}</span></Link> </span>
-       </div>
-      <textarea name={`comment-${normalisedCriterionId}`} bind:value={$evaluation['evaluationData'][id]['observations']} id={`comment-${normalisedCriterionId}`} cols="20" rows="5" on:change={() => { evaluation.updateCache($evaluation); $evaluation['evaluationData'][id]['evaluated'] = true; }}></textarea>
-    </div>
+    <EvaluationResultSelector {id} {num} />
+    <EvaluationObservation {id} {num} />
   </div>
 </div>
 
 <style>
-.observation {
-  margin-top: 1em;
-}
-@media (min-width: 35em) {
-  .observation {
-    margin-top: 0;
-  }
-}
-.observation__header {
-  display: flex;
-  flex-direction: column;
-}
-@media (min-width: 35em) {
-  .observation__header {
-    flex-direction: row;
-  }
-}
-  .observation__meta {
-    margin-left: auto;
-    font-size: smaller;
-    align-self: baseline;
-  }
 .criterion {
   margin-bottom: 4em;
   background-color: var(--pure-white);
@@ -100,37 +57,6 @@
 .criterion ol li {
   list-style: lower-alpha;
 }
-  .criterion__answers {
-    display: flex;
-    align-items: start;
-    justify-content: stretch;
-    flex-direction: column;
-  }
-    .criterion__answers label {
-      font-size: 90%;
-      display: block;
-      color: var(--wai-green);
-      font-weight: bold;
-      margin-bottom: .5em; 
-    }
-    .criterion__answers select {
-      margin-right: 1em;
-    }
-    .criterion__answers div:first-child {
-      flex: 1;
-    }
-    .criterion__answers div:last-child {
-      flex: 3;
-    }
-    .criterion__answers textarea {
-      width: 100%;
-      font-family: "Noto Sans Mono", monospace;
-    }
-  @media (min-width: 35em) {
-    .criterion__answers {
-      flex-direction: row;
-    }
-  }
 .criterion__ref {
   padding: .25em 1em;
   border-radius: 1em;
@@ -146,4 +72,37 @@
   background-color: transparent;
   border-color: var(--ocean);
 }
+.criterion__answers {
+  display: flex;
+  align-items: start;
+  justify-content: stretch;
+  flex-direction: column;
+}
+  /* use :global for children as they are in different components */
+  :global(.criterion__answers label) {
+    font-size: 90%;
+    display: block;
+    color: var(--wai-green);
+    font-weight: bold;
+    margin-bottom: .5em; 
+  }
+  :global(.criterion__answers select) {
+    margin-right: 1em;
+  }
+  :global(.criterion__answers div:first-child) {
+    flex: 1;
+  }
+  :global(.criterion__answers div:last-child) {
+    flex: 3;
+  }
+  :global(.criterion__answers textarea) {
+    width: 100%;
+    font-family: "Noto Sans Mono", monospace;
+  }
+@media (min-width: 35em) {
+  .criterion__answers {
+    flex-direction: row;
+  }
+}
+
 </style>
