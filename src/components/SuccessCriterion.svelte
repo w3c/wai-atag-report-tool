@@ -11,6 +11,7 @@
   export let details = null;
 
   $: results = [
+    { id: 'not-set', text: '--'},
     { id: 'not-checked', text: 'Not checked' },
     { id: 'passed', text: 'Passed' },
     { id: 'failed', text: 'Failed' },
