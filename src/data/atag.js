@@ -20,8 +20,7 @@ const atag = [
             handle: "Web-Based Accessible (WCAG)",
             text:
               "If the authoring tool contains web-based user interfaces, then those web-based user interfaces meet the WCAG 2.0 success criteria.",
-            level:
-              "Level A to meet WCAG 2.0 Level A success criteria; Level AA to meet WCAG 2.0 Level A and AA success criteria; Level AAA to meet all WCAG 2.0 success criteria",
+            level: "Level A, AA, AAA",
           },
         ],
       },
@@ -574,8 +573,7 @@ const atag = [
             handle: "Content Auto-Generation After Authoring Sessions (WCAG)",
             text:
               "The authoring tool does not automatically generate web content after the end of an authoring session, or, authors can specify that the content be accessible web content (WCAG).",
-            level:
-              "Level A to meet WCAG 2.0 Level A success criteria; Level AA to meet WCAG 2.0 Level A and AA success criteria; Level AAA to meet all WCAG 2.0 success criteria",
+            level: "Level A, AA, AAA",
             details: [
               {
                 type: "note",
@@ -591,8 +589,7 @@ const atag = [
             handle: "Content Auto-Generation During Authoring Sessions (WCAG",
             text:
               " If the authoring tool provides the functionality for automatically generating web content during an authoring session, then at least one of the following is true:",
-            level:
-              "Level A to meet WCAG 2.0 Level A success criteria; Level AA to meet WCAG 2.0 Level A and AA success criteria; Level AAA to meet all WCAG 2.0 success criteria",
+            level: "Level A, AA, AAA",
             details: [
               {
                 type: "ulist",
@@ -648,8 +645,7 @@ const atag = [
             handle: "Restructuring and Recoding Transformations",
             text:
               "If the authoring tool provides restructuring transformations or re-coding transformations, and if equivalent mechanisms exist in the web content technology of the output, then at least one of the following is true: ",
-            level:
-              "Level A to meet WCAG 2.0 Level A success criteria; Level AA to meet WCAG 2.0 Level A and AA success criteria; Level AAA to meet all WCAG 2.0 success criteria",
+            level: "Level A, AA, AAA",
             details: [
               {
                 type: "olist",
@@ -696,8 +692,7 @@ const atag = [
             handle: "Copy-Paste Inside Authoring Tool (WCAG)",
             text:
               "If the authoring tool supports copy and paste of structured content, then any accessibility information (WCAG) in the copied content is preserved when the authoring tool is both the source and destination of the copy-paste and the source and destination use the same web content technology.",
-            level:
-              "Level A to meet WCAG 2.0 Level A success criteria; Level AA to meet WCAG 2.0 Level A and AA success criteria; Level AAA to meet all WCAG 2.0 success criteria",
+            level: "Level A, AA, AAA",
           },
           {
             id: "optimizations-preserve-accessibility",
@@ -747,8 +742,7 @@ const atag = [
             handle: "Ensure that accessible content production is possible. ",
             text:
               "The authoring tool does not place restrictions on the web content that authors can specify or those restrictions do not prevent WCAG 2.0 success criteria from being met.",
-            level:
-              "Level A to meet WCAG 2.0 Level A success criteria; Level AA to meet WCAG 2.0 Level A and AA success criteria; Level AAA to meet all WCAG 2.0 success criteria",
+            level: "Level A, AA, AAA",
           },
         ],
       },
@@ -764,8 +758,7 @@ const atag = [
             handle: "Accessible Option Prominence (WCAG)",
             text:
               "If authors are provided with a choice of authoring actions for achieving the same authoring outcome (e.g. styling text), then options that will result in accessible web content (WCAG) are at least as prominent as options that will not.",
-            level:
-              "Level A to meet WCAG 2.0 Level A success criteria; Level AA to meet WCAG 2.0 Level A and AA success criteria; Level AAA to meet all WCAG 2.0 success criteria",
+            level: "Level A, AA, AAA",
           },
           {
             id: "setting-accessibility-props",
@@ -773,8 +766,7 @@ const atag = [
             handle: "Setting Accessibility Properties (WCAG)",
             text:
               "If the authoring tool provides mechanisms to set web content properties (e.g. attribute values), then mechanisms are also provided to set web content properties related to accessibility information (WCAG).",
-            level:
-              "Level A to meet WCAG 2.0 Level A success criteria; Level AA to meet WCAG 2.0 Level A and AA success criteria; Level AAA to meet all WCAG 2.0 success criteria",
+            level: "Level A, AA, AAA",
           },
         ],
       },
@@ -791,8 +783,7 @@ const atag = [
             handle: "Alternative Content is Editable (WCAG)",
             text:
               "If the authoring tool provides functionality for adding non-text content, then authors are able to modify programmatically associated text alternatives for non-text content.",
-            level:
-              "Level A to meet WCAG 2.0 Level A success criteria; Level AA to meet WCAG 2.0 Level A and AA success criteria; Level AAA to meet all WCAG 2.0 success criteria",
+            level: "Level A, AA, AAA",
           },
           {
             id: "automatic-repair-of-text-alts",
@@ -839,8 +830,7 @@ const atag = [
             handle: "Accessible Template Options (WCAG)",
             text:
               "If the authoring tool provides templates, then there are accessible template (WCAG) options for a range of template uses.",
-            level:
-              "Level A to meet WCAG 2.0 Level A success criteria; Level AA to meet WCAG 2.0 Level A and AA success criteria; Level AAA to meet all WCAG 2.0 success criteria",
+            level: "Level A, AA, AAA",
           },
           {
             id: "identify-template-accessibility",
@@ -931,8 +921,7 @@ const atag = [
             handle: "Checking Assistance (WCAG)",
             text:
               "If the authoring tool provides authors with the ability to add or modify web content in such a way that a WCAG 2.0 success criterion can be violated, then accessibility checking for that success criterion is provided (e.g. an HTML authoring tool that inserts images should check for alternative text; a video authoring tool with the ability to edit text tracks should check for captions).",
-            level:
-              "Level A to meet WCAG 2.0 Level A success criteria; Level AA to meet WCAG 2.0 Level A and AA success criteria; Level AAA to meet all WCAG 2.0 success criteria",
+            level: "Level A, AA, AAA",
             details: [
               {
                 type: "note",
@@ -1005,8 +994,7 @@ const atag = [
             handle: "Repair Assistance (WCAG",
             text:
               "If checking (see Success Criterion B.3.1.1) can detect that a WCAG 2.0 success criterion is not met, then repair suggestion(s) are provided:",
-            level:
-              "Level A to meet WCAG 2.0 Level A success criteria; Level AA to meet WCAG 2.0 Level A and AA success criteria; Level AAA to meet all WCAG 2.0 success criteria",
+            level: "Level A, AA, AAA",
             details: [
               {
                 type: "note",
@@ -1081,8 +1069,7 @@ const atag = [
             handle: "Model Practice (WCAG)",
             text:
               "A range of examples in the documentation (e.g. markup, screen shots of WYSIWYG editing-views) demonstrate accessible authoring practices (WCAG).",
-            level:
-              "Level A to meet WCAG 2.0 Level A success criteria; Level AA to meet WCAG 2.0 Level A and AA success criteria; Level AAA to meet all WCAG 2.0 success criteria",
+            level: "Level A, AA, AAA",
           },
           {
             id: "feature-instructions",

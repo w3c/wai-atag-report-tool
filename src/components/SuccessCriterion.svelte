@@ -29,12 +29,11 @@
 
 <div id={normalisedCriterionId} class="criterion">
   <h3>
-    {num}: {handle}
+    {num}: {handle} <em>{level}</em>
     <a href={linkToImplementing} class="criterion__ref" target="_blank">Implementing {num}</a>
   </h3>
   <p>{text}</p>
   {#if list}<SuccessCriterionDetails type="list" details={list} />{/if}
-  <p><em>{level}</em></p>
   {#if notes && notes.length > 0}<SuccessCriterionDetails type="notes" details={notes} />{/if}
   <div class="criterion__answers">
     <div>
@@ -92,6 +91,11 @@
   margin-top: 0;
   font-weight: normal;
 }
+.criterion h3 em {
+  font-size: smaller;
+  font-style: normal;
+  margin: 0 2em 0 .5em;
+}
 .criterion ol li {
   list-style: lower-alpha;
 }
@@ -135,6 +139,7 @@
   font-size: 70%;
   color: inherit;
   text-decoration: none;
+  white-space: nowrap;
 }
 .criterion__ref:hover {
   background-color: transparent;
