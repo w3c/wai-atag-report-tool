@@ -32,7 +32,7 @@
 
   <p>More details: <a href={linkToPrinciple} target="_blank" rel="noopener roreferrer">{principle.num} {principle.text}</a></p>
   
-  {#each guidelines as guideline }
+  {#each guidelines as guideline, i (guideline.id) }
   <Guideline {...guideline} />
   {/each}
 
