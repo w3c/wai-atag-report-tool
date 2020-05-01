@@ -555,7 +555,7 @@ const atag = [
   },
   {
     principle: {
-      handle: "Generated Content Accessible",
+      handle: "Produces Accessible Content",
       text: "Fully automatic processes produce accessible content ",
       num: "B.1",
     },
@@ -724,7 +724,7 @@ const atag = [
   },
   {
     principle: {
-      handle: "Authors Supported",
+      handle: "Supports Authors",
       text: "Authors are supported in producing accessible content",
       num: "B.2",
     },
