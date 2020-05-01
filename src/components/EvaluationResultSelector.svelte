@@ -22,9 +22,7 @@
   <label for={`result-${normalisedCriterionId}`}>Result<span class="visuallyhidden"> for {num}</span></label>
   <select id={`result-${normalisedCriterionId}`} name={`result-${id}`} bind:value={$evaluation['evaluationData'][id]['result']} on:change={() => { evaluation.updateCache($evaluation); $evaluation['evaluationData'][id]['evaluated'] = true}}>
     {#each results as result}
-      <option name={`option-${id}-${result.id}`}>
-        {result.text}
-      </option>
+      <option name={`option-${id}-${result.id}`}>{result.text}</option>
     {/each}
   </select>
 </div>
