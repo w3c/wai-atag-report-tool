@@ -16,6 +16,12 @@
 
   onMount(() => {
     currentPage.update( currentPage => 'Evaluation' );
+
+    // by setting location.hash explictly, we ensure :target 
+    // selectors will work as expected
+    if (location.hash.length > 0) {
+      location.hash = location.hash;
+    }
   });
 
   const normalisedPrincipleId = atag[id].principle.num.replace(/\./g, '').toLowerCase();
@@ -55,3 +61,9 @@
     {/if}
   </Pager>
 </div>
+
+<style>
+  :global(.criterion:target) { 
+    outline: 2px solid var(--gold); 
+  }
+</style>
