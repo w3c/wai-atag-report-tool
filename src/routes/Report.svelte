@@ -64,7 +64,7 @@
   {:else}
   <dd>Not provided</dd>
   {/if}
-  <dt>Organisation</dt>
+  <dt>Organization</dt>
   {#if $evaluation["meta"]["evaluatorOrg"] && $evaluation["meta"]["evaluatorOrg"]["value"]}
   <dd>{$evaluation["meta"]["evaluatorOrg"]["value"]}</dd>
   {:else}
