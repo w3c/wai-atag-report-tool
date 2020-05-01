@@ -31,29 +31,43 @@
   Report
 </Header>
 <p><a href={jsonDownload} class="button button-secondary">Download evaluation (JSON)</a></p>
+<h2 class="report-header">
+  General
+  <Link to="/start">
+    <span class="visuallyhidden">Edit details</span>
+    <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+  </Link>
+</h2>
 <dl>
+  <dt>Tool Name 
+  </dt>
   {#if $evaluation["meta"]["name"] && $evaluation["meta"]["name"]["value"]}
-  <dt>Name</dt>
   <dd>{$evaluation["meta"]["name"]["value"]}</dd>
+  {:else}
+  <dd>Not provided</dd>
   {/if}
-  {#if $evaluation["meta"]["website"] && $evaluation["meta"]["website"]["value"]}
   <dt>Website</dt>
+  {#if $evaluation["meta"]["website"] && $evaluation["meta"]["website"]["value"]}
   <dd>{$evaluation["meta"]["website"]["value"]}</dd>
+  {:else}
+  <dd>Not provided</dd>
   {/if}
-  {#if $evaluation["meta"]["evaluatorName"] && $evaluation["meta"]["evaluatorName"]["value"]}
   <dt>Evaluator</dt>
+  {#if $evaluation["meta"]["evaluatorName"] && $evaluation["meta"]["evaluatorName"]["value"]}
   <dd>{$evaluation["meta"]["evaluatorName"]["value"]}</dd>
+  {:else}
+  <dd>Not provided</dd>
   {/if}
-  {#if $evaluation["meta"]["evaluatorOrg"] && $evaluation["meta"]["evaluatorOrg"]["value"]}
   <dt>Organisation</dt>
+  {#if $evaluation["meta"]["evaluatorOrg"] && $evaluation["meta"]["evaluatorOrg"]["value"]}
   <dd>{$evaluation["meta"]["evaluatorOrg"]["value"]}</dd>
-  {/if}
-  {#if $evaluation["meta"]["createdWith"] && $evaluation["meta"]["createdWith"]["value"]}
-  <dt>Created with ATAG Report Tool version</dt>
-  <dd>{$evaluation["meta"]["createdWith"]["value"]}</dd>
+  {:else}
+  <dd>Not provided</dd>
   {/if}
 </dl>
-<table>
+
+<h2 id="results">Results</h2>
+<table aria-labelledby="results">
 	<thead>
 		<tr>
 			<th>Success Criterion</th>
@@ -84,7 +98,27 @@
 	</tbody>
 </table>
 
+{#if $evaluation["meta"]["createdWith"] && $evaluation["meta"]["createdWith"]["value"]}
+<p><small>Created with ATAG Report Tool version {$evaluation["meta"]["createdWith"]["value"]}</p>
+{/if}
+
+
 <style>
+  .report-header {
+    display: flex;
+  }
+    :global(.report-header a) {
+      margin-left: auto;
+    }
+  dl {
+    column-count: 2;
+  }
+  dt {
+    font-weight: normal;
+  }
+  dd {
+    font-weight: bold;
+  }
   tr:target {
     outline: 2px solid black;
   }
