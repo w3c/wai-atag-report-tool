@@ -127,4 +127,8 @@
   tr:target {
     outline: 2px solid var(--gold);
   }
+  thead {
+    position: sticky;
+    top: 0;
+  }
 </style>
