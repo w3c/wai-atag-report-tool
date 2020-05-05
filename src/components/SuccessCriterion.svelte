@@ -89,10 +89,10 @@
   :global(.criterion__answers select) {
     margin-right: 1em;
   }
-  :global(.criterion__answers div:first-child) {
+  :global(.criterion__answers > div:first-child) {
     flex: 1;
   }
-  :global(.criterion__answers div:last-child) {
+  :global(.criterion__answers > div:last-child) {
     flex: 3;
   }
   :global(.criterion__answers textarea) {

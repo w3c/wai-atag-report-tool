@@ -10,6 +10,14 @@
 </script>
 
 <div class="observation">
+  <textarea 
+    name={`comment-${normalisedCriterionId}`} 
+    bind:value={$evaluation['evaluationData'][id]['observations']} 
+    id={`comment-${normalisedCriterionId}`} 
+    cols="20" 
+    rows="5" 
+    on:change={() => { evaluation.updateCache($evaluation); $evaluation['evaluationData'][id]['evaluated'] = true; }}
+  ></textarea>  
   <div class="observation__header">
     <label for={`comment-${normalisedCriterionId}`}>
       Observations
@@ -24,19 +32,13 @@
     </span>
   </div>
 
-  <textarea 
-    name={`comment-${normalisedCriterionId}`} 
-    bind:value={$evaluation['evaluationData'][id]['observations']} 
-    id={`comment-${normalisedCriterionId}`} 
-    cols="20" 
-    rows="5" 
-    on:change={() => { evaluation.updateCache($evaluation); $evaluation['evaluationData'][id]['evaluated'] = true; }}
-  ></textarea>
 </div>
 
 <style>
 .observation {
   margin-top: 1em;
+  display: flex;
+  flex-direction: column;
 }
 @media (min-width: 35em) {
   .observation {
@@ -46,6 +48,7 @@
 .observation__header {
   display: flex;
   flex-direction: column;
+  order: -1;
 }
 @media (min-width: 35em) {
   .observation__header {
