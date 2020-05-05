@@ -7,8 +7,14 @@
   import PagerLink from '../components/PagerLink.svelte';
   import { currentPage } from '../stores/currentPage.js';
 
+  let tips;
+
   onMount(() => {
     currentPage.update( currentPage => 'Start' );
+
+    if (location.hash === '#markdown') {
+      tips.setAttribute('open', '');
+    }
   });
 </script>
 
@@ -56,9 +62,10 @@ This tool guides you through the individual requirements of the <a href="https:/
 	</dl>
 </details>
 
-<details>
+<details bind:this={tips}>
 	<summary><h2>Tips for using this tool</h2></summary>
 	<ul>
+    <li id="markdown">You can format your evaluation with <a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a>, so that you can use lists, links and code examples.</li>
 		<li>Remember to regularly save the information that you enter because it is not stored on a server.</li>
 		<li>More information on each ATAG Success Criterion is in <a href="https://www.w3.org/TR/IMPLEMENTING-ATAG20/" target="_blank">Implementing ATAG 2.0</a>. Links in this tool lead you to the relevant sections of the “Implementing” document.</li>
 		<li>You can go back and forth between the pages (each is a Principle) in any order. None of the fields are required.</li>
