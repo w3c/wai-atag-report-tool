@@ -1,5 +1,6 @@
 <script>
   import { onMount } from 'svelte';
+  import { Link } from 'svelte-routing';
   import ExpandCollapseAll from '../components/ExpandCollapseAll.svelte';
   import Header from '../components/Header.svelte';
   import HeaderSub from '../components/HeaderSub.svelte';
@@ -27,7 +28,7 @@
 
 <p>This tool helps evaluators report on the accessibility of authoring tools. It guides you through the Authoring Tool Accessibility Guidelines (ATAG) requirements, lets you record your evaluation results for each requirement, and generates a report of the authoring tool's ATAG conformance.</p>
 
-<p><small>Note: this evaluation happens on your computer, no data is sent to us. To save the report on your computer, use <kbd>Ctrl</kbd>/<kbd>⌘ (Command)</kbd> + <kdb>S</kdb>.</small></p>
+<p><small>Note: this evaluation happens on your computer, no data is sent to us. To save the report on your computer, export it to HTML or JSON on the <Link to={"/report"}>Report</Link> page.</p>
 
 <ExpandCollapseAll />
 
