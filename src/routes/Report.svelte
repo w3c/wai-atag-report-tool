@@ -45,7 +45,7 @@
   <HeaderSub>ATAG Report Tool</HeaderSub>
   Report
 </Header>
-<p><a href={jsonDownload} class="button button-secondary">Download evaluation (JSON)</a></p>
+<p><a href={jsonDownload} download="report.json" class="button button-secondary">Download evaluation (JSON)</a></p>
 <h2 class="report-header">
   General
   <Link to="/start">
