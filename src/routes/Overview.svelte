@@ -25,18 +25,20 @@
   Overview
 </Header>
 
-<aside class="box">
-  <header class="box-h ">About</header>
-  <div class="box-i">
-This tool guides you through the individual requirements of the <a href="https://www.w3.org/WAI/standards-guidelines/atag/">W3C Authoring Tool Accessibility Guidelines (ATAG)</a>, to help you record your evaluation of authoring tools in consistent reports.
-  </div>
-</aside>
-
-<p>Authoring tools include content management systems (CMS), code editors, and other software used to create web content. With this tool, you can produce a report of an authoring tool's conformance with the <a href="https://www.w3.org/TR/ATAG20/">ATAG 2.0</a> standard. The tool is designed for accessibility auditors.</p>
+<p>This tool helps evaluators report on the accessibility of authoring tools. It guides you through the Authoring Tool Accessibility Guidelines (ATAG) requirements, lets you record your evaluation results for each requirement, and generates a report of the authoring tool's ATAG conformance.</p>
 
 <p><small>Note: this evaluation happens on your computer, no data is sent to us. To save the report on your computer, use <kbd>Ctrl</kbd>/<kbd>⌘ (Command)</kbd> + <kdb>S</kdb>.</small></p>
 
 <ExpandCollapseAll />
+
+<details>
+  <summary>
+    <h2>About authoring tools and ATAG</h2>
+  </summary>
+    <p>Authoring tools are software and services used to create web content, including content management systems (CMS); what-you-see-is-what-you-get (WYSIWYG) HTML editors; websites that let users add content, such as blogs and wikis.</p>
+    <p>Authoring Tool Accessibility Guidelines (ATAG) explains how to make the authoring tools themselves accessible and how to help authors create more accessible web content.</p>
+    <p>For more information, see the <a href="https://www.w3.org/WAI/standards-guidelines/atag/">Authoring Tool Accessibility Guidelines (ATAG) Overview</a></p>
+</details>
 
 <details>
 	<summary><h2>Structure of this tool</h2></summary>
