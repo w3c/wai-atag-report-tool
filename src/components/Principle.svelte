@@ -31,7 +31,7 @@
 <div class={className}>
   <Header>
     <HeaderSub>
-      ATAG Report Tool (<span class="visuallyhidden">Principle </span>{id+1}<span aria-hidden="true">/</span><span class="visuallyhidden"> of </span>8)
+      ATAG Report Tool
     </HeaderSub>
     {principle.num}: {principle.handle}
   </Header>
