@@ -32,6 +32,13 @@
 
   $: jsonDownload = `data:application/json;charset=utf-8,${encodeURIComponent(JSON.stringify($evaluation))}`;
   $: evaluatedItems = getEvaluatedItems($evaluation);
+  $: evaluatedItemsByResult = {
+      passed: evaluatedItems.filter(item => item.result === 'Passed'),
+      failed: evaluatedItems.filter(item => item.result === 'Failed'),
+      cannottell: evaluatedItems.filter(item => item.result === 'Cannot tell'),
+      na: evaluatedItems.filter(item => item.result === 'Not applicable'),
+      notchecked: evaluatedItems.filter(item => item.result === 'Not checked')
+  };
 </script>
 
 <Header>
@@ -75,6 +82,45 @@
 </dl>
 
 <h2 id="results">Results</h2>
+<h3>Summary</h3>
+<p>This report has results for {evaluatedItems.length} out of {Object.values($evaluation.evaluationData).length} Success Criteria.</p>
+<ul>
+  {#if evaluatedItemsByResult.passed.length > 0 }
+  <li>Passed: 
+    {#each evaluatedItemsByResult.passed as item}
+    <a href={linkToSC(item.num)} class="criterion__ref">{item.num}</a>
+    {/each}
+  </li>
+  {/if}
+  {#if evaluatedItemsByResult.failed.length > 0 }
+  <li>Failed:
+    {#each evaluatedItemsByResult.failed as item}
+    <a href={linkToSC(item.num)} class="criterion__ref">{item.num}</a>
+    {/each}
+  </li>
+  {/if}
+  {#if evaluatedItemsByResult.cannottell.length > 0 }
+  <li>Cannot tell:
+    {#each evaluatedItemsByResult.cannottell as item}
+    <a href={linkToSC(item.num)} class="criterion__ref">{item.num}</a>
+    {/each}
+  </li>
+  {/if}
+  {#if evaluatedItemsByResult.na.length > 0 }
+  <li>Not applicable:
+    {#each evaluatedItemsByResult.na as item}
+    <a href={linkToSC(item.num)} class="criterion__ref">{item.num}</a>
+    {/each}
+  </li>
+  {/if}
+  {#if evaluatedItemsByResult.notchecked.length > 0 }
+  <li>Not checked: 
+    {#each evaluatedItemsByResult.notchecked as item}
+    <a href={linkToSC(item.num)} class="criterion__ref">{item.num}</a>
+    {/each}
+  {/if}
+</ul>
+<h3>All results</h3>
 <table aria-labelledby="results">
 	<thead>
 		<tr>
@@ -171,4 +217,19 @@
       font-weight: normal;
     }
   }
+.criterion__ref {
+  padding: .25em 1em;
+  border-radius: 1em;
+  margin-left: .75em;
+  background-color: var(--cloudy-subtle);
+  border: 1px solid var(--cloudy-subtle);
+  font-size: 70%;
+  color: inherit;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.criterion__ref:hover {
+  background-color: transparent;
+  border-color: var(--ocean);
+}
 </style>
