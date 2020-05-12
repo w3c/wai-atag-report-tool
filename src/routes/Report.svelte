@@ -6,6 +6,7 @@
   import Header from '../components/Header.svelte';
   import HeaderSub from '../components/HeaderSub.svelte';
   import { currentPage } from '../stores/currentPage.js';
+  import { getEvaluatedItems } from '../utils/getEvaluatedItems.js';
 
   onMount(() => {
     currentPage.update( currentPage => 'Report' );
@@ -30,6 +31,7 @@
   }
 
   $: jsonDownload = `data:application/json;charset=utf-8,${encodeURIComponent(JSON.stringify($evaluation))}`;
+  $: evaluatedItems = getEvaluatedItems($evaluation);
 </script>
 
 <Header>

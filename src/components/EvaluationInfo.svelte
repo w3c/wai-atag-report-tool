@@ -3,6 +3,7 @@
   import { evaluation } from '../stores/evaluation.js';
   import { currentPage } from '../stores/currentPage.js';
   import { importEvaluation } from '../utils/importEvaluation.js';
+  import { getEvaluatedItems } from '../utils/getEvaluatedItems.js';
   import MoreInfo from './MoreInfo.svelte';
 
   let fresh = evaluation.isFresh();
@@ -26,7 +27,7 @@
     fresh = evaluation.isFresh();
   });
 
-  $: evaluatedItems = $evaluation && $evaluation.evaluationData && Object.keys($evaluation.evaluationData).length > 0 ? Object.values($evaluation.evaluationData).filter(item => item.evaluated === true) : [];
+  $: evaluatedItems = getEvaluatedItems($evaluation);
 </script>
 
 <aside>
