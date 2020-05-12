@@ -85,11 +85,11 @@
 	<tbody>
 	{#each Object.values($evaluation.evaluationData) as result}
 	<tr id={`criterion-${result.num.replace(/\./g, '').toLowerCase()}`}>
-		<td>{result.num}: {result.handle}</td>
-		<td>{result.result ? result.result : 'No result'}</td>
+		<td class="results-label-sc">{result.num}: {result.handle}</td>
+		<td><span class="results-label-mobile">Result: </span>{result.result ? result.result : 'No result'}</td>
 		<td>
       {#if result.observations}
-        {@html marked(result.observations)}
+        <span class="results-label-mobile">Observations: </span>{@html marked(result.observations)}
       {/if}
     </td>
     <td>
@@ -121,6 +121,9 @@
   dt {
     font-weight: normal;
   }
+  dt:after {
+    content: ':';
+  }
   dd {
     font-weight: bold;
     margin-left: 0;
@@ -131,5 +134,39 @@
   thead {
     position: sticky;
     top: 0;
+  }
+  thead th {
+    position: absolute;
+    left: -9999em;
+    top: -9999em;
+  }
+  tbody td {
+    display: block;
+    border-style: none;
+  }
+  tbody tr {
+    margin-bottom: 1em;
+    border-bottom: 1px solid var(--cloudy);
+  }
+  .results-label-sc {
+    font-weight: bold;
+  }
+  @media (min-width: 60em) {
+    thead th {
+      position: static;
+    }
+    tbody td {
+      display: table-cell;
+      border: 1px solid var(--cloudy);
+    }
+    tbody tr {
+      border-bottom: 0;
+    }
+    .results-label-mobile {
+      display: none;
+    }
+    .results-label-sc {
+      font-weight: normal;
+    }
   }
 </style>
