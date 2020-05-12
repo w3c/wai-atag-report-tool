@@ -123,6 +123,7 @@
   }
   dd {
     font-weight: bold;
+    margin-left: 0;
   }
   tr:target {
     outline: 2px solid var(--gold);
