@@ -11,7 +11,7 @@
   let tips;
 
   onMount(() => {
-    currentPage.update( currentPage => 'Start' );
+    currentPage.update( currentPage => 'Overview' );
 
     if (location.hash === '#markdown') {
       tips.setAttribute('open', '');

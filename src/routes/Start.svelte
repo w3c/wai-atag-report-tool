@@ -8,7 +8,7 @@
   import { currentPage } from '../stores/currentPage.js';
 
   onMount(() => {
-    currentPage.update( currentPage => 'Your Evaluation' );
+    currentPage.update( currentPage => 'Start' );
   });
 </script>
 
