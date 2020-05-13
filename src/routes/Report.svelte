@@ -67,6 +67,12 @@
   {:else}
   <dd>Not provided</dd>
   {/if}
+  <dt>Conformance Target</dt>
+  {#if $evaluation["meta"]["conformanceTarget"] && $evaluation["meta"]["conformanceTarget"]["value"]}
+  <dd>{$evaluation["meta"]["conformanceTarget"]["value"]}</dd>
+  {:else}
+  <dd>Not provided</dd>
+  {/if}
   <dt>Evaluator</dt>
   {#if $evaluation["meta"]["evaluatorName"] && $evaluation["meta"]["evaluatorName"]["value"]}
   <dd>{$evaluation["meta"]["evaluatorName"]["value"]}</dd>

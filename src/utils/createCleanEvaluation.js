@@ -39,6 +39,10 @@ export function createCleanEvaluation() {
       id: "evaluatorOrg",
       value: null,
     },
+    conformanceTarget: {
+      id: "conformanceTarget",
+      value: "AA",
+    },
     createdWith: {
       id: "createdWith",
       value: packageJson.version,
