@@ -182,6 +182,9 @@
     font-weight: bold;
     margin-left: 0;
   }
+  table {
+    width: 100%;
+  }
   tr:target {
     outline: 2px solid var(--gold);
   }
