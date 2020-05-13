@@ -4,13 +4,14 @@
   import EvaluationResultSelector from './EvaluationResultSelector.svelte';
   import EvaluationObservation from './EvaluationObservation.svelte';
   import SuccessCriterionDetails from './SuccessCriterionDetails.svelte';
+  import SuccessCriterionHeader from './SuccessCriterionHeader.svelte';
   import { normaliseCriterionId } from '../utils/normaliseCriterionId';
 
   export let id;
   export let num;
   export let handle;
   export let text;
-  export let level = 'A';
+  export let level = null;
   export let details = null;
 
   let notes = null;
@@ -20,20 +21,33 @@
   $: linkToImplementing = `https://www.w3.org/WAI/AU/2012/WD-IMPLEMENTING-ATAG20-20121011/#sc_${normalisedCriterionId}`;
   $: notes = details ? details.filter(detail => detail.type === 'note') : null;
   $: list = details ? details.filter(detail => detail.type === 'olist' || detail.type === 'ulist') : null;
+  $: inConformanceTarget = $evaluation.meta.conformanceTarget.value.length >= level.substring(6).length;
 </script>
 
 <div id={normalisedCriterionId} class="criterion">
-  <h3>
-    {num}: {handle} <em>{level}</em>
-    <a href={linkToImplementing} class="criterion__ref" target="_blank">Implementing {num}</a>
-  </h3>
-  <p>{text}</p>
-  {#if list}<SuccessCriterionDetails type="list" details={list} />{/if}
-  {#if notes && notes.length > 0}<SuccessCriterionDetails type="notes" details={notes} />{/if}
-  <div class="criterion__answers">
-    <EvaluationResultSelector {id} {num} />
-    <EvaluationObservation {id} {num} />
-  </div>
+  {#if inConformanceTarget || level === "Level A, AA, AAA"}
+    <SuccessCriterionHeader {num} {handle} {level} />
+    <p>{text}</p>
+    {#if list}<SuccessCriterionDetails type="list" details={list} />{/if}
+    {#if notes && notes.length > 0}<SuccessCriterionDetails type="notes" details={notes} />{/if}
+    <div class="criterion__answers">
+      <EvaluationResultSelector {id} {num} />
+      <EvaluationObservation {id} {num} />
+    </div>
+  {:else}
+    <details>
+      <summary>
+        <SuccessCriterionHeader {num} {handle} {level} />
+      </summary>
+      <p>{text}</p>
+      {#if list}<SuccessCriterionDetails type="list" details={list} />{/if}
+      {#if notes && notes.length > 0}<SuccessCriterionDetails type="notes" details={notes} />{/if}
+      <div class="criterion__answers">
+        <EvaluationResultSelector {id} {num} />
+        <EvaluationObservation {id} {num} />
+      </div>
+    </details>
+  {/if}
 </div>
 
 <style>
@@ -44,33 +58,6 @@
   box-shadow: 1px 1px 4px -4px
     #000;
   padding: 1em;
-}
-.criterion h3 {
-  margin-top: 0;
-  font-weight: normal;
-}
-.criterion h3 em {
-  font-size: smaller;
-  font-style: normal;
-  margin: 0 2em 0 .5em;
-}
-.criterion ol li {
-  list-style: lower-alpha;
-}
-.criterion__ref {
-  padding: .25em 1em;
-  border-radius: 1em;
-  margin-left: .75em;
-  background-color: var(--cloudy-subtle);
-  border: 1px solid var(--cloudy-subtle);
-  font-size: 70%;
-  color: inherit;
-  text-decoration: none;
-  white-space: nowrap;
-}
-.criterion__ref:hover {
-  background-color: transparent;
-  border-color: var(--ocean);
 }
 .criterion__answers {
   display: flex;
@@ -104,5 +91,4 @@
     flex-direction: row;
   }
 }
-
 </style>
