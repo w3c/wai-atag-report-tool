@@ -9,7 +9,7 @@
   let fresh = evaluation.isFresh();
 
   function startNew() {
-    navigate('/your-evaluation', { replace: false });
+    navigate('/start', { replace: false });
   }
 
   function toOverview() {
