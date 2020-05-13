@@ -169,10 +169,9 @@
     :global(.report-header a) {
       margin-left: auto;
     }
-  dl {
-    column-count: 2;
-  }
   dt {
+    grid-column: 1 / 2;
+    margin-top: 0;
     font-weight: normal;
   }
   dt:after {
@@ -181,6 +180,17 @@
   dd {
     font-weight: bold;
     margin-left: 0;
+    margin-bottom: 1em;
+  }
+  @media (min-width: 40em) {
+    dl {
+      display: grid;
+      grid-template-columns: auto 2fr;
+      gap: .5em 3em;
+    }
+    dd {
+      margin-bottom: 0;
+    }
   }
   table {
     width: 100%;
