@@ -9,7 +9,7 @@
 </script>
 
 <h3>
-  {num}: {handle} <em>{level}</em>
+  {num}: {handle} <em>Level {level}</em>
   <LinkToSC href={linkToImplementing}>Implementing {num}</LinkToSC>
 </h3>
 
