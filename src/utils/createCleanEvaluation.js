@@ -17,6 +17,7 @@ export function createCleanEvaluation() {
           result: null,
           observations: null,
           evaluated: false,
+          level: successcriterion.level,
         };
       }
     }

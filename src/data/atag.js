@@ -20,7 +20,7 @@ const atag = [
             handle: "Web-Based Accessible (WCAG)",
             text:
               "If the authoring tool contains web-based user interfaces, then those web-based user interfaces meet the WCAG 2.0 success criteria.",
-            level: "Level A, AA, AAA",
+            level: "A, AA, AAA",
           },
         ],
       },
@@ -37,7 +37,7 @@ const atag = [
             handle: "Accessibility Guidelines",
             text:
               "If the authoring tool contains non-web-based user interfaces, then those non-web-based user interfaces follow user interface accessibility guidelines for the platform.",
-            level: "Level A",
+            level: "A",
             details: [
               {
                 type: "note",
@@ -53,7 +53,7 @@ const atag = [
             handle: "Platform Accessibility Services",
             text:
               "If the authoring tool contains non-web-based user interfaces, then those non-web-based user interfaces expose accessibility information through platform accessibility services.",
-            level: "Level A",
+            level: "A",
             details: [
               {
                 type: "note",
@@ -87,7 +87,7 @@ const atag = [
             handle: "Text Alternatives for Rendered Non-Text Content",
             text:
               "If an editing-view renders non-text content, then any programmatically associated text alternatives for the non-text content can be programmatically determined.",
-            level: "Level A",
+            level: "A",
           },
           {
             id: "alts-for-time-based",
@@ -95,7 +95,7 @@ const atag = [
             handle: "Alternatives for Rendered Time-Based Media",
             text:
               "If an editing-view renders time-based media, then at least one of the following is true:",
-            level: "Level A",
+            level: "A",
             details: [
               {
                 type: "olist",
@@ -130,7 +130,7 @@ const atag = [
             handle: "Editing-View Status Indicators",
             text:
               "If an editing-view adds status indicators to the content being edited, then the information being conveyed by the status indicators can be programmatically determined.",
-            level: "Level A",
+            level: "A",
             details: [
               {
                 type: "note",
@@ -146,7 +146,7 @@ const atag = [
             handle: "Access to Rendered Text Properties",
             text:
               "If an editing-view renders any text formatting properties that authors can also edit using the editing-view, then the properties can be programmatically determined.",
-            level: "Level AA",
+            level: "AA",
           },
         ],
       },
@@ -172,7 +172,7 @@ const atag = [
             handle: "Keyboard Access (Minimum)",
             text:
               "All functionality of the authoring tool is operable through a keyboard interface without requiring specific timings for individual keystrokes, except where the underlying function requires input that depends on the path of the user's movement and not just the endpoints.",
-            level: "Level A",
+            level: "A",
             details: [
               {
                 type: "note",
@@ -200,7 +200,7 @@ const atag = [
             handle: "No Keyboard Traps",
             text:
               "If keyboard focus can be moved to a component using a keyboard interface, then focus can be moved away from that component using only a keyboard interface. If it requires more than unmodified arrow or tab keys or other standard exit methods, authors are advised of the method for moving focus away.",
-            level: "Level A",
+            level: "A",
           },
           {
             id: "efficient-keyboard-access",
@@ -208,7 +208,7 @@ const atag = [
             handle: "Efficient Keyboard Access",
             text:
               "The authoring tool user interface includes mechanisms to make keyboard access more efficient than sequential keyboard access.",
-            level: "Level AA",
+            level: "AA",
           },
         ],
       },
@@ -225,7 +225,7 @@ const atag = [
             handle: "Auto-Save (minimum)",
             text:
               "The authoring tool does not include session time limits or the authoring tool can automatically save edits made before the session time limits are reached.",
-            level: "Level A",
+            level: "A",
           },
           {
             id: "timing-adjustable",
@@ -233,7 +233,7 @@ const atag = [
             handle: "Timing Adjustable",
             text:
               "The authoring tool does not include time limits or at least one of the following is true:",
-            level: "Level A",
+            level: "A",
             details: [
               {
                 type: "olist",
@@ -277,7 +277,7 @@ const atag = [
             handle: "Static Input Components",
             text:
               "The authoring tool does not include moving user interface components that accept input where the movement of these components cannot be paused by authors. ",
-            level: "Level A",
+            level: "A",
           },
         ],
       },
@@ -294,7 +294,7 @@ const atag = [
             handle: "Static View Option",
             text:
               "If an editing-view can play visual time-based content, then playing is not necessarily automatic upon loading the content and playing can be paused.",
-            level: "Level A",
+            level: "A",
           },
         ],
       },
@@ -311,7 +311,7 @@ const atag = [
             handle: "Navigate by structure",
             text:
               "If editing-views expose the markup elements in the web content being edited, then the markup elements (e.g. source code, content renderings) are selectable and navigation mechanisms are provided to move the selection focus between elements.",
-            level: "Level AA",
+            level: "AA",
           },
         ],
       },
@@ -328,7 +328,7 @@ const atag = [
             handle: "Text Search",
             text:
               "If the authoring tool provides an editing-view of text-based content, then the editing-view enables text search, such that all of the following are true:",
-            level: "Level AA",
+            level: "AA",
             details: [
               {
                 type: "olist",
@@ -370,7 +370,7 @@ const atag = [
             handle: "Independence of Display",
             text:
               "If the authoring tool includes display settings for editing-views, then the authoring tool allows authors to adjust these settings without modifying the web content being edited.",
-            level: "Level A",
+            level: "A",
           },
           {
             id: "save-settings",
@@ -378,7 +378,7 @@ const atag = [
             handle: "Save Settings",
             text:
               "If the authoring tool includes display and/or control settings, then these settings can be saved between authoring sessions.",
-            level: "Level AA",
+            level: "AA",
           },
           {
             id: "apply-platform-settings",
@@ -386,7 +386,7 @@ const atag = [
             handle: "Apply Platform Settings",
             text:
               "The authoring tool respects changes in platform display and control settings, unless authors select more specific display and control settings using the authoring tool.",
-            level: "Level AA",
+            level: "AA",
           },
         ],
       },
@@ -404,7 +404,7 @@ const atag = [
             handle: "Preview (Minimum)",
             text:
               "If a preview is provided, then at least one of the following is true:",
-            level: "Level A",
+            level: "A",
             details: [
               {
                 type: "olist",
@@ -415,9 +415,9 @@ const atag = [
                       "The preview renders content using a user agent that is in-market; or",
                   },
                   {
-                    handle: " UAAG (Level A)",
+                    handle: " UAAG (A)",
                     text:
-                      "The preview conforms to the User Agent Accessibility Guidelines 1.0 Level A",
+                      "The preview conforms to the User Agent Accessibility Guidelines 1.0 A",
                   },
                 ],
               },
@@ -447,7 +447,7 @@ const atag = [
             handle: "Content Changes Reversible (Minimum)",
             text:
               "All authoring actions are either reversible or the authoring tool requires author confirmation to proceed.",
-            level: "Level A",
+            level: "A",
           },
           {
             id: "settings-change-confirm",
@@ -455,7 +455,7 @@ const atag = [
             handle: "Settings Change Confirmation",
             text:
               "If the authoring tool provides mechanisms for changing authoring tool user interface settings, then those mechanisms can reverse the setting changes, or the authoring tool requires author confirmation to proceed. ",
-            level: "Level A",
+            level: "A",
           },
         ],
       },
@@ -473,7 +473,7 @@ const atag = [
             handle: "Describe Accessibility Features",
             text:
               "For each authoring tool feature that is used to meet Part A of ATAG 2.0, at least one of the following is true: (a) Described in the Documentation: Use of the feature is explained in the authoring tool's documentation; or (b) Described in the Interface: Use of the feature is explained in the authoring tool user interface; or (c) Platform Service: The feature is a service provided by an underlying platform; or (d) Not Used by Authors: The feature is not used directly by authors (e.g. passing information to a platform accessibility service).",
-            level: "Level A",
+            level: "A",
             details: [
               {
                 type: "ulist",
@@ -514,7 +514,7 @@ const atag = [
             handle: "Document All Features",
             text:
               "For each authoring tool feature, at least one of the following is true:  (a) Described in the Documentation: Use of the feature is explained in the authoring tool's documentation; or (b) Described in the Interface: Use of the feature is explained in the authoring tool user interface; or (c) Platform Service: The feature is a service provided by an underlying platform; or (d) Not Used by Authors: The feature is not used directly by authors (e.g. passing information to a platform accessibility service).",
-            level: "Level AA",
+            level: "AA",
             details: [
               {
                 type: "olist",
@@ -573,7 +573,7 @@ const atag = [
             handle: "Content Auto-Generation After Authoring Sessions (WCAG)",
             text:
               "The authoring tool does not automatically generate web content after the end of an authoring session, or, authors can specify that the content be accessible web content (WCAG).",
-            level: "Level A, AA, AAA",
+            level: "A, AA, AAA",
             details: [
               {
                 type: "note",
@@ -589,7 +589,7 @@ const atag = [
             handle: "Content Auto-Generation During Authoring Sessions (WCAG",
             text:
               " If the authoring tool provides the functionality for automatically generating web content during an authoring session, then at least one of the following is true:",
-            level: "Level A, AA, AAA",
+            level: "A, AA, AAA",
             details: [
               {
                 type: "ulist",
@@ -645,7 +645,7 @@ const atag = [
             handle: "Restructuring and Recoding Transformations",
             text:
               "If the authoring tool provides restructuring transformations or re-coding transformations, and if equivalent mechanisms exist in the web content technology of the output, then at least one of the following is true: ",
-            level: "Level A, AA, AAA",
+            level: "A, AA, AAA",
             details: [
               {
                 type: "olist",
@@ -692,7 +692,7 @@ const atag = [
             handle: "Copy-Paste Inside Authoring Tool (WCAG)",
             text:
               "If the authoring tool supports copy and paste of structured content, then any accessibility information (WCAG) in the copied content is preserved when the authoring tool is both the source and destination of the copy-paste and the source and destination use the same web content technology.",
-            level: "Level A, AA, AAA",
+            level: "A, AA, AAA",
           },
           {
             id: "optimizations-preserve-accessibility",
@@ -700,7 +700,7 @@ const atag = [
             handle: "Optimizations Preserve Accessibility",
             text:
               "If the authoring tool provides optimizing web content transformations, then any accessibility information (WCAG) in the input is preserved in the output.",
-            level: "Level A",
+            level: "A",
           },
           {
             id: "text-alts-for-non-text-preserved",
@@ -708,7 +708,7 @@ const atag = [
             handle: "Text Alternatives for Non-Text Content are Preserved",
             text:
               " If the authoring tool provides web content transformations that preserve non-text content in the output, then any text alternatives for that non-text content are also preserved, if equivalent mechanisms exist in the web content technology of the output. ",
-            level: "Level A",
+            level: "A",
             details: [
               {
                 type: "note",
@@ -742,7 +742,7 @@ const atag = [
             handle: "Ensure that accessible content production is possible. ",
             text:
               "The authoring tool does not place restrictions on the web content that authors can specify or those restrictions do not prevent WCAG 2.0 success criteria from being met.",
-            level: "Level A, AA, AAA",
+            level: "A, AA, AAA",
           },
         ],
       },
@@ -758,7 +758,7 @@ const atag = [
             handle: "Accessible Option Prominence (WCAG)",
             text:
               "If authors are provided with a choice of authoring actions for achieving the same authoring outcome (e.g. styling text), then options that will result in accessible web content (WCAG) are at least as prominent as options that will not.",
-            level: "Level A, AA, AAA",
+            level: "A, AA, AAA",
           },
           {
             id: "setting-accessibility-props",
@@ -766,7 +766,7 @@ const atag = [
             handle: "Setting Accessibility Properties (WCAG)",
             text:
               "If the authoring tool provides mechanisms to set web content properties (e.g. attribute values), then mechanisms are also provided to set web content properties related to accessibility information (WCAG).",
-            level: "Level A, AA, AAA",
+            level: "A, AA, AAA",
           },
         ],
       },
@@ -783,7 +783,7 @@ const atag = [
             handle: "Alternative Content is Editable (WCAG)",
             text:
               "If the authoring tool provides functionality for adding non-text content, then authors are able to modify programmatically associated text alternatives for non-text content.",
-            level: "Level A, AA, AAA",
+            level: "A, AA, AAA",
           },
           {
             id: "automatic-repair-of-text-alts",
@@ -791,7 +791,7 @@ const atag = [
             handle: "Automating Repair of Text Alternatives",
             text:
               'The authoring tool does not attempt to repair text alternatives for non-text content or the following are all true: (a) No Generic or Irrelevant Strings: Generic strings (e.g. "image") and irrelevant strings (e.g. the file handle, file format) are not used as text alternatives; and (b) In-Session Repairs: If the repair attempt occurs during an authoring session, authors have the opportunity to accept, modify, or reject the repair attempt prior to insertion of the text alternative into the content; and (c) Out-of-Session Repairs: If the repair attempt occurs after an authoring session has ended, the repaired text alternatives are indicated during subsequent authoring sessions (if any) and authors have the opportunity to accept, modify, or reject the repair strings prior to insertion in the content.',
-            level: "Level A",
+            level: "A",
             details: [
               {
                 type: "olist",
@@ -830,7 +830,7 @@ const atag = [
             handle: "Accessible Template Options (WCAG)",
             text:
               "If the authoring tool provides templates, then there are accessible template (WCAG) options for a range of template uses.",
-            level: "Level A, AA, AAA",
+            level: "A, AA, AAA",
           },
           {
             id: "identify-template-accessibility",
@@ -838,7 +838,7 @@ const atag = [
             handle: "Identify Template Accessibility",
             text:
               "If the authoring tool includes a template selection mechanism and provides any non-accessible template (WCAG) options, then the template selection mechanism can display distinctions between the accessible and non-accessible options.",
-            level: "Level AA",
+            level: "AA",
             details: [
               {
                 type: "note",
@@ -854,7 +854,7 @@ const atag = [
             text:
               "If the authoring tool includes a template selection mechanism and allows authors to create new non-accessible templates (WCAG), then authors can enable the template selection mechanism to display distinctions between accessible and non-accessible templates that they create.",
             handle: "Author-Created Templates",
-            level: "Level AA",
+            level: "AA",
             details: [
               {
                 type: "note",
@@ -878,16 +878,16 @@ const atag = [
             num: "B.2.5.1",
             handle: "Accessible Pre-Authored Content Options",
             text:
-              "If the authoring tool provides pre-authored content, then a range of accessible pre-authored content (to WCAG Level AA) options are provided.",
-            level: "Level AA",
+              "If the authoring tool provides pre-authored content, then a range of accessible pre-authored content (to WCAG AA) options are provided.",
+            level: "AA",
           },
           {
             id: "identify-pre-authored-content-accessibility",
             num: "B.2.5.2",
             handle: "Identify Pre-Authored Content Accessibility",
             text:
-              "If the authoring tool includes a pre-authored content selection mechanism and provides any non-accessible pre-authored content (WCAG Level AA) options, then the selection mechanism can display distinctions between the accessible and non-accessible options.",
-            level: "Level AA",
+              "If the authoring tool includes a pre-authored content selection mechanism and provides any non-accessible pre-authored content (WCAG AA) options, then the selection mechanism can display distinctions between the accessible and non-accessible options.",
+            level: "AA",
             details: [
               {
                 type: "note",
@@ -921,7 +921,7 @@ const atag = [
             handle: "Checking Assistance (WCAG)",
             text:
               "If the authoring tool provides authors with the ability to add or modify web content in such a way that a WCAG 2.0 success criterion can be violated, then accessibility checking for that success criterion is provided (e.g. an HTML authoring tool that inserts images should check for alternative text; a video authoring tool with the ability to edit text tracks should check for captions).",
-            level: "Level A, AA, AAA",
+            level: "A, AA, AAA",
             details: [
               {
                 type: "note",
@@ -937,7 +937,7 @@ const atag = [
             handle: "Help Authors Decide",
             text:
               "If the authoring tool provides accessibility checking that relies on authors to decide whether potential web content accessibility problems (WCAG) are correctly identified (i.e. manual checking and semi-automated checking), then the accessibility checking process provides instructions that describe how to decide.",
-            level: "Level A",
+            level: "A",
           },
           {
             id: "help-authors-locate",
@@ -945,7 +945,7 @@ const atag = [
             handle: "Help Authors Locate",
             text:
               "If the authoring tool provides checks that require authors to decide whether a potential web content accessibility problem (WCAG) is correctly identified (i.e. manual checking and semi-automated checking), then the relevant content is identified to the authors.",
-            level: "Level A",
+            level: "A",
             details: [
               {
                 type: "note",
@@ -961,7 +961,7 @@ const atag = [
             handle: "Status Report",
             text:
               "If the authoring tool provides checks, then authors can receive an accessibility status report based on the results of the accessibility checks.",
-            level: "Level AA",
+            level: "AA",
             details: [
               {
                 type: "note",
@@ -977,7 +977,7 @@ const atag = [
             handle: "Programmatic Association of Results",
             text:
               "If the authoring tool provides checks, then the authoring tool can programmatically associate accessibility checking results with the web content that was checked.",
-            level: "Level AA",
+            level: "AA",
           },
         ],
       },
@@ -994,7 +994,7 @@ const atag = [
             handle: "Repair Assistance (WCAG",
             text:
               "If checking (see Success Criterion B.3.1.1) can detect that a WCAG 2.0 success criterion is not met, then repair suggestion(s) are provided:",
-            level: "Level A, AA, AAA",
+            level: "A, AA, AAA",
             details: [
               {
                 type: "note",
@@ -1028,7 +1028,7 @@ const atag = [
             handle: "Features Active by Default",
             text:
               "All accessible content support features are turned on by default. ",
-            level: "Level A",
+            level: "A",
           },
           {
             id: "option-to-reactivate-features",
@@ -1036,7 +1036,7 @@ const atag = [
             handle: "Option to Reactivate Features",
             text:
               "The authoring tool does not include the option to turn off its accessible content support features or features which have been turned off can be turned back on.",
-            level: "Level A",
+            level: "A",
           },
           {
             id: "feature-deactivation-warning",
@@ -1044,7 +1044,7 @@ const atag = [
             handle: "Feature Deactivation Warning",
             text:
               "The authoring tool does not include the option to turn off its accessible content support features or, if these features can be turned off, authors are informed that this may increase the risk of content accessibility problems (WCAG).",
-            level: "Level AA",
+            level: "AA",
           },
           {
             id: "feature-prominence",
@@ -1052,7 +1052,7 @@ const atag = [
             handle: "Feature Prominence",
             text:
               "All accessible content support features are at least as prominent as features related to either invalid markup, syntax errors, spelling errors or grammar errors.",
-            level: "Level AA",
+            level: "AA",
           },
         ],
       },
@@ -1069,7 +1069,7 @@ const atag = [
             handle: "Model Practice (WCAG)",
             text:
               "A range of examples in the documentation (e.g. markup, screen shots of WYSIWYG editing-views) demonstrate accessible authoring practices (WCAG).",
-            level: "Level A, AA, AAA",
+            level: "A, AA, AAA",
           },
           {
             id: "feature-instructions",
@@ -1077,12 +1077,11 @@ const atag = [
             handle: "Feature Instructions",
             text:
               "Instructions for using any accessible content support features appear in the documentation.",
-            level: "Level A",
+            level: "A",
           },
         ],
       },
     ],
   },
 ];
-
 export default atag;

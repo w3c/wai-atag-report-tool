@@ -69,7 +69,7 @@
   {/if}
   <dt>Conformance Target</dt>
   {#if $evaluation["meta"]["conformanceTarget"] && $evaluation["meta"]["conformanceTarget"]["value"]}
-  <dd>{$evaluation["meta"]["conformanceTarget"]["value"]}</dd>
+  <dd>Level {$evaluation["meta"]["conformanceTarget"]["value"]}</dd>
   {:else}
   <dd>Not provided</dd>
   {/if}
@@ -138,6 +138,11 @@
 	</thead>
 	<tbody>
 	{#each Object.values($evaluation.evaluationData) as result}
+  {#if ($evaluation.meta.conformanceTarget.value.length < result.level.length) && result.level !== 'A, AA, AAA' }
+  <tr>
+    <td colspan="4">{$evaluation.meta.conformanceTarget.value} -- {result.level} -- {result.num} was not in scope for this report</td>
+  </tr>
+  {:else}
 	<tr id={`criterion-${result.num.replace(/\./g, '').toLowerCase()}`}>
 		<td class="results-label-sc">{result.num}: {result.handle}</td>
 		<td><span class="results-label-mobile">Result: </span>{result.result ? result.result : 'No result'}</td>
@@ -153,6 +158,7 @@
       </Link>
     </td>
 	</tr>
+  {/if}
 	{/each}
 	</tbody>
 </table>

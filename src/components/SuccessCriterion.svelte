@@ -21,11 +21,11 @@
   $: linkToImplementing = `https://www.w3.org/WAI/AU/2012/WD-IMPLEMENTING-ATAG20-20121011/#sc_${normalisedCriterionId}`;
   $: notes = details ? details.filter(detail => detail.type === 'note') : null;
   $: list = details ? details.filter(detail => detail.type === 'olist' || detail.type === 'ulist') : null;
-  $: inConformanceTarget = $evaluation.meta.conformanceTarget.value.length >= level.substring(6).length;
+  $: inConformanceTarget = $evaluation.meta.conformanceTarget.value.length >= level.length;
 </script>
 
 <div id={normalisedCriterionId} class="criterion">
-  {#if inConformanceTarget || level === "Level A, AA, AAA"}
+  {#if inConformanceTarget || level === "A, AA, AAA"}
     <SuccessCriterionHeader {num} {handle} {level} />
     <p>{text}</p>
     {#if list}<SuccessCriterionDetails type="list" details={list} />{/if}
