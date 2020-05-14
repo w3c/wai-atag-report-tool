@@ -210,6 +210,30 @@ const atag = [
               "The authoring tool user interface includes mechanisms to make keyboard access more efficient than sequential keyboard access.",
             level: "AA",
           },
+          {
+            id: "keyboard-access-enhanced",
+            num: "A.3.1.4",
+            handle: "Keyboard Access (Enhanced)",
+            text:
+              "All functionality of the authoring tool is operable through a keyboard interface without requiring specific timings for individual keystrokes.",
+            level: "AAA",
+          },
+          {
+            id: "customise-keyboard-access",
+            num: "A.3.1.5",
+            handle: "Customize Keyboard Access",
+            text:
+              "If the authoring tool includes keyboard commands, then those keyboard commands can be customized.",
+            level: "AAA",
+          },
+          {
+            id: "present-keyboard-commands",
+            num: "A.3.1.6",
+            handle: "Present Keyboard Commands",
+            text:
+              "If the authoring tool includes keyboard commands, then the authoring tool provides a way for authors to determine the keyboard commands associated with authoring tool user interface components.",
+            level: "AAA",
+          },
         ],
       },
       {
@@ -279,6 +303,14 @@ const atag = [
               "The authoring tool does not include moving user interface components that accept input where the movement of these components cannot be paused by authors. ",
             level: "A",
           },
+          {
+            id: "content-edits-saved",
+            num: "A.3.2.4",
+            handle: "Content Edits Saved (Extended)",
+            text:
+              "The authoring tool can be set to automatically save web content edits made using the authoring tool.",
+            level: "AAA",
+          },
         ],
       },
       {
@@ -312,6 +344,22 @@ const atag = [
             text:
               "If editing-views expose the markup elements in the web content being edited, then the markup elements (e.g. source code, content renderings) are selectable and navigation mechanisms are provided to move the selection focus between elements.",
             level: "AA",
+          },
+          {
+            id: "navigate-by-relationships",
+            num: "A.3.4.2",
+            handle: "Navigate by Programmatic Relationships",
+            text:
+              " If editing-views allow editing of programmatic relationships within web content, then mechanisms are provided that support navigation between the related content.",
+            level: "AAA",
+            details: [
+              {
+                type: "note",
+                handle: "Note",
+                text:
+                  "Depending on the web content technology and the nature of the authoring tool, relationships may include, but are not limited to, element nesting, headings, labeling, programmatic definitions, and ID relationships.",
+              },
+            ],
           },
         ],
       },
@@ -423,6 +471,14 @@ const atag = [
               },
             ],
           },
+          {
+            id: "preview-enhanced",
+            num: "A.3.7.2",
+            handle: "Preview (Enhanced)",
+            text:
+              "If a preview is provided, then authors can specify which user agent performs the preview.",
+            level: "AAA",
+          },
         ],
       },
     ],
@@ -456,6 +512,22 @@ const atag = [
             text:
               "If the authoring tool provides mechanisms for changing authoring tool user interface settings, then those mechanisms can reverse the setting changes, or the authoring tool requires author confirmation to proceed. ",
             level: "A",
+          },
+          {
+            id: "content-changes-reversible-enhanced",
+            num: "A.4.1.3",
+            handle: "Content Changes Reversible (Enhanced)",
+            text:
+              "Authors can sequentially reverse a series of reversible authoring actions. (Level AAA)",
+            level: "AAA",
+            details: [
+              {
+                type: "note",
+                handle: "Note",
+                text:
+                  "It is acceptable to clear the authoring action history at the end of authoring sessions.",
+              },
+            ],
           },
         ],
       },
@@ -815,6 +887,31 @@ const atag = [
               },
             ],
           },
+          {
+            id: "save-for-reuse",
+            num: "B.2.3.3",
+            handle: "Save for Reuse",
+            text:
+              "If the authoring tool provides the functionality for adding non-text content, when authors enter programmatically associated text alternatives for non-text content, then both of the following are true:",
+            level: "AAA",
+            details: [
+              {
+                type: "olist",
+                items: [
+                  {
+                    handle: "Save and Suggest",
+                    text:
+                      "The text alternatives are automatically saved and suggested by the authoring tool, if the same non-text content is reused; and",
+                  },
+                  {
+                    handle: "Edit Option",
+                    text:
+                      "The author has the option to edit or delete the saved text alternatives.",
+                  },
+                ],
+              },
+            ],
+          },
         ],
       },
       {
@@ -863,6 +960,14 @@ const atag = [
                   "The distinction can involve providing information for the accessible templates (WCAG), the non-accessible templates or both.",
               },
             ],
+          },
+          {
+            id: "accessible-template-options-enhanced",
+            num: "B.2.4.4",
+            text:
+              "If the authoring tool provides templates, then all of the templates are accessible template (to WCAG Level AA).",
+            handle: "Accessible Template Options (Enhanced)",
+            level: "AAA",
           },
         ],
       },
@@ -1078,6 +1183,22 @@ const atag = [
             text:
               "Instructions for using any accessible content support features appear in the documentation.",
             level: "A",
+          },
+          {
+            id: "tutorial",
+            num: "B.4.2.3",
+            handle: "Tutorial",
+            text:
+              "The authoring tool provides a tutorial for an accessible authoring process that is specific to that authoring tool.",
+            level: "AAA",
+          },
+          {
+            id: "instruction-index",
+            num: "B.4.2.4",
+            handle: "Instruction Index",
+            text:
+              "The authoring tool documentation contains an index to the instructions for using any accessible content support features.",
+            level: "AAA",
           },
         ],
       },
