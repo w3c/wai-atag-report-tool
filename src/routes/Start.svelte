@@ -52,6 +52,17 @@
 </div>
 {/if}
 
+{#if $evaluation["meta"]["conformanceTarget"]}
+<div class="field">
+  <label for="evaluation-meta-conformance-target">Conformance Target</label>
+  <select name="evaluation-meta-conformance-target" id="evaluation-meta-conformance-target" bind:value={$evaluation["meta"]["conformanceTarget"]["value"]} on:change={() => { evaluation.updateCache($evaluation);}}>
+    <option value="A">Level A</option>
+    <option value="AA">Level AA</option>
+    <option value="AAA">Level AAA</option>
+  </select>
+</div>
+{/if}
+
 <Pager label="Previous/Next Principle">
   <PagerLink to="/" direction="previous">Overview</PagerLink>
   <PagerLink to="/principle/1" direction="next">A.1</PagerLink>

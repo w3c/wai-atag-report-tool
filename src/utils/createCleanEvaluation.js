@@ -17,6 +17,7 @@ export function createCleanEvaluation() {
           result: null,
           observations: null,
           evaluated: false,
+          level: successcriterion.level,
         };
       }
     }
@@ -38,6 +39,10 @@ export function createCleanEvaluation() {
     evaluatorOrg: {
       id: "evaluatorOrg",
       value: null,
+    },
+    conformanceTarget: {
+      id: "conformanceTarget",
+      value: "AA",
     },
     createdWith: {
       id: "createdWith",
