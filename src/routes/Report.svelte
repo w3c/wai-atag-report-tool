@@ -138,9 +138,9 @@
 	</thead>
 	<tbody>
 	{#each Object.values($evaluation.evaluationData) as result}
-  {#if ($evaluation.meta.conformanceTarget.value.length < result.level.length) && result.level !== 'A, AA, AAA' }
+  {#if ($evaluation.meta.conformanceTarget.value.length < result.level.length) && result.level !== 'A, AA, AAA' && result.evaluated !== true}
   <tr>
-    <td colspan="4">{$evaluation.meta.conformanceTarget.value} -- {result.level} -- {result.num} was not in scope for this report</td>
+    <td colspan="4">{result.num} was not in scope for this report</td>
   </tr>
   {:else}
 	<tr id={`criterion-${result.num.replace(/\./g, '').toLowerCase()}`}>
