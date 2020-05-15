@@ -6,13 +6,10 @@
   import { getEvaluatedItems } from '../utils/getEvaluatedItems.js';
   import MoreInfo from './MoreInfo.svelte';
 
-  let fresh = evaluation.isFresh();
+  let fresh;
 
   function startNew() {
-    if (window.confirm("This will clear the current evaluation and start a new one. Are you sure that's what you'd like to do?")) {
-      evaluation.clearCache();
-      navigate('/start', { replace: true });
-    }
+    navigate('/start', { replace: false });
   }
 
   function toOverview() {
@@ -30,6 +27,7 @@
     fresh = evaluation.isFresh();
   });
 
+  $: fresh = evaluation.isFresh();
   $: evaluatedItems = getEvaluatedItems($evaluation);
   $: totalCriteria = Object.values($evaluation.evaluationData).filter( item => item.level && item.length <= $evaluation.meta.conformanceTarget.value.length).length;
 
