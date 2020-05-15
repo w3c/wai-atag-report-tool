@@ -9,7 +9,10 @@
   let fresh = evaluation.isFresh();
 
   function startNew() {
-    navigate('/start', { replace: false });
+    if (window.confirm("This will clear the current evaluation and start a new one. Are you sure that's what you'd like to do?")) {
+      evaluation.clearCache();
+      navigate('/start', { replace: true });
+    }
   }
 
   function toOverview() {
