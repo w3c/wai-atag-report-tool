@@ -29,8 +29,7 @@
 
   $: fresh = evaluation.isFresh();
   $: evaluatedItems = getEvaluatedItems($evaluation);
-  $: totalCriteria = Object.values($evaluation.evaluationData).filter( item => item.level && item.length <= $evaluation.meta.conformanceTarget.value.length).length;
-
+  $: totalCriteria = Object.values($evaluation.evaluationData).filter( item => item.level && item.level.length <= $evaluation.meta.conformanceTarget.value.length).length;
 </script>
 
 <aside>
