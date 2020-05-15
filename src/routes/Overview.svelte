@@ -12,10 +12,6 @@
 
   onMount(() => {
     currentPage.update( currentPage => 'Overview' );
-
-    if (location.hash === '#markdown') {
-      tips.setAttribute('open', '');
-    }
   });
 </script>
 
@@ -68,8 +64,8 @@
 <details bind:this={tips}>
 	<summary><h2>Tips for using this tool</h2></summary>
 	<ul>
-    <li id="markdown">You can format your evaluation with <a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a>, so that you can use lists, links and code examples.</li>
-		<li>Remember to regularly save the information that you enter because it is not stored on a server.</li>
+    <li>You can format your evaluation with <a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a>, so that you can use lists, links and code examples (read more about <a href="https://daringfireball.net/projects/markdown/syntax#block">Markdown syntax</a>).</li>
+		<li>While you report your findings, changes are saved in your browser (not on our servers).</li>
 		<li>More information on each ATAG Success Criterion is in <a href="https://www.w3.org/TR/IMPLEMENTING-ATAG20/" target="_blank">Implementing ATAG 2.0</a>. Links in this tool lead you to the relevant sections of the “Implementing” document.</li>
 		<li>You can go back and forth between the pages (each is a Principle) in any order. None of the fields are required.</li>
 		<li>The tool provides your report as HTML (web page) and as JSON (structured data).</li>
