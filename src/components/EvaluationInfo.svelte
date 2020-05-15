@@ -33,7 +33,7 @@
 </script>
 
 <aside>
-  {#if fresh && $currentPage === "Start"}
+  {#if fresh && $currentPage === "Overview"}
    <h2>Your evaluation</h2>
    <p>Welcome to the ATAG Report Tool.</p>
    <button class="button" on:click={startNew}>Start new evaluation</button>
