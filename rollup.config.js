@@ -1,5 +1,6 @@
 import svelte from "rollup-plugin-svelte";
 import resolve from "rollup-plugin-node-resolve";
+import babel from "rollup-plugin-babel";
 import commonjs from "rollup-plugin-commonjs";
 import livereload from "rollup-plugin-livereload";
 import serve from "rollup-plugin-serve";
@@ -39,7 +40,29 @@ export default {
 				importee === "svelte" || importee.startsWith("svelte/"),
 		}),
 		commonjs(),
-
+		babel({
+			extensions: [".js", ".mjs", ".html", ".svelte"],
+			runtimeHelpers: true,
+			exclude: ["node_modules/@babel/**"], // <= /!\ NOT 'node_mobules/**'
+			presets: [
+				[
+					"@babel/preset-env",
+					{
+						// adapter to ensure IE 11 support
+						targets: "> 0.25%, not dead, IE 11",
+					},
+				],
+			],
+			plugins: [
+				"@babel/plugin-syntax-dynamic-import",
+				[
+					"@babel/plugin-transform-runtime",
+					{
+						useESModules: true,
+					},
+				],
+			],
+		}),
 		// In dev mode, call `npm run start` once
 		// the bundle has been generated
 		!production &&
