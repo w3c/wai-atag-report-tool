@@ -2,7 +2,7 @@
   export let href;
 </script>
 
-<a {href} class="link-to-sc" target="_blank"><slot></slot></a>
+<a {href} class="link-to-sc"><slot></slot></a>
 
 <style>
 .link-to-sc {
