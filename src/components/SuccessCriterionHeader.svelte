@@ -8,21 +8,23 @@
   $: linkToImplementing = `https://www.w3.org/WAI/AU/2012/WD-IMPLEMENTING-ATAG20-20121011/#sc_${normalisedCriterionId}`;
 </script>
 
-<h3>
-  {num}: {handle} <em>Level {level}</em>
+<div class="criterion-header">
+  <h3>{num}: {handle}</h3> 
+  <em class="criterion-header__level">Level {level}</em>
   <LinkToSC href={linkToImplementing}>Implementing {num}</LinkToSC>
-</h3>
+</div>
 
 <style>
-h3 {
+.criterion-header h3 {
   margin-top: 0;
   margin-bottom: 0;
   font-weight: normal;
+  display: inline;
 }
-:global([open] h3) {
+:global([open] .criterion-header) {
   margin-bottom: 1em;
 }
-h3 em {
+.criterion-header__level {
   font-size: smaller;
   font-style: normal;
   margin: 0 2em 0 .5em;
