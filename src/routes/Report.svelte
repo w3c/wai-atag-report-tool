@@ -92,21 +92,21 @@
 <p>This report has results for {evaluatedItems.length} out of {Object.values($evaluation.evaluationData).length} Success Criteria.</p>
 <ul>
   {#if evaluatedItemsByResult.passed.length > 0 }
-  <li>Passed: 
+  <li>Passed ({evaluatedItemsByResult.passed.length}): 
     {#each evaluatedItemsByResult.passed as item}
     <a href={linkToSC(item.num)} class="criterion__ref">{item.num}</a>
     {/each}
   </li>
   {/if}
   {#if evaluatedItemsByResult.failed.length > 0 }
-  <li>Failed:
+  <li>Failed ({evaluatedItemsByResult.failed.length}):
     {#each evaluatedItemsByResult.failed as item}
     <a href={linkToSC(item.num)} class="criterion__ref">{item.num}</a>
     {/each}
   </li>
   {/if}
   {#if evaluatedItemsByResult.cannottell.length > 0 }
-  <li>Cannot tell:
+  <li>Cannot tell ({evaluatedItemsByResult.cannottell.length}):
     {#each evaluatedItemsByResult.cannottell as item}
     <a href={linkToSC(item.num)} class="criterion__ref">{item.num}</a>
     {/each}
@@ -120,7 +120,7 @@
   </li>
   {/if}
   {#if evaluatedItemsByResult.notchecked.length > 0 }
-  <li>Not checked: 
+  <li>Not checked ({evaluatedItemsByResult.notchecked.length}): 
     {#each evaluatedItemsByResult.notchecked as item}
     <a href={linkToSC(item.num)} class="criterion__ref">{item.num}</a>
     {/each}
