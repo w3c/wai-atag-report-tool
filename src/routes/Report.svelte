@@ -144,7 +144,7 @@
   {:else}
 	<tr id={`criterion-${result.num.replace(/\./g, '').toLowerCase()}`}>
 		<td class="results-label-sc">{result.num}: {result.handle}</td>
-		<td><span class="results-label-mobile">Result: </span>{result.result ? result.result : 'No result'}</td>
+		<td><span class="results-label-mobile">Result: </span>{result.result && result.result !== '--' ? result.result : 'No result'}</td>
 		<td>
       {#if result.observations}
         <span class="results-label-mobile">Observations: </span>{@html marked(result.observations)}
