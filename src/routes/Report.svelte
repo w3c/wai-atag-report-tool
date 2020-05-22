@@ -54,8 +54,7 @@
   </Link>
 </h2>
 <dl>
-  <dt>Tool Name 
-  </dt>
+  <dt>Tool Name</dt>
   {#if $evaluation["meta"]["name"] && $evaluation["meta"]["name"]["value"]}
   <dd>{$evaluation["meta"]["name"]["value"]}</dd>
   {:else}
@@ -192,7 +191,7 @@
     dl {
       display: grid;
       grid-template-columns: auto 2fr;
-      gap: .5em 3em;
+      gap: .5em 1em;
     }
     dd {
       margin-bottom: 0;
