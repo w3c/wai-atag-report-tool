@@ -1,5 +1,6 @@
 <script>
   import { Link } from "svelte-routing";
+  import marked from 'marked';
 
   import { evaluation } from "../stores/evaluation.js";
 

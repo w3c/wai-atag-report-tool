@@ -1,7 +1,6 @@
 <script>
   import { onMount } from 'svelte';
   import { Link } from "svelte-routing";
-  import marked from 'marked';
   
   import Header from '../components/Header.svelte';
   import HeaderSub from '../components/HeaderSub.svelte';
