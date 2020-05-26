@@ -2,6 +2,7 @@ import { writable } from "svelte/store";
 import { createCleanEvaluation } from "../utils/createCleanEvaluation.js";
 
 const storageName = "atag_report_tool_evaluation";
+const DATA_MODEL = "2"; // update this number whenever new things added to the data model to cachebust [remove this when stable]
 let fresh = true;
 
 export function updateCache(evaluation) {
@@ -25,7 +26,8 @@ export function getEvaluation() {
 
   if (
     localStorage.getItem(storageName) &&
-    localStorage.getItem(storageName) !== null
+    localStorage.getItem(storageName) !== null &&
+    localStorage.getItem(`${storageName}-data-model`) === DATA_MODEL
   ) {
     try {
       const serialisedEvaluation = localStorage.getItem(storageName);
@@ -38,6 +40,10 @@ export function getEvaluation() {
       return cleanEvaluation;
     }
   } else {
+    localStorage.setItem(`${storageName}-data-model`, DATA_MODEL);
+    console.log(
+      "Removed evaluation data as it was created with a previous development version of ART."
+    );
     return cleanEvaluation;
   }
 }
