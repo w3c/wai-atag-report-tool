@@ -2,6 +2,7 @@
   import { evaluation } from '../stores/evaluation.js';
   import MoreInfo from './MoreInfo.svelte';
   import EvaluationResultSelector from './EvaluationResultSelector.svelte';
+  import EvaluationLevelSelector from './EvaluationLevelSelector.svelte';
   import EvaluationObservation from './EvaluationObservation.svelte';
   import SuccessCriterionDetails from './SuccessCriterionDetails.svelte';
   import SuccessCriterionHeader from './SuccessCriterionHeader.svelte';
@@ -31,7 +32,12 @@
     {#if list}<SuccessCriterionDetails type="list" details={list} />{/if}
     {#if notes && notes.length > 0}<SuccessCriterionDetails type="notes" details={notes} />{/if}
     <div class="criterion__answers">
-      <EvaluationResultSelector {id} {num} />
+      <div>
+        <EvaluationResultSelector {id} {num} />
+        {#if level === "A, AA, AAA"}
+        <EvaluationLevelSelector {id} {num} />
+        {/if}
+      </div>
       <EvaluationObservation {id} {num} />
     </div>
   {:else}
@@ -43,7 +49,9 @@
       {#if list}<SuccessCriterionDetails type="list" details={list} />{/if}
       {#if notes && notes.length > 0}<SuccessCriterionDetails type="notes" details={notes} />{/if}
       <div class="criterion__answers">
-        <EvaluationResultSelector {id} {num} />
+        <div>
+          <EvaluationResultSelector {id} {num} />
+        </div>
         <EvaluationObservation {id} {num} />
       </div>
     </details>
