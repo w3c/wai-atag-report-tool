@@ -27,14 +27,14 @@
 </script>
 
 <label for={`result-${normalisedCriterionId}`}>Result<span class="visuallyhidden"> for {num}</span></label>
-  <select id={`result-${normalisedCriterionId}`} name={`result-${id}`} bind:value={$evaluation['evaluationData'][id]['result']} on:blur={() => { evaluation.updateCache($evaluation); setEvaluatedStatus(id); }}>
-    {#each results as result}
-      <option name={`option-${id}-${result.id}`}>{result.text}</option>
-    {/each}
-  </select>
+<select id={`result-${normalisedCriterionId}`} name={`result-${id}`} bind:value={$evaluation['evaluationData'][id]['result']} on:change={() => { evaluation.updateCache($evaluation); setEvaluatedStatus(id); }}>
+  {#each results as result}
+    <option name={`option-${id}-${result.id}`}>{result.text}</option>
+  {/each}
+</select>
 
 <style>
   select {
     margin-bottom: 1em;
   }
-</div>
+</style>
