@@ -2,7 +2,10 @@ import { writable } from "svelte/store";
 import { createCleanEvaluation } from "../utils/createCleanEvaluation.js";
 
 const storageName = "atag_report_tool_evaluation";
-const DATA_MODEL = "2"; // update this number whenever new things added to the data model to cachebust [remove this when stable]
+
+// update this number whenever new things added to the data model to cachebust [remove this when stable]
+const DATA_MODEL = "3";
+
 let fresh = true;
 
 export function updateCache(evaluation) {
