@@ -15,12 +15,6 @@
   onMount(() => {
     currentPage.update( currentPage => 'Report' );
     
-    // by setting location.hash explictly, we ensure :target 
-    // selectors will work as expected
-    if (location.hash.length > 0) {
-      location.hash = location.hash;
-    }
-
     htmlDownload = createHTMLDownload();
   });
 
