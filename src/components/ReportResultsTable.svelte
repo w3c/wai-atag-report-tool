@@ -73,7 +73,7 @@
     <td colspan="4">{result.num} was not in scope for this report</td>
   </tr>
   {:else}
-  <tr id={`criterion-${result.num.replace(/\./g, '').toLowerCase()}`}>
+  <tr id={`criterion-${result.num.replace(/\./g, '').toLowerCase()}`} class={`result${result.result ? ' result--' + result.result.toLowerCase().trim() : ''}`}>
     <td class="results-label-sc">{result.num}: {result.handle}</td>
     <td><span class="results-label-mobile">Result: </span>{result.result && result.result !== '--' ? result.result : 'No result'}</td>
     <td>
@@ -99,11 +99,29 @@
 
 
 <style>
-    table {
+  table {
     width: 100%;
   }
   tr:target {
     outline: 2px solid var(--gold);
+  }
+  .result td {
+    position: relative;
+  }
+  .result td:first-child::before {
+    content: '';
+    width: .5em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: var(--line-grey);
+  }
+  .result--passed td:first-child::before {
+    background-color: green;
+  }
+  .result--failed td:first-child::before {
+    background-color: var(--faded-red);
   }
   thead {
     position: sticky;
