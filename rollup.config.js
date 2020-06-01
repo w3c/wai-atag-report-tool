@@ -18,7 +18,6 @@ export default {
 		file: "public/build/bundle.js",
 	},
 	plugins: [
-		json(),
 		svelte({
 			// enable run-time checks when not in production
 			dev: !production,
@@ -40,16 +39,19 @@ export default {
 				importee === "svelte" || importee.startsWith("svelte/"),
 		}),
 		commonjs(),
+		json(),
 		babel({
 			extensions: [".js", ".mjs", ".html", ".svelte"],
 			runtimeHelpers: true,
-			exclude: ["node_modules/@babel/**"], // <= /!\ NOT 'node_mobules/**'
+			exclude: ["node_modules/@babel/**", "node_modules/core-js/**"],
 			presets: [
 				[
 					"@babel/preset-env",
 					{
 						// adapter to ensure IE 11 support
-						targets: "> 0.25%, not dead, IE 11",
+						targets: "> 0.25%, not dead",
+						useBuiltIns: "usage",
+						corejs: 3,
 					},
 				],
 			],

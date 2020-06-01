@@ -20,11 +20,10 @@
     "svelte": "^3.0.0"
   },
   "dependencies": {
-    "es6-shim": "^0.35.5",
     "marked": "^0.8.2",
+    "core-js": "3",
     "oaf-svelte-routing": "^2.0.0",
-    "svelte-routing": "^1.4.0",
-    "svelte-tabs": "^1.1.0"
+    "svelte-routing": "^1.4.0"
   },
   "scripts": {
     "build": "rollup -c",
