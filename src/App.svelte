@@ -21,7 +21,7 @@
     <ProgressItem to="/report">Report</ProgressItem>
   </Progress>
   <EvaluationInfo />
-  <section aria-label="Main content">
+  <section class="app-content" aria-label="Main content">
     <Route path="/">
       <Overview />
     </Route>
@@ -38,7 +38,7 @@
 </Router>
 
 <style>
-  section {
+  .app-content {
     grid-column: content-start / content-end;
   }
 </style>

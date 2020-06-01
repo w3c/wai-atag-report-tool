@@ -1,6 +1,6 @@
 <script>
   import { Link } from "svelte-routing";
-  import { evaluation } from "../stores/evaluation.js";
+  import { evaluation } from "../../stores/evaluation.js";
 </script>
 
 <h2 class="report-header">
