@@ -1,6 +1,8 @@
 import atag from "../data/atag.js";
 import packageJson from "../../package.json";
 
+const datestamp = new Date().toDateString();
+
 export function createCleanEvaluation() {
   const cleanEvaluation = {
     evaluationData: {},
@@ -32,6 +34,10 @@ export function createCleanEvaluation() {
       id: "website",
       value: null,
     },
+    executiveSummary: {
+      id: "executiveSummary",
+      value: null,
+    },
     evaluatorName: {
       id: "evaluatorName",
       value: null,
@@ -39,6 +45,10 @@ export function createCleanEvaluation() {
     evaluatorOrg: {
       id: "evaluatorOrg",
       value: null,
+    },
+    evaluationId: {
+      id: "evaluationId",
+      value: datestamp,
     },
     conformanceTarget: {
       id: "conformanceTarget",
