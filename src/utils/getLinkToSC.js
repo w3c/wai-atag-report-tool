@@ -1,4 +1,4 @@
-export function linkToSC(num) {
+export function getLinkToSC(num) {
   const principle =
     num.substring(0, 1) === "A"
       ? num.substring(2, 3)
