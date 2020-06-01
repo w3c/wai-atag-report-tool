@@ -2,10 +2,10 @@
   import { Link } from "svelte-routing";
   import marked from 'marked';
 
-  import { evaluation } from "../stores/evaluation.js";
+  import { evaluation } from "../../stores/evaluation.js";
 
-  import { linkToSC } from '../utils/linkToSC.js';
-  import { getEvaluatedItems } from '../utils/getEvaluatedItems.js';
+  import { linkToSC } from '../../utils/linkToSC.js';
+  import { getEvaluatedItems } from '../../utils/getEvaluatedItems.js';
 
   $: evaluatedItems = getEvaluatedItems($evaluation);
   $: evaluatedItemsByResult = {
