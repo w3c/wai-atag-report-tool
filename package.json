@@ -20,6 +20,7 @@
     "svelte": "^3.0.0"
   },
   "dependencies": {
+    "es6-shim": "^0.35.5",
     "marked": "^0.8.2",
     "oaf-svelte-routing": "^2.0.0",
     "svelte-routing": "^1.4.0",

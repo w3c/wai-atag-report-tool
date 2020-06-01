@@ -1,4 +1,5 @@
 import App from "./App.svelte";
+import "es6-shim";
 import { globalHistory as history } from "svelte-routing/src/history";
 import { wrapHistory } from "oaf-svelte-routing";
 import atag from "./data/atag.js";
