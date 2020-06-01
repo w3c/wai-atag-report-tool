@@ -4,7 +4,7 @@ With this tool, people can report on how accessible their [authoring tool](https
 
 ## Status
 
-This project is an early prototype.
+This project is a prototype that is currently under review by the Education & Outreach Working Group.
 
 ## Development
 
