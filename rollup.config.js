@@ -49,7 +49,6 @@ export default {
 					"@babel/preset-env",
 					{
 						// adapter to ensure IE 11 support
-						targets: "> 0.25%, not dead",
 						useBuiltIns: "usage",
 						corejs: 3,
 					},
