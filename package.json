@@ -19,6 +19,7 @@
     "sirv-cli": "^0.4.4",
     "svelte": "^3.0.0"
   },
+  "browserslist": "> 0.25%, not dead",
   "dependencies": {
     "marked": "^0.8.2",
     "core-js": "3",
