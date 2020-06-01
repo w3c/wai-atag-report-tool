@@ -29,6 +29,10 @@
   {:else}
   <dd>Not provided</dd>
   {/if}
+  <dt>Report Identifier</dt>
+  {#if $evaluation["meta"]["evaluationId"] && $evaluation["meta"]["evaluationId"]["value"]}
+  <dd>{$evaluation["meta"]["evaluationId"]["value"]}</dd>
+  {/if}
   <dt>Evaluator</dt>
   {#if $evaluation["meta"]["evaluatorName"] && $evaluation["meta"]["evaluatorName"]["value"]}
   <dd>{$evaluation["meta"]["evaluatorName"]["value"]}</dd>
