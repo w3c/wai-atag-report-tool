@@ -17,7 +17,7 @@
     <td colspan="4">{result.num} was not in scope for this report</td>
   </tr>
 {:else}
-  <tr class="result-row" id={rowId}>
+  <tr class={`result-row${result.result ? ' result-row--' + result.result.toLowerCase().trim().split(' ').join('') : ''}`}  id={rowId}>
     <td class="results-label-sc">{result.num}: {result.handle}</td>
     <td><span class="results-label-mobile">Result: </span>{result.result && result.result !== '--' ? result.result : 'No result'}</td>
     <td>
@@ -44,7 +44,27 @@
   }
     .result-row td {
       display: block;
+      position: relative;
       border-style: none;
+    }
+    .result-row td:first-child::before {
+      content: '';
+      width: .5em;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      background-color: var(--line-grey);
+    }
+    .result-row--passed td:first-child::before,
+    .result-row--notapplicable td:first-child::before {
+      background-color: green;
+    }
+    .result-row--failed td:first-child::before {
+      background-color: var(--faded-red);
+    }
+    .result-row--cannottell td:first-child::before {
+      background-color: orange;
     }
   .results-label-sc {
     font-weight: bold;
