@@ -20,7 +20,6 @@
     {/each}
     <ProgressItem to="/report">Report</ProgressItem>
   </Progress>
-  <EvaluationInfo />
   <section class="app-content" aria-label="Main content">
     <Route path="/">
       <Overview />
@@ -35,6 +34,7 @@
       <Report />
     </Route>
   </section>
+  <EvaluationInfo />
 </Router>
 
 <style>
