@@ -39,6 +39,9 @@
     margin-bottom: 1em;
     border-bottom: 1px solid var(--cloudy);
   }
+  .result-row:target {
+    outline: 2px solid var(--gold);
+  }
     .result-row td {
       display: block;
       border-style: none;
