@@ -1,5 +1,5 @@
 <script>
-  import { navigate, Router, Link } from 'svelte-routing';
+  import { navigate, Router, Link } from 'svelte-navigator';
   import { evaluation } from '../stores/evaluation.js';
   import { currentPage } from '../stores/currentPage.js';
   import { importEvaluation } from '../utils/importEvaluation.js';
