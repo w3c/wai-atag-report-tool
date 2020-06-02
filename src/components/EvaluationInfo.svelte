@@ -62,7 +62,9 @@
     <p>Reported on <strong>{evaluatedItems.length}</strong> out of <strong>{totalCriteria}</strong> success criteria.</p>
     {/if}
     <button class="button" on:click={toOverview}>View report</button>
+    {#if evaluatedItems.length > 0}
     <button class="button button-secondary" on:click={clear}>Clear report</button>
+    {/if}
   {/if}
 </aside>
 
