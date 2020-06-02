@@ -39,6 +39,7 @@
 
 <style>
   .app-content {
-    grid-column: content-start / content-end;
+    grid-column: 2 / span 6;
+    grid-row-start: 2;
   }
 </style>
