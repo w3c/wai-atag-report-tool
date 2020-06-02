@@ -22,6 +22,11 @@
   });
 </script>
 
+<svelte:head>
+  <title>Report | ATAG Report Tool | W3C WAI</title>
+</svelte:head>
+
+
 <Header>
   <HeaderSub>ATAG Report Tool</HeaderSub>
   Report

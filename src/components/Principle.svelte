@@ -28,6 +28,10 @@
   const linkToPrinciple = `https://www.w3.org/TR/ATAG20/#principle_${normalisedPrincipleId}`;
 </script>
 
+<svelte:head>
+  <title>{principle.num} | ATAG Report Tool | W3C WAI</title>
+</svelte:head>
+
 <div class={className}>
   <Header>
     <HeaderSub>
