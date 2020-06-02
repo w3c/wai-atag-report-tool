@@ -4,7 +4,7 @@ import { createCleanEvaluation } from "../utils/createCleanEvaluation.js";
 const storageName = "atag_report_tool_evaluation";
 
 // update this number whenever new things added to the data model to cachebust [remove this when stable]
-const DATA_MODEL = "3";
+const DATA_MODEL = "9";
 
 let fresh = true;
 
