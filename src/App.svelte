@@ -7,6 +7,7 @@
   import Principle from './components/Principle.svelte';
   import Progress from './components/Progress.svelte';
   import ProgressItem from './components/ProgressItem.svelte';
+  import { currentPage } from './stores/currentPage.js';
   import atag from './data/atag.js';
   export let url = "";
 </script>
@@ -34,7 +35,9 @@
       <Report />
     </Route>
   </section>
+  {#if $currentPage !== "Report"}
   <EvaluationInfo />
+  {/if}
 </Router>
 
 <style>
