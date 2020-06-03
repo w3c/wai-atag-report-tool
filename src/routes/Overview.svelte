@@ -1,6 +1,6 @@
 <script>
   import { onMount } from 'svelte';
-  import { Link } from 'svelte-routing';
+  import { Link } from 'svelte-navigator';
   import ExpandCollapseAll from '../components/ExpandCollapseAll.svelte';
   import Header from '../components/Header.svelte';
   import HeaderSub from '../components/HeaderSub.svelte';
@@ -14,6 +14,10 @@
     currentPage.update( currentPage => 'Overview' );
   });
 </script>
+
+<svelte:head>
+  <title>Overview | ATAG Report Tool | W3C WAI</title>
+</svelte:head>
 
 <Header>  
   <HeaderSub>

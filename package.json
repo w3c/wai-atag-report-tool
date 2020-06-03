@@ -21,10 +21,9 @@
   },
   "browserslist": "> 0.25%, not dead",
   "dependencies": {
-    "marked": "^0.8.2",
     "core-js": "3",
-    "oaf-svelte-routing": "^2.0.0",
-    "svelte-routing": "^1.4.0"
+    "marked": "^0.8.2",
+    "svelte-navigator": "^3.0.5"
   },
   "scripts": {
     "build": "rollup -c",

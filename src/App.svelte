@@ -1,5 +1,5 @@
 <script>
-  import { Router, Route } from "svelte-routing";
+  import { Router, Route } from "svelte-navigator";
   import Overview from "./routes/Overview.svelte";
   import Start from './routes/Start.svelte';
   import EvaluationInfo from './components/EvaluationInfo.svelte';
