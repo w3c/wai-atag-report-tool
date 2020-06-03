@@ -47,7 +47,7 @@
       position: relative;
       border-style: none;
     }
-    .result-row td:first-child::before {
+    .result-row td:nth-child(2)::before {
       content: '';
       width: .5em;
       position: absolute;
@@ -56,14 +56,14 @@
       bottom: 0;
       background-color: var(--line-grey);
     }
-    .result-row--passed td:first-child::before,
-    .result-row--notapplicable td:first-child::before {
+    .result-row--passed td:nth-child(2)::before,
+    .result-row--notapplicable td:nth-child(2)::before {
       background-color: green;
     }
-    .result-row--failed td:first-child::before {
+    .result-row--failed td:nth-child(2)::before {
       background-color: var(--faded-red);
     }
-    .result-row--cannottell td:first-child::before {
+    .result-row--cannottell td:nth-child(2)::before {
       background-color: orange;
     }
   .results-label-sc {
