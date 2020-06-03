@@ -53,7 +53,7 @@
 	<p>As you go through and evaluate your tool, you will select a "result" for each criterion. Here is the legend of what those selections mean:</p>
 	<dl>
 		<dt>Not checked</dt>
-		<dd>You did not check this success criterion</dd>
+		<dd>You did not check this success criterion.</dd>
 		<dt>Pass</dt>
 		<dd>This success criterion is met.</dd>
 		<dt>Failed</dt>
