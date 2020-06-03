@@ -19,7 +19,6 @@
   let list = null;
 
   $: normalisedCriterionId = normaliseCriterionId(num);
-  $: linkToImplementing = `https://www.w3.org/WAI/AU/2012/WD-IMPLEMENTING-ATAG20-20121011/#sc_${normalisedCriterionId}`;
   $: notes = details ? details.filter(detail => detail.type === 'note') : null;
   $: list = details ? details.filter(detail => detail.type === 'olist' || detail.type === 'ulist') : null;
   $: inConformanceTarget = $evaluation.meta.conformanceTarget && $evaluation.meta.conformanceTarget.value.length >= level.length;
