@@ -30,7 +30,7 @@
 
 {#if $evaluation["meta"]["website"]}
 <div class="field">
-  <label for="evaluation-meta-website">Website</label>
+  <label for="evaluation-meta-website">Website (URL)</label>
   <input type="url" bind:value={$evaluation["meta"]["website"]["value"]} id="evaluation-meta-website" on:blur={() =>  evaluation.updateCache($evaluation)} />
 </div>
 {/if}
