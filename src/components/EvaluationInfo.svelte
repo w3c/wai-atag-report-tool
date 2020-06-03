@@ -43,7 +43,7 @@
   <Router>
     <h2>
       {#if $evaluation["meta"] && $evaluation["meta"]["name"] && $evaluation["meta"]["name"]["value"]}
-      <small>Reporting on </small>{$evaluation["meta"]["name"]["value"]}
+      <small>Report for </small>{$evaluation["meta"]["name"]["value"]}
       {:else}
       Your report
       {/if}
