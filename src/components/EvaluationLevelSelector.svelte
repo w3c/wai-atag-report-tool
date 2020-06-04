@@ -15,7 +15,7 @@
 </script>
 
 <label for={`result-level-${normalisedCriterionId}`}>Evaluate <span class="visuallyhidden"> {num} </span> as</label>
-<select id={`result-level-${normalisedCriterionId}`} name={`result-${id}`} bind:value={$evaluation['evaluationData'][id]['evaluatedLevel']} on:change={() => { evaluation.updateCache($evaluation); }}>
+<select id={`result-level-${normalisedCriterionId}`} name={`result-${id}`} bind:value={$evaluation['evaluationData'][id]['evaluatedLevel']} on:blur={() => { evaluation.updateCache($evaluation); }}>
   {#each results as result}
     <option name={`option-${id}-${result.id}`}>{result.text}</option>
   {/each}
