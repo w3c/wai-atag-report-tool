@@ -7,8 +7,6 @@
   import PagerLink from '../components/PagerLink.svelte';
   import { currentPage } from '../stores/currentPage.js';
 
-  let tips;
-
   onMount(() => {
     currentPage.update( currentPage => 'Overview' );
   });
@@ -59,7 +57,6 @@
 	</dl>
 </details>
 
-<details bind:this={tips}>
 	<summary><h2>Tips for using this tool</h2></summary>
 	<ul>
     <li>You can format your evaluation with <a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a>, so that you can use lists, links and code examples (read more about <a href="https://daringfireball.net/projects/markdown/syntax#block">Markdown syntax</a>).</li>
