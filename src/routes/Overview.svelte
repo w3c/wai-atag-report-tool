@@ -20,7 +20,13 @@
 
 <p>This tool helps evaluators report on the accessibility of authoring tools. It guides you through the Authoring Tool Accessibility Guidelines (ATAG) requirements, lets you record your evaluation results for each requirement, and generates a report of the authoring tool's ATAG conformance.</p>
 
-<p><small>Note: this evaluation happens on your computer, no data is sent to us. To save the report on your computer, export it to HTML or JSON on the <Link to={"/report"}>Report</Link> page.</p>
+<p>Tips for using this tool:</p>
+
+<ul>
+  <li>You can export your report as HTML (web page) and as JSON (structured data).</li>
+  <li>The tool saves information you enter locally in your browser for backup (not on our servers).</li>
+  <li>You can format your evaluation with <a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a>, so that you can use lists, links and code examples (read more about <a href="https://daringfireball.net/projects/markdown/syntax#block">Markdown syntax</a>).</li>
+</ul>
 
 <ExpandCollapseAll />
 
@@ -38,6 +44,7 @@
 	<p>Following the structure of ATAG, this tool takes you through eight <strong>Principles</strong>. Each principle has a number of <strong>Guidelines</strong>, which are further divided into <strong>Success Criteria</strong>. For each, you can select a result and note down any observations. Results include "Not checked", "Passed", "Failed", "Not applicable", and "Cannot tell".</p>
 	<p>Part A (Principles A.1 to A.4) is related to the <strong>editing experience</strong> with the authoring tool. It helps ensure that content can be created by people with disabilities.</p>
 	<p>Part B (Principles B.1 to B.4) is about the <strong>output</strong> of the authoring tool. It helps ensure that content editors can create accessible content, and are encouraged to do so.</p>
+  <p>More information on each ATAG Success Criterion is in <a href="https://www.w3.org/TR/IMPLEMENTING-ATAG20/" target="_blank">Implementing ATAG 2.0</a>. Links in this tool lead you to the relevant sections of the “Implementing” document.</p>
 </details>
 
 <details>
@@ -55,16 +62,6 @@
 		<dt>Cannot tell</dt>
 		<dd>It is unclear whether the success criterion is met.</dd>
 	</dl>
-</details>
-
-	<summary><h2>Tips for using this tool</h2></summary>
-	<ul>
-    <li>You can format your evaluation with <a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a>, so that you can use lists, links and code examples (read more about <a href="https://daringfireball.net/projects/markdown/syntax#block">Markdown syntax</a>).</li>
-		<li>This tools saves information you enter locally in your browser for backup (not on our servers).</li>
-		<li>More information on each ATAG Success Criterion is in <a href="https://www.w3.org/TR/IMPLEMENTING-ATAG20/" target="_blank">Implementing ATAG 2.0</a>. Links in this tool lead you to the relevant sections of the “Implementing” document.</li>
-		<li>You can go back and forth between the pages (each is a Principle) in any order. None of the fields are required.</li>
-		<li>The tool provides your report as HTML (web page) and as JSON (structured data).</li>
-	</ul>
 </details>
 
 <Pager label="Previous/Next Principle">
