@@ -3,7 +3,6 @@
   import { Link } from 'svelte-navigator';
   import ExpandCollapseAll from '../components/ExpandCollapseAll.svelte';
   import Header from '../components/Header.svelte';
-  import HeaderSub from '../components/HeaderSub.svelte';
   import Pager from '../components/Pager.svelte';
   import PagerLink from '../components/PagerLink.svelte';
   import { currentPage } from '../stores/currentPage.js';
@@ -19,12 +18,7 @@
   <title>Overview | ATAG Report Tool | W3C WAI</title>
 </svelte:head>
 
-<Header>  
-  <HeaderSub>
-    ATAG Report Tool
-  </HeaderSub>
-  Overview
-</Header>
+<Header>Overview</Header>
 
 <p>This tool helps evaluators report on the accessibility of authoring tools. It guides you through the Authoring Tool Accessibility Guidelines (ATAG) requirements, lets you record your evaluation results for each requirement, and generates a report of the authoring tool's ATAG conformance.</p>
 

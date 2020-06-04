@@ -1,7 +1,6 @@
 <script>
   import { onMount } from 'svelte';
   import Header from '../components/Header.svelte';
-  import HeaderSub from '../components/HeaderSub.svelte';
   import Pager from '../components/Pager.svelte';
   import PagerLink from '../components/PagerLink.svelte';
   import { evaluation } from '../stores/evaluation.js';
@@ -17,12 +16,7 @@
 </svelte:head>
 
 
-<Header>
-  <HeaderSub>
-    ATAG Report Tool
-  </HeaderSub>
-  Start
-</Header>
+<Header>Start</Header>
 
 <h2>About the authoring tool</h2>
 

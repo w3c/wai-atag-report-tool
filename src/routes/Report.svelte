@@ -3,7 +3,6 @@
   import { Link } from "svelte-navigator";
   
   import Header from '../components/Header.svelte';
-  import HeaderSub from '../components/HeaderSub.svelte';
   import ReportHeader from '../components/report/ReportHeader.svelte';
   import ReportResults from '../components/report/ReportResults.svelte';
   import ReportHTMLDownload from '../components/report/ReportHTMLDownload.svelte';
@@ -27,10 +26,7 @@
 </svelte:head>
 
 
-<Header>
-  <HeaderSub>ATAG Report Tool</HeaderSub>
-  Report
-</Header>
+<Header>Report</Header>
 
 <p>
   <ReportHTMLDownload />

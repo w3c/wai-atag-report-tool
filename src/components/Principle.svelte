@@ -1,7 +1,6 @@
 <script>
   import { onMount } from 'svelte';
   import Header from './Header.svelte';
-  import HeaderSub from './HeaderSub.svelte';
   import Guideline from './Guideline.svelte';
   import Pager from './Pager.svelte';
   import PagerLink from './PagerLink.svelte';
@@ -33,12 +32,7 @@
 </svelte:head>
 
 <div class={className}>
-  <Header>
-    <HeaderSub>
-      ATAG Report Tool
-    </HeaderSub>
-    {principle.num}: {principle.handle}
-  </Header>
+  <Header>{principle.num}: {principle.handle}</Header>
 
   <p>More details: <a href={linkToPrinciple} target="_blank" rel="noopener roreferrer">{principle.num} {principle.text}</a></p>
   
