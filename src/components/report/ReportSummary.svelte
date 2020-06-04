@@ -26,7 +26,7 @@
   {:else}
   Not provided
   {/if}
-  <button type="button" class="button-secondary" on:click={toggleEdit}>Edit</button>
+  <p><button type="button" class="button-secondary" on:click={toggleEdit}>Edit</button></p>
 {/if}
 </div>
 
