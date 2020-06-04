@@ -4,6 +4,7 @@
   
   import Header from '../components/Header.svelte';
   import ReportHeader from '../components/report/ReportHeader.svelte';
+  import ReportSummary from '../components/report/ReportSummary.svelte';
   import ReportResults from '../components/report/ReportResults.svelte';
   import ReportHTMLDownload from '../components/report/ReportHTMLDownload.svelte';
   import ReportJSONDownload from '../components/report/ReportJSONDownload.svelte';
@@ -34,6 +35,7 @@
 </p>
 
 <ReportHeader />
+<ReportSummary />
 <ReportResults />
 
 

@@ -1,55 +1,57 @@
 <script>
-  import { Link } from "svelte-navigator";
+  import { Link, navigate } from "svelte-navigator";
+  import ReportHeaderKey from './ReportHeaderKey.svelte';
+  import ReportHeaderMultiValue from './ReportHeaderMultiValue.svelte';
+  import ReportHeaderValue from './ReportHeaderValue.svelte';
   import { evaluation } from "../../stores/evaluation.js";
+
+  let editing = false;
+  let section;
+
+  function toggleEdit() {
+    editing = !editing; 
+    section.focus();
+  }
 </script>
 
-<h2 class="report-header">
-  General
-  <Link to="/start">
-    <span class="visuallyhidden">Edit details</span>
-    <svg aria-hidden="true" focusable="false"  width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
-  </Link>
-</h2>
-<dl>
-  <dt>Tool Name</dt>
-  {#if $evaluation["meta"]["name"] && $evaluation["meta"]["name"]["value"]}
-  <dd>{$evaluation["meta"]["name"]["value"]}</dd>
+<div tabindex="-1" bind:this={section}>
+  <h2 class="report-header">
+    General
+  </h2>
+  <dl>
+    <dt><ReportHeaderKey {editing} field="name">Tool Name</ReportHeaderKey></dt>
+    <dd><ReportHeaderValue {editing} field="name" /></dd>
+    <dt><ReportHeaderKey {editing} field="website">Website</ReportHeaderKey></dt>
+    <dd><ReportHeaderValue {editing} field="website" /></dd>
+    <dt><ReportHeaderKey {editing} field="conformanceTarget">Conformance Target</ReportHeaderKey></dt>
+    <dd>
+      <ReportHeaderMultiValue {editing} field="conformanceTarget">
+        <option value="A">Level A</option>
+        <option value="AA">Level AA</option>
+        <option value="AAA">Level AAA</option>
+      </ReportHeaderMultiValue>
+    </dd>
+    <dt><ReportHeaderKey {editing} field="evaluationId">Report Identifier</ReportHeaderKey></dt>
+    <dd><ReportHeaderValue {editing} field="evaluationId" /></dd>
+    <dt><ReportHeaderKey {editing} field="evaluatorName">Evaluator</ReportHeaderKey></dt>
+    <dd><ReportHeaderValue {editing} field="evaluatorName" /></dd>
+    <dt><ReportHeaderKey {editing} field="evaluatorOrg">Organization</ReportHeaderKey></dt>
+    <dd><ReportHeaderValue {editing} field="evaluatorOrg" /></dd>
+  </dl>
+  {#if editing}
+  <button type="button" class="button button-secondary" on:click={toggleEdit}>Save</button>
   {:else}
-  <dd>Not provided</dd>
+  <button type="button" class="button button-secondary" on:click={toggleEdit}>Edit</button>
   {/if}
-  <dt>Website</dt>
-  {#if $evaluation["meta"]["website"] && $evaluation["meta"]["website"]["value"]}
-  <dd>{$evaluation["meta"]["website"]["value"]}</dd>
-  {:else}
-  <dd>Not provided</dd>
-  {/if}
-  <dt>Conformance Target</dt>
-  {#if $evaluation["meta"]["conformanceTarget"] && $evaluation["meta"]["conformanceTarget"]["value"]}
-  <dd>Level {$evaluation["meta"]["conformanceTarget"]["value"]}</dd>
-  {:else}
-  <dd>Not provided</dd>
-  {/if}
-  <dt>Evaluator</dt>
-  {#if $evaluation["meta"]["evaluatorName"] && $evaluation["meta"]["evaluatorName"]["value"]}
-  <dd>{$evaluation["meta"]["evaluatorName"]["value"]}</dd>
-  {:else}
-  <dd>Not provided</dd>
-  {/if}
-  <dt>Organization</dt>
-  {#if $evaluation["meta"]["evaluatorOrg"] && $evaluation["meta"]["evaluatorOrg"]["value"]}
-  <dd>{$evaluation["meta"]["evaluatorOrg"]["value"]}</dd>
-  {:else}
-  <dd>Not provided</dd>
-  {/if}
-</dl>
+</div>
 
 <style>
-   .report-header {
+  .report-header {
     display: flex;
   }
-    :global(.report-header a) {
-      margin-left: auto;
-    }
+  div:focus { 
+    outline: none; 
+  }
   dt {
     grid-column: 1 / 2;
     margin-top: 0;

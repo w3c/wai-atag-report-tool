@@ -1,5 +1,5 @@
 <script>
-  import LinkToSC from './LinkToSC.svelte';
+  import LinkToGuidance from './LinkToGuidance.svelte';
   import { normaliseCriterionId } from '../utils/normaliseCriterionId';
 
   export let num, handle, level, linkToImplementing;
@@ -11,7 +11,7 @@
 <div class="criterion-header">
   <h3>{num}: {handle}</h3> 
   <em class="criterion-header__level">Level {level}</em>
-  <LinkToSC href={linkToImplementing}>Implementing {num}</LinkToSC>
+  <LinkToGuidance href={linkToImplementing}>Implementing {num}</LinkToGuidance>
 </div>
 
 <style>
