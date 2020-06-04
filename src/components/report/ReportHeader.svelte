@@ -48,6 +48,9 @@
 </div>
 
 <style>
+  .report-header {
+    display: flex;
+  }
   div:focus { 
     outline: none; 
   }
