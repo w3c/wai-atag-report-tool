@@ -17,6 +17,12 @@
 .link-to-guidance {
   border-width: 1px;
   font-weight: normal;
+  color: var(--grey);
+}
+.link-to-guidance:hover,
+.link-to-guidance:focus {
+  color: var(--off-black);
+  background-color: transparent;  
 }
 .link-to-guidance svg {
   margin-right: .25em;
