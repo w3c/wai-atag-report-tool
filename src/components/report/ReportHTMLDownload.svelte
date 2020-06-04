@@ -23,7 +23,7 @@
   }
 </script>
 
-<a href={htmlDownload} download="report.html" class="button button-secondary">Download evaluation (HTML)</a>
+<a href={htmlDownload} download="report.html" class="button">Download evaluation (HTML)</a>
 
 <div hidden bind:this={htmlDownloadTemplate}>
   <ReportHeader />

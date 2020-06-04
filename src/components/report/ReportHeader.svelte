@@ -1,6 +1,5 @@
 <script>
   import { Link, navigate } from "svelte-navigator";
-  import EditButton from './EditButton.svelte';
   import ReportHeaderKey from './ReportHeaderKey.svelte';
   import ReportHeaderMultiValue from './ReportHeaderMultiValue.svelte';
   import ReportHeaderValue from './ReportHeaderValue.svelte';
@@ -18,9 +17,6 @@
 <div tabindex="-1" bind:this={section}>
   <h2 class="report-header">
     General
-    {#if !editing}
-    <EditButton on:edit={toggleEdit}>Edit details</EditButton>
-    {/if}
   </h2>
   <dl>
     <dt><ReportHeaderKey {editing} field="name">Tool Name</ReportHeaderKey></dt>
@@ -43,7 +39,9 @@
     <dd><ReportHeaderValue {editing} field="evaluatorOrg" /></dd>
   </dl>
   {#if editing}
-  <button type="button" on:click={toggleEdit}>Save</button>
+  <button type="button" class="button button-secondary" on:click={toggleEdit}>Save</button>
+  {:else}
+  <button type="button" class="button button-secondary" on:click={toggleEdit}>Edit</button>
   {/if}
 </div>
 
