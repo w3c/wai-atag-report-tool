@@ -2,6 +2,7 @@
   import { onMount } from 'svelte';
   import Header from './Header.svelte';
   import Guideline from './Guideline.svelte';
+  import LinkToGuidance from './LinkToGuidance.svelte';
   import Pager from './Pager.svelte';
   import PagerLink from './PagerLink.svelte';
   import atag from '../data/atag.js';
@@ -34,7 +35,7 @@
 <div class={className}>
   <Header>{principle.num}: {principle.handle}</Header>
 
-  <p>More details: <a href={linkToPrinciple} target="_blank" rel="noopener roreferrer">{principle.num} {principle.text}</a></p>
+  <p><LinkToGuidance href={linkToPrinciple} target="_blank" rel="noopener roreferrer">{principle.num} {principle.text}</LinkToGuidance></p>
   
   {#each guidelines as guideline, i (guideline.id) }
   <Guideline {...guideline} />
