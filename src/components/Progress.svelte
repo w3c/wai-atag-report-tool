@@ -2,7 +2,7 @@
   .progress {
     grid-column: navigation-start / content-end;
     overflow: auto;
-    margin: -32px 0 32px;
+    margin: -32px 0 40px;
     background-color: var(--cloudy-subtle);
   } 
     .progress ul {
