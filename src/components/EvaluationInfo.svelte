@@ -1,5 +1,5 @@
 <script>
-  import { navigate, Router, Link } from 'svelte-routing';
+  import { navigate, Router, Link } from 'svelte-navigator';
   import { evaluation } from '../stores/evaluation.js';
   import { currentPage } from '../stores/currentPage.js';
   import { importEvaluation } from '../utils/importEvaluation.js';
@@ -39,11 +39,11 @@
    <button class="button" on:click={startNew}>Start new report</button>
    <input type="file" id="import-evaluation" on:change={importEvaluation} class="visuallyhidden" accept="application/json"/>
    <label for="import-evaluation" class="button button-secondary">Import report</label>
-  {:else if $currentPage === "Your Evaluation" }
+  {:else if $currentPage === "Start" }
   <Router>
     <h2>
       {#if $evaluation["meta"] && $evaluation["meta"]["name"] && $evaluation["meta"]["name"]["value"]}
-      <small>Reporting on </small>{$evaluation["meta"]["name"]["value"]}
+      <small>Report for </small>{$evaluation["meta"]["name"]["value"]}
       {:else}
       Your report
       {/if}
@@ -53,7 +53,7 @@
   {:else}
     <h2>
       {#if $evaluation["meta"] && $evaluation["meta"]["name"] && $evaluation["meta"]["name"]["value"]}
-      <small>Report on </small>{$evaluation["meta"]["name"]["value"]}
+      <small>Report for </small>{$evaluation["meta"]["name"]["value"]}
       {:else}
       Your report
       {/if}
@@ -62,8 +62,8 @@
     <p>Reported on <strong>{evaluatedItems.length}</strong> out of <strong>{totalCriteria}</strong> success criteria.</p>
     {/if}
     <button class="button" on:click={toOverview}>View report</button>
-    {#if evaluatedItems.length > 0}
-    <button class="button button-secondary" on:click={clear}>Clear report</button>
+    {#if evaluatedItems.length > 0 && $currentPage === "Overview"}
+    <button class="button button-secondary" on:click={clear}>Start new report</button>
     {/if}
   {/if}
 </aside>

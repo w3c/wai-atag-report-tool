@@ -5,7 +5,7 @@
   export let num, handle, level, linkToImplementing;
 
   $: normalisedCriterionId = normaliseCriterionId(num);
-  $: linkToImplementing = `https://www.w3.org/WAI/AU/2012/WD-IMPLEMENTING-ATAG20-20121011/#sc_${normalisedCriterionId}`;
+  $: linkToImplementing = `https://www.w3.org/TR/IMPLEMENTING-ATAG20/#sc_${normalisedCriterionId}`;
 </script>
 
 <div class="criterion-header">

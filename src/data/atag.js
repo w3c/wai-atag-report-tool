@@ -658,7 +658,7 @@ const atag = [
           {
             id: "content-during-authoring-session",
             num: "B.1.1.2",
-            handle: "Content Auto-Generation During Authoring Sessions (WCAG",
+            handle: "Content Auto-Generation During Authoring Sessions (WCAG)",
             text:
               " If the authoring tool provides the functionality for automatically generating web content during an authoring session, then at least one of the following is true:",
             level: "A, AA, AAA",

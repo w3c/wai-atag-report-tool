@@ -1,5 +1,5 @@
 <script>
-  import { Link } from "svelte-routing";
+  import { Link } from "svelte-navigator";
   import { evaluation } from '../stores/evaluation.js';
   import { normaliseCriterionId } from '../utils/normaliseCriterionId';
 

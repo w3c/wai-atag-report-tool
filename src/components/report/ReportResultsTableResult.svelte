@@ -1,5 +1,5 @@
 <script>
-  import { Link } from "svelte-routing";
+  import { Link } from "svelte-navigator";
   import marked from 'marked';
   import { getLinkToSC } from '../../utils/getLinkToSC.js';
 
@@ -18,7 +18,7 @@
   </tr>
 {:else}
   <tr class={`result-row${result.result ? ' result-row--' + result.result.toLowerCase().trim().split(' ').join('') : ''}`}  id={rowId}>
-    <td class="results-label-sc">{result.num}: {result.handle}</td>
+    <td class="results-label-sc">{result.num}: {result.handle} ({#if isMultiLevelSC}evaluated as {/if}{result.evaluatedLevel})</td>
     <td><span class="results-label-mobile">Result: </span>{result.result && result.result !== '--' ? result.result : 'No result'}</td>
     <td>
       {#if result.observations}
