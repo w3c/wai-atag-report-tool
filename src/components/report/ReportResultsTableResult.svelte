@@ -18,7 +18,7 @@
   </tr>
 {:else}
   <tr class="result-row" id={rowId}>
-    <td class="results-label-sc">{result.num}: {result.handle}</td>
+    <td class="results-label-sc">{result.num}: {result.handle} ({#if isMultiLevelSC}evaluated as {/if}{result.evaluatedLevel})</td>
     <td><span class="results-label-mobile">Result: </span>{result.result && result.result !== '--' ? result.result : 'No result'}</td>
     <td>
       {#if result.observations}

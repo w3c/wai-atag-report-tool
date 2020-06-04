@@ -18,6 +18,10 @@ export function createCleanEvaluation() {
           observations: null,
           evaluated: false,
           level: successcriterion.level,
+          evaluatedLevel:
+            successcriterion.level === "A, AA, AAA"
+              ? "Level AA"
+              : `Level ${successcriterion.level}`,
         };
       }
     }
