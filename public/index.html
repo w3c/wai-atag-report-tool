@@ -40,21 +40,52 @@
       .progress__item .active {
         background-color: var(--body-bg);
       }
+      .tool-header {
+        grid-column: 2 / 10;
+        display: flex;
+        align-items: center;
+      }
+      .tool-header a {
+        text-decoration: none;
+      }
+      .tool-header-name {
+        font-size: 1.125em;
+        white-space: nowrap;
+      }
+      @media (min-width: 60em) {
+        .tool-header-name {
+          font-size: 1.5em;
+        }
+      }
+      .tool-header-logo {
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+      }
+      .tool-header-logo img {
+        display: block;
+        margin: 0.75em 0 0.75em 0.5em;
+        height: 1.5em;
+      }
+      @media (min-width: 60em) {
+        .tool-header-logo img {
+          height: 2em;
+        }
+      }
     </style>
   </head>
   <body>
     <header id="site-header" class="default-grid with-gap">
-      <div class="logo" style="grid-column-start: navigation-start;">
-        <a href="http://w3.org/">
-          <img alt="W3C" src="/images/w3c.svg" width="73" height="50" />
-        </a>
-        <a href="http://w3.org/WAI/">
-          <img
-            alt="Web Accessibility Initiative"
-            src="/images/wai.svg"
-            height="50"
-          />
-        </a>
+      <div class="tool-header">
+        <span class="tool-header-name">ATAG Report Tool</span>
+        <div class="tool-header-logo">
+          <a href="http://w3.org/">
+            <img alt="W3C" src="/images/w3c.svg" />
+          </a>
+          <a href="http://w3.org/WAI/">
+            <img alt="Web Accessibility Initiative" src="/images/wai.svg" />
+          </a>
+        </div>
       </div>
     </header>
     <main

@@ -1,7 +1,6 @@
 <script>
   import { onMount } from 'svelte';
   import Header from '../components/Header.svelte';
-  import HeaderSub from '../components/HeaderSub.svelte';
   import Pager from '../components/Pager.svelte';
   import PagerLink from '../components/PagerLink.svelte';
   import { evaluation } from '../stores/evaluation.js';
@@ -12,40 +11,40 @@
   });
 </script>
 
-<Header>
-  <HeaderSub>
-    ATAG Report Tool
-  </HeaderSub>
-  Start
-</Header>
+<svelte:head>
+  <title>Start | ATAG Report Tool | W3C WAI</title>
+</svelte:head>
+
+
+<Header>Start</Header>
 
 <h2>About the authoring tool</h2>
 
 <div class="field">
   <label for="evaluation-meta-name">Name</label>
-  <input type="text" bind:value={$evaluation["meta"]["name"]["value"]} id="evaluation-meta-name"on:change={() =>  evaluation.updateCache($evaluation)} />
+  <input type="text" bind:value={$evaluation["meta"]["name"]["value"]} id="evaluation-meta-name"on:blur={() =>  evaluation.updateCache($evaluation)} />
 </div>
 
 <div class="field">
-  <label for="evaluation-meta-website">Website</label>
-  <input type="url" bind:value={$evaluation["meta"]["website"]["value"]} id="evaluation-meta-website" on:change={() =>  evaluation.updateCache($evaluation)} />
+  <label for="evaluation-meta-website">Website (URL)</label>
+  <input type="url" bind:value={$evaluation["meta"]["website"]["value"]} id="evaluation-meta-website" on:blur={() =>  evaluation.updateCache($evaluation)} />
 </div>
 
 <h2>About the evaluation</h2>
 
 <div class="field">
-  <label for="evaluation-meta-your-name">Name of Evaluator</label>
-  <input type="text" bind:value={$evaluation["meta"]["evaluatorName"]["value"]} id="evaluation-meta-your-name"on:change={() =>  evaluation.updateCache($evaluation)} />
+  <label for="evaluation-meta-your-name">Name of evaluator</label>
+  <input type="text" bind:value={$evaluation["meta"]["evaluatorName"]["value"]} id="evaluation-meta-your-name"on:blur={() =>  evaluation.updateCache($evaluation)} />
 </div>
 
 <div class="field">
-  <label for="evaluation-meta-org-name">Organization of Evaluator</label>
-  <input type="text" bind:value={$evaluation["meta"]["evaluatorOrg"]["value"]} id="evaluation-meta-org-name"on:change={() =>  evaluation.updateCache($evaluation)} />
+  <label for="evaluation-meta-org-name">Organization of evaluator</label>
+  <input type="text" bind:value={$evaluation["meta"]["evaluatorOrg"]["value"]} id="evaluation-meta-org-name"on:blur={() =>  evaluation.updateCache($evaluation)} />
 </div>
 
 <div class="field">
   <label for="evaluation-meta-conformance-target">Conformance Target</label>
-  <select name="evaluation-meta-conformance-target" id="evaluation-meta-conformance-target" bind:value={$evaluation["meta"]["conformanceTarget"]["value"]} on:change={() => { evaluation.updateCache($evaluation);}}>
+  <select name="evaluation-meta-conformance-target" id="evaluation-meta-conformance-target" bind:value={$evaluation["meta"]["conformanceTarget"]["value"]} on:blur={() => { evaluation.updateCache($evaluation);}}>
     <option value="A">Level A</option>
     <option value="AA">Level AA</option>
     <option value="AAA">Level AAA</option>

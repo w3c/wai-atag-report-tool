@@ -2,6 +2,7 @@
   import { evaluation } from '../stores/evaluation.js';
   import MoreInfo from './MoreInfo.svelte';
   import EvaluationResultSelector from './EvaluationResultSelector.svelte';
+  import EvaluationLevelSelector from './EvaluationLevelSelector.svelte';
   import EvaluationObservation from './EvaluationObservation.svelte';
   import SuccessCriterionDetails from './SuccessCriterionDetails.svelte';
   import SuccessCriterionHeader from './SuccessCriterionHeader.svelte';
@@ -18,7 +19,6 @@
   let list = null;
 
   $: normalisedCriterionId = normaliseCriterionId(num);
-  $: linkToImplementing = `https://www.w3.org/WAI/AU/2012/WD-IMPLEMENTING-ATAG20-20121011/#sc_${normalisedCriterionId}`;
   $: notes = details ? details.filter(detail => detail.type === 'note') : null;
   $: list = details ? details.filter(detail => detail.type === 'olist' || detail.type === 'ulist') : null;
   $: inConformanceTarget = $evaluation.meta.conformanceTarget && $evaluation.meta.conformanceTarget.value.length >= level.length;
@@ -31,7 +31,12 @@
     {#if list}<SuccessCriterionDetails type="list" details={list} />{/if}
     {#if notes && notes.length > 0}<SuccessCriterionDetails type="notes" details={notes} />{/if}
     <div class="criterion__answers">
-      <EvaluationResultSelector {id} {num} />
+      <div>
+        <EvaluationResultSelector {id} {num} />
+        {#if level === "A, AA, AAA"}
+        <EvaluationLevelSelector {id} {num} />
+        {/if}
+      </div>
       <EvaluationObservation {id} {num} />
     </div>
   {:else}
@@ -43,7 +48,9 @@
       {#if list}<SuccessCriterionDetails type="list" details={list} />{/if}
       {#if notes && notes.length > 0}<SuccessCriterionDetails type="notes" details={notes} />{/if}
       <div class="criterion__answers">
-        <EvaluationResultSelector {id} {num} />
+        <div>
+          <EvaluationResultSelector {id} {num} />
+        </div>
         <EvaluationObservation {id} {num} />
       </div>
     </details>

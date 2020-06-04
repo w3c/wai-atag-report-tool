@@ -1,9 +1,8 @@
 <script>
   import { onMount } from 'svelte';
-  import { Link } from 'svelte-routing';
+  import { Link } from 'svelte-navigator';
   import ExpandCollapseAll from '../components/ExpandCollapseAll.svelte';
   import Header from '../components/Header.svelte';
-  import HeaderSub from '../components/HeaderSub.svelte';
   import Pager from '../components/Pager.svelte';
   import PagerLink from '../components/PagerLink.svelte';
   import { currentPage } from '../stores/currentPage.js';
@@ -15,12 +14,11 @@
   });
 </script>
 
-<Header>  
-  <HeaderSub>
-    ATAG Report Tool
-  </HeaderSub>
-  Overview
-</Header>
+<svelte:head>
+  <title>Overview | ATAG Report Tool | W3C WAI</title>
+</svelte:head>
+
+<Header>Overview</Header>
 
 <p>This tool helps evaluators report on the accessibility of authoring tools. It guides you through the Authoring Tool Accessibility Guidelines (ATAG) requirements, lets you record your evaluation results for each requirement, and generates a report of the authoring tool's ATAG conformance.</p>
 
@@ -49,7 +47,7 @@
 	<p>As you go through and evaluate your tool, you will select a "result" for each criterion. Here is the legend of what those selections mean:</p>
 	<dl>
 		<dt>Not checked</dt>
-		<dd>You did not check this success criterion</dd>
+		<dd>You did not check this success criterion.</dd>
 		<dt>Pass</dt>
 		<dd>This success criterion is met.</dd>
 		<dt>Failed</dt>

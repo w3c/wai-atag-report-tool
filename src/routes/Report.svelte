@@ -1,9 +1,8 @@
 <script>
   import { onMount } from 'svelte';
-  import { Link } from "svelte-routing";
+  import { Link } from "svelte-navigator";
   
   import Header from '../components/Header.svelte';
-  import HeaderSub from '../components/HeaderSub.svelte';
   import ReportHeader from '../components/report/ReportHeader.svelte';
   import ReportResults from '../components/report/ReportResults.svelte';
   import ReportHTMLDownload from '../components/report/ReportHTMLDownload.svelte';
@@ -22,10 +21,12 @@
   });
 </script>
 
-<Header>
-  <HeaderSub>ATAG Report Tool</HeaderSub>
-  Report
-</Header>
+<svelte:head>
+  <title>Report | ATAG Report Tool | W3C WAI</title>
+</svelte:head>
+
+
+<Header>Report</Header>
 
 <p>
   <ReportHTMLDownload />

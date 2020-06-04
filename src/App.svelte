@@ -1,5 +1,5 @@
 <script>
-  import { Router, Route } from "svelte-routing";
+  import { Router, Route } from "svelte-navigator";
   import Overview from "./routes/Overview.svelte";
   import Start from './routes/Start.svelte';
   import EvaluationInfo from './components/EvaluationInfo.svelte';
@@ -7,6 +7,7 @@
   import Principle from './components/Principle.svelte';
   import Progress from './components/Progress.svelte';
   import ProgressItem from './components/ProgressItem.svelte';
+  import { currentPage } from './stores/currentPage.js';
   import atag from './data/atag.js';
   export let url = "";
 </script>
@@ -20,7 +21,6 @@
     {/each}
     <ProgressItem to="/report">Report</ProgressItem>
   </Progress>
-  <EvaluationInfo />
   <section class="app-content" aria-label="Main content">
     <Route path="/">
       <Overview />
@@ -35,10 +35,14 @@
       <Report />
     </Route>
   </section>
+  {#if $currentPage !== "Report"}
+  <EvaluationInfo />
+  {/if}
 </Router>
 
 <style>
   .app-content {
-    grid-column: content-start / content-end;
+    grid-column: 2 / span 6;
+    grid-row-start: 2;
   }
 </style>

@@ -1,5 +1,5 @@
 <script>
-  import { Link } from "svelte-routing";
+  import { Link } from "svelte-navigator";
   import marked from 'marked';
   import { getLinkToSC } from '../../utils/getLinkToSC.js';
 
@@ -17,8 +17,8 @@
     <td colspan="4">{result.num} was not in scope for this report</td>
   </tr>
 {:else}
-  <tr class="result-row" id={rowId}>
-    <td class="results-label-sc">{result.num}: {result.handle}</td>
+  <tr class={`result-row${result.result ? ' result-row--' + result.result.toLowerCase().trim().split(' ').join('') : ''}`}  id={rowId}>
+    <td class="results-label-sc">{result.num}: {result.handle} ({#if isMultiLevelSC}evaluated as {/if}{result.evaluatedLevel})</td>
     <td><span class="results-label-mobile">Result: </span>{result.result && result.result !== '--' ? result.result : 'No result'}</td>
     <td>
       {#if result.observations}
@@ -39,9 +39,32 @@
     margin-bottom: 1em;
     border-bottom: 1px solid var(--cloudy);
   }
+  .result-row:target {
+    outline: 2px solid var(--gold);
+  }
     .result-row td {
       display: block;
+      position: relative;
       border-style: none;
+    }
+    .result-row td:nth-child(2)::before {
+      content: '';
+      width: .5em;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      background-color: var(--line-grey);
+    }
+    .result-row--passed td:nth-child(2)::before,
+    .result-row--notapplicable td:nth-child(2)::before {
+      background-color: green;
+    }
+    .result-row--failed td:nth-child(2)::before {
+      background-color: var(--faded-red);
+    }
+    .result-row--cannottell td:nth-child(2)::before {
+      background-color: orange;
     }
   .results-label-sc {
     font-weight: bold;
