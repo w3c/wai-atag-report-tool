@@ -25,7 +25,7 @@
   margin-bottom: 1em;
 }
 .criterion-header__level {
-  font-size: smaller;
+  font-size: .8125rem;
   font-style: normal;
   margin: 0 2em 0 .5em;
 }
