@@ -19,7 +19,8 @@
   font-weight: normal;
   color: var(--dk-grey);
   border-color: var(--line-grey);
-  vertical-align: baseline;
+  vertical-align: middle;
+  margin: 2px 0;
 }
 .link-to-guidance:hover,
 .link-to-guidance:focus {

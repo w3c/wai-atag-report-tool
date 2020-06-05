@@ -15,18 +15,20 @@
 </div>
 
 <style>
+.criterion-header {
+  margin-bottom: 1em;
+}
 .criterion-header h3 {
   margin-top: 0;
   margin-bottom: 0;
   font-weight: normal;
   display: inline;
 }
-:global([open] .criterion-header) {
-  margin-bottom: 1em;
-}
 .criterion-header__level {
   font-size: .8125rem;
   font-style: normal;
-  margin: 0 2em 0 .5em;
+  margin: 0 1.5em 0 .5em;
+  vertical-align: middle;
+  white-space: nowrap;
 }
 </style>
