@@ -19,14 +19,14 @@
     <label for={`evaluation-meta-edit-executiveSummary`}>Executive Summary</label>
     <textarea bind:value={$evaluation["meta"]["executiveSummary"]["value"]} id={`evaluation-meta-edit-executiveSummary`} on:blur={() => evaluation.updateCache($evaluation)}></textarea>
   </div>
-  <button type="button button-secondary" on:click={toggleEdit}>Save</button>
+  <button type="button button-secondary" on:click={toggleEdit}>Save<span class="visuallyhidden"> executive summary</span></button>
 {:else}
   {#if $evaluation["meta"]["executiveSummary"]["value"]}
   {@html marked($evaluation["meta"]["executiveSummary"]["value"])}
   {:else}
   Not provided
   {/if}
-  <p><button type="button" class="button-secondary" on:click={toggleEdit}>Edit</button></p>
+  <p><button type="button" class="button-secondary" on:click={toggleEdit}>Edit<span class="visuallyhidden"> executive summary</span></button></p>
 {/if}
 </div>
 

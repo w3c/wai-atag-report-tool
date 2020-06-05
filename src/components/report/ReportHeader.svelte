@@ -39,9 +39,9 @@
     <dd><ReportHeaderValue {editing} field="evaluatorOrg" /></dd>
   </dl>
   {#if editing}
-  <button type="button" class="button button-secondary" on:click={toggleEdit}>Save</button>
+  <button type="button" class="button button-secondary" on:click={toggleEdit}>Save<span class="visuallyhidden"> general info</span></button>
   {:else}
-  <button type="button" class="button button-secondary" on:click={toggleEdit}>Edit</button>
+  <button type="button" class="button button-secondary" on:click={toggleEdit}>Edit<span class="visuallyhidden"> general info</span></button>
   {/if}
 </div>
 
