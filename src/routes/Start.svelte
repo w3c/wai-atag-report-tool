@@ -18,7 +18,7 @@
 
 <Header>Start</Header>
 
-<h2>About the authoring tool</h2>
+<h2>Authoring tool</h2>
 
 <div class="field">
   <label for="evaluation-meta-name">Name</label>
@@ -30,17 +30,7 @@
   <input type="url" bind:value={$evaluation["meta"]["website"]["value"]} id="evaluation-meta-website" on:blur={() =>  evaluation.updateCache($evaluation)} />
 </div>
 
-<h2>About the evaluation</h2>
-
-<div class="field">
-  <label for="evaluation-meta-your-name">Name of evaluator</label>
-  <input type="text" bind:value={$evaluation["meta"]["evaluatorName"]["value"]} id="evaluation-meta-your-name"on:blur={() =>  evaluation.updateCache($evaluation)} />
-</div>
-
-<div class="field">
-  <label for="evaluation-meta-org-name">Organization of evaluator</label>
-  <input type="text" bind:value={$evaluation["meta"]["evaluatorOrg"]["value"]} id="evaluation-meta-org-name"on:blur={() =>  evaluation.updateCache($evaluation)} />
-</div>
+<h2>Report</h2>
 
 <div class="field">
   <label for="evaluation-meta-conformance-target">Conformance Target</label>
@@ -59,6 +49,18 @@
 <div class="field">
   <label for="evaluation-meta-executive-summary">Executive Summary</label>
   <textarea bind:value={$evaluation["meta"]["executiveSummary"]["value"]} id="evaluation-meta-executive-summary" on:change={() =>  evaluation.updateCache($evaluation)}></textarea>
+</div>
+
+<h2>Evaluator</h2>
+
+<div class="field">
+  <label for="evaluation-meta-your-name">Name of evaluator</label>
+  <input type="text" bind:value={$evaluation["meta"]["evaluatorName"]["value"]} id="evaluation-meta-your-name"on:blur={() =>  evaluation.updateCache($evaluation)} />
+</div>
+
+<div class="field">
+  <label for="evaluation-meta-org-name">Organization of evaluator</label>
+  <input type="text" bind:value={$evaluation["meta"]["evaluatorOrg"]["value"]} id="evaluation-meta-org-name"on:blur={() =>  evaluation.updateCache($evaluation)} />
 </div>
 
 
