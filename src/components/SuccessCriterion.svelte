@@ -76,9 +76,12 @@
   :global(.criterion__answers label) {
     font-size: 90%;
     display: block;
-    color: var(--wai-green);
-    font-weight: bold;
+    color: var(--off-black);
+    font-weight: normal;
     margin-bottom: .5em; 
+  }
+  :global(.criterion__answers label::after) {
+    content: ':';
   }
   :global(.criterion__answers select) {
     margin-right: 1em;
