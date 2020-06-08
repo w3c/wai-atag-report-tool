@@ -7,7 +7,7 @@
   const conformanceTarget = $evaluation.meta.conformanceTarget.value;
 </script>
 
-<h3>All results</h3>
+<h3>All Results</h3>
 
 <table aria-labelledby="results">
   <thead>

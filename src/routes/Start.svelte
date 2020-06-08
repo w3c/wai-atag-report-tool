@@ -18,7 +18,7 @@
 
 <Header>Start</Header>
 
-<h2>Authoring tool</h2>
+<h2>Authoring Tool</h2>
 
 <div class="field">
   <label for="evaluation-meta-name">Name</label>
@@ -54,12 +54,12 @@
 <h2>Evaluator</h2>
 
 <div class="field">
-  <label for="evaluation-meta-your-name">Name of evaluator</label>
+  <label for="evaluation-meta-your-name">Name of Evaluator</label>
   <input type="text" bind:value={$evaluation["meta"]["evaluatorName"]["value"]} id="evaluation-meta-your-name"on:blur={() =>  evaluation.updateCache($evaluation)} />
 </div>
 
 <div class="field">
-  <label for="evaluation-meta-org-name">Organization of evaluator</label>
+  <label for="evaluation-meta-org-name">Organization of Evaluator</label>
   <input type="text" bind:value={$evaluation["meta"]["evaluatorOrg"]["value"]} id="evaluation-meta-org-name"on:blur={() =>  evaluation.updateCache($evaluation)} />
 </div>
 

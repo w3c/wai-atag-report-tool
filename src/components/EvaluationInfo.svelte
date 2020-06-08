@@ -45,7 +45,7 @@
       {#if $evaluation["meta"] && $evaluation["meta"]["name"] && $evaluation["meta"]["name"]["value"]}
       <small>Report for </small>{$evaluation["meta"]["name"]["value"]}
       {:else}
-      Your report
+      Your Report
       {/if}
     </h2>
     <p>On this page, you can add information about your report, or start evaluating straight away in <Link to="/principle/1">Principle 1</Link>.</p>
@@ -55,13 +55,13 @@
       {#if $evaluation["meta"] && $evaluation["meta"]["name"] && $evaluation["meta"]["name"]["value"]}
       <small>Report for </small>{$evaluation["meta"]["name"]["value"]}
       {:else}
-      Your report
+      Your Report
       {/if}
     </h2>
     {#if evaluatedItems && $evaluation.evaluationData}
     <p>Reported on <strong>{evaluatedItems.length}</strong> out of <strong>{totalCriteria}</strong> success criteria.</p>
     {/if}
-    <button class="button" on:click={toOverview}>View report</button>
+    <button class="button" on:click={toOverview}>View Report</button>
     {#if evaluatedItems.length > 0 && $currentPage === "Overview"}
     <button class="button button-secondary" on:click={clear}>Start new report</button>
     {/if}
