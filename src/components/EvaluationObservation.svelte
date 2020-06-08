@@ -24,7 +24,7 @@
       <span class="visuallyhidden">for {num}</span>
     </label>
     <span class="observation__meta">
-      <Link to={`/report#criterion-${normalisedCriterionId}`}>View in report<span class="visuallyhidden"> for {normalisedCriterionId}</span></Link>
+      <Link to={`/report#criterion-${normalisedCriterionId}`}>View in Report<span class="visuallyhidden"> for {normalisedCriterionId}</span></Link>
     </span>
   </div>
 
