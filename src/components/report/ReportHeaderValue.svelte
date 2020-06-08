@@ -1,6 +1,8 @@
 <script>
   import { evaluation } from "../../stores/evaluation.js";
 
+  import NoResult from "../NoResult.svelte";
+
   export let field;
   export let editing;
 </script>
@@ -11,6 +13,6 @@
   {#if $evaluation["meta"][field] && $evaluation["meta"][field]["value"]}
   {$evaluation["meta"][field]["value"]}
   {:else}
-  Not provided
+  <NoResult>Not provided</NoResult>
   {/if}
 {/if}

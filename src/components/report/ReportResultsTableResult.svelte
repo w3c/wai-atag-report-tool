@@ -3,6 +3,8 @@
   import marked from 'marked';
   import { getLinkToSC } from '../../utils/getLinkToSC.js';
 
+  import NoResult from '../NoResult.svelte';
+
   export let result;
   export let conformanceTarget = "AA";
 
@@ -19,7 +21,13 @@
 {:else}
   <tr class={`result-row${result.result ? ' result-row--' + result.result.toLowerCase().trim().split(' ').join('') : ''}`}  id={rowId}>
     <td class="results-label-sc">{result.num}: {result.handle} ({#if isMultiLevelSC}evaluated as {/if}{result.evaluatedLevel})</td>
-    <td><span class="results-label-mobile">Result: </span>{result.result && result.result !== '--' ? result.result : 'No result'}</td>
+    <td><span class="results-label-mobile">Result: </span>
+      {#if result.result && result.result !== '--'}
+      {result.result} 
+      {:else}
+      <NoResult>No result</NoResult>
+      {/if}
+    </td>
     <td>
       {#if result.observations}
         <span class="results-label-mobile">Observations: </span>{@html marked(result.observations)}
