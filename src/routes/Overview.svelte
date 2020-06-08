@@ -23,6 +23,7 @@
 <p>Tips for using this tool:</p>
 
 <ul>
+  <li>As you use the tool, the <Link to="/report">Report</Link> page lists the success criteria that you have checked and not checked.</li>
   <li>You can export your report as HTML (web page) and as JSON (structured data).</li>
   <li>The tool saves information you enter locally in your browser for backup (not on our servers).</li>
   <li>You can format your evaluation with <a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a>, so that you can use lists, links and code examples.</li>
