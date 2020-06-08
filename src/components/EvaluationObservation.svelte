@@ -51,12 +51,6 @@
     flex-direction: row;
   }
 }
-  .observation :global(a) {
-    color: var(--wai-green);
-  }
-  .observation :global(a:hover) {
-    color: var(--w3c-blue);
-  }
   .observation label {
     margin-right: .5em;
   }
