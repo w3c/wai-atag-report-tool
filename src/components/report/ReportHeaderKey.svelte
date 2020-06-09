@@ -4,7 +4,9 @@
 </script>
 
 {#if editing}
-<label for={`evaluation-meta-edit-${field}`}><slot></slot></label>
+  <label for={`evaluation-meta-edit-${field}`}>
+    <slot />
+  </label>
 {:else}
-<slot></slot>
+  <slot />
 {/if}

@@ -5,7 +5,7 @@ export function getEvaluatedItems(evaluation) {
     Object.keys(evaluation.evaluationData).length > 0
   ) {
     return Object.values(evaluation.evaluationData).filter(
-      item => item.evaluated === true
+      (item) => item.evaluated === true
     );
   } else {
     return [];

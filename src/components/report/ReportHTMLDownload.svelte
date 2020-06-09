@@ -1,8 +1,8 @@
 <script>
-  import { onMount } from 'svelte';
+  import { onMount } from "svelte";
 
-  import ReportHeader from './ReportHeader.svelte';
-  import ReportResultsTable from './ReportResultsTable.svelte';
+  import ReportHeader from "./ReportHeader.svelte";
+  import ReportResultsTable from "./ReportResultsTable.svelte";
 
   let htmlDownload, htmlDownloadTemplate;
 
@@ -11,19 +11,25 @@
   });
 
   function createHTMLDownload() {
-    const htmlDocument = document.implementation.createHTMLDocument('ATAG Conformance Report');
+    const htmlDocument = document.implementation.createHTMLDocument(
+      "ATAG Conformance Report"
+    );
     let blob, download;
 
     htmlDocument.body.innerHTML = htmlDownloadTemplate.innerHTML;
 
-    blob = new Blob([htmlDocument.documentElement.outerHTML], { type: 'text/html' });
+    blob = new Blob([htmlDocument.documentElement.outerHTML], {
+      type: "text/html",
+    });
     download = URL.createObjectURL(blob);
 
-    return download
+    return download;
   }
 </script>
 
-<a href={htmlDownload} download="report.html" class="button">Download Report (HTML)</a>
+<a href={htmlDownload} download="report.html" class="button">
+  Download Report (HTML)
+</a>
 
 <div hidden bind:this={htmlDownloadTemplate}>
   <ReportHeader />

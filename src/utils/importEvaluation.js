@@ -10,12 +10,12 @@ export function importEvaluation(event) {
 
     var reader = new FileReader();
 
-    reader.onload = function(event) {
+    reader.onload = function (event) {
       try {
         var converted = JSON.parse(event.target.result);
 
         if (converted.evaluationData) {
-          evaluation.update(evaluation => converted);
+          evaluation.update((evaluation) => converted);
 
           if (converted.meta.name.value) {
             alert(`Evaluation “${converted.meta.name.value}” loaded`);

@@ -15,7 +15,7 @@
 </script>
 
 <li class="progress__item">
-  <Link to="{to}" getProps="{getProps}">
+  <Link {to} {getProps}>
     <slot />
   </Link>
 </li>

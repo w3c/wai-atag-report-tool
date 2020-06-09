@@ -6,11 +6,13 @@
 </script>
 
 {#if editing}
-<input type="text" bind:value={$evaluation["meta"][field]["value"]} id={`evaluation-meta-edit-${field}`} on:blur={() => evaluation.updateCache($evaluation)} />
+  <input
+    type="text"
+    bind:value={$evaluation['meta'][field]['value']}
+    id={`evaluation-meta-edit-${field}`}
+    on:blur={() => evaluation.updateCache($evaluation)} />
 {:else}
-  {#if $evaluation["meta"][field] && $evaluation["meta"][field]["value"]}
-  {$evaluation["meta"][field]["value"]}
-  {:else}
-  Not provided
-  {/if}
+  {#if $evaluation['meta'][field] && $evaluation['meta'][field]['value']}
+    {$evaluation['meta'][field]['value']}
+  {:else}Not provided{/if}
 {/if}

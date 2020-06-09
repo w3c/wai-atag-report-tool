@@ -1,33 +1,11 @@
 <script>
-  import ReportResultsTableResult from './ReportResultsTableResult.svelte';
+  import ReportResultsTableResult from "./ReportResultsTableResult.svelte";
 
   import { evaluation } from "../../stores/evaluation.js";
 
   const results = Object.values($evaluation.evaluationData);
   const conformanceTarget = $evaluation.meta.conformanceTarget.value;
 </script>
-
-<h3>All Results</h3>
-
-<table aria-labelledby="results">
-  <thead>
-    <tr>
-      <th>Success Criterion</th>
-      <th>Result</th>
-      <th>Observations</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-  {#each results as result}
-    <ReportResultsTableResult {result} {conformanceTarget} />
-  {/each}
-  </tbody>
-</table>
-
-{#if $evaluation["meta"]["createdWith"] && $evaluation["meta"]["createdWith"]["value"]}
-<p><small>Created with ATAG Report Tool version {$evaluation["meta"]["createdWith"]["value"]}</p>
-{/if}
 
 <style>
   table {
@@ -52,3 +30,29 @@
     }
   }
 </style>
+
+<h3>All Results</h3>
+
+<table aria-labelledby="results">
+  <thead>
+    <tr>
+      <th>Success Criterion</th>
+      <th>Result</th>
+      <th>Observations</th>
+      <th />
+    </tr>
+  </thead>
+  <tbody>
+    {#each results as result}
+      <ReportResultsTableResult {result} {conformanceTarget} />
+    {/each}
+  </tbody>
+</table>
+
+{#if $evaluation['meta']['createdWith'] && $evaluation['meta']['createdWith']['value']}
+  <p>
+    <small>
+      Created with ATAG Report Tool version {$evaluation['meta']['createdWith']['value']}
+    </small>
+  </p>
+{/if}
