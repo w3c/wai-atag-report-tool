@@ -13,8 +13,6 @@
     margin-bottom: 1em;
   }
   .criterion-header h3 {
-    margin-top: 0;
-    margin-bottom: 0;
     font-weight: normal;
     display: inline;
   }
