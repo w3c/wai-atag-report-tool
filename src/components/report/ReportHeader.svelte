@@ -47,7 +47,7 @@
 </style>
 
 <div tabindex="-1" bind:this={section}>
-  <h2 class="report-header">General</h2>
+  <h2 class="report-header">About the Evaluation</h2>
   <dl>
     <dt>
       <ReportHeaderKey {editing} field="name">Tool Name</ReportHeaderKey>

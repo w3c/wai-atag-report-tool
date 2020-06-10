@@ -1,6 +1,5 @@
 <script>
   import { evaluation } from "../../stores/evaluation.js";
-  import LinkToSC from "../LinkToSC.svelte";
   import { getLinkToSC } from "../../utils/getLinkToSC.js";
 
   export let label;
