@@ -38,10 +38,10 @@
     <Route path="/start">
       <Start />
     </Route>
-    <Route path="/principle/:id" let:params>
+    <Route path="/principle/:id" let:params primary={false}>
       <Principle id={params.id - 1} />
     </Route>
-    <Route path="/report">
+    <Route path="/report" primary={false}>
       <Report />
     </Route>
   </section>
