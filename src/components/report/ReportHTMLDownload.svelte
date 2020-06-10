@@ -27,13 +27,15 @@
   }
 
   function cleanUp(node) {
-    const els = node.querySelectorAll("[class], [id], [aria-labelledby]");
+    const els = Array.from(
+      node.querySelectorAll("[class], [id], [aria-labelledby]")
+    );
 
-    for (const el of els) {
+    els.forEach(el => {
       el.removeAttribute("id");
       el.removeAttribute("class");
       el.removeAttribute("aria-labelledby");
-    }
+    });
   }
 </script>
 
