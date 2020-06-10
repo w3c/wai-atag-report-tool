@@ -25,13 +25,23 @@
 
     return download;
   }
+
+  function cleanUp(node) {
+    const els = node.querySelectorAll("[class], [id], [aria-labelledby]");
+
+    for (const el of els) {
+      el.removeAttribute("id");
+      el.removeAttribute("class");
+      el.removeAttribute("aria-labelledby");
+    }
+  }
 </script>
 
 <a href={htmlDownload} download="report.html" class="button">
   Download Report (HTML)
 </a>
 
-<div hidden bind:this={htmlDownloadTemplate}>
+<div hidden use:cleanUp bind:this={htmlDownloadTemplate}>
   <ReportHeader />
   <ReportResultsTable />
 </div>
