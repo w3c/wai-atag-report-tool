@@ -17,6 +17,9 @@
     grid-column: 2 / span 6;
     grid-row-start: 2;
   }
+  .app-content--report {
+    grid-column: 2 / span 8;
+  }
 </style>
 
 <Router {url}>
@@ -31,7 +34,10 @@
     {/each}
     <ProgressItem to="/report">Report</ProgressItem>
   </Progress>
-  <section class="app-content" aria-label="Main content">
+  <section
+    class="app-content"
+    class:app-content--report={$currentPage === 'Report'}
+    aria-label="Main content">
     <Route path="/">
       <Overview />
     </Route>
