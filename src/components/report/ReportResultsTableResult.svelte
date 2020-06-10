@@ -68,7 +68,11 @@
 
 {#if isInConformanceTarget && !isMultiLevelSC && !isEvaluated}
   <tr class="result-row" id={rowId}>
-    <td colspan="4">{result.num} was not in scope for this report</td>
+    <td class="results-label-sc">{result.num}: {result.handle}</td>
+    <td colspan="3">
+      <span class="results-label-mobile">Result:</span>
+      Not in scope
+    </td>
   </tr>
 {:else}
   <tr
