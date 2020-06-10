@@ -44,10 +44,7 @@
   <Header>{principle.num}: {principle.handle}</Header>
 
   <p>
-    <LinkToGuidance
-      href={linkToPrinciple}
-      target="_blank"
-      rel="noopener roreferrer">
+    <LinkToGuidance href={linkToPrinciple}>
       {principle.num} {principle.text}
     </LinkToGuidance>
   </p>

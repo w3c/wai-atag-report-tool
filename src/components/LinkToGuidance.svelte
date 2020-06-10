@@ -21,7 +21,11 @@
   }
 </style>
 
-<a {href} class="link-to-guidance button button-small button-secondary">
+<a
+  {href}
+  class="link-to-guidance button button-small button-secondary"
+  target="_blank"
+  rel="noopener roreferrer">
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="14"
