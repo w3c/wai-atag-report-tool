@@ -13,7 +13,7 @@
     id={`evaluation-meta-${field}`}
     bind:value={$evaluation['meta'][field]['value']}
     on:blur={() => {
-      evaluation.updateCache($evaluation);
+  <select name={`evaluation-meta-${field}`} id={`evaluation-meta-${field}`} bind:value={$evaluation["meta"][field]["value"]} on:blur={() => { evaluation.updateCache($evaluation);}}>
     }}>
     <slot />
   </select>
@@ -21,6 +21,6 @@
   {#if $evaluation['meta'][field] && $evaluation['meta'][field]['value']}
     {$evaluation['meta'][field]['value']}
   {:else}
-    <NoResult>Not provided</NoResult>
+  <NoResult>Not provided</NoResult>
   {/if}
 {/if}
