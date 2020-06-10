@@ -43,7 +43,7 @@
   }
 </style>
 
-<h3>Overview</h3>
+<h3>Summary</h3>
 
 <p>This report has results for {items.length} Success Criteria.</p>
 
