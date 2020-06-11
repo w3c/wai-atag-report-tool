@@ -68,7 +68,9 @@
 
 {#if isInConformanceTarget && !isMultiLevelSC && !isEvaluated}
   <tr class="result-row" id={rowId}>
-    <td class="results-label-sc">{result.num}: {result.handle}</td>
+    <td class="results-label-sc">
+      {result.num}: {result.handle} (Level {result.level})
+    </td>
     <td colspan="3">
       <span class="results-label-mobile">Result:</span>
       Not in scope
@@ -86,6 +88,7 @@
       {result.num}: {result.handle} (
       {#if isMultiLevelSC}evaluated as{/if}
       {result.evaluatedLevel})
+      {:else}({result.evaluatedLevel}){/if}
     </td>
     <td>
       <span class="results-label-mobile">Result:</span>
