@@ -85,9 +85,9 @@
             .join('') : ''}`}
     id={rowId}>
     <td class="results-label-sc">
-      {result.num}: {result.handle} (
-      {#if isMultiLevelSC}evaluated as{/if}
-      {result.evaluatedLevel})
+      {result.num}: {result.handle}
+      {#if isMultiLevelSC}
+        (evaluated as {result.evaluatedLevel})
       {:else}({result.evaluatedLevel}){/if}
     </td>
     <td>
