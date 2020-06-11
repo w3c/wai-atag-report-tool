@@ -126,21 +126,16 @@
         success criteria.
       </p>
     {/if}
-    <details open style="margin-bottom: 2em;">
-      <summary>
-        <h3>Details</h3>
-      </summary>
-      <div style="margin-left: -2rem; columns: 2; column-gap: 1.5em;">
-        <EvaluationInfoPrincipleDetail principle="A.1" done="2" total="4" />
-        <EvaluationInfoPrincipleDetail principle="A.2" done="3" total="7" />
-        <EvaluationInfoPrincipleDetail principle="A.3" done="3" total="5" />
-        <EvaluationInfoPrincipleDetail principle="A.4" done="1" total="3" />
-        <EvaluationInfoPrincipleDetail principle="B.1" done="1" total="4" />
-        <EvaluationInfoPrincipleDetail principle="B.2" done="4" total="4" />
-        <EvaluationInfoPrincipleDetail principle="B.3" done="3" total="4" />
-        <EvaluationInfoPrincipleDetail principle="B.4" done="1" total="2" />
-      </div>
-    </details>
+    <div style="columns: 2; column-gap: 1.5em;">
+      <EvaluationInfoPrincipleDetail principle="A.1" done="2" total="4" />
+      <EvaluationInfoPrincipleDetail principle="A.2" done="3" total="7" />
+      <EvaluationInfoPrincipleDetail principle="A.3" done="3" total="5" />
+      <EvaluationInfoPrincipleDetail principle="A.4" done="1" total="3" />
+      <EvaluationInfoPrincipleDetail principle="B.1" done="1" total="4" />
+      <EvaluationInfoPrincipleDetail principle="B.2" done="4" total="4" />
+      <EvaluationInfoPrincipleDetail principle="B.3" done="3" total="4" />
+      <EvaluationInfoPrincipleDetail principle="B.4" done="1" total="2" />
+    </div>
     <button class="button" on:click={toOverview}>View Report</button>
     {#if evaluatedItems.length > 0 && $currentPage === 'Overview'}
       <button class="button button-secondary" on:click={clear}>
