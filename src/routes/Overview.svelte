@@ -135,5 +135,5 @@
 </details>
 
 <Pager label="Previous/Next Principle">
-  <PagerLink to="/start" direction="next">Start</PagerLink>
+  <PagerLink to="/about" direction="next">About</PagerLink>
 </Pager>

@@ -7,15 +7,15 @@
   import { currentPage } from "../stores/currentPage.js";
 
   onMount(() => {
-    currentPage.update(currentPage => "Start");
+    currentPage.update(currentPage => "About");
   });
 </script>
 
 <svelte:head>
-  <title>Start | ATAG Report Tool | W3C WAI</title>
+  <title>About | ATAG Report Tool | W3C WAI</title>
 </svelte:head>
 
-<Header>Start</Header>
+<Header>About</Header>
 
 <h2>Authoring Tool</h2>
 

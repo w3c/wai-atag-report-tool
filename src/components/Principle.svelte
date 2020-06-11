@@ -55,7 +55,7 @@
 
   <Pager label="Previous/Next Principle">
     {#if id === 0}
-      <PagerLink to={'/start'} direction="previous">Start</PagerLink>
+      <PagerLink to={'/about'} direction="previous">About</PagerLink>
     {/if}
     {#if id > 0 && id < atag.length}
       <PagerLink to={`/principle/${id}`} direction="previous">

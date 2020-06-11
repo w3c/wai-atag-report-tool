@@ -9,7 +9,7 @@
   let fresh;
 
   function startNew() {
-    navigate("/start", { replace: false });
+    navigate("/about", { replace: false });
   }
 
   function toOverview() {
@@ -94,7 +94,7 @@
     <label for="import-evaluation" class="button button-secondary">
       Import report
     </label>
-  {:else if $currentPage === 'Start'}
+  {:else if $currentPage === 'About'}
     <Router>
       <h2>
         {#if $evaluation['meta'] && $evaluation['meta']['name'] && $evaluation['meta']['name']['value']}
