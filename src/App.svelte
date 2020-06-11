@@ -44,7 +44,7 @@
     <Route path="/about">
       <About />
     </Route>
-    <Route path="/principle/:id" let:params primary={false}>
+    <Route path="/principle/:id" let:params>
       <Principle id={params.id - 1} />
     </Route>
     <Route path="/report" primary={false}>
