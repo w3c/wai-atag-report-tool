@@ -27,6 +27,7 @@
     bottom: 0;
     left: 0;
     background: var(--ocean);
+    transition: width 0.2s;
   }
   .progress {
     font-size: 0.65em;

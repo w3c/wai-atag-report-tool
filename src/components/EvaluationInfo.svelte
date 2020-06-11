@@ -127,7 +127,10 @@
       </p>
     {/if}
     <div style="columns: 2; column-gap: 1.5em;">
-      <EvaluationInfoPrincipleDetail principle="A.1" done="2" total="4" />
+      <EvaluationInfoPrincipleDetail
+        principle="A.1"
+        done={evaluatedItems.length}
+        total={totalCriteria} />
       <EvaluationInfoPrincipleDetail principle="A.2" done="3" total="7" />
       <EvaluationInfoPrincipleDetail principle="A.3" done="3" total="5" />
       <EvaluationInfoPrincipleDetail principle="A.4" done="1" total="3" />
