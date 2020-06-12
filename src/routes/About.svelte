@@ -20,7 +20,7 @@
 <h2>Authoring Tool</h2>
 
 <div class="field">
-  <label for="evaluation-meta-name">Name</label>
+  <label for="evaluation-meta-name">Name of tool</label>
   <input
     type="text"
     bind:value={$evaluation['meta']['name']['value']}
