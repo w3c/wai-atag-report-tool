@@ -1,6 +1,5 @@
 <script>
   import { evaluation } from "../stores/evaluation.js";
-  import MoreInfo from "./MoreInfo.svelte";
   import EvaluationResultSelector from "./EvaluationResultSelector.svelte";
   import EvaluationLevelSelector from "./EvaluationLevelSelector.svelte";
   import EvaluationObservation from "./EvaluationObservation.svelte";
