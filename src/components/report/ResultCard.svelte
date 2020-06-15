@@ -25,6 +25,9 @@
       font-size: 3em;
     }
   }
+  .result-card__label {
+    font-size: 1.125em;
+  }
 </style>
 
 <li class="result-card">
