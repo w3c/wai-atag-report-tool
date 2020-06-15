@@ -1,5 +1,5 @@
 <script>
-  import EvaluationInfoPrincipleDetail from "./EvaluationInfoPrincipleDetail.svelte";
+  import YourReportProgress from "./YourReportProgress.svelte";
   import ProgressBar from "./ProgressBar.svelte";
   import { navigate, Router, Link } from "svelte-navigator";
   import { evaluation } from "../stores/evaluation.js";
@@ -11,7 +11,6 @@
     principles,
   } from "../utils/getProgressPerPrinciple.js";
   import { inConformanceTarget } from "../utils/inConformanceTarget.js";
-  import MoreInfo from "./MoreInfo.svelte";
 
   let fresh;
 
@@ -39,6 +38,10 @@
   });
 
   $: fresh = evaluation.isFresh();
+  $: nameProvided =
+    $evaluation["meta"] &&
+    $evaluation["meta"]["name"] &&
+    $evaluation["meta"]["name"]["value"];
   $: evaluatedItems = getEvaluatedItems($evaluation);
   $: progressPerPrinciple = getProgressPerPrinciple($evaluation);
   $: totalCriteria = Object.values($evaluation.evaluationData).filter(
@@ -84,9 +87,10 @@
     border-color: var(--w3c-blue);
     outline-color: var(--w3c-blue);
   }
-  .evaluation-info-details {
+  .your-report-progress {
     columns: 2;
     column-gap: 1.5em;
+    margin: 2.25em 0 1.75em 0;
   }
 </style>
 
@@ -106,24 +110,22 @@
     </label>
   {:else}
     <h2>
-      {#if $evaluation['meta'] && $evaluation['meta']['name'] && $evaluation['meta']['name']['value']}
+      {#if nameProvided}
         <small>Report for</small>
         {$evaluation['meta']['name']['value']}
       {:else}Your Report{/if}
     </h2>
-    {#if evaluatedItems && $evaluation.evaluationData}
-      <p>
-        Reported on
-        <strong>{evaluatedItems.length}</strong>
-        out of
-        <strong>{totalCriteria}</strong>
-        success criteria.
-      </p>
-      <!-- <ProgressBar percentage={100 / (totalCriteria / evaluatedItems.length)} /> -->
-    {/if}
-    <div class="evaluation-info-details">
+    <p style="margin-bottom: .5em;">
+      Reported on
+      <strong>{evaluatedItems.length}</strong>
+      out of
+      <strong>{totalCriteria}</strong>
+      success criteria.
+    </p>
+    <ProgressBar percentage={100 / (totalCriteria / evaluatedItems.length)} />
+    <div class="your-report-progress">
       {#each principles as principle}
-        <EvaluationInfoPrincipleDetail
+        <YourReportProgress
           {principle}
           done={progressPerPrinciple[principle]['evaluated']}
           total={progressPerPrinciple[principle]['total']} />

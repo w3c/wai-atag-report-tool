@@ -2,7 +2,7 @@
   import { Router, Route } from "svelte-navigator";
   import Overview from "./routes/Overview.svelte";
   import About from "./routes/About.svelte";
-  import EvaluationInfo from "./components/EvaluationInfo.svelte";
+  import YourReport from "./components/YourReport.svelte";
   import Report from "./routes/Report.svelte";
   import Principle from "./components/Principle.svelte";
   import Progress from "./components/Progress.svelte";
@@ -52,6 +52,6 @@
     </Route>
   </section>
   {#if $currentPage !== 'Report'}
-    <EvaluationInfo />
+    <YourReport />
   {/if}
 </Router>

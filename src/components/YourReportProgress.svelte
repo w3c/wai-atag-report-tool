@@ -10,30 +10,34 @@
 </script>
 
 <style>
-  .detail {
+  .progress {
     margin-bottom: 1em;
   }
-  a {
+  .principle__name {
     color: var(--off-black);
     font-weight: bold;
     text-decoration: none;
   }
-  a:hover span {
+  .principle__name:hover span {
     text-decoration: underline;
   }
-  .progress {
+  .progress__principle {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.125em;
+  }
+  .progress__part {
     font-size: 0.65em;
+    margin-left: auto;
   }
 </style>
 
-<div class="detail">
-  <div style="display: flex; align-items: center; margin-bottom: 0.125em;">
-    <span class="principle">
-      <a href={getLinkToPrinciple(principle)}>
-        <span>{principle}</span>
-      </a>
-    </span>
-    <span class="progress" style="margin-left: auto;">{done} of {total}</span>
+<div class="progress">
+  <div class="progress__principle">
+    <a href={getLinkToPrinciple(principle)} class="principle__name">
+      <span>{principle}</span>
+    </a>
+    <span class="progress__part">{done} of {total}</span>
   </div>
   <ProgressBar {percentage} />
 </div>
