@@ -95,21 +95,6 @@
     <label for="import-evaluation" class="button button-secondary">
       Import report
     </label>
-  {:else if $currentPage === 'About'}
-    <Router>
-      <h2>
-        {#if $evaluation['meta'] && $evaluation['meta']['name'] && $evaluation['meta']['name']['value']}
-          <small>Report for</small>
-          {$evaluation['meta']['name']['value']}
-        {:else}Your Report{/if}
-      </h2>
-      <p>
-        On this page, you can add information about your report, or start
-        evaluating straight away in
-        <Link to="/principle/1">Principle 1</Link>
-        .
-      </p>
-    </Router>
   {:else}
     <h2>
       {#if $evaluation['meta'] && $evaluation['meta']['name'] && $evaluation['meta']['name']['value']}
