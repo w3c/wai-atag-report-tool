@@ -10,6 +10,7 @@
     getProgressPerPrinciple,
     principles,
   } from "../utils/getProgressPerPrinciple.js";
+  import { inConformanceTarget } from "../utils/inConformanceTarget.js";
   import MoreInfo from "./MoreInfo.svelte";
 
   let fresh;
@@ -39,11 +40,9 @@
 
   $: fresh = evaluation.isFresh();
   $: evaluatedItems = getEvaluatedItems($evaluation);
-  $: progressPerPrinciple = console.log(getProgressPerPrinciple($evaluation));
+  $: progressPerPrinciple = getProgressPerPrinciple($evaluation);
   $: totalCriteria = Object.values($evaluation.evaluationData).filter(
-    item =>
-      item.level &&
-      item.level.length <= $evaluation.meta.conformanceTarget.value.length
+    item => item.level && inConformanceTarget(item, $evaluation)
   ).length;
 </script>
 
@@ -126,8 +125,8 @@
       {#each principles as principle}
         <EvaluationInfoPrincipleDetail
           {principle}
-          done={getProgressPerPrinciple($evaluation)[principle]['evaluated']}
-          total={getProgressPerPrinciple($evaluation)[principle]['total']} />
+          done={progressPerPrinciple[principle]['evaluated']}
+          total={progressPerPrinciple[principle]['total']} />
       {/each}
     </div>
     <button class="button" on:click={toOverview}>View Report</button>

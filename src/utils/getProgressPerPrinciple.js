@@ -1,3 +1,5 @@
+import { inConformanceTarget } from "./inConformanceTarget.js";
+
 export const principles = [
   "A.1",
   "A.2",
@@ -10,8 +12,6 @@ export const principles = [
 ];
 
 export function getProgressPerPrinciple(evaluation) {
-  const conformanceTarget = evaluation.meta.conformanceTarget.value.length;
-
   let progressPerPrinciple = {};
 
   function getEvaluatedForPrinciple(principleNum) {
@@ -20,7 +20,7 @@ export function getProgressPerPrinciple(evaluation) {
         (item) =>
           item.num.startsWith(principleNum) &&
           item.result !== "Not checked" &&
-          item.level.length <= conformanceTarget
+          inConformanceTarget(item, evaluation)
       ).length || 0
     );
   }
@@ -29,9 +29,8 @@ export function getProgressPerPrinciple(evaluation) {
     return (
       Object.values(evaluation.evaluationData).filter(
         (item) =>
-          (item.num.startsWith(principleNum) &&
-            item.level.length <= conformanceTarget) ||
-          item.evaluatedLevel.replace("Level ", "") <= conformanceTarget
+          item.num.startsWith(principleNum) &&
+          inConformanceTarget(item, evaluation)
       ).length || 0
     );
   }
