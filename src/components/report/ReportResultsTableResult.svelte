@@ -3,8 +3,6 @@
   import marked from "marked";
   import { getLinkToSC } from "../../utils/getLinkToSC.js";
 
-  import NoResult from "../NoResult.svelte";
-
   export let result;
   export let conformanceTarget = "AA";
 
@@ -92,11 +90,7 @@
     </td>
     <td>
       <span class="results-label-mobile">Result:</span>
-      {#if result.result && result.result !== '--'}
-        {result.result}
-      {:else}
-        <NoResult>No result</NoResult>
-      {/if}
+      {result.result}
     </td>
     <td>
       {#if result.observations}
