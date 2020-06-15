@@ -21,8 +21,7 @@ export function getMissingItems(evaluation) {
   ) {
     return Object.values(evaluation.evaluationData).filter(
       (item) =>
-        item.result === "Not checked" &&
-        item.level.length <= conformanceTarget.length
+        item.result === "Not checked" && item.level.length <= conformanceTarget
     );
   } else {
     return [];
