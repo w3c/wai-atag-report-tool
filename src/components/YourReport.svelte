@@ -13,7 +13,7 @@
   } from "../utils/getProgressPerPrinciple.js";
   import { inConformanceTarget } from "../utils/inConformanceTarget.js";
 
-  let fresh;
+  let fresh, showButton, box;
 
   function startNew() {
     navigate("/about", { replace: false });
@@ -36,6 +36,7 @@
 
   function toggleYourReport() {
     showYourReport.update(v => (v = !v));
+    box.focus();
   }
 
   evaluation.subscribe(value => {
@@ -60,26 +61,30 @@
     grid-row-start: 2;
     align-self: start;
     justify-self: end;
-    padding: 1em;
+    padding: 1em 0;
     border: 1px solid transparent;
+    outline: none;
   }
-  aside.has-report {
+  aside.has-report-box {
     background: var(--footer-grey);
     box-shadow: 0px 2px 8px -7px #000;
     border-color: var(--line-grey);
     margin-bottom: 2em;
+    padding: 1em;
   }
   @media (min-width: 60em) {
-    aside.has-report {
+    aside.has-report-box {
       position: sticky;
       top: 1em;
     }
   }
   .button-showhide {
     border-width: 1px;
+    border-color: transparent;
     font-weight: normal;
-    background-color: transparent;
-    color: inherit;
+    background-color: var(--grey);
+    color: var(--pure-white);
+    padding: 0 6px;
   }
   h2 {
     font-weight: bold;
@@ -116,7 +121,10 @@
   }
 </style>
 
-<aside class:has-report={$showYourReport === true}>
+<aside
+  class:has-report-box={$showYourReport === true}
+  bind:this={box}
+  tabindex="-1">
   {#if $showYourReport === true}
     {#if fresh && $currentPage === 'Overview'}
       <h2>
@@ -142,8 +150,10 @@
     {:else}
       <h2>
         {#if nameProvided}
-          <small>Report for</small>
-          {$evaluation['meta']['name']['value']}
+          <div>
+            <small>Report for</small>
+            {$evaluation['meta']['name']['value']}
+          </div>
         {:else}Your Report{/if}
         <button
           type="button"
