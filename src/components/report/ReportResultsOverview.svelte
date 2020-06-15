@@ -13,7 +13,6 @@
     "Failed",
     "Cannot tell",
     "Not applicable",
-    "Not checked",
   ];
 
   function getItemsFromCategory(category) {
