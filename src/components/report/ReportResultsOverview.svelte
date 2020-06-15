@@ -52,16 +52,17 @@
   {/each}
 </ul>
 
-<details>
-  <summary>
-    <h3>Missing results</h3>
-  </summary>
-  <p>Results for these criteria are still missing:</p>
-  <ul class="result-missing">
-    {#each missingItems as item}
-      <li>
-        <Link to={getLinkToSC(item.num)}>{item.num}: {item.handle}</Link>
-      </li>
-    {/each}
-  </ul>
-</details>
+{#if missingItems.length > 0}
+  <details>
+    <summary>
+      <h3>Not checked ({missingItems.length})</h3>
+    </summary>
+    <ul class="result-missing">
+      {#each missingItems as item}
+        <li>
+          <Link to={getLinkToSC(item.num)}>{item.num}: {item.handle}</Link>
+        </li>
+      {/each}
+    </ul>
+  </details>
+{/if}
