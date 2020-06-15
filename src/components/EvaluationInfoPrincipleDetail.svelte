@@ -1,4 +1,5 @@
 <script>
+  import ProgressBar from "./ProgressBar.svelte";
   import { getLinkToPrinciple } from "../utils/getLinkToPrinciple";
 
   export let principle;
@@ -12,26 +13,6 @@
   .detail {
     margin-bottom: 1em;
   }
-  .principle {
-    /* display: block; */
-  }
-  .progress-bar {
-    height: 0.25em;
-    width: 100%;
-    background-color: var(--cloudy);
-    position: relative;
-  }
-  .progress-bar__progress {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    background: var(--ocean);
-    transition: width 0.2s;
-  }
-  .progress {
-    font-size: 0.65em;
-  }
   a {
     color: var(--off-black);
     font-weight: bold;
@@ -39,6 +20,9 @@
   }
   a:hover span {
     text-decoration: underline;
+  }
+  .progress {
+    font-size: 0.65em;
   }
 </style>
 
@@ -51,9 +35,5 @@
     </span>
     <span class="progress" style="margin-left: auto;">{done} of {total}</span>
   </div>
-  <div class="progress-bar">
-    <span class="progress-bar__progress" style={`width: ${percentage}%`}>
-      <span class="visuallyhidden">{percentage} %</span>
-    </span>
-  </div>
+  <ProgressBar {percentage} />
 </div>

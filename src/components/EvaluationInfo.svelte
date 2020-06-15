@@ -1,10 +1,15 @@
 <script>
   import EvaluationInfoPrincipleDetail from "./EvaluationInfoPrincipleDetail.svelte";
+  import ProgressBar from "./ProgressBar.svelte";
   import { navigate, Router, Link } from "svelte-navigator";
   import { evaluation } from "../stores/evaluation.js";
   import { currentPage } from "../stores/currentPage.js";
   import { importEvaluation } from "../utils/importEvaluation.js";
   import { getEvaluatedItems } from "../utils/getEvaluatedItems.js";
+  import {
+    getProgressPerPrinciple,
+    principles,
+  } from "../utils/getProgressPerPrinciple.js";
   import MoreInfo from "./MoreInfo.svelte";
 
   let fresh;
@@ -34,6 +39,7 @@
 
   $: fresh = evaluation.isFresh();
   $: evaluatedItems = getEvaluatedItems($evaluation);
+  $: progressPerPrinciple = console.log(getProgressPerPrinciple($evaluation));
   $: totalCriteria = Object.values($evaluation.evaluationData).filter(
     item =>
       item.level &&
@@ -79,6 +85,10 @@
     border-color: var(--w3c-blue);
     outline-color: var(--w3c-blue);
   }
+  .evaluation-info-details {
+    columns: 2;
+    column-gap: 1.5em;
+  }
 </style>
 
 <aside>
@@ -110,19 +120,15 @@
         <strong>{totalCriteria}</strong>
         success criteria.
       </p>
+      <!-- <ProgressBar percentage={100 / (totalCriteria / evaluatedItems.length)} /> -->
     {/if}
-    <div style="columns: 2; column-gap: 1.5em;">
-      <EvaluationInfoPrincipleDetail
-        principle="A.1"
-        done={evaluatedItems.length}
-        total={totalCriteria} />
-      <EvaluationInfoPrincipleDetail principle="A.2" done="3" total="7" />
-      <EvaluationInfoPrincipleDetail principle="A.3" done="3" total="5" />
-      <EvaluationInfoPrincipleDetail principle="A.4" done="1" total="3" />
-      <EvaluationInfoPrincipleDetail principle="B.1" done="1" total="4" />
-      <EvaluationInfoPrincipleDetail principle="B.2" done="4" total="4" />
-      <EvaluationInfoPrincipleDetail principle="B.3" done="3" total="4" />
-      <EvaluationInfoPrincipleDetail principle="B.4" done="1" total="2" />
+    <div class="evaluation-info-details">
+      {#each principles as principle}
+        <EvaluationInfoPrincipleDetail
+          {principle}
+          done={getProgressPerPrinciple($evaluation)[principle]['evaluated']}
+          total={getProgressPerPrinciple($evaluation)[principle]['total']} />
+      {/each}
     </div>
     <button class="button" on:click={toOverview}>View Report</button>
     {#if evaluatedItems.length > 0 && $currentPage === 'Overview'}
