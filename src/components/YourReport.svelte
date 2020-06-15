@@ -4,6 +4,7 @@
   import { navigate, Router, Link } from "svelte-navigator";
   import { evaluation } from "../stores/evaluation.js";
   import { currentPage } from "../stores/currentPage.js";
+  import { showYourReport } from "../stores/showYourReport.js";
   import { importEvaluation } from "../utils/importEvaluation.js";
   import { getEvaluatedItems } from "../utils/getEvaluatedItems.js";
   import {
@@ -33,6 +34,10 @@
     }
   }
 
+  function toggleYourReport() {
+    showYourReport.update(v => (v = !v));
+  }
+
   evaluation.subscribe(value => {
     fresh = evaluation.isFresh();
   });
@@ -51,30 +56,47 @@
 
 <style>
   aside {
-    background: var(--footer-grey);
-    box-shadow: 0px 2px 8px -7px #000;
-    padding: 1em;
-    border: 1px solid var(--line-grey);
     grid-column: 8 / span 2;
     grid-row-start: 2;
     align-self: start;
+    justify-self: end;
+    padding: 1em;
+    border: 1px solid transparent;
+  }
+  aside.has-report {
+    background: var(--footer-grey);
+    box-shadow: 0px 2px 8px -7px #000;
+    border-color: var(--line-grey);
     margin-bottom: 2em;
   }
   @media (min-width: 60em) {
-    aside {
+    aside.has-report {
       position: sticky;
       top: 1em;
     }
+  }
+  .button-showhide {
+    border-width: 1px;
+    font-weight: normal;
+    background-color: transparent;
+    color: inherit;
   }
   h2 {
     font-weight: bold;
     font-size: 1em;
     margin: 0;
+    display: flex;
+    align-items: center;
   }
   h2 small {
     display: block;
     font-weight: normal;
     color: var(--dk-blue);
+  }
+  h2 button {
+    margin-left: auto;
+    margin-bottom: 2px;
+    margin-top: 2px;
   }
   .button + .button,
   .button + input + .button /* the file upload button */ {
@@ -94,48 +116,71 @@
   }
 </style>
 
-<aside>
-  {#if fresh && $currentPage === 'Overview'}
-    <h2>Your report</h2>
-    <p>No report started.</p>
-    <button class="button" on:click={startNew}>Start new report</button>
-    <input
-      type="file"
-      id="import-evaluation"
-      on:change={importEvaluation}
-      class="visuallyhidden"
-      accept="application/json" />
-    <label for="import-evaluation" class="button button-secondary">
-      Import report
-    </label>
-  {:else}
-    <h2>
-      {#if nameProvided}
-        <small>Report for</small>
-        {$evaluation['meta']['name']['value']}
-      {:else}Your Report{/if}
-    </h2>
-    <p style="margin-bottom: .5em;">
-      Reported on
-      <strong>{evaluatedItems.length}</strong>
-      out of
-      <strong>{totalCriteria}</strong>
-      success criteria.
-    </p>
-    <ProgressBar percentage={100 / (totalCriteria / evaluatedItems.length)} />
-    <div class="your-report-progress">
-      {#each principles as principle}
-        <YourReportProgress
-          {principle}
-          done={progressPerPrinciple[principle]['evaluated']}
-          total={progressPerPrinciple[principle]['total']} />
-      {/each}
-    </div>
-    <button class="button" on:click={toOverview}>View Report</button>
-    {#if evaluatedItems.length > 0 && $currentPage === 'Overview'}
-      <button class="button button-secondary" on:click={clear}>
-        Start new report
-      </button>
+<aside class:has-report={$showYourReport === true}>
+  {#if $showYourReport === true}
+    {#if fresh && $currentPage === 'Overview'}
+      <h2>
+        Your report
+        <button
+          type="button"
+          class="button-secondary button-small button-showhide"
+          on:click={toggleYourReport}>
+          Hide
+        </button>
+      </h2>
+      <p>No report started.</p>
+      <button class="button" on:click={startNew}>Start new report</button>
+      <input
+        type="file"
+        id="import-evaluation"
+        on:change={importEvaluation}
+        class="visuallyhidden"
+        accept="application/json" />
+      <label for="import-evaluation" class="button button-secondary">
+        Import report
+      </label>
+    {:else}
+      <h2>
+        {#if nameProvided}
+          <small>Report for</small>
+          {$evaluation['meta']['name']['value']}
+        {:else}Your Report{/if}
+        <button
+          type="button"
+          class="button-secondary button-small button-showhide"
+          on:click={toggleYourReport}>
+          Hide
+        </button>
+      </h2>
+      <p style="margin-bottom: .5em;">
+        Reported on
+        <strong>{evaluatedItems.length}</strong>
+        out of
+        <strong>{totalCriteria}</strong>
+        success criteria.
+      </p>
+      <ProgressBar percentage={100 / (totalCriteria / evaluatedItems.length)} />
+      <div class="your-report-progress">
+        {#each principles as principle}
+          <YourReportProgress
+            {principle}
+            done={progressPerPrinciple[principle]['evaluated']}
+            total={progressPerPrinciple[principle]['total']} />
+        {/each}
+      </div>
+      <button class="button" on:click={toOverview}>View Report</button>
+      {#if evaluatedItems.length > 0 && $currentPage === 'Overview'}
+        <button type="button" class="button button-secondary" on:click={clear}>
+          New Report
+        </button>
+      {/if}
     {/if}
+  {:else}
+    <button
+      type="button"
+      class="button-secondary button-small button-showhide"
+      on:click={toggleYourReport}>
+      Show sidebar
+    </button>
   {/if}
 </aside>
