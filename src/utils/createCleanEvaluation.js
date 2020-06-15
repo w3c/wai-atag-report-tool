@@ -16,9 +16,8 @@ export function createCleanEvaluation() {
           id: successcriterion.id,
           num: successcriterion.num,
           handle: successcriterion.handle,
-          result: null,
+          result: "Not checked",
           observations: null,
-          evaluated: false,
           level: successcriterion.level,
           evaluatedLevel:
             successcriterion.level === "A, AA, AAA"

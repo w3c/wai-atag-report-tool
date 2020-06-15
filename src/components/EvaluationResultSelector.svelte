@@ -7,24 +7,12 @@
   export let num;
 
   $: results = [
-    { id: "not-set", text: "--" },
     { id: "not-checked", text: "Not checked" },
     { id: "passed", text: "Passed" },
     { id: "failed", text: "Failed" },
     { id: "cannot-tell", text: "Cannot tell" },
     { id: "not-applicable", text: "Not applicable" },
   ];
-
-  function setEvaluatedStatus(id) {
-    if (
-      $evaluation["evaluationData"][id] &&
-      $evaluation["evaluationData"][id]["result"] !== "--"
-    ) {
-      $evaluation["evaluationData"][id]["evaluated"] = true;
-    } else {
-      $evaluation["evaluationData"][id]["evaluated"] = false;
-    }
-  }
 
   $: normalisedCriterionId = normaliseCriterionId(num);
 </script>
@@ -45,7 +33,6 @@
   bind:value={$evaluation['evaluationData'][id]['result']}
   on:blur={() => {
     evaluation.updateCache($evaluation);
-    setEvaluatedStatus(id);
   }}>
   {#each results as result}
     <option name={`option-${id}-${result.id}`}>{result.text}</option>

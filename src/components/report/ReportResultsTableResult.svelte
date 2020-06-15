@@ -10,7 +10,7 @@
 
   const isMultiLevelSC = result.level === "A, AA, AAA";
   const isInConformanceTarget = conformanceTarget.length < result.level.length;
-  const isEvaluated = result.evaluated === true;
+  const isEvaluated = result.result !== "Not checked";
   const rowId = `criterion-${result.num.replace(/\./g, "").toLowerCase()}`;
 </script>
 
