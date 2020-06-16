@@ -8,6 +8,7 @@
   import Progress from "./components/Progress.svelte";
   import ProgressItem from "./components/ProgressItem.svelte";
   import { currentPage } from "./stores/currentPage.js";
+  import { showYourReport } from "./stores/showYourReport.js";
   import atag from "./data/atag.js";
   export let url = "";
 </script>
@@ -17,7 +18,7 @@
     grid-column: 2 / span 6;
     grid-row-start: 2;
   }
-  .app-content--report {
+  .app-content--wide {
     grid-column: 2 / span 8;
   }
 </style>
@@ -36,7 +37,7 @@
   </Progress>
   <section
     class="app-content"
-    class:app-content--report={$currentPage === 'Report'}
+    class:app-content--wide={$currentPage === 'Report' || !$showYourReport}
     aria-label="Main content">
     <Route path="/">
       <Overview />
