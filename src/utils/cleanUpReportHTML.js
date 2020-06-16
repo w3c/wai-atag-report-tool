@@ -13,14 +13,22 @@ export function cleanUp(node) {
   });
 
   tables.forEach((el) => {
-    const lastItems = Array.from(
-      el.querySelectorAll("th:last-child, td:last-child")
+    const editColumnItems = Array.from(
+      el.querySelectorAll(".result-row__edit")
+    );
+    const notInScopeNoObservations = Array.from(
+      el.querySelectorAll(".not-in-scope-no-observations")
     );
 
     el.setAttribute("border", "1");
     el.setAttribute("style", "border-collapse: collapse");
 
-    lastItems.forEach((el) => {
+    notInScopeNoObservations.forEach((el) => {
+      const row = el.parentNode;
+      row.parentNode.removeChild(row);
+    });
+
+    editColumnItems.forEach((el) => {
       el.parentNode.removeChild(el);
     });
   });
