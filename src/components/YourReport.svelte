@@ -50,8 +50,8 @@
     $evaluation["meta"]["name"]["value"];
   $: evaluatedItems = getEvaluatedItems($evaluation);
   $: progressPerPrinciple = getProgressPerPrinciple($evaluation);
-  $: totalCriteria = Object.values($evaluation.evaluationData).filter(
-    item => item.level && inConformanceTarget(item, $evaluation)
+  $: totalCriteria = Object.values($evaluation.evaluationData).filter(item =>
+    inConformanceTarget(item, $evaluation)
   ).length;
 </script>
 
