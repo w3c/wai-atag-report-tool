@@ -1,13 +1,13 @@
 <script>
   import { Link } from "svelte-navigator";
   import marked from "marked";
+  import { evaluation } from "../../stores/evaluation.js";
   import { getLinkToSC } from "../../utils/getLinkToSC.js";
+  import { inConformanceTarget } from "../../utils/inConformanceTarget.js";
 
   export let result;
-  export let conformanceTarget = "AA";
 
   const isMultiLevelSC = result.level === "A, AA, AAA";
-  const isInConformanceTarget = conformanceTarget.length < result.level.length;
   const isEvaluated = result.result !== "Not checked";
   const rowId = `criterion-${result.num.replace(/\./g, "").toLowerCase()}`;
 </script>
@@ -64,15 +64,25 @@
   }
 </style>
 
-{#if isInConformanceTarget && !isMultiLevelSC && !isEvaluated}
+{#if !inConformanceTarget(result, $evaluation) && !isMultiLevelSC && !isEvaluated}
   <tr class="result-row" id={rowId}>
     <td class="results-label-sc">
       {result.num}: {result.handle} (Level {result.level})
     </td>
-    <td colspan="3">
-      <span class="results-label-mobile">Result:</span>
-      Not in scope
-    </td>
+    {#if result.observations}
+      <td>
+        <span class="results-label-mobile">Result:</span>
+        Not in scope
+      </td>
+      <td colspan="2">
+        {@html marked(result.observations)}
+      </td>
+    {:else}
+      <td colspan="3" class="not-in-scope-no-observations">
+        <span class="results-label-mobile">Result:</span>
+        Not in scope
+      </td>
+    {/if}
   </tr>
 {:else}
   <tr
@@ -98,7 +108,7 @@
         {@html marked(result.observations)}
       {/if}
     </td>
-    <td>
+    <td class="result-row__edit">
       <Link to={getLinkToSC(result.num)}>
         <span class="visuallyhidden">Edit {result.num}</span>
         <svg

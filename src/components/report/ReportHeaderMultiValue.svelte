@@ -1,11 +1,16 @@
 <script>
   import { evaluation } from "../../stores/evaluation.js";
 
-  import NoResult from "../NoResult.svelte";
-
   export let field;
   export let editing;
 </script>
+
+<style>
+  .no-result {
+    font-weight: normal;
+    font-style: italic;
+  }
+</style>
 
 {#if editing}
   <select
@@ -21,6 +26,6 @@
   {#if $evaluation['meta'][field] && $evaluation['meta'][field]['value']}
     {$evaluation['meta'][field]['value']}
   {:else}
-    <NoResult>Not provided</NoResult>
+    <span class="no-result">(Not provided)</span>
   {/if}
 {/if}

@@ -4,7 +4,6 @@
   import { evaluation } from "../../stores/evaluation.js";
 
   const results = Object.values($evaluation.evaluationData);
-  const conformanceTarget = $evaluation.meta.conformanceTarget.value;
 </script>
 
 <style>
@@ -39,12 +38,12 @@
       <th>Success Criterion</th>
       <th>Result</th>
       <th>Observations</th>
-      <th />
+      <th class="result-row__edit" />
     </tr>
   </thead>
   <tbody>
     {#each results as result}
-      <ReportResultsTableResult {result} {conformanceTarget} />
+      <ReportResultsTableResult {result} />
     {/each}
   </tbody>
 </table>
