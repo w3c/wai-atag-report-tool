@@ -1,6 +1,7 @@
 <script>
   import { onMount } from "svelte";
   import Header from "../components/Header.svelte";
+  import MoreInfo from "../components/MoreInfo.svelte";
   import Pager from "../components/Pager.svelte";
   import PagerLink from "../components/PagerLink.svelte";
   import { evaluation } from "../stores/evaluation.js";
@@ -55,7 +56,13 @@
 </div>
 
 <div class="field">
-  <label for="evaluation-meta-eval-id">Report Identifier</label>
+  <label for="evaluation-meta-eval-id">
+    Report Identifier
+    <MoreInfo>
+      Use this field to uniquely identify this report. You can use a date,
+      internal version number of anything else.
+    </MoreInfo>
+  </label>
   <input
     type="text"
     bind:value={$evaluation['meta']['evaluationId']['value']}
