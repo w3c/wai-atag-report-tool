@@ -2,19 +2,14 @@ export function cleanUp(node) {
   const removeEls = Array.from(
     node.querySelectorAll("button, input, .results-label-mobile")
   );
+  const tables = Array.from(node.querySelectorAll("table"));
+  const emptyValues = Array.from(node.querySelectorAll("span.no-result"));
   const remoteAttributeEls = Array.from(
     node.querySelectorAll("[class], [id], [aria-labelledby]")
   );
-  const tables = Array.from(node.querySelectorAll("table"));
 
   removeEls.forEach((el) => {
     el.parentNode.removeChild(el);
-  });
-
-  remoteAttributeEls.forEach((el) => {
-    el.removeAttribute("id");
-    el.removeAttribute("class");
-    el.removeAttribute("aria-labelledby");
   });
 
   tables.forEach((el) => {
@@ -28,5 +23,19 @@ export function cleanUp(node) {
     lastItems.forEach((el) => {
       el.parentNode.removeChild(el);
     });
+  });
+
+  emptyValues.forEach((el) => {
+    const dd = el.closest("dd");
+    const dt = dd.previousElementSibling;
+
+    dt.parentNode.removeChild(dt);
+    dd.parentNode.removeChild(dd);
+  });
+
+  remoteAttributeEls.forEach((el) => {
+    el.removeAttribute("id");
+    el.removeAttribute("class");
+    el.removeAttribute("aria-labelledby");
   });
 }
