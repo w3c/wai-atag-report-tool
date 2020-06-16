@@ -57,7 +57,7 @@
 </script>
 
 <style>
-  aside {
+  .your-report {
     grid-column: 8 / span 2;
     grid-row-start: 2;
     align-self: start;
@@ -66,7 +66,7 @@
     border: 1px solid transparent;
     outline: none;
   }
-  aside.has-report-box {
+  .your-report--expanded {
     background: var(--footer-grey);
     box-shadow: 0px 2px 8px -7px #000;
     border-color: var(--line-grey);
@@ -74,49 +74,49 @@
     padding: 1em;
   }
   @media (min-width: 60em) {
-    aside.has-report-box {
+    .your-report--expanded {
       position: sticky;
       top: 1em;
     }
   }
 
-  h2 {
+  .your-report__heading {
     font-weight: bold;
     font-size: 1em;
     margin: 0;
     display: flex;
     align-items: center;
   }
-  h2 small {
+  .your-report__heading-pre {
     display: block;
     font-weight: normal;
     color: var(--dk-blue);
   }
-  .button + .button,
-  .button + input + .button /* the file upload button */ {
-    margin-top: 0.25em;
-  }
-  input[type="file"]:focus + label {
+  .your-report__import:focus + .your-report__import-label {
     outline-offset: 2px;
     outline: 2px solid transparent;
     transition: outline-offset 0.2s linear;
     border-color: var(--w3c-blue);
     outline-color: var(--w3c-blue);
   }
-  .your-report-progress {
+  .your-report__progress-by-principle {
     columns: 2;
     column-gap: 1.5em;
     margin: 2.25em 0 1.75em 0;
   }
+  .your-report__description {
+    margin-bottom: 0.5em;
+  }
 </style>
 
 <aside
-  class:has-report-box={$showYourReport === true}
+  class="your-report"
+  class:your-report--expanded={$showYourReport === true}
   bind:this={box}
   tabindex="-1">
   {#if $showYourReport === true}
     {#if fresh && $currentPage === 'Overview'}
-      <h2>
+      <h2 class="your-report__heading">
         Your report
         <ButtonShowHide expanded={true} on:toggle={toggleYourReport}>
           Hide
@@ -128,16 +128,18 @@
         type="file"
         id="import-evaluation"
         on:change={importEvaluation}
-        class="visuallyhidden"
+        class="visuallyhidden your-report__import"
         accept="application/json" />
-      <label for="import-evaluation" class="button button-secondary">
+      <label
+        for="import-evaluation"
+        class="button button-secondary your-report__import-label">
         Import report
       </label>
     {:else}
-      <h2>
+      <h2 class="your-report__heading">
         {#if nameProvided}
           <div>
-            <small>Report for</small>
+            <small class="your-report__heading-pre">Report for</small>
             {$evaluation['meta']['name']['value']}
           </div>
         {:else}Your Report{/if}
@@ -145,7 +147,7 @@
           Hide
         </ButtonShowHide>
       </h2>
-      <p style="margin-bottom: .5em;">
+      <p class="your-report__description">
         Reported on
         <strong>{evaluatedItems.length}</strong>
         out of
@@ -153,7 +155,7 @@
         success criteria.
       </p>
       <ProgressBar percentage={100 / (totalCriteria / evaluatedItems.length)} />
-      <div class="your-report-progress">
+      <div class="your-report__progress-by-principle">
         {#each principles as principle}
           <YourReportProgress
             {principle}
