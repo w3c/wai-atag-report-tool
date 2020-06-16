@@ -3,6 +3,7 @@
   import { evaluation } from "../../stores/evaluation.js";
 
   import ReportHeader from "./ReportHeader.svelte";
+  import ReportSummary from "./ReportSummary.svelte";
   import ReportResultsTable from "./ReportResultsTable.svelte";
 
   import { cleanUp } from "../../utils/cleanUpReportHTML.js";
@@ -30,5 +31,6 @@
     {#if nameProvided}for {$evaluation['meta']['name']['value']}{/if}
   </h1>
   <ReportHeader />
+  <ReportSummary editing={false} />
   <ReportResultsTable />
 </div>
