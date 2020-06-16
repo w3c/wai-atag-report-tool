@@ -1,6 +1,7 @@
 <script>
   import YourReportProgress from "./YourReportProgress.svelte";
   import ProgressBar from "./ProgressBar.svelte";
+  import ButtonShowHide from "./ButtonShowHide.svelte";
   import { navigate, Router, Link } from "svelte-navigator";
   import { evaluation } from "../stores/evaluation.js";
   import { currentPage } from "../stores/currentPage.js";
@@ -78,14 +79,7 @@
       top: 1em;
     }
   }
-  .button-showhide {
-    border-width: 1px;
-    border-color: transparent;
-    font-weight: normal;
-    background-color: var(--grey);
-    color: var(--pure-white);
-    padding: 0 6px;
-  }
+
   h2 {
     font-weight: bold;
     font-size: 1em;
@@ -97,11 +91,6 @@
     display: block;
     font-weight: normal;
     color: var(--dk-blue);
-  }
-  h2 button {
-    margin-left: auto;
-    margin-bottom: 2px;
-    margin-top: 2px;
   }
   .button + .button,
   .button + input + .button /* the file upload button */ {
@@ -129,12 +118,9 @@
     {#if fresh && $currentPage === 'Overview'}
       <h2>
         Your report
-        <button
-          type="button"
-          class="button-secondary button-small button-showhide"
-          on:click={toggleYourReport}>
+        <ButtonShowHide expanded={true} on:toggle={toggleYourReport}>
           Hide
-        </button>
+        </ButtonShowHide>
       </h2>
       <p>No report started.</p>
       <button class="button" on:click={startNew}>Start new report</button>
@@ -155,12 +141,9 @@
             {$evaluation['meta']['name']['value']}
           </div>
         {:else}Your Report{/if}
-        <button
-          type="button"
-          class="button-secondary button-small button-showhide"
-          on:click={toggleYourReport}>
+        <ButtonShowHide expanded={true} on:toggle={toggleYourReport}>
           Hide
-        </button>
+        </ButtonShowHide>
       </h2>
       <p style="margin-bottom: .5em;">
         Reported on
@@ -186,11 +169,8 @@
       {/if}
     {/if}
   {:else}
-    <button
-      type="button"
-      class="button-secondary button-small button-showhide"
-      on:click={toggleYourReport}>
+    <ButtonShowHide expanded={false} on:toggle={toggleYourReport}>
       Show sidebar
-    </button>
+    </ButtonShowHide>
   {/if}
 </aside>
