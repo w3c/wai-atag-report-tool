@@ -57,11 +57,7 @@
 
 <div class="field">
   <label for="evaluation-meta-eval-id">
-    Report Identifier
-    <MoreInfo>
-      Use this field to uniquely identify this report. You can use a date,
-      internal version number of anything else.
-    </MoreInfo>
+    Report Identifier (date, internal version number, etc.)
   </label>
   <input
     type="text"
