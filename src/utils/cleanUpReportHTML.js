@@ -34,7 +34,7 @@ export function cleanUp(node) {
   });
 
   emptyValues.forEach((el) => {
-    const dd = el.closest("dd");
+    const dd = el.parentNode;
     const dt = dd.previousElementSibling;
 
     dt.parentNode.removeChild(dt);
