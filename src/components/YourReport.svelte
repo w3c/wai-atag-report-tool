@@ -150,8 +150,12 @@
       <p class="your-report__description">
         Reported on
         <strong>{evaluatedItems.length}</strong>
-        out of
+        of
         <strong>{totalCriteria}</strong>
+        {#if $evaluation.meta.conformanceTarget.value === 'A'}Level&nbsp;A{/if}
+        {#if $evaluation.meta.conformanceTarget.value === 'AA'}
+          Level&nbsp;A,&nbsp;AA
+        {/if}
         success criteria.
       </p>
       <ProgressBar percentage={100 / (totalCriteria / evaluatedItems.length)} />
