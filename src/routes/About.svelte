@@ -1,7 +1,6 @@
 <script>
   import { onMount } from "svelte";
   import Header from "../components/Header.svelte";
-  import MoreInfo from "../components/MoreInfo.svelte";
   import Pager from "../components/Pager.svelte";
   import PagerLink from "../components/PagerLink.svelte";
   import { evaluation } from "../stores/evaluation.js";
@@ -57,7 +56,7 @@
 
 <div class="field">
   <label for="evaluation-meta-eval-id">
-    Report Identifier (date, internal version number, etc.)
+    Report Identifier (date, internal version number, or other)
   </label>
   <input
     type="text"
