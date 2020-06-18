@@ -58,7 +58,10 @@
 
 <style>
   .your-report {
+    -ms-grid-column: 8;
+    -ms-grid-column-span: 1;
     grid-column: 8 / span 2;
+    -ms-grid-row: 2;
     grid-row-start: 2;
     align-self: start;
     justify-self: end;

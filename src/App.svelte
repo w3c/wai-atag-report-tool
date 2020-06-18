@@ -23,6 +23,7 @@
     grid-row-start: 2;
   }
   .app-content--wide {
+    -ms-grid-column-span: 8;
     grid-column: 2 / span 8;
   }
 </style>

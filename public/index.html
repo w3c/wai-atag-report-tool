@@ -18,6 +18,8 @@
         scroll-margin-top: 5rem;
       }
       .default-grid {
+        display: -ms-grid;
+        display: grid;
         -ms-grid-columns: minmax(16px, 1fr) (minmax(0, 50px)) [2]
           (minmax(0, 110px)) [6] minmax(16px, 1fr);
         grid-template-columns:
@@ -34,6 +36,11 @@
           padding: 0;
         }
       }
+      main {
+        display: block;
+        padding: 2em 0;
+        background-image: linear-gradient(#d0e1f1 0, #d0e1f1 48px, #fff 48px);
+      }
       .nav__item {
         list-style: none;
         margin: 0;
@@ -44,18 +51,21 @@
         font-size: 0.85em;
         padding: 1em;
         text-decoration: none;
-        background-color: var(--cloudy-subtle);
+        background-color: #d0e1f1; /* cloudy-subtle */
         color: inherit;
         white-space: nowrap;
         transition-duration: 0.1s;
       }
       .nav__item .active {
-        background-color: var(--body-bg);
+        background-color: #fafafc; /* body-bg */
       }
       .nav__item a:focus {
         outline-offset: -0.5em;
       }
       .tool-header {
+        -ms-grid-column: 2;
+        -ms-grid-column-span: 8;
+        -ms-grid-row: 1;
         grid-column: 2 / 10;
         display: flex;
         align-items: center;
@@ -104,16 +114,7 @@
         </div>
       </div>
     </header>
-    <main
-      style="
-        padding: 2em 0;
-        background-image: linear-gradient(
-          var(--cloudy-subtle) 0,
-          var(--cloudy-subtle) 48px,
-          var(--pure-white) 48px
-        );
-      "
-    >
+    <main>
       <div id="conformance-tool" class="default-grid leftcol">
         <!-- app 'renders' here -->
       </div>
