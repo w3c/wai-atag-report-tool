@@ -33,6 +33,7 @@
     font-weight: bold;
     margin-left: 0;
     margin-bottom: 1em;
+    grid-column: 2 / 3;
   }
   @media (min-width: 40em) {
     dl {

@@ -15,7 +15,11 @@
 
 <style>
   .app-content {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 6;
     grid-column: 2 / span 6;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 2;
     grid-row-start: 2;
   }
   .app-content--wide {
@@ -34,6 +38,7 @@
       </NavItem>
     {/each}
     <NavItem to="/report">Report</NavItem>
+  </Nav>
   <section
     class="app-content"
     class:app-content--wide={$currentPage === 'Report' || !$showYourReport}

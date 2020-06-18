@@ -18,13 +18,16 @@
         scroll-margin-top: 5rem;
       }
       .default-grid {
-        grid-template-columns: [complete-start] minmax(16px,1fr) [navigation-start] repeat(2,minmax(0,50px)) [navigation-end content-start] repeat(6,minmax(0,110px)) [content-end] minmax(16px,1fr) [complete-end];
-      }
-      .logo {
-        grid-column: navigation-start / content-end;
-      }
-      .logo a {
-        text-decoration: none;
+        -ms-grid-columns: minmax(16px, 1fr) (minmax(0, 50px)) [2]
+          (minmax(0, 110px)) [6] minmax(16px, 1fr);
+        grid-template-columns:
+          [complete-start] minmax(16px, 1fr) [navigation-start] repeat(
+            2,
+            minmax(0, 50px)
+          )
+          [navigation-end content-start] repeat(6, minmax(0, 110px))
+          [content-end] minmax(16px, 1fr)
+          [complete-end];
       }
       @media (min-width: 60em) {
         #conformance-tool {
@@ -53,6 +56,7 @@
         grid-column: 2 / 10;
         display: flex;
         align-items: center;
+        width: 100%;
       }
       .tool-header a {
         text-decoration: none;
@@ -89,7 +93,7 @@
         <span class="tool-header-name">ATAG Report Tool</span>
         <div class="tool-header-logo">
           <a href="http://w3.org/">
-            <img alt="W3C" src="/images/w3c.svg" />
+            <img alt="W3C" src="/images/w3c.svg" height="44" />
           </a>
           <a href="http://w3.org/WAI/">
             <img alt="Web Accessibility Initiative" src="/images/wai.svg" />
@@ -98,12 +102,14 @@
       </div>
     </header>
     <main
-      style="padding: 2em 0; background-image: linear-gradient(
-      var(--cloudy-subtle) 0,
-      var(--cloudy-subtle) 48px,
-      var(--pure-white) 48px  
-    );
-"
+      style="
+        padding: 2em 0;
+        background-image: linear-gradient(
+          var(--cloudy-subtle) 0,
+          var(--cloudy-subtle) 48px,
+          var(--pure-white) 48px
+        );
+      "
     >
       <div id="conformance-tool" class="default-grid leftcol">
         <!-- app 'renders' here -->
@@ -131,11 +137,7 @@
           <ul>
             <li>
               <a href="https://twitter.com/w3c_wai"
-                ><svg
-                  focusable="false"
-                  aria-hidden="true"
-                  class="icon-twitter "
-                >
+                ><svg focusable="false" aria-hidden="true" class="icon-twitter">
                   <use
                     xlink:href="https://w3.org/WAI/assets/images/icons.svg#icon-twitter"
                   ></use>
@@ -145,7 +147,7 @@
             </li>
             <li>
               <a href="https://www.w3.orghttps://w3.org/WAI/feed.xml"
-                ><svg focusable="false" aria-hidden="true" class="icon-rss ">
+                ><svg focusable="false" aria-hidden="true" class="icon-rss">
                   <use
                     xlink:href="https://w3.org/WAI/assets/images/icons.svg#icon-rss"
                   ></use>
@@ -156,11 +158,7 @@
             <li>
               <a
                 href="https://www.youtube.com/channel/UCU6ljj3m1fglIPjSjs2DpRA/playlistsv"
-                ><svg
-                  focusable="false"
-                  aria-hidden="true"
-                  class="icon-youtube "
-                >
+                ><svg focusable="false" aria-hidden="true" class="icon-youtube">
                   <use
                     xlink:href="https://w3.org/WAI/assets/images/icons.svg#icon-youtube"
                   ></use>
@@ -197,7 +195,7 @@
         </div>
       </div>
       <div lang="en" dir="auto" translate="no" class="q4-start q4-end">
-        <ul style="margin-bottom:0">
+        <ul style="margin-bottom: 0;">
           <li>
             <a href="https://w3.org/WAI/about/contacting/">Contact WAI</a>
           </li>
