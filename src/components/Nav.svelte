@@ -1,11 +1,15 @@
 <style>
-  .progress {
-    grid-column: navigation-start / content-end;
+  .nav {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 6;
+    grid-column: 2 / span 6;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
     overflow: auto;
     margin: -32px 0 40px;
     background-color: var(--cloudy-subtle);
   }
-  .progress ul {
+  .nav ul {
     display: flex;
     flex-direction: row;
     margin: 0;
@@ -13,7 +17,7 @@
   }
 </style>
 
-<nav class="progress" aria-label="Steps">
+<nav class="nav" aria-label="Steps">
   <ul>
     <slot />
   </ul>

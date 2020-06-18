@@ -5,8 +5,8 @@
   import YourReport from "./components/YourReport.svelte";
   import Report from "./routes/Report.svelte";
   import Principle from "./components/Principle.svelte";
-  import Progress from "./components/Progress.svelte";
-  import ProgressItem from "./components/ProgressItem.svelte";
+  import Nav from "./components/Nav.svelte";
+  import NavItem from "./components/NavItem.svelte";
   import { currentPage } from "./stores/currentPage.js";
   import { showYourReport } from "./stores/showYourReport.js";
   import atag from "./data/atag.js";
@@ -24,17 +24,16 @@
 </style>
 
 <Router {url}>
-  <Progress>
-    <ProgressItem to="/">Overview</ProgressItem>
-    <ProgressItem to="/about">About</ProgressItem>
+  <Nav>
+    <NavItem to="/">Overview</NavItem>
+    <NavItem to="/about">About</NavItem>
     {#each atag as { principle, guidelines }, i}
-      <ProgressItem to="principle/{i + 1}">
+      <NavItem to="principle/{i + 1}">
         {principle.num}
         <span class="visuallyhidden">: {principle.handle}</span>
-      </ProgressItem>
+      </NavItem>
     {/each}
-    <ProgressItem to="/report">Report</ProgressItem>
-  </Progress>
+    <NavItem to="/report">Report</NavItem>
   <section
     class="app-content"
     class:app-content--wide={$currentPage === 'Report' || !$showYourReport}
