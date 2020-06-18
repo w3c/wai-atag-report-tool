@@ -107,6 +107,10 @@
   .your-report__description {
     margin-bottom: 0.5em;
   }
+  button,
+  input {
+    margin-bottom: 4px;
+  }
 </style>
 
 <aside
