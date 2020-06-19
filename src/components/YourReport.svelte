@@ -106,6 +106,7 @@
     columns: 2;
     column-gap: 1.5em;
     margin: 2.25em 0 1.75em 0;
+    padding: 0;
   }
   .your-report__description {
     margin-bottom: 0.5em;
@@ -166,14 +167,14 @@
         Success Criteria.
       </p>
       <ProgressBar percentage={100 / (totalCriteria / evaluatedItems.length)} />
-      <div class="your-report__progress-by-principle">
+      <ul class="your-report__progress-by-principle">
         {#each principles as principle}
           <YourReportProgress
             {principle}
             done={progressPerPrinciple[principle]['evaluated']}
             total={progressPerPrinciple[principle]['total']} />
         {/each}
-      </div>
+      </ul>
       <button class="button" on:click={toOverview}>View Report</button>
       {#if evaluatedItems.length > 0 && $currentPage === 'Overview'}
         <button type="button" class="button button-secondary" on:click={clear}>

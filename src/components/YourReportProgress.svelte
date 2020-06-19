@@ -12,6 +12,7 @@
 <style>
   .progress {
     margin-bottom: 1em;
+    list-style: none;
   }
   .principle__name {
     color: var(--off-black);
@@ -32,7 +33,7 @@
   }
 </style>
 
-<div class="progress">
+<li class="progress">
   <div class="progress__principle">
     <a href={getLinkToPrinciple(principle)} class="principle__name">
       <span>{principle}</span>
@@ -40,4 +41,4 @@
     <span class="progress__part">{done} of {total}</span>
   </div>
   <ProgressBar {percentage} />
-</div>
+</li>
