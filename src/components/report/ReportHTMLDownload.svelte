@@ -7,6 +7,12 @@
   import ReportSummary from "./ReportSummary.svelte";
   import ReportResultsTable from "./ReportResultsTable.svelte";
 
+  import {
+    resultCategories,
+    getEvaluatedItems,
+    getMissingItems,
+    getItemsFromCategory,
+  } from "../../utils/getEvaluatedItems.js";
   import { cleanUp } from "../../utils/cleanUpReportHTML.js";
   import { createHTMLDownload } from "../../utils/createHTMLDownload.js";
 
@@ -20,6 +26,9 @@
     $evaluation["meta"] &&
     $evaluation["meta"]["name"] &&
     $evaluation["meta"]["name"]["value"];
+
+  $: items = getEvaluatedItems($evaluation);
+  $: missingItems = getMissingItems($evaluation);
 </script>
 
 <a href={htmlDownload} download="report.html" class="button">
@@ -36,5 +45,11 @@
   <h2>Results</h2>
   <h3>Summary</h3>
   <ReportNumbers />
+  <ul>
+    {#each resultCategories as category}
+      <li>{getItemsFromCategory(items, category).length} {category}</li>
+    {/each}
+    <li>{missingItems.length} Not Checked</li>
+  </ul>
   <ReportResultsTable />
 </div>
