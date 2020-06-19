@@ -2,6 +2,7 @@
   import YourReportProgress from "./YourReportProgress.svelte";
   import ProgressBar from "./ProgressBar.svelte";
   import ButtonShowHide from "./ButtonShowHide.svelte";
+  import ReportNumbers from "./report/ReportNumbers.svelte";
   import { navigate, Router, Link } from "svelte-navigator";
   import { evaluation } from "../stores/evaluation.js";
   import { currentPage } from "../stores/currentPage.js";
@@ -108,7 +109,7 @@
     margin: 2.25em 0 1.75em 0;
     padding: 0;
   }
-  .your-report__description {
+  :global(.your-report__description) {
     margin-bottom: 0.5em;
   }
   button,
@@ -155,17 +156,7 @@
           Hide
         </ButtonShowHide>
       </h2>
-      <p class="your-report__description">
-        Reported on
-        <strong>{evaluatedItems.length}</strong>
-        of
-        <strong>{totalCriteria}</strong>
-        {#if $evaluation.meta.conformanceTarget.value === 'A'}Level&nbsp;A{/if}
-        {#if $evaluation.meta.conformanceTarget.value === 'AA'}
-          Level&nbsp;A,&nbsp;AA
-        {/if}
-        Success Criteria.
-      </p>
+      <ReportNumbers className="your-report__description" />
       <ProgressBar percentage={100 / (totalCriteria / evaluatedItems.length)} />
       <ul class="your-report__progress-by-principle">
         {#each principles as principle}

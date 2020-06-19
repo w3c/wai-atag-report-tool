@@ -1,5 +1,12 @@
 import { inConformanceTarget } from "./inConformanceTarget.js";
 
+export const resultCategories = [
+  "Passed",
+  "Failed",
+  "Cannot tell",
+  "Not applicable",
+];
+
 export function getEvaluatedItems(evaluation) {
   if (
     evaluation &&
@@ -28,4 +35,8 @@ export function getMissingItems(evaluation) {
   } else {
     return [];
   }
+}
+
+export function getItemsFromCategory(items, category) {
+  return items.filter((item) => item.result === category);
 }

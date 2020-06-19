@@ -3,6 +3,7 @@
   import { evaluation } from "../../stores/evaluation.js";
 
   import ReportHeader from "./ReportHeader.svelte";
+  import ReportNumbers from "./ReportNumbers.svelte";
   import ReportSummary from "./ReportSummary.svelte";
   import ReportResultsTable from "./ReportResultsTable.svelte";
 
@@ -32,5 +33,8 @@
   </h1>
   <ReportHeader />
   <ReportSummary editing={false} />
+  <h2>Results</h2>
+  <h3>Summary</h3>
+  <ReportNumbers />
   <ReportResultsTable />
 </div>
