@@ -50,6 +50,7 @@
   {#each resultCategories as category}
     <ResultCard label={category} items={getItemsFromCategory(category)} />
   {/each}
+  <ResultCard label="Not checked" items={missingItems} />
 </ul>
 
 {#if missingItems.length > 0}
