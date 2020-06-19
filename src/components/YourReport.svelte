@@ -163,7 +163,7 @@
         {#if $evaluation.meta.conformanceTarget.value === 'AA'}
           Level&nbsp;A,&nbsp;AA
         {/if}
-        success criteria.
+        Success Criteria.
       </p>
       <ProgressBar percentage={100 / (totalCriteria / evaluatedItems.length)} />
       <div class="your-report__progress-by-principle">
