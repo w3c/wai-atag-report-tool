@@ -1,6 +1,6 @@
 <script>
   import { onMount } from "svelte";
-  import { Link } from "svelte-navigator";
+  import { Link, useLocation } from "svelte-navigator";
 
   import Header from "../components/Header.svelte";
   import ReportHeader from "../components/report/ReportHeader.svelte";
@@ -11,14 +11,15 @@
 
   import { currentPage } from "../stores/currentPage.js";
 
+  import { honourFragmentIdLinks } from "../utils/honourFragmentIdLinks.js";
+
+  const location = useLocation();
+
   onMount(() => {
+    let fragment;
     currentPage.update(currentPage => "Report");
 
-    // by setting location.hash explictly, we ensure :target
-    // selectors will work as expected
-    if (location.hash.length > 0) {
-      location.hash = location.hash;
-    }
+    honourFragmentIdLinks($location);
   });
 </script>
 
@@ -36,3 +37,4 @@
 <ReportHeader />
 <ReportSummary />
 <ReportResults />
+

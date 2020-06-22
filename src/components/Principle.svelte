@@ -1,5 +1,6 @@
 <script>
   import { onMount } from "svelte";
+  import { useLocation } from "svelte-navigator";
   import Header from "./Header.svelte";
   import Guideline from "./Guideline.svelte";
   import LinkToGuidance from "./LinkToGuidance.svelte";
@@ -7,6 +8,7 @@
   import PagerLink from "./PagerLink.svelte";
   import atag from "../data/atag.js";
   import { currentPage } from "../stores/currentPage.js";
+  import { honourFragmentIdLinks } from "../utils/honourFragmentIdLinks.js";
 
   export let id = null;
   export let className = undefined;
@@ -14,14 +16,12 @@
   $: principle = atag[id].principle || null;
   $: guidelines = atag[id].guidelines || null;
 
+  const location = useLocation();
+
   onMount(() => {
     currentPage.update(currentPage => "Evaluation");
 
-    // by setting location.hash explictly, we ensure :target
-    // selectors will work as expected
-    if (location.hash.length > 0) {
-      location.hash = location.hash;
-    }
+    honourFragmentIdLinks($location);
   });
 
   const normalisedPrincipleId = atag[id].principle.num
