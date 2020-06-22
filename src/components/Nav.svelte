@@ -2,7 +2,7 @@
   .nav {
     -ms-grid-column: 2;
     -ms-grid-column-span: 8;
-    grid-column: 2 / span 6;
+    grid-column: 2 / span 8;
     -ms-grid-row: 1;
     -ms-grid-row-span: 1;
     grid-row: 1;
