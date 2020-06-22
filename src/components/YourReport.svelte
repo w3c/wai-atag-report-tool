@@ -175,7 +175,7 @@
     {/if}
   {:else}
     <ButtonShowHide expanded={false} on:toggle={toggleYourReport}>
-      Show sidebar
+      Show “Your Report”
     </ButtonShowHide>
   {/if}
 </aside>
