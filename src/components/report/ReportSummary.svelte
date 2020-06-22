@@ -2,7 +2,7 @@
   import { evaluation } from "../../stores/evaluation.js";
   import marked from "marked";
 
-  let editing = false;
+  export let editing = false;
   let section;
 
   function toggleEdit() {

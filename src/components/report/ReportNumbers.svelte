@@ -3,7 +3,7 @@
   import { getEvaluatedItems } from "../../utils/getEvaluatedItems.js";
   import { inConformanceTarget } from "../../utils/inConformanceTarget.js";
 
-  export let className;
+  export let className = "";
 
   $: items = getEvaluatedItems($evaluation);
   $: totalCriteria = Object.values($evaluation.evaluationData).filter(item =>
