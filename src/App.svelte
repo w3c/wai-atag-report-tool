@@ -4,6 +4,7 @@
   import About from "./routes/About.svelte";
   import YourReport from "./components/YourReport.svelte";
   import Report from "./routes/Report.svelte";
+  import Acknowledgements from "./routes/Acknowledgements.svelte";
   import Principle from "./components/Principle.svelte";
   import Nav from "./components/Nav.svelte";
   import NavItem from "./components/NavItem.svelte";
@@ -11,6 +12,12 @@
   import { showYourReport } from "./stores/showYourReport.js";
   import atag from "./data/atag.js";
   export let url = "";
+
+  const pagesWithYourReport = ["About", "Evaluation"];
+
+  function needsYourReport(pageName) {
+    return pagesWithYourReport.indexOf(pageName) > -1;
+  }
 </script>
 
 <style>
@@ -42,7 +49,7 @@
   </Nav>
   <section
     class="app-content"
-    class:app-content--wide={$currentPage === 'Report' || !$showYourReport}
+    class:app-content--wide={!needsYourReport($currentPage) || !$showYourReport}
     aria-label="Main content">
     <Route path="/">
       <Overview />
@@ -56,8 +63,11 @@
     <Route path="/report">
       <Report />
     </Route>
+    <Route path="/acknowledgements">
+      <Acknowledgements />
+    </Route>
   </section>
-  {#if $currentPage !== 'Report'}
+  {#if needsYourReport($currentPage)}
     <YourReport />
   {/if}
 </Router>
