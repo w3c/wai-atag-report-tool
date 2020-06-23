@@ -49,7 +49,7 @@
     display: block;
     color: var(--off-black);
     font-weight: normal;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.125em;
   }
   :global(.criterion__answers label::after) {
     content: ":";
