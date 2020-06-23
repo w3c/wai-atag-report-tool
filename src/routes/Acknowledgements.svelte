@@ -24,17 +24,12 @@
 </p>
 
 <h2>Project Leadership</h2>
-<dl>
-  <dt>Developer and Editor</dt>
-  <dd>Hidde de Vries, W3C WAI</dd>
-  <dt>Project Lead</dt>
-  <dd>Shadi Abou-Zahra, W3C WAI</dd>
-  <dt>EOWG Co-Chairs</dt>
-  <dd>Brent Bakken, Pearson</dd>
-  <dd>Sharron Rush, Knowbility</dd>
-  <dt>EOWG Staff Contact:</dt>
-  <dd>Shawn Lawton Henry, W3C WAI</dd>
-</dl>
+<ul>
+  <li>Developer and Editor: Hidde de Vries, W3C WAI</li>
+  <li>Project Lead: Shadi Abou-Zahra, W3C WAI</li>
+  <li>EOWG Co-Chairs: Brent Bakken, Pearson and Sharron Rush, Knowbility</li>
+  <li>EOWG Staff Contact: Shawn Lawton Henry, W3C WAI</li>
+</ul>
 
 <h2>Major Contributors</h2>
 <ul>
