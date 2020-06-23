@@ -41,7 +41,7 @@
   <li>Shadi Abou-Zahra, W3C WAI</li>
   <li>Shawn Lawton Henry, W3C WAI</li>
   <li>Eric Eggert, Knowbility/W3C</li>
-  <li>Kevin White, Scottish Government</li>
+  <li>Kevin White, The Scottish Government</li>
   <li>Daniel Montalvo, W3C WAI</li>
 </ul>
 
