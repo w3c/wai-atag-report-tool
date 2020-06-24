@@ -104,10 +104,10 @@ evaluation:
     executiveSummary: 
       id: "executiveSummary"
       value: null
-    evaluatorName
+    evaluatorName:
       id: "evaluatorName"
       value: null
-    evaluatorOrg
+    evaluatorOrg:
       id: "evaluatorOrg"
       value: null
     evaluationId:
