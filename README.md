@@ -118,5 +118,5 @@ evaluation:
       value: defaults to "AA", used to decide which criteria in scope
     createdWith: 
       id: "createdWith",
-      value: set to version number in package.josn at generation of report
+      value: set to version number in package.json at generation of report
 ```
