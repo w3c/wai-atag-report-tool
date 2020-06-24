@@ -84,8 +84,8 @@ There is also an object that contains the current evaluation. It is based on the
 Here is an example of what that object looks like, for reference:
 
 ```yaml
-evaluation
-  evaluationData
+evaluation:
+  evaluationData:
     successcriterionId: 
       - id: successcriterion.id,
       - num: unique reference to the criterion (like “A.3.1”)
@@ -94,7 +94,7 @@ evaluation
       - observations: string of Markdown. Defaults to null.
       - level: level this criterion applies to (like “A”). Note: some can apply to any of A, AA or AAA (“multi-level SCs”).
       - evaluatedLevel: level this criterion is evaluated as. Same as level, except for multi-level SCs, where it is picked from a dropdown.
-  meta
+  meta:
     name:
       id: "name"
       value: null
