@@ -50,23 +50,11 @@
 <div tabindex="-1" bind:this={section}>
   <h2 class="report-header">About the Evaluation</h2>
   <dl>
-    <dt>
-      <ReportHeaderKey {editing} field="name">Tool Name</ReportHeaderKey>
-    </dt>
-    <dd>
-      <ReportHeaderValue {editing} field="name" />
-    </dd>
-    <dt>
-      <ReportHeaderKey {editing} field="website">Website</ReportHeaderKey>
-    </dt>
-    <dd>
-      <ReportHeaderValue {editing} field="website" />
-    </dd>
-    <dt>
-      <ReportHeaderKey {editing} field="conformanceTarget">
-        Conformance Target
-      </ReportHeaderKey>
-    </dt>
+    <dt><ReportHeaderKey {editing} field="name">Tool Name</ReportHeaderKey></dt>
+    <dd><ReportHeaderValue {editing} field="name" /></dd>
+    <dt><ReportHeaderKey {editing} field="website">Website</ReportHeaderKey></dt>
+    <dd><ReportHeaderValue {editing} field="website" /></dd>
+    <dt><ReportHeaderKey {editing} field="conformanceTarget">Conformance Target</ReportHeaderKey></dt>
     <dd>
       <ReportHeaderMultiValue {editing} field="conformanceTarget">
         <option value="A">Level A</option>
@@ -74,30 +62,12 @@
         <option value="AAA">Level AAA</option>
       </ReportHeaderMultiValue>
     </dd>
-    <dt>
-      <ReportHeaderKey {editing} field="evaluationId">
-        Report Identifier
-      </ReportHeaderKey>
-    </dt>
-    <dd>
-      <ReportHeaderValue {editing} field="evaluationId" />
-    </dd>
-    <dt>
-      <ReportHeaderKey {editing} field="evaluatorName">
-        Evaluator
-      </ReportHeaderKey>
-    </dt>
-    <dd>
-      <ReportHeaderValue {editing} field="evaluatorName" />
-    </dd>
-    <dt>
-      <ReportHeaderKey {editing} field="evaluatorOrg">
-        Organization
-      </ReportHeaderKey>
-    </dt>
-    <dd>
-      <ReportHeaderValue {editing} field="evaluatorOrg" />
-    </dd>
+    <dt><ReportHeaderKey {editing} field="evaluationId">Report Identifier</ReportHeaderKey></dt>
+    <dd><ReportHeaderValue {editing} field="evaluationId" /></dd>
+    <dt><ReportHeaderKey {editing} field="evaluatorName">Evaluator</ReportHeaderKey></dt>
+    <dd><ReportHeaderValue {editing} field="evaluatorName" /></dd>
+    <dt><ReportHeaderKey {editing} field="evaluatorOrg">Organization</ReportHeaderKey></dt>
+    <dd><ReportHeaderValue {editing} field="evaluatorOrg" /></dd>
   </dl>
   {#if editing}
     <button type="button" class="button button-secondary" on:click={toggleEdit}>

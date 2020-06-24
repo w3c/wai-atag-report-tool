@@ -8,7 +8,7 @@
   import { currentPage } from "../stores/currentPage.js";
 
   onMount(() => {
-    currentPage.update(currentPage => "Overview");
+    currentPage.update((currentPage) => "Overview");
   });
 </script>
 
@@ -42,8 +42,8 @@
   </li>
   <li>
     You can format your evaluation with
-    <a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a>
-    , so that you can use lists, links and code examples.
+    <a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a>, 
+    so that you can use lists, links and code examples.
   </li>
 </ul>
 
@@ -78,20 +78,16 @@
   </summary>
   <p>
     Following the structure of ATAG, this tool takes you through eight
-    <strong>Principles</strong>
-    . Each principle has a number of
-    <strong>Guidelines</strong>
-    , which are further divided into
-    <strong>Success Criteria</strong>
-    . For each, you can select a result and note down any observations. Results
-    include "Not checked", "Passed", "Failed", "Not applicable", and "Cannot
-    tell".
+    <strong>Principles</strong>. Each principle has a number of
+    <strong>Guidelines</strong>, which are further divided into
+    <strong>Success Criteria</strong>. For each, you can select 
+    a result and note down any observations. Results include “Not checked”, 
+    “Passed”, “Failed”, “Not applicable”, and “Cannot tell”.
   </p>
   <p>
     Part A (Principles A.1 to A.4) is related to the
-    <strong>editing experience</strong>
-    with the authoring tool. It helps ensure that content can be created by
-    people with disabilities.
+    <strong>editing experience</strong> with the authoring tool. 
+    It helps ensure that content can be created by people with disabilities.
   </p>
   <p>
     Part B (Principles B.1 to B.4) is about the
@@ -103,9 +99,8 @@
     More information on each ATAG Success Criterion is in
     <a href="https://www.w3.org/TR/IMPLEMENTING-ATAG20/" target="_blank">
       Implementing ATAG 2.0
-    </a>
-    . Links in this tool lead you to the relevant sections of the “Implementing”
-    document.
+    </a>. Links in this tool lead you to the relevant sections of the 
+    “Implementing” document.
   </p>
 </details>
 
@@ -114,7 +109,7 @@
     <h2>Result Choices</h2>
   </summary>
   <p>
-    As you go through and evaluate your tool, you will select a "result" for
+    As you go through and evaluate your tool, you will select a “result” for
     each criterion. Here is the legend of what those selections mean:
   </p>
   <dl>
