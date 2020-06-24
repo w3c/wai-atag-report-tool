@@ -1,4 +1,4 @@
-# [Draft] ATAG Report Tool (ART)
+# ATAG Report Tool (ART)
 
 With this tool, people can report on how accessible their [authoring tool](https://www.w3.org/TR/ATAG20/#def-Authoring-Tool) is. It guides them through the Success Criteria of the [Authoring Tool Accessibility Guidelines 2.0](https://www.w3.org/TR/ATAG20/) (ATAG 2.0), allowing to record a **result** and **observation** for each. It outputs to JSON and HTML.
 
