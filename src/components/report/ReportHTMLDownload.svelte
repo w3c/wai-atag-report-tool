@@ -36,6 +36,22 @@
 </a>
 
 <div hidden use:cleanUp bind:this={htmlDownloadTemplate}>
+  <style>
+    table,
+    td,
+    th {
+      border-color: #3b3b3b;
+    }
+    td:not(:last-child),
+    th {
+      padding: 1em;
+      vertical-align: top;
+      text-align: left;
+    }
+    td:last-child {
+      padding: 0 1em;
+    }
+  </style>
   <h1>
     {title}
     {#if nameProvided}for {$evaluation['meta']['name']['value']}{/if}
