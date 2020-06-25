@@ -31,9 +31,9 @@
     "svelte-navigator": "^3.0.8"
   },
   "scripts": {
-    "mustache": "mustache config/$NODE_ENV.json src/index.html > public/index.html",
-    "build": "mustache & rollup -c",
-    "dev": "mustache rollup -c -w",
+    "replace_vars": "mustache config/$NODE_ENV.json src/index.html > public/index.html",
+    "build": "npm run replace_vars && rollup -c",
+    "dev": "npm run replace_vars && rollup -c -w",
     "start": "sirv public"
   }
 }
