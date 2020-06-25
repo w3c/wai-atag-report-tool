@@ -1,6 +1,8 @@
 name: Deploy
 
 on:
+  push: 
+    - master
   release:
     types: [created]
   
@@ -41,7 +43,7 @@ jobs:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
         file: build.zip
         asset_name: build.zip
-        tag: ${{ github.ref }}
+        tag: ${{ GITHUB_REF }}
         overwrite: true
     - name: Wait for gh-pages to be updated
       uses: jakejarvis/wait-action@master
