@@ -13,7 +13,7 @@
   import atag from "./data/atag.js";
   export let url = "";
 
-  const pagesWithYourReport = ["About", "Evaluation"];
+  const pagesWithYourReport = ["Overview", "About", "Evaluation"];
 
   function needsYourReport(pageName) {
     return pagesWithYourReport.indexOf(pageName) > -1;

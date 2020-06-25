@@ -19,6 +19,7 @@
 
   function startNew() {
     navigate("/about", { replace: false });
+    fresh = false;
   }
 
   function toOverview() {
@@ -167,7 +168,7 @@
         {/each}
       </ul>
       <button class="button" on:click={toOverview}>View Report</button>
-      {#if evaluatedItems.length > 0 && $currentPage === 'Overview'}
+      {#if $currentPage === 'Overview'}
         <button type="button" class="button button-secondary" on:click={clear}>
           New Report
         </button>
