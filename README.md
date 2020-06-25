@@ -32,9 +32,7 @@ To create an optimised version of the app:
 npm run build
 ```
 
-If you're building for production and plan to publish somewhere that requires a base path, set `NODE_ENV` to 'production' (for WAI website) or 'ghpages' (for GitHub pages).
-
-This prepends URLs with a prefix relevant for the environment (as set in `config/{environment}.json`), both in the `index.html` (via Mustache) and in the Router setting.
+You can run the newly built app with `npm run start`. This uses [sirv](https://github.com/lukeed/sirv), which is included in your package.json's `dependencies` so that the app will work when you deploy to platforms like [Heroku](https://heroku.com).
 
 ## Data structure
 
