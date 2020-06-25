@@ -20,7 +20,7 @@ jobs:
       with:
         node-version: '12.x'
     - run: npm install
-    - run: npm run export
+    - run: npm run build
     - name: Build and Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
