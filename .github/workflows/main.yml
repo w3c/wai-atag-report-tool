@@ -1,11 +1,12 @@
 name: Deploy
 
 on:
-  push: 
+  push:
+    branches:
     - master
+    - release/*
   release:
     types: [created]
-  
 
 jobs:
   build:
