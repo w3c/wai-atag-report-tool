@@ -11,6 +11,7 @@
   import { currentPage } from "./stores/currentPage.js";
   import { showYourReport } from "./stores/showYourReport.js";
   import atag from "./data/atag.js";
+  import vars from "../config/__buildEnv__.json";
   export let url = "";
 
   const pagesWithYourReport = ["Overview", "About", "Evaluation"];
@@ -35,7 +36,7 @@
   }
 </style>
 
-<Router {url}>
+<Router {url} basepath={vars.pathPrefix}>
   <Nav>
     <NavItem to="/">Overview</NavItem>
     <NavItem to="/about">About</NavItem>
