@@ -6,10 +6,8 @@ import livereload from "rollup-plugin-livereload";
 import serve from "rollup-plugin-serve";
 import { terser } from "rollup-plugin-terser";
 import json from "@rollup/plugin-json";
-import replace from '@rollup/plugin-replace';
 
 const production = !process.env.ROLLUP_WATCH;
-const buildEnv = process.env.NODE_ENV || "development";
 
 export default {
   input: "src/main.js",
@@ -17,7 +15,7 @@ export default {
     sourcemap: true,
     format: "iife",
     name: "app",
-    file: `public/build/bundle.js`,
+    file: "public/build/bundle.js",
   },
   plugins: [
     svelte({
@@ -26,7 +24,7 @@ export default {
       // we'll extract any component CSS out into
       // a separate file — better for performance
       css: (css) => {
-        css.write(`public/build/bundle.css`);
+        css.write("public/build/bundle.css");
       },
     }),
 
@@ -65,9 +63,6 @@ export default {
           },
         ],
       ],
-    }),
-    replace({
-      __buildEnv__: buildEnv,
     }),
     // In dev mode, call `npm run start` once
     // the bundle has been generated
