@@ -44,7 +44,7 @@ jobs:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
         file: build.zip
         asset_name: build.zip
-        tag: ${{ GITHUB_REF }}
+        tag: ${{ github.ref }}
         overwrite: true
     - name: Wait for gh-pages to be updated
       uses: jakejarvis/wait-action@master
