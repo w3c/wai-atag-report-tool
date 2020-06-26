@@ -58,7 +58,7 @@
       <span class="visuallyhidden">for {num}</span>
     </label>
     <span class="observation__meta">
-      <Link to={`${vars.pathPrefix}/report#criterion-${normalisedCriterionId}`}>
+      <Link to={`/report#criterion-${normalisedCriterionId}`}>
         View in Report
         <span class="visuallyhidden">for {normalisedCriterionId}</span>
       </Link>
