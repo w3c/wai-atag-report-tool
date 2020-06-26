@@ -24,7 +24,7 @@ npm run dev
 
 Navigate to [localhost:5000](http://localhost:5000). You should see your app running. Edit a component file in `src`, save it, and reload the page to see your changes.
 
-## Building and running in production mode
+## Deployment
 
 To create an optimised version of the app:
 
@@ -32,9 +32,51 @@ To create an optimised version of the app:
 npm run build
 ```
 
-If you're building for production and plan to publish somewhere that requires a base path, set `NODE_ENV` to 'production' (for WAI website) or 'ghpages' (for GitHub pages).
+### Preview on now.sh
 
-This prepends URLs with a prefix relevant for the environment (as set in `config/{environment}.json`), both in the `index.html` (via Mustache) and in the Router setting.
+(To be discontinued) 
+
+On merge to the `main` branch, a preview is created on https://atag-report-tool.hdv.now.sh.
+
+On PR to the `main` branch, a PR preview is created, see the PR for the URI.
+
+### Preview on Netlify
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/edc36781-ec31-41e0-9c4c-6af8d3090a58/deploy-status)](https://app.netlify.com/sites/wai-atag-report-tool/deploys)
+
+On merge to the `main` branch, a preview is created on https://wai-atag-report-tool.netlify.app.
+
+On PR to the `main` branch, a Netlify PR preview is created, see the PR for the URI.
+
+### Release to W3C/WAI website
+
+The W3C/WAI site serves what's on GitHub pages. To release to GitHub pages, [create a new release](https://github.com/w3c/wai-atag-report-tool/releases/new). This should trigger a [deploy action](https://github.com/w3c/wai-atag-report-tool/actions?query=workflow%3ADeploy).
+
+### Use `NODE_ENV` to use environment-depended variables in HTML and JavaScript (.svelte)
+
+In some deployment contexts, things like paths may need to vary. There are two steps to this:
+
+1. Add environment specific settings to `config/[environment-name].json`, for example `{ pathPrefix: "/WAI" }` or `{ imageDir: "/images" }`
+2. Before running `npm run build` or `npm run dev`, set `export NODE_ENV=[environment-name]`
+
+
+#### Using in HTML
+
+Use variables in HTML, with `{{ variable-name }}`, for instance `{{ pathPrefix }}`. If you need these non-escaped, use triple brackets, for instance `{{{ pathPrefix }}}`.
+
+[Mustache](http://mustache.github.io/) replaces the variables in `src/index.html` and places the resulting HTML in `public/index.html`.
+
+#### Using in JavaScript
+
+In JavaScript, `__buildEnv__` is replaced with the name of the build environment using the [replace plugin for rollup](https://github.com/rollup/plugins).
+
+To use variables, this is how  you can import the JSON file that your build environment needs: 
+
+```js
+import vars from "../../config/__buildEnv__.json";
+```
+
+The vars are now in the `vars` object, you can reference them with `vars.variableName`, for instance `vars.pathPrefix`. 
 
 ## Data structure
 
