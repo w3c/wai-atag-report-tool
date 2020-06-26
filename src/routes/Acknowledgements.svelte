@@ -31,7 +31,6 @@
 
 <h2>Major Contributors</h2>
 <ul>
-  <li>Shadi Abou-Zahra, W3C WAI</li>
   <li>Shawn Lawton Henry, W3C WAI</li>
   <li>Eric Eggert, Knowbility and W3C</li>
   <li>Kevin White, The Scottish Government</li>
