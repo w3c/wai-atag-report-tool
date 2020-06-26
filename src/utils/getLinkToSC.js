@@ -7,5 +7,5 @@ export function getLinkToSC(num) {
       : parseInt(num.substring(2, 3), 10) + 4;
   const criterion = num.replace(/\./g, "").toLowerCase();
 
-  return `${vars.pathPrefix}/principle/${principle}#${criterion}`;
+  return `/principle/${principle}#${criterion}`;
 }
