@@ -1,5 +1,6 @@
 <script>
   import { Link } from "svelte-navigator";
+  import vars from "../../config/__buildEnv__.json";
 
   export let to = "";
   export let direction = "";
@@ -18,14 +19,14 @@
         focusable="false"
         aria-hidden="true"
         class="icon-arrow-right pager--item-icon">
-        <use xlink:href="/images/icons.svg#icon-arrow-left" />
+        <use xlink:href={`${vars.pathPrefix}/images/icons.svg#icon-arrow-left`} />
       </svg>
     {:else if direction === 'next'}
       <svg
         focusable="false"
         aria-hidden="true"
         class="icon-arrow-right pager--item-icon">
-        <use xlink:href="/images/icons.svg#icon-arrow-right" />
+        <use xlink:href={`${vars.pathPrefix}/images/icons.svg#icon-arrow-right`} />
       </svg>
     {/if}
     <span class="pager--item-text">
