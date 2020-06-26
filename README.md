@@ -52,7 +52,7 @@ On PR to the `main` branch, a Netlify PR preview is created, see the PR for the 
 
 The W3C/WAI site serves what's on GitHub pages. To release to GitHub pages, [create a new release](https://github.com/w3c/wai-atag-report-tool/releases/new). This should trigger a [deploy action](https://github.com/w3c/wai-atag-report-tool/actions?query=workflow%3ADeploy).
 
-### Use `NODE_ENV` to use environment-depended variables in HTML and JavaScript (.svelte)
+### Environment-specific variables in HTML and JavaScript (.svelte)
 
 In some deployment contexts, things like paths may need to vary. There are two steps to this:
 
