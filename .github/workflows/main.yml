@@ -3,8 +3,7 @@ name: Deploy
 on:
   push:
     branches:
-    - main
-    - release/*
+    - production
   release:
     types: [created]
 
@@ -24,6 +23,7 @@ jobs:
         node-version: '12.x'
     - run: npm install
     - run: export NODE_ENV=ghpages && npm run build
+    - run: cd public && ln -s index.html 404.html # symlink for GH pages fallback
     - name: Install SSH Client 🔑
       uses: webfactory/ssh-agent@v0.2.0
       with:
