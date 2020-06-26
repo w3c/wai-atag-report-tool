@@ -7,6 +7,9 @@
   function getProps({ location, href, isPartiallyCurrent, isCurrent }) {
     const isActive = href === `${vars.pathPrefix}/` ? isCurrent : isPartiallyCurrent || isCurrent;
 
+    console.log('isActive', isActive);
+    console.log('isCurrent', isCurrent);
+
     // The object returned here is spread on the anchor element's attributes
     if (isActive) {
       return { class: "active" };
