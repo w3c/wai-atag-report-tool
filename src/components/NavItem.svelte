@@ -5,13 +5,15 @@
   export let to = "";
 
   function getProps({ location, href, isPartiallyCurrent, isCurrent }) {
-    const isActive = href === `${vars.pathPrefix}/` ? isCurrent : isPartiallyCurrent || isCurrent;
+    let relativeHref = href.replace(vars.pathPrefix, '');
+    let isActive;
 
-    console.log('href', href);
-    console.log('isActive', isActive);
-    console.log('isCurrent', isCurrent);
+    if (relativeHref === "") {
+      relativeHref = "/";
+    }
 
-    // The object returned here is spread on the anchor element's attributes
+    isActive = relativeHref === location.pathname;
+
     if (isActive) {
       return { class: "active" };
     }
