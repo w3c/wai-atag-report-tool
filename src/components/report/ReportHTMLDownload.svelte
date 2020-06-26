@@ -48,7 +48,7 @@
       vertical-align: top;
       text-align: left;
     }
-    td:last-child {
+    td:not([class]):last-child {
       padding: 0 1em;
     }
   </style>
