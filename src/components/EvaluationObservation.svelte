@@ -2,6 +2,7 @@
   import { Link } from "svelte-navigator";
   import { evaluation } from "../stores/evaluation.js";
   import { normaliseCriterionId } from "../utils/normaliseCriterionId";
+  import vars from "../../config/__buildEnv__.json";
 
   export let id;
   export let num;
@@ -57,7 +58,7 @@
       <span class="visuallyhidden">for {num}</span>
     </label>
     <span class="observation__meta">
-      <Link to={`/report#criterion-${normalisedCriterionId}`}>
+      <Link to={`${vars.pathPrefix}/report#criterion-${normalisedCriterionId}`}>
         View in Report
         <span class="visuallyhidden">for {normalisedCriterionId}</span>
       </Link>

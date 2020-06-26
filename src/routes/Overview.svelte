@@ -6,6 +6,7 @@
   import Pager from "../components/Pager.svelte";
   import PagerLink from "../components/PagerLink.svelte";
   import { currentPage } from "../stores/currentPage.js";
+  import vars from "../../config/__buildEnv__.json";
 
   onMount(() => {
     currentPage.update((currentPage) => "Overview");
@@ -30,7 +31,7 @@
 <ul>
   <li>
     As you use the tool, the
-    <Link to="/report">Report</Link>
+    <Link to={`${vars.pathPrefix}/report`}>Report</Link>
     page lists the success criteria that you have checked and not checked.
   </li>
   <li>

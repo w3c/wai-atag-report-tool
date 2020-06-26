@@ -14,16 +14,17 @@
     principles,
   } from "../utils/getProgressPerPrinciple.js";
   import { inConformanceTarget } from "../utils/inConformanceTarget.js";
+  import vars from "../../config/__buildEnv__.json";
 
   let fresh, showButton, box;
 
   function startNew() {
-    navigate("/about", { replace: false });
+    navigate(`${vars.pathPrefix}/about`, { replace: false });
     fresh = false;
   }
 
   function toOverview() {
-    navigate("/report", { replace: false });
+    navigate(`${vars.pathPrefix}/report`, { replace: false });
   }
 
   function clear() {
@@ -33,7 +34,7 @@
       )
     ) {
       evaluation.clearCache();
-      navigate("/", { replace: true });
+      navigate(`${vars.pathPrefix}/`, { replace: true });
     }
   }
 
