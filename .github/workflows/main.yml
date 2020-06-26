@@ -34,22 +34,22 @@ jobs:
         BRANCH: gh-pages
         FOLDER: public
         SSH: true
-    - name: Zip Files
-      uses: montudor/action-zip@v0.1.0
-      with:
-        args: zip -r build.zip ./public
-    - name: Upload zip file to release
-      uses: svenstaro/upload-release-action@v1-release
-      with:
-        repo_token: ${{ secrets.GITHUB_TOKEN }}
-        file: build.zip
-        asset_name: build.zip
-        tag: ${{ github.ref }}
-        overwrite: true
-    - name: Wait for gh-pages to be updated
-      uses: jakejarvis/wait-action@master
-      with:
-        time: '30s'
+    # # - name: Zip Files
+    # #   uses: montudor/action-zip@v0.1.0
+    # #   with:
+    # #     args: zip -r build.zip ./public
+    # # - name: Upload zip file to release
+    # #   uses: svenstaro/upload-release-action@v1-release
+    # #   with:
+    # #     repo_token: ${{ secrets.GITHUB_TOKEN }}
+    # #     file: build.zip
+    # #     asset_name: build.zip
+    # #     tag: ${{ github.ref }}
+    # #     overwrite: true
+    # - name: Wait for gh-pages to be updated
+    #   uses: jakejarvis/wait-action@master
+    #   with:
+    #     time: '30s'
     # - name: Update URL mapping on W3C site
     #  uses: fjogeleit/http-request-action@master
     #  with:
