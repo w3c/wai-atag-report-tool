@@ -1,11 +1,7 @@
 # ATAG Report Tool (ART)
 
 With this tool, people can report on how accessible their [authoring tool](https://www.w3.org/TR/ATAG20/#def-Authoring-Tool) is. It guides them through the Success Criteria of the [Authoring Tool Accessibility Guidelines 2.0](https://www.w3.org/TR/ATAG20/) (ATAG 2.0), allowing to record a **result** and **observation** for each. It outputs to JSON and HTML.
-
-## Status
-
-This project is a prototype that is currently under review by the Education & Outreach Working Group.
-
+  
 ## Development
 
 This application is built with [Svelte](https://svelte.dev). To run it locally, you need to clone it this repository, have [Node](https://nodejs.org) installed and then run this in the project's directory:
@@ -31,14 +27,6 @@ To create an optimised version of the app:
 ```bash
 npm run build
 ```
-
-### Preview on now.sh
-
-(To be discontinued) 
-
-On merge to the `main` branch, a preview is created on https://atag-report-tool.hdv.now.sh.
-
-On PR to the `main` branch, a PR preview is created, see the PR for the URI.
 
 ### Preview on Netlify
 
