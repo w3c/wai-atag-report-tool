@@ -33,7 +33,7 @@
   "scripts": {
     "replace_vars": "mustache config/$NODE_ENV.json src/index.html > public/index.html",
     "build": "npm run replace_vars && rollup -c",
-    "dev": "npm run replace_vars && rollup -c -w",
+    "dev": "export NODE_ENV=development && npm run replace_vars && rollup -c -w",
     "start": "sirv public"
   }
 }
