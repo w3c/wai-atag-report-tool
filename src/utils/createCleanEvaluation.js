@@ -8,8 +8,10 @@ export function createCleanEvaluation() {
     evaluationData: {},
     meta: {},
   };
+  let principleApplicability = {};
 
   for (const principle of atag) {
+    principleApplicability[principle.principle.num] = true;
     for (const guideline of principle.guidelines) {
       for (const successcriterion of guideline.successcriteria) {
         cleanEvaluation["evaluationData"][successcriterion.id] = {
@@ -61,7 +63,10 @@ export function createCleanEvaluation() {
       id: "createdWith",
       value: packageJson.version,
     },
+    principleApplicability: principleApplicability
   };
+
+
 
   return cleanEvaluation;
 }
