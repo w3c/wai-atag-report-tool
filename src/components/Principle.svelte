@@ -58,9 +58,13 @@
     </LinkToGuidance>
   </p>
 
+  {#if $evaluation['meta']['principleApplicability'][principle.num]}
   {#each guidelines as guideline, i (guideline.id)}
     <Guideline {...guideline} />
   {/each}
+  {:else}
+    <p>The checkbox for this principle was not checked, so it is not applicable, so we won't show any guidelines, but this text instead.</p>
+  {/if}
 
   <Pager label="Previous/Next Principle">
     {#if id === 0}
