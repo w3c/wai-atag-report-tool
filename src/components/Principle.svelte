@@ -1,4 +1,5 @@
 <script>
+  import { evaluation } from "../stores/evaluation.js";
   import { onMount } from "svelte";
   import { useLocation } from "svelte-navigator";
   import Header from "./Header.svelte";
@@ -42,6 +43,14 @@
 
 <div class={className}>
   <Header>{principle.num}: {principle.handle}</Header>
+  <label for={`principle-applicability-${principle.num}`}>Applicable?</label>
+  <input 
+    type="checkbox" 
+    id={`principle-applicability-${principle.num}`} 
+    bind:checked={$evaluation['meta']['principleApplicability'][principle.num]} 
+    on:blur={() => {
+    evaluation.updateCache($evaluation);
+  }}>
 
   <p>
     <LinkToGuidance href={linkToPrinciple}>
