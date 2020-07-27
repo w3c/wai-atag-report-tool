@@ -31,7 +31,7 @@
 <ul>
   <li>
     As you use the tool, the
-    <Link to={`${vars.pathPrefix}/report`}>Report</Link>
+    <Link to="report">Report</Link>
     page lists the success criteria that you have checked and not checked.
   </li>
   <li>
