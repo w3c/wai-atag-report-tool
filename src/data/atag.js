@@ -544,7 +544,7 @@ const atag = [
             num: "A.4.2.1",
             handle: "Describe Accessibility Features",
             text:
-              "For each authoring tool feature that is used to meet Part A of ATAG 2.0, at least one of the following is true: (a) Described in the Documentation: Use of the feature is explained in the authoring tool's documentation; or (b) Described in the Interface: Use of the feature is explained in the authoring tool user interface; or (c) Platform Service: The feature is a service provided by an underlying platform; or (d) Not Used by Authors: The feature is not used directly by authors (e.g. passing information to a platform accessibility service).",
+              "For each authoring tool feature that is used to meet Part A of ATAG 2.0, at least one of the following is true:",
             level: "A",
             details: [
               {
