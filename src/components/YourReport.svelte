@@ -144,7 +144,7 @@
       <label
         for="import-evaluation"
         class="button button-secondary your-report__import-label">
-        Import report
+        Open report
       </label>
     {:else}
       <h2 class="your-report__heading">
