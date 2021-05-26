@@ -4,7 +4,7 @@ export function cleanUp(node) {
   );
   const tables = Array.from(node.querySelectorAll("table"));
   const emptyValues = Array.from(node.querySelectorAll("span.no-result"));
-  const remoteAttributeEls = Array.from(
+  const removeAttributeEls = Array.from(
     node.querySelectorAll("[class], [id], [aria-labelledby]")
   );
 
@@ -41,7 +41,7 @@ export function cleanUp(node) {
     dd.parentNode.removeChild(dd);
   });
 
-  remoteAttributeEls.forEach((el) => {
+  removeAttributeEls.forEach((el) => {
     el.removeAttribute("id");
     el.removeAttribute("class");
     el.removeAttribute("aria-labelledby");
