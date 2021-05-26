@@ -544,7 +544,7 @@ const atag = [
             num: "A.4.2.1",
             handle: "Describe Accessibility Features",
             text:
-              "For each authoring tool feature that is used to meet Part A of ATAG 2.0, at least one of the following is true: (a) Described in the Documentation: Use of the feature is explained in the authoring tool's documentation; or (b) Described in the Interface: Use of the feature is explained in the authoring tool user interface; or (c) Platform Service: The feature is a service provided by an underlying platform; or (d) Not Used by Authors: The feature is not used directly by authors (e.g. passing information to a platform accessibility service).",
+              "For each authoring tool feature that is used to meet Part A of ATAG 2.0, at least one of the following is true:",
             level: "A",
             details: [
               {
@@ -585,7 +585,7 @@ const atag = [
             num: "A.4.2.2",
             handle: "Document All Features",
             text:
-              "For each authoring tool feature, at least one of the following is true:  (a) Described in the Documentation: Use of the feature is explained in the authoring tool's documentation; or (b) Described in the Interface: Use of the feature is explained in the authoring tool user interface; or (c) Platform Service: The feature is a service provided by an underlying platform; or (d) Not Used by Authors: The feature is not used directly by authors (e.g. passing information to a platform accessibility service).",
+              "For each authoring tool feature, at least one of the following is true:",
             level: "AA",
             details: [
               {
@@ -862,7 +862,7 @@ const atag = [
             num: "B.2.3.2",
             handle: "Automating Repair of Text Alternatives",
             text:
-              'The authoring tool does not attempt to repair text alternatives for non-text content or the following are all true: (a) No Generic or Irrelevant Strings: Generic strings (e.g. "image") and irrelevant strings (e.g. the file handle, file format) are not used as text alternatives; and (b) In-Session Repairs: If the repair attempt occurs during an authoring session, authors have the opportunity to accept, modify, or reject the repair attempt prior to insertion of the text alternative into the content; and (c) Out-of-Session Repairs: If the repair attempt occurs after an authoring session has ended, the repaired text alternatives are indicated during subsequent authoring sessions (if any) and authors have the opportunity to accept, modify, or reject the repair strings prior to insertion in the content.',
+              "The authoring tool does not attempt to repair text alternatives for non-text content or the following are all true:",
             level: "A",
             details: [
               {
