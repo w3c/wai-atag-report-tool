@@ -1,1 +1,248 @@
-index.html
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta property="og:title" content="ATAG Report Tool" />
+    <meta name="author" content="W3C Web Accessibility Initiative (WAI)" />
+    <meta property="og:description" content="Tool to help report on accessibility of authoring tools. Guides through the Authoring Tool Accessibility Guidelines (ATAG) requirements, allows you to record evaluation results and generate a report of the authoring tool's ATAG conformance." />
+    <meta name="twitter:image" property="og:image" content="https://www.w3.org/WAI/assets/images/social-sharing-default.jpg">
+      <title>
+      ATAG Conformance Evaluation Report Tool | Web Accessibility Initiative
+      (WAI) | W3C
+    </title>
+    <link
+      rel="stylesheet"
+      href="https://w3.org/WAI/assets/css/style.css?1767612106"
+    />
+    <link rel="stylesheet" href="/WAI/atag/report-tool/build/bundle.css" />
+    <script defer src="/WAI/atag/report-tool/build/bundle.js"></script>
+    <style>
+      :target {
+        scroll-margin-top: 5rem;
+      }
+      @media (min-width: 60em) {
+        .default-grid {
+          display: -ms-grid;
+          display: grid;
+          -ms-grid-columns: minmax(16px, 1fr) (minmax(0, 50px)) [2]
+            (minmax(0, 110px)) [6] minmax(16px, 1fr);
+          grid-template-columns:
+            [complete-start] minmax(16px, 1fr) [navigation-start] repeat(
+              2,
+              minmax(0, 50px)
+            )
+            [navigation-end content-start] repeat(6, minmax(0, 110px))
+            [content-end] minmax(16px, 1fr)
+            [complete-end];
+        }
+        #conformance-tool {
+          padding: 0;
+        }
+      }
+      main {
+        display: block;
+        padding: 2em 0;
+        background-image: linear-gradient(#d0e1f1 0, #d0e1f1 48px, #fff 48px);
+      }
+      .nav__item {
+        list-style: none;
+        margin: 0;
+        text-decoration: none;
+      }
+      .nav__item a {
+        display: block;
+        font-size: 0.85em;
+        padding: 1em;
+        text-decoration: none;
+        background-color: #d0e1f1; /* cloudy-subtle */
+        color: inherit;
+        white-space: nowrap;
+        transition-duration: 0.1s;
+        border-bottom: 1px solid transparent;
+      }
+      .nav__item .active {
+        background-color: #fff; /* body-bg */
+        border-bottom: 1px solid #fff;
+      }
+      .nav__item a:focus {
+        outline-offset: -0.5em;
+      }
+      .tool-header {
+        -ms-grid-column: 2;
+        -ms-grid-column-span: 8;
+        -ms-grid-row: 1;
+        grid-column: 2 / 10;
+        display: flex;
+        align-items: center;
+        width: 100%;
+      }
+      .tool-header a {
+        text-decoration: none;
+      }
+      .tool-header-name {
+        font-size: 1.125em;
+        white-space: nowrap;
+      }
+      @media (min-width: 60em) {
+        .tool-header-name {
+          font-size: 1.5em;
+        }
+      }
+      .tool-header-logo {
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+      }
+      .tool-header-logo img {
+        display: block;
+        margin: 0.75em 0 0.75em 0.5em;
+        height: 1.5em;
+      }
+      @media (min-width: 60em) {
+        .tool-header-logo img {
+          height: 2em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header id="site-header" class="default-grid with-gap">
+      <div class="tool-header">
+        <span class="tool-header-name">ATAG Report Tool</span>
+        <div class="tool-header-logo">
+          <a href="http://w3.org/">
+            <img alt="W3C" src="/WAI/atag/report-tool/images/w3c.svg" width="92" height="44" />
+          </a>
+          <a href="http://w3.org/WAI/">
+            <img alt="Web Accessibility Initiative" src="/WAI/atag/report-tool/images/wai.svg" />
+          </a>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div id="conformance-tool" class="default-grid leftcol">
+        <!-- app 'renders' here -->
+      </div>
+    </main>
+    <div class="default-grid">
+      <aside
+        class="box box-icon box-space-above"
+        id="helpimprove"
+        style="-ms-grid-column: 2; -ms-grid-column-span: 8; grid-column: 2 / 8;"
+      >
+        <header class="box-h box-h-icon box-h-space-above box-h-icon">
+          <svg focusable="false" aria-hidden="true" class="icon-comments">
+            <use xlink:href="/WAI/atag/report-tool/images/icons.svg#icon-comments"></use>
+          </svg>
+          <h2>Help improve this page</h2>
+        </header>
+        <div class="box-i">
+          <p>
+            Please share your ideas, suggestions, or comments via e-mail to the
+            publicly-archived list
+            <a
+              href="mailto:wai-eo-editors@w3.org?subject=[en]%20Accessibility%20Fundamentals%20Overview"
+              >wai-eo-editors@w3.org</a
+            >
+            or via GitHub.
+          </p>
+          <div class="button-group">
+            <a
+              href="mailto:wai-eo-editors@w3.org?subject=[en]%20ATAG%20Report%20Tool&amp;body=[put%20comment%20here...]"
+              class="button"
+              ><span>E-mail</span></a
+            >
+            <a
+              href="https://github.com/w3c/wai-atag-report-tool/"
+              class="button"
+              ><span>Fork &amp; Edit on GitHub</span></a
+            ><a
+              href="https://github.com/w3c/wai-atag-report-tool/issues/new"
+              class="button"
+              ><span>New GitHub Issue</span></a
+            >
+          </div>
+        </div>
+        <div></div>
+      </aside>
+    </div>
+    <footer
+      id="wai-site-footer"
+      class="page-footer default-grid"
+      aria-label="Page"
+    >
+      <div
+        class="inner"
+        style="-ms-grid-column: 2; -ms-grid-column-span: 8; grid-column: 2 / 8;"
+      >
+        <p><strong>Date:</strong> Published 29 June 2020.</p>
+        <p>
+          <strong>Developer and Editor</strong>: <a href="https://www.w3.org/People/hidde/">Hidde de Vries</a>. 
+          <strong>Project Lead</strong>: <a href="https://www.w3.org/People/shadi/">Shadi Abou-Zahra</a>. 
+          <strong>Contributors</strong>: <a href="https://www.w3.org/People/Shawn/">Shawn Lawton Henry</a>, 
+          Eric Eggert, Kevin White, and Daniel Montalvo. <a href="/WAI/atag/report-tool/acknowledgements">Acknowledgements</a> lists additional contributors.
+        </p>
+        <p>
+          Developed by the Education and Outreach Working Group (<a
+            href="http://www.w3.org/WAI/EO/"
+            >EOWG</a
+          >) with support from the
+          <a href="https://www.w3.org/WAI/about/projects/wai-guide/"
+            >WAI-Guide</a
+          >
+          project funded by the European Commission (EC) under the Horizon 2020
+          program (Grant Agreement 822245).
+        </p>
+      </div>
+    </footer>
+    <footer class="w3c-global-footer wai-global-footer default-grid" aria-label="Site">
+      <div class="inner">
+        <div class="wai-global-footer__content">
+          <div class="wai-global-footer__subsite"><a href="https://www.w3.org/WAI/" lang="en" dir="auto" translate="no">W3C Web Accessibility Initiative (WAI)</a></div>
+          <div class="wai-global-footer__subsite-desc">Strategies, standards, resources to make the Web accessible to people with disabilities</div>
+          <div class="wai-global-footer__cta w3c-l-cluster w3c-l-cluster--vertical-align">
+            <ul class="w3c-clean-list" role="list">
+              <li class="w3c-with-icon--before w3c-with-icon--larger">
+                <img class="w3c-icon w3c-icon--larger" src="https://www.w3.org/WAI/assets/images/email.svg" width="30" height="30" alt="" aria-hidden="true">
+                <a href="https://www.w3.org/WAI/news/subscribe/">Get News in Email</a>
+              </li>
+              <li class="w3c-with-icon--before w3c-with-icon--larger">
+                <img class="w3c-icon w3c-icon--larger" src="https://www.w3.org/WAI/assets/images/social/linkedin.svg" width="30" height="30" alt="" aria-hidden="true">
+                <a href="https://www.linkedin.com/company/w3c-wai/" translate="no">LinkedIn</a>
+              </li>
+              <li class="w3c-with-icon--before w3c-with-icon--larger">
+                <img class="w3c-icon w3c-icon--larger" src="https://www.w3.org/assets/website-2021/svg/mastodon.svg" width="30" height="30" alt="" aria-hidden="true">
+                <a href="https://w3c.social/@wai" translate="no">Mastodon</a>
+              </li>
+              <li class="w3c-with-icon--before w3c-with-icon--larger">
+                <img class="w3c-icon w3c-icon--larger" src="https://www.w3.org/WAI/assets/images/social/youtube.svg" width="30" height="30" alt="" aria-hidden="true">
+                <a href="https://www.youtube.com/channel/UCU6ljj3m1fglIPjSjs2DpRA/playlists/" translate="no">YouTube</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="w3c-global-footer__links">
+          <div class="w3c-l-cluster">
+            <ul class="w3c-clean-list" role="list">
+              <li><a href="https://www.w3.org/WAI/">Home</a></li>
+              <li><a href="https://www.w3.org/WAI/about/contacting/">Contact</a></li>
+              <li><a href="https://www.w3.org/WAI/sitemap/">Site map</a></li>
+              <li><a href="https://www.w3.org/WAI/about/support/">Support WAI</a></li>
+              <li><a href="https://www.w3.org/WAI/news/">News</a></li>
+              <li><a href="https://www.w3.org/WAI/about/accessibility-statement/">Accessibility statement</a></li>
+              <li><a href="https://www.w3.org/WAI/translations/">All Translations</a></li>
+              <li><a href="https://www.w3.org/WAI/roles/">Resources for roles</a></li>
+            </ul>
+          </div>
+        </div>
+        <p class="w3c-copyright" translate="no">Copyright © 2026  <a href="https://www.w3.org/">World Wide Web	Consortium</a>.<br>
+          <abbr title="World Wide Web Consortium">W3C</abbr><sup>®</sup>
+          <a href="https://www.w3.org/policies/#disclaimers">liability</a>,
+          <a href="https://www.w3.org/policies/#trademarks">trademark</a> and
+          <a rel="license" href="https://www.w3.org/copyright/software-license/" title="W3C Software License">permissive license</a>
+          rules apply unless otherwise noted. See <a href="https://www.w3.org/WAI/about/using-wai-material/">Permission to Use WAI Material</a>.</p>
+      </div>
+    </footer>
+  </body>
+</html>
