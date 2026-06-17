@@ -6,7 +6,6 @@ on:
     - gh-pages
   release:
     types: [created]
-  workflow_dispatch:
 
 jobs:
   build:
@@ -17,14 +16,13 @@ jobs:
 
     steps:
     - name: Checkout 🛎️
-      uses: actions/checkout@v6
+      uses: actions/checkout@v4
       with:
         persist-credentials: false
     - name: Use Node.js '12.x'
-      uses: actions/setup-node@v6
+      uses: actions/setup-node@v4
       with:
         node-version: '12.x'
-        package-manager-cache: false
     - run: npm install
     - run: export NODE_ENV=ghpages && npm run build
     - run: cd public && ln -s index.html 404.html # symlink for GH pages fallback
