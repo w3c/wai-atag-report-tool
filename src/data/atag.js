@@ -1096,7 +1096,7 @@ const atag = [
           {
             id: "repair-assistance",
             num: "B.3.2.1",
-            handle: "Repair Assistance (WCAG",
+            handle: "Repair Assistance (WCAG)",
             text:
               "If checking (see Success Criterion B.3.1.1) can detect that a WCAG 2.0 success criterion is not met, then repair suggestion(s) are provided:",
             level: "A, AA, AAA",
