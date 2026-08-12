@@ -36,5 +36,8 @@
     "build": "npm run replace_vars && rollup -c",
     "dev": "cross-env NODE_ENV=development && npm run replace_vars && rollup -c -w",
     "start": "sirv public"
+  },
+  "engines": {
+    "node": ">=24 <25"
   }
 }
